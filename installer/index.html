@@ -24,10 +24,7 @@
   body { touch-action: manipulation; }
 
   /* ---- 640x480 stage, scaled to the viewport ---- */
-  /* Anchored to the bottom and sized to the small viewport: Chrome for iOS can size its web
-     view as if its toolbars were hidden while they are still shown, and then only the bottom
-     100svh of the window is actually visible. */
-  #viewport { position: fixed; right: 0; bottom: 0; left: 0; height: 100%; height: 100svh; overflow: hidden; }
+  #viewport { position: fixed; top: 0; right: 0; bottom: 0; left: 0; inset: 0; overflow: hidden; }
   #stagepos { position: absolute; left: 0; top: 0; }
   #stage {
     position: relative; width: 640px; height: 480px;
@@ -866,8 +863,7 @@
   var scale = 1, portrait = false, stageW = 640, stageH = 480;
   var stagePos = $('stagepos'), stage = $('stage');
   function fit() {
-    var root = document.documentElement;
-    var vw = +query.vw || root.clientWidth || window.innerWidth, vh = +query.vh || root.clientHeight || window.innerHeight, dpr = +query.dpr || window.devicePixelRatio || 1;
+    var vw = +query.vw || window.innerWidth, vh = +query.vh || window.innerHeight, dpr = +query.dpr || window.devicePixelRatio || 1;
     function crispScale(L) {
       var k = Math.floor(Math.min(vw / (L.x1 - L.x0), vh / (L.y1 - L.y0)) * dpr);
       return k / dpr;
@@ -880,14 +876,21 @@
       s = Math.max(0.5, Math.min(vw / (L.x1 - L.x0), vh / (L.y1 - L.y0)));
     }
     stageW = L.w; stageH = L.h;
-    function offset(v, size, e0, e1) {
+    // Mobile browsers launched from another app can paint the page under their own top
+    // bar (about 120 CSS px on iOS) without telling the page, so when the scene is cropped
+    // keep the dialogs at least that far from the top whenever they still fit.
+    function offset(v, size, e0, e1, safeTop) {
       var o = (v - size) / 2;
-      if (size > v) o = (e1 - e0) * s <= v ? Math.min(Math.max(o, -e0 * s), v - e1 * s) : (v - (e0 + e1) * s) / 2;
+      if (size > v) {
+        var lo = -e0 * s, hi = v - e1 * s;
+        if (safeTop - e0 * s <= hi) lo = Math.max(lo, safeTop - e0 * s);
+        o = lo <= hi ? Math.min(Math.max(o, lo), hi) : (v - (e0 + e1) * s) / 2;
+      }
       return Math.round(o * dpr) / dpr;
     }
     stage.classList.toggle('portrait', portrait);
-    stagePos.style.left = offset(vw, L.w * s, L.x0, L.x1) + 'px';
-    stagePos.style.top = offset(vh, L.h * s, L.y0, L.y1) + 'px';
+    stagePos.style.left = offset(vw, L.w * s, L.x0, L.x1, 0) + 'px';
+    stagePos.style.top = offset(vh, L.h * s, L.y0, L.y1, 132) + 'px';
     if (useZoom) stage.style.zoom = String(s);
     else stage.style.transform = 'scale(' + s + ')';
     scale = s;
@@ -953,44 +956,6 @@
     test.src = 'assets/selfcheck.js';
     document.head.appendChild(test);
   }
-})();
-</script>
-
-<div id="dbg" style="position:fixed;left:0;right:0;top:38%;z-index:99;background:rgba(0,0,0,.82);color:#7f7;font:12px/1.25 ui-monospace,Menlo,monospace;padding:6px;white-space:pre-wrap;word-break:break-all;pointer-events:none"></div>
-<script>
-(function () {
-  var t0 = Date.now(), log = [];
-  function snap(tag) {
-    var vp = document.getElementById('viewport'), r = vp.getBoundingClientRect(), sp = document.getElementById('stagepos');
-    var vv = window.visualViewport, de = document.documentElement, probe = document.getElementById('svhprobe');
-    if (!probe) { probe = document.createElement('div'); probe.id = 'svhprobe'; probe.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:100svh;visibility:hidden'; document.body.appendChild(probe); }
-    var lvh = document.getElementById('lvhprobe');
-    if (!lvh) { lvh = document.createElement('div'); lvh.id = 'lvhprobe'; lvh.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:100lvh;visibility:hidden'; document.body.appendChild(lvh); }
-    var full = document.getElementById('fullprobe');
-    if (!full) { full = document.createElement('div'); full.id = 'fullprobe'; full.style.cssText = 'position:fixed;top:0;bottom:0;left:0;width:1px;visibility:hidden'; document.body.appendChild(full); }
-    var fr = full.getBoundingClientRect();
-    return tag + ' +' + (Date.now() - t0) + 'ms inner ' + innerWidth + 'x' + innerHeight + ' client ' + de.clientWidth + 'x' + de.clientHeight +
-      ' vv ' + (vv ? Math.round(vv.width) + 'x' + Math.round(vv.height) + ' off ' + Math.round(vv.offsetTop) + ' page ' + Math.round(vv.pageTop) + ' s' + vv.scale : '-') +
-      ' scrollY ' + scrollY + ' | svh ' + probe.offsetHeight + ' lvh ' + lvh.offsetHeight + ' inset0-box top ' + Math.round(fr.top) + ' h ' + Math.round(fr.height) +
-      ' | #viewport top ' + Math.round(r.top) + ' bottom ' + Math.round(r.bottom) + ' h ' + Math.round(r.height) + ' | stagepos ' + sp.style.left + ',' + sp.style.top + ' zoom ' + getComputedStyle(document.getElementById('stage')).zoom + ' screen ' + screen.width + 'x' + screen.height + ' dpr ' + devicePixelRatio;
-  }
-  function show() { document.getElementById('dbg').textContent = log.join('\n'); }
-  function add(tag) { log.push(snap(tag)); if (log.length > 8) log.shift(); show(); }
-  add('init');
-  var reloaded = false;
-  try { reloaded = sessionStorage.getItem('kickreload') === '1'; } catch (e) {}
-  if (reloaded) log.push('*** after automatic reload (kick 4) ***');
-  function kick(name, fn) { log.push('*** KICK ' + name + ' ***'); show(); try { fn(); } catch (e) { log.push('kick error ' + e); } setTimeout(function () { add('after ' + name); }, 300); }
-  if (!reloaded) {
-    setTimeout(function () { kick('1 hash-nav', function () { var h = location.hash; location.hash = '#kick'; setTimeout(function () { history.replaceState(null, '', location.pathname + location.search + h); }, 100); }); }, 1500);
-    setTimeout(function () { kick('2 scroll', function () { document.body.style.minHeight = 'calc(100% + 2px)'; document.documentElement.style.overflow = 'auto'; window.scrollTo(0, 1); setTimeout(function () { window.scrollTo(0, 0); document.body.style.minHeight = ''; document.documentElement.style.overflow = ''; }, 150); }); }, 3000);
-    setTimeout(function () { kick('3 meta-viewport', function () { var m = document.querySelector('meta[name=viewport]'), c = m.getAttribute('content'); m.setAttribute('content', 'width=device-width, initial-scale=1'); setTimeout(function () { m.setAttribute('content', c); }, 150); }); }, 4500);
-    setTimeout(function () { try { sessionStorage.setItem('kickreload', '1'); } catch (e) {} log.push('*** KICK 4 reload ***'); show(); setTimeout(function () { location.reload(); }, 300); }, 6000);
-  }
-  [100, 500, 1000].forEach(function (ms) { setTimeout(function () { add('t' + ms); }, ms); });
-  ['resize', 'pageshow', 'focus', 'orientationchange'].forEach(function (ev) { window.addEventListener(ev, function () { add(ev); }); });
-  document.addEventListener('visibilitychange', function () { add('vis:' + document.visibilityState); });
-  if (window.visualViewport) { visualViewport.addEventListener('resize', function () { add('vv.resize'); }); visualViewport.addEventListener('scroll', function () { add('vv.scroll'); }); }
 })();
 </script>
 </body>
