@@ -975,9 +975,19 @@
       ' | #viewport top ' + Math.round(r.top) + ' bottom ' + Math.round(r.bottom) + ' h ' + Math.round(r.height) + ' | stagepos ' + sp.style.left + ',' + sp.style.top + ' zoom ' + getComputedStyle(document.getElementById('stage')).zoom + ' screen ' + screen.width + 'x' + screen.height + ' dpr ' + devicePixelRatio;
   }
   function show() { document.getElementById('dbg').textContent = log.join('\n'); }
-  function add(tag) { log.push(snap(tag)); if (log.length > 9) log.shift(); show(); }
+  function add(tag) { log.push(snap(tag)); if (log.length > 8) log.shift(); show(); }
   add('init');
-  [100, 500, 1500, 3000, 6000].forEach(function (ms) { setTimeout(function () { add('t' + ms); }, ms); });
+  var reloaded = false;
+  try { reloaded = sessionStorage.getItem('kickreload') === '1'; } catch (e) {}
+  if (reloaded) log.push('*** after automatic reload (kick 4) ***');
+  function kick(name, fn) { log.push('*** KICK ' + name + ' ***'); show(); try { fn(); } catch (e) { log.push('kick error ' + e); } setTimeout(function () { add('after ' + name); }, 300); }
+  if (!reloaded) {
+    setTimeout(function () { kick('1 hash-nav', function () { var h = location.hash; location.hash = '#kick'; setTimeout(function () { history.replaceState(null, '', location.pathname + location.search + h); }, 100); }); }, 1500);
+    setTimeout(function () { kick('2 scroll', function () { document.body.style.minHeight = 'calc(100% + 2px)'; document.documentElement.style.overflow = 'auto'; window.scrollTo(0, 1); setTimeout(function () { window.scrollTo(0, 0); document.body.style.minHeight = ''; document.documentElement.style.overflow = ''; }, 150); }); }, 3000);
+    setTimeout(function () { kick('3 meta-viewport', function () { var m = document.querySelector('meta[name=viewport]'), c = m.getAttribute('content'); m.setAttribute('content', 'width=device-width, initial-scale=1'); setTimeout(function () { m.setAttribute('content', c); }, 150); }); }, 4500);
+    setTimeout(function () { try { sessionStorage.setItem('kickreload', '1'); } catch (e) {} log.push('*** KICK 4 reload ***'); show(); setTimeout(function () { location.reload(); }, 300); }, 6000);
+  }
+  [100, 500, 1000].forEach(function (ms) { setTimeout(function () { add('t' + ms); }, ms); });
   ['resize', 'pageshow', 'focus', 'orientationchange'].forEach(function (ev) { window.addEventListener(ev, function () { add(ev); }); });
   document.addEventListener('visibilitychange', function () { add('vis:' + document.visibilityState); });
   if (window.visualViewport) { visualViewport.addEventListener('resize', function () { add('vv.resize'); }); visualViewport.addEventListener('scroll', function () { add('vv.scroll'); }); }
