@@ -1,0 +1,161 @@
+global TomteSprites
+
+on checktomte spnum
+  [  0] getparam 0 .............................. <spnum>
+  [  2] pusharglist 1 ........................... <spnum>
+  [  4] localcall 2 ............................. <getclass(spnum)>
+  [  6] setlocal 0 .............................. cn = getclass(spnum)
+  [  8] getparam 0 .............................. <spnum>
+  [ 10] getlocal 0 .............................. <cn>
+  [ 12] pusharglistnoret 2 ...................... <spnum, cn>
+  [ 14] localcall 1 ............................. FixaGrej(spnum, cn)
+  [ 16] getparam 0 .............................. <spnum>
+  [ 18] pushint8 76 ............................. <76>
+  [ 21] eq ...................................... <spnum = 76>
+  [ 22] jmpifz [ 34] ............................ if spnum = 76 then
+  [ 25] getparam 0 .............................. <spnum>
+  [ 27] pushint8 3 .............................. <3>
+  [ 30] pusharglistnoret 2 ...................... <spnum, 3>
+  [ 32] localcall 1 ............................. FixaGrej(spnum, 3)
+  [ 34] getparam 0 .............................. <spnum>
+  [ 36] pushint8 73 ............................. <73>
+  [ 39] eq ...................................... <spnum = 73>
+  [ 40] jmpifz [ 52] ............................ if spnum = 73 then
+  [ 43] getparam 0 .............................. <spnum>
+  [ 45] pushint8 3 .............................. <3>
+  [ 48] pusharglistnoret 2 ...................... <spnum, 3>
+  [ 50] localcall 1 ............................. FixaGrej(spnum, 3)
+  [ 52] getparam 0 .............................. <spnum>
+  [ 54] pushint8 79 ............................. <79>
+  [ 57] eq ...................................... <spnum = 79>
+  [ 58] jmpifz [ 70] ............................ if spnum = 79 then
+  [ 61] getparam 0 .............................. <spnum>
+  [ 63] pushint8 3 .............................. <3>
+  [ 66] pusharglistnoret 2 ...................... <spnum, 3>
+  [ 68] localcall 1 ............................. FixaGrej(spnum, 3)
+  [ 70] getparam 0 .............................. <spnum>
+  [ 72] pushint8 66 ............................. <66>
+  [ 75] eq ...................................... <spnum = 66>
+  [ 76] jmpifz [ 89] ............................ if spnum = 66 then
+  [ 79] pushint8 2 .............................. <2>
+  [ 82] pushcons 0 .............................. <"Tomte01">
+  [ 84] pusharglistnoret 2 ...................... <2, "Tomte01">
+  [ 86] extcall 37 .............................. puppetSound(2, "Tomte01")
+  [ 89] getparam 0 .............................. <spnum>
+  [ 91] pushint8 67 ............................. <67>
+  [ 94] eq ...................................... <spnum = 67>
+  [ 95] jmpifz [108] ............................ if spnum = 67 then
+  [ 98] pushint8 2 .............................. <2>
+  [101] pushcons 8 .............................. <"Tomte02">
+  [103] pusharglistnoret 2 ...................... <2, "Tomte02">
+  [105] extcall 37 .............................. puppetSound(2, "Tomte02")
+  [108] getparam 0 .............................. <spnum>
+  [110] pushint8 68 ............................. <68>
+  [113] eq ...................................... <spnum = 68>
+  [114] jmpifz [127] ............................ if spnum = 68 then
+  [117] pushint8 2 .............................. <2>
+  [120] pushcons 16 ............................. <"Tomte03">
+  [122] pusharglistnoret 2 ...................... <2, "Tomte03">
+  [124] extcall 37 .............................. puppetSound(2, "Tomte03")
+  [127] getparam 0 .............................. <spnum>
+  [129] pushint8 69 ............................. <69>
+  [132] eq ...................................... <spnum = 69>
+  [133] jmpifz [146] ............................ if spnum = 69 then
+  [136] pushint8 2 .............................. <2>
+  [139] pushcons 24 ............................. <"Tomte04">
+  [141] pusharglistnoret 2 ...................... <2, "Tomte04">
+  [143] extcall 37 .............................. puppetSound(2, "Tomte04")
+  [146] ret
+end
+
+on FixaGrej SpNr, Class
+  [  0] getglobal 43 ............................ <TomteSprites>
+  [  3] getparam 8 .............................. <Class>
+  [  5] pusharglist 2 ........................... <TomteSprites, Class>
+  [  7] objcall 41 .............................. <TomteSprites[Class]>
+  [ 10] setlocal 0 .............................. TB = TomteSprites[Class]
+  [ 12] getglobal 43 ............................ <TomteSprites>
+  [ 15] getparam 8 .............................. <Class>
+  [ 17] pusharglist 2 ........................... <TomteSprites, Class>
+  [ 19] objcall 41 .............................. <TomteSprites[Class]>
+  [ 22] pushzero ................................ <0>
+  [ 23] nteq .................................... <TomteSprites[Class] <> 0>
+  [ 24] jmpifz [ 57] ............................ if TomteSprites[Class] <> 0 then
+  [ 27] getglobal 43 ............................ <TomteSprites>
+  [ 30] getparam 8 .............................. <Class>
+  [ 32] pusharglist 2 ........................... <TomteSprites, Class>
+  [ 34] objcall 41 .............................. <TomteSprites[Class]>
+  [ 37] pusharglist 1 ........................... <TomteSprites[Class]>
+  [ 39] extcall 4 ............................... <sprite(TomteSprites[Class])>
+  [ 41] getglobal 43 ............................ <TomteSprites>
+  [ 44] getparam 8 .............................. <Class>
+  [ 46] pusharglist 2 ........................... <TomteSprites, Class>
+  [ 48] objcall 41 .............................. <TomteSprites[Class]>
+  [ 51] pusharglist 1 ........................... <TomteSprites[Class]>
+  [ 53] extcall 5 ............................... <getStartPos(TomteSprites[Class])>
+  [ 55] setobjprop 6 ............................ sprite(TomteSprites[Class]).loc = getStartPos(TomteSprites[Class])
+  [ 57] getglobal 43 ............................ <TomteSprites>
+  [ 60] getparam 8 .............................. <Class>
+  [ 62] getparam 0 .............................. <SpNr>
+  [ 64] pusharglistnoret 3 ...................... <TomteSprites, Class, SpNr>
+  [ 66] objcall 110 ............................. TomteSprites[Class] = SpNr
+  [ 69] getglobal 43 ............................ <TomteSprites>
+  [ 72] getlocal 0 .............................. <TB>
+  [ 74] pusharglist 2 ........................... <TomteSprites, TB>
+  [ 76] extcall 12 .............................. <getOne(TomteSprites, TB)>
+  [ 78] setlocal 8 .............................. p = getOne(TomteSprites, TB)
+  [ 80] getlocal 8 .............................. <p>
+  [ 82] pushzero ................................ <0>
+  [ 83] gt ...................................... <p > 0>
+  [ 84] jmpifz [ 98] ............................ if p > 0 then
+  [ 87] getglobal 43 ............................ <TomteSprites>
+  [ 90] getlocal 8 .............................. <p>
+  [ 92] pushzero ................................ <0>
+  [ 93] pusharglistnoret 3 ...................... <TomteSprites, p, 0>
+  [ 95] objcall 110 ............................. TomteSprites[p] = 0
+  [ 98] ret
+end
+
+on getclass spnum
+  [  0] getglobal 13 ............................ <skosprites>
+  [  2] getparam 0 .............................. <spnum>
+  [  4] pusharglist 2 ........................... <skosprites, spnum>
+  [  6] extcall 12 .............................. <getOne(skosprites, spnum)>
+  [  8] pushzero ................................ <0>
+  [  9] nteq .................................... <getOne(skosprites, spnum) <> 0>
+  [ 10] jmpifz [ 20] ............................ if getOne(skosprites, spnum) <> 0 then
+  [ 13] pushint8 3 .............................. <3>
+  [ 16] pusharglistnoret 1 ...................... <3>
+  [ 18] extcall 14 .............................. return 3
+  [ 20] getglobal 15 ............................ <huvudsprites>
+  [ 22] getparam 0 .............................. <spnum>
+  [ 24] pusharglist 2 ........................... <huvudsprites, spnum>
+  [ 26] extcall 12 .............................. <getOne(huvudsprites, spnum)>
+  [ 28] pushzero ................................ <0>
+  [ 29] nteq .................................... <getOne(huvudsprites, spnum) <> 0>
+  [ 30] jmpifz [ 40] ............................ if getOne(huvudsprites, spnum) <> 0 then
+  [ 33] pushint8 1 .............................. <1>
+  [ 36] pusharglistnoret 1 ...................... <1>
+  [ 38] extcall 14 .............................. return 1
+  [ 40] getglobal 115 ........................... <Ljudsprites>
+  [ 43] getparam 0 .............................. <spnum>
+  [ 45] pusharglist 2 ........................... <Ljudsprites, spnum>
+  [ 47] extcall 12 .............................. <getOne(Ljudsprites, spnum)>
+  [ 49] pushzero ................................ <0>
+  [ 50] nteq .................................... <getOne(Ljudsprites, spnum) <> 0>
+  [ 51] jmpifz [ 61] ............................ if getOne(Ljudsprites, spnum) <> 0 then
+  [ 54] pushint8 4 .............................. <4>
+  [ 57] pusharglistnoret 1 ...................... <4>
+  [ 59] extcall 14 .............................. return 4
+  [ 61] getglobal 17 ............................ <kladsprites>
+  [ 63] getparam 0 .............................. <spnum>
+  [ 65] pusharglist 2 ........................... <kladsprites, spnum>
+  [ 67] extcall 12 .............................. <getOne(kladsprites, spnum)>
+  [ 69] pushzero ................................ <0>
+  [ 70] nteq .................................... <getOne(kladsprites, spnum) <> 0>
+  [ 71] jmpifz [ 81] ............................ if getOne(kladsprites, spnum) <> 0 then
+  [ 74] pushint8 2 .............................. <2>
+  [ 77] pusharglistnoret 1 ...................... <2>
+  [ 79] extcall 14 .............................. return 2
+  [ 81] ret
+end

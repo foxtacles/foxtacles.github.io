@@ -1,0 +1,12 @@
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 17 .............................. init()
+  [  4] pusharglistnoret 0 ...................... <>
+  [  6] extcall 21 .............................. initpannan()
+  [  8] pushcons 0 .............................. <"fixaspo">
+  [ 10] pushint8 3 .............................. <3>
+  [ 13] set 0 ................................... set the keyDownScript to "fixaspo"
+  [ 15] pushint8 75 ............................. <75>
+  [ 18] setglobal 45 ............................ maxvinkel = 75
+  [ 21] ret
+end

@@ -1,0 +1,13 @@
+on Wait ticks
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 18 .............................. startTimer()
+  [  4] pushint8 34 ............................. <34>
+  [  7] get 7 ................................... <the timer>
+  [  9] getparam 0 .............................. <ticks>
+  [ 11] lt ...................................... <the timer < ticks>
+  [ 12] jmpifz [ 21] ............................ repeat while the timer < ticks
+  [ 15] pusharglistnoret 0 ...................... <>
+  [ 17] extcall 19 .............................. nothing()
+  [ 19] endrepeat [  4]
+  [ 21] ret
+end

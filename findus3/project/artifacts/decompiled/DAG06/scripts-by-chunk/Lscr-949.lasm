@@ -1,0 +1,8 @@
+on exitFrame
+  [  0] pushcons 0 .............................. <"Poang">
+  [  2] pusharglist 1 ........................... <"Poang">
+  [  4] extcall 38 .............................. <member("Poang")>
+  [  7] pushcons 8 .............................. <"0">
+  [  9] setobjprop 69 ........................... member("Poang").text = "0"
+  [ 12] ret
+end

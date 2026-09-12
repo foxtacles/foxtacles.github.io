@@ -1,0 +1,45 @@
+on changePicture startCastNumber, stopCastNumber, direction, spriteNumber, counter, counterChangeValue
+  [  0] getparam 32 ............................. <counter>
+  [  2] pushint8 1 .............................. <1>
+  [  5] add ..................................... <counter + 1>
+  [  6] setparam 32 ............................. counter = counter + 1
+  [  8] getparam 32 ............................. <counter>
+  [ 10] getparam 40 ............................. <counterChangeValue>
+  [ 12] eq ...................................... <counter = counterChangeValue>
+  [ 13] jmpifz [ 85] ............................ if counter = counterChangeValue then
+  [ 16] pushint8 1 .............................. <1>
+  [ 19] setparam 32 ............................. counter = 1
+  [ 21] getparam 24 ............................. <spriteNumber>
+  [ 23] getparam 24 ............................. <spriteNumber>
+  [ 25] pushint8 35 ............................. <35>
+  [ 28] get 6 ................................... <the memberNum of sprite spriteNumber>
+  [ 30] getparam 16 ............................. <direction>
+  [ 32] add ..................................... <the memberNum of sprite spriteNumber + direction>
+  [ 33] pushint8 35 ............................. <35>
+  [ 36] set 6 ................................... set the memberNum of sprite spriteNumber to the memberNum of sprite spriteNumber + direction
+  [ 38] getparam 24 ............................. <spriteNumber>
+  [ 40] pushint8 35 ............................. <35>
+  [ 43] get 6 ................................... <the memberNum of sprite spriteNumber>
+  [ 45] getparam 8 .............................. <stopCastNumber>
+  [ 47] gt ...................................... <the memberNum of sprite spriteNumber > stopCastNumber>
+  [ 48] jmpifz [ 63] ............................ if the memberNum of sprite spriteNumber > stopCastNumber then / else
+  [ 51] getparam 24 ............................. <spriteNumber>
+  [ 53] getparam 0 .............................. <startCastNumber>
+  [ 55] pushint8 35 ............................. <35>
+  [ 58] set 6 ................................... set the memberNum of sprite spriteNumber to startCastNumber
+  [ 60] jmp [ 85]
+  [ 63] getparam 24 ............................. <spriteNumber>
+  [ 65] pushint8 35 ............................. <35>
+  [ 68] get 6 ................................... <the memberNum of sprite spriteNumber>
+  [ 70] getparam 0 .............................. <startCastNumber>
+  [ 72] lt ...................................... <the memberNum of sprite spriteNumber < startCastNumber>
+  [ 73] jmpifz [ 85] ............................ if the memberNum of sprite spriteNumber < startCastNumber then
+  [ 76] getparam 24 ............................. <spriteNumber>
+  [ 78] getparam 8 .............................. <stopCastNumber>
+  [ 80] pushint8 35 ............................. <35>
+  [ 83] set 6 ................................... set the memberNum of sprite spriteNumber to stopCastNumber
+  [ 85] getparam 32 ............................. <counter>
+  [ 87] pusharglistnoret 1 ...................... <counter>
+  [ 89] extcall 15 .............................. return counter
+  [ 91] ret
+end

@@ -1,0 +1,99 @@
+{
+  "name": "START",
+  "input": "artifacts/disc/MAIN/START.DXR",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 0,
+    "movieLeft": 0,
+    "movieBottom": 480,
+    "movieRight": 640,
+    "minMember": 1,
+    "maxMember": 1,
+    "field9": 0,
+    "field10": 0,
+    "D7stageColorG": 255,
+    "D7stageColorB": 255,
+    "commentFont": 0,
+    "commentSize": 0,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 255,
+    "bitDepth": 32,
+    "field17": 0,
+    "field18": 0,
+    "field19": 0,
+    "directorVersion": 1406,
+    "field21": 32,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 15,
+    "platform": 1,
+    "protection": 1311,
+    "field29": 60,
+    "checksum": 421833758
+  },
+  "cast_libraries": [
+    {
+      "name": "Internal",
+      "filePath": "",
+      "preloadSettings": 0,
+      "minMember": 1,
+      "maxMember": 1,
+      "id": 66560
+    }
+  ],
+  "member_types": {
+    "script": 1
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 1,
+      "chunk_id": 4,
+      "type": "script",
+      "type_id": 11,
+      "name": "go movie intro",
+      "script_chunk": 11,
+      "children": []
+    }
+  ],
+  "scripts": [
+    {
+      "chunk_id": 11,
+      "path": "artifacts/decompiled/START/scripts-by-chunk/Lscr-11.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 4,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 1,
+          "chunk_id": 4,
+          "type": "script",
+          "type_id": 11,
+          "name": "go movie intro",
+          "script_chunk": 11,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "labels": [],
+  "score": {
+    "path": "artifacts/analysis/scores/START.json",
+    "frames": 1,
+    "spans": 1
+  },
+  "filmloops": [],
+  "texts": []
+}

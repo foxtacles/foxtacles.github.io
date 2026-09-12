@@ -1,0 +1,7 @@
+on exitFrame
+  [  0] pushint8 1 .............................. <1>
+  [  3] pushcons 0 .............................. <"kicker">
+  [  5] pusharglistnoret 2 ...................... <1, "kicker">
+  [  7] extcall 2 ............................... go(1, "kicker")
+  [  9] ret
+end

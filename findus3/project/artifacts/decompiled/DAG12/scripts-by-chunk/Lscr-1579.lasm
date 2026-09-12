@@ -1,0 +1,38 @@
+on moveObjectInParabola gravity, timeStep, timeInMotion, velXstart, velYstart, startX, startY, currentSprite
+  [  0] getparam 24 ............................. <velXstart>
+  [  2] getparam 16 ............................. <timeInMotion>
+  [  4] mul ..................................... <velXstart * timeInMotion>
+  [  5] getparam 40 ............................. <startX>
+  [  7] add ..................................... <(velXstart * timeInMotion) + startX>
+  [  8] setlocal 0 .............................. newX = (velXstart * timeInMotion) + startX
+  [ 10] pushcons 0 .............................. <0.5>
+  [ 12] getparam 0 .............................. <gravity>
+  [ 14] mul ..................................... <0.5 * gravity>
+  [ 15] getparam 16 ............................. <timeInMotion>
+  [ 17] mul ..................................... <0.5 * gravity * timeInMotion>
+  [ 18] getparam 16 ............................. <timeInMotion>
+  [ 20] mul ..................................... <0.5 * gravity * timeInMotion * timeInMotion>
+  [ 21] getparam 32 ............................. <velYstart>
+  [ 23] getparam 16 ............................. <timeInMotion>
+  [ 25] mul ..................................... <velYstart * timeInMotion>
+  [ 26] add ..................................... <(0.5 * gravity * timeInMotion * timeInMotion) + (velYstart * timeInMotion)>
+  [ 27] getparam 48 ............................. <startY>
+  [ 29] add ..................................... <(0.5 * gravity * timeInMotion * timeInMotion) + (velYstart * timeInMotion) + startY>
+  [ 30] setlocal 8 .............................. newY = (0.5 * gravity * timeInMotion * timeInMotion) + (velYstart * timeInMotion) + startY
+  [ 32] getparam 56 ............................. <currentSprite>
+  [ 34] getlocal 0 .............................. <newX>
+  [ 36] pushint8 13 ............................. <13>
+  [ 39] set 6 ................................... set the locH of sprite currentSprite to newX
+  [ 41] getparam 56 ............................. <currentSprite>
+  [ 43] getlocal 8 .............................. <newY>
+  [ 45] pushint8 14 ............................. <14>
+  [ 48] set 6 ................................... set the locV of sprite currentSprite to newY
+  [ 50] getparam 16 ............................. <timeInMotion>
+  [ 52] getparam 8 .............................. <timeStep>
+  [ 54] add ..................................... <timeInMotion + timeStep>
+  [ 55] setparam 16 ............................. timeInMotion = timeInMotion + timeStep
+  [ 57] getparam 16 ............................. <timeInMotion>
+  [ 59] pusharglistnoret 1 ...................... <timeInMotion>
+  [ 61] extcall 60 .............................. return timeInMotion
+  [ 64] ret
+end

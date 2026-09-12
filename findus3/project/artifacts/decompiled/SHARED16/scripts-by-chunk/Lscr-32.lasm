@@ -1,0 +1,162 @@
+on FixaNySkatt
+  [  0] pushint8 30 ............................. <30>
+  [  2] setlocal 0 .............................. MaxAntalSkatt = 30
+  [  4] pusharglistnoret 0 ...................... <>
+  [  6] extcall 0 ............................... ReadSkattFile()
+  [  8] pusharglist 0 ........................... <>
+  [ 10] thebuiltin 30 ........................... <the result>
+  [ 12] pushsymb 31 ............................. <#FAIL>
+  [ 14] eq ...................................... <the result = #FAIL>
+  [ 15] jmpifz [ 19] ............................ if the result = #FAIL then
+  [ 18] ret ..................................... exit
+  [ 19] getglobal 16 ............................ <lSkattMatris>
+  [ 21] getlocal 0 .............................. <MaxAntalSkatt>
+  [ 23] pusharglistnoret 2 ...................... <lSkattMatris, MaxAntalSkatt>
+  [ 25] localcall 1 ............................. CheckPosInLista(lSkattMatris, MaxAntalSkatt)
+  [ 27] pusharglist 0 ........................... <>
+  [ 29] thebuiltin 30 ........................... <the result>
+  [ 31] pushsymb 32 ............................. <#false>
+  [ 33] eq ...................................... <the result = #false>
+  [ 34] pusharglist 0 ........................... <>
+  [ 36] thebuiltin 30 ........................... <the result>
+  [ 38] pushint8 12 ............................. <12>
+  [ 40] gt ...................................... <the result > 12>
+  [ 41] or ...................................... <(the result = #false) or (the result > 12)>
+  [ 42] jmpifz [ 52] ............................ if (the result = #false) or (the result > 12) then
+  [ 45] pushsymb 34 ............................. <#Full>
+  [ 47] pusharglistnoret 1 ...................... <#Full>
+  [ 49] extcall 33 .............................. return #Full
+  [ 51] ret ..................................... exit
+  [ 52] getglobal 16 ............................ <lSkattMatris>
+  [ 54] getlocal 0 .............................. <MaxAntalSkatt>
+  [ 56] pusharglistnoret 2 ...................... <lSkattMatris, MaxAntalSkatt>
+  [ 58] localcall 2 ............................. SlumpaNyItem(lSkattMatris, MaxAntalSkatt)
+  [ 60] pusharglist 0 ........................... <>
+  [ 62] thebuiltin 30 ........................... <the result>
+  [ 64] setlocal 8 .............................. SkattNr = the result
+  [ 66] pushint8 1 .............................. <1>
+  [ 68] setlocal 16 ............................. i = 1
+  [ 70] getglobal 16 ............................ <lSkattMatris>
+  [ 72] getlocal 16 ............................. <i>
+  [ 74] pusharglist 2 ........................... <lSkattMatris, i>
+  [ 76] extcall 35 .............................. <getAt(lSkattMatris, i)>
+  [ 78] pushzero ................................ <0>
+  [ 79] nteq .................................... <getAt(lSkattMatris, i) <> 0>
+  [ 80] getlocal 16 ............................. <i>
+  [ 82] getlocal 0 .............................. <MaxAntalSkatt>
+  [ 84] lt ...................................... <i < MaxAntalSkatt>
+  [ 85] and ..................................... <(getAt(lSkattMatris, i) <> 0) and (i < MaxAntalSkatt)>
+  [ 86] jmpifz [ 98] ............................ repeat while (getAt(lSkattMatris, i) <> 0) and (i < MaxAntalSkatt)
+  [ 89] getlocal 16 ............................. <i>
+  [ 91] pushint8 1 .............................. <1>
+  [ 93] add ..................................... <i + 1>
+  [ 94] setlocal 16 ............................. i = i + 1
+  [ 96] endrepeat [ 70]
+  [ 98] getglobal 16 ............................ <lSkattMatris>
+  [100] getlocal 16 ............................. <i>
+  [102] getlocal 8 .............................. <SkattNr>
+  [104] pusharglistnoret 3 ...................... <lSkattMatris, i, SkattNr>
+  [106] extcall 36 .............................. setAt(lSkattMatris, i, SkattNr)
+  [108] pusharglistnoret 0 ...................... <>
+  [110] extcall 1 ............................... WriteSkattFile()
+  [112] pusharglist 0 ........................... <>
+  [114] thebuiltin 30 ........................... <the result>
+  [116] pushsymb 31 ............................. <#FAIL>
+  [118] eq ...................................... <the result = #FAIL>
+  [119] jmpifz [123] ............................ if the result = #FAIL then
+  [122] ret ..................................... exit
+  [123] getlocal 8 .............................. <SkattNr>
+  [125] pusharglistnoret 1 ...................... <SkattNr>
+  [127] extcall 33 .............................. return SkattNr
+  [129] ret
+end
+
+on CheckPosInLista lista, maxItem
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getparam 8 .............................. <maxItem>
+  [  8] lteq
+  [  9] jmpifz [ 41] ............................ repeat with i = 1 to maxItem
+  [ 12] getparam 0 .............................. <lista>
+  [ 14] getlocal 0 .............................. <i>
+  [ 16] pusharglist 2 ........................... <lista, i>
+  [ 18] extcall 35 .............................. <getAt(lista, i)>
+  [ 20] pushzero ................................ <0>
+  [ 21] eq ...................................... <getAt(lista, i) = 0>
+  [ 22] jmpifz [ 32] ............................ if getAt(lista, i) = 0 then
+  [ 25] getlocal 0 .............................. <i>
+  [ 27] pusharglistnoret 1 ...................... <i>
+  [ 29] extcall 33 .............................. return i
+  [ 31] ret ..................................... exit
+  [ 32] pushint8 1
+  [ 34] getlocal 0
+  [ 36] add
+  [ 37] setlocal 0
+  [ 39] endrepeat [  4]
+  [ 41] pushsymb 32 ............................. <#false>
+  [ 43] pusharglistnoret 1 ...................... <#false>
+  [ 45] extcall 33 .............................. return #false
+  [ 47] ret
+end
+
+on SlumpaNyItem lista, maxItem
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0 .............................. bContinue = 1
+  [  4] pushzero ................................ <0>
+  [  5] setlocal 8 .............................. ggr = 0
+  [  7] getlocal 0 .............................. <bContinue>
+  [  9] jmpifz [109] ............................ repeat while bContinue
+  [ 12] getlocal 8 .............................. <ggr>
+  [ 14] pushint8 1 .............................. <1>
+  [ 16] add ..................................... <ggr + 1>
+  [ 17] setlocal 8 .............................. ggr = ggr + 1
+  [ 19] getlocal 8 .............................. <ggr>
+  [ 21] pushint8 1000 ........................... <1000>
+  [ 24] gt ...................................... <ggr > 1000>
+  [ 25] jmpifz [ 31] ............................ if ggr > 1000 then
+  [ 28] pushzero ................................ <0>
+  [ 29] setlocal 0 .............................. bContinue = 0
+  [ 31] getparam 8 .............................. <maxItem>
+  [ 33] pusharglist 1 ........................... <maxItem>
+  [ 35] extcall 42 .............................. <random(maxItem)>
+  [ 37] setlocal 16 ............................. r = random(maxItem)
+  [ 39] pushint8 1 .............................. <1>
+  [ 41] setlocal 24 ............................. FinnsInte = 1
+  [ 43] getlocal 16 ............................. <r>
+  [ 45] pushint8 33 ............................. <33>
+  [ 47] gt ...................................... <r > 33>
+  [ 48] jmpifz [ 54] ............................ if r > 33 then
+  [ 51] pushzero ................................ <0>
+  [ 52] setlocal 24 ............................. FinnsInte = 0
+  [ 54] pushint8 1 .............................. <1>
+  [ 56] setlocal 32
+  [ 58] getlocal 32
+  [ 60] getparam 8 .............................. <maxItem>
+  [ 62] lteq
+  [ 63] jmpifz [ 92] ............................ repeat with j = 1 to maxItem
+  [ 66] getparam 0 .............................. <lista>
+  [ 68] getlocal 32 ............................. <j>
+  [ 70] pusharglist 2 ........................... <lista, j>
+  [ 72] extcall 35 .............................. <getAt(lista, j)>
+  [ 74] getlocal 16 ............................. <r>
+  [ 76] eq ...................................... <getAt(lista, j) = r>
+  [ 77] jmpifz [ 83] ............................ if getAt(lista, j) = r then
+  [ 80] pushzero ................................ <0>
+  [ 81] setlocal 24 ............................. FinnsInte = 0
+  [ 83] pushint8 1
+  [ 85] getlocal 32
+  [ 87] add
+  [ 88] setlocal 32
+  [ 90] endrepeat [ 58]
+  [ 92] getlocal 24 ............................. <FinnsInte>
+  [ 94] pushint8 1 .............................. <1>
+  [ 96] eq ...................................... <FinnsInte = 1>
+  [ 97] jmpifz [107] ............................ if FinnsInte = 1 then
+  [100] getlocal 16 ............................. <r>
+  [102] pusharglistnoret 1 ...................... <r>
+  [104] extcall 33 .............................. return r
+  [106] ret ..................................... exit
+  [107] endrepeat [  7]
+  [109] ret
+end

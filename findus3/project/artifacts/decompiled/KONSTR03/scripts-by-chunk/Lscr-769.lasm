@@ -1,0 +1,475 @@
+on HUVUDLOOP
+  [  0] pushzero ................................ <0>
+  [  1] setglobal 123 ........................... SenasteLjud = 0
+  [  4] pushzero ................................ <0>
+  [  5] setglobal 18 ............................ KonstruktionFardig = 0
+  [  7] pushint8 2 .............................. <2>
+  [ 10] pusharglist 1 ........................... <2>
+  [ 12] extcall 85 .............................. <GA(2)>
+  [ 15] pushzero ................................ <0>
+  [ 16] gt ...................................... <GA(2) > 0>
+  [ 17] jmpifz [ 34] ............................ if GA(2) > 0 then
+  [ 20] getglobal 74 ............................ <Oknggr>
+  [ 23] pushint8 1 .............................. <1>
+  [ 26] pushint8 3 .............................. <3>
+  [ 29] pusharglistnoret 3 ...................... <Oknggr, 1, 3>
+  [ 31] extcall 86 .............................. setAt(Oknggr, 1, 3)
+  [ 34] pushint8 2 .............................. <2>
+  [ 37] pusharglist 1 ........................... <2>
+  [ 39] extcall 85 .............................. <GA(2)>
+  [ 42] pushzero ................................ <0>
+  [ 43] eq ...................................... <GA(2) = 0>
+  [ 44] jmpifz [ 61] ............................ if GA(2) = 0 then
+  [ 47] getglobal 74 ............................ <Oknggr>
+  [ 50] pushint8 1 .............................. <1>
+  [ 53] pushint8 1 .............................. <1>
+  [ 56] pusharglistnoret 3 ...................... <Oknggr, 1, 1>
+  [ 58] extcall 86 .............................. setAt(Oknggr, 1, 1)
+  [ 61] pushint8 2 .............................. <2>
+  [ 64] pusharglist 1 ........................... <2>
+  [ 66] extcall 85 .............................. <GA(2)>
+  [ 69] pushzero ................................ <0>
+  [ 70] gt ...................................... <GA(2) > 0>
+  [ 71] pushint8 4 .............................. <4>
+  [ 74] pusharglist 1 ........................... <4>
+  [ 76] extcall 85 .............................. <GA(4)>
+  [ 79] pushzero ................................ <0>
+  [ 80] gt ...................................... <GA(4) > 0>
+  [ 81] and ..................................... <(GA(2) > 0) and (GA(4) > 0)>
+  [ 82] pushint8 8 .............................. <8>
+  [ 85] pusharglist 1 ........................... <8>
+  [ 87] extcall 85 .............................. <GA(8)>
+  [ 90] pushzero ................................ <0>
+  [ 91] gt ...................................... <GA(8) > 0>
+  [ 92] and ..................................... <(GA(2) > 0) and (GA(4) > 0) and (GA(8) > 0)>
+  [ 93] jmpifz [118] ............................ if (GA(2) > 0) and (GA(4) > 0) and (GA(8) > 0) then / else
+  [ 96] getglobal 81 ............................ <AntalLoopObjekt>
+  [ 99] pushint8 10 ............................. <10>
+  [102] pushint8 2 .............................. <2>
+  [105] pusharglistnoret 3 ...................... <AntalLoopObjekt, 10, 2>
+  [107] extcall 86 .............................. setAt(AntalLoopObjekt, 10, 2)
+  [110] pushint8 1 .............................. <1>
+  [113] setglobal 18 ............................ KonstruktionFardig = 1
+  [115] jmp [132]
+  [118] getglobal 81 ............................ <AntalLoopObjekt>
+  [121] pushint8 10 ............................. <10>
+  [124] pushint8 1 .............................. <1>
+  [127] pusharglistnoret 3 ...................... <AntalLoopObjekt, 10, 1>
+  [129] extcall 86 .............................. setAt(AntalLoopObjekt, 10, 1)
+  [132] pushzero ................................ <0>
+  [133] setlocal 0 .............................. EndKonstrukt = 0
+  [135] pushzero ................................ <0>
+  [136] setglobal 87 ............................ FrameNr = 0
+  [139] pusharglist 0 ........................... <>
+  [141] thebuiltin 88 ........................... <the ticks>
+  [144] setlocal 8 .............................. GrundTick = the ticks
+  [146] getlocal 0 .............................. <EndKonstrukt>
+  [148] pushzero ................................ <0>
+  [149] eq ...................................... <EndKonstrukt = 0>
+  [150] jmpifz [1076] ........................... repeat while EndKonstrukt = 0
+  [153] pusharglist 0 ........................... <>
+  [155] thebuiltin 3 ............................ <the mouseUp>
+  [157] pushzero ................................ <0>
+  [158] eq ...................................... <the mouseUp = 0>
+  [159] jmpifz [167] ............................ if the mouseUp = 0 then
+  [162] pushint8 1 .............................. <1>
+  [165] setlocal 0 .............................. EndKonstrukt = 1
+  [167] pusharglist 0 ........................... <>
+  [169] thebuiltin 88 ........................... <the ticks>
+  [172] setlocal 8 .............................. GrundTick = the ticks
+  [174] getglobal 87 ............................ <FrameNr>
+  [177] pushint8 1 .............................. <1>
+  [180] add ..................................... <FrameNr + 1>
+  [181] setglobal 87 ............................ FrameNr = FrameNr + 1
+  [184] pusharglistnoret 0 ...................... <>
+  [186] extcall 24 .............................. startTimer()
+  [188] pushint8 1 .............................. <1>
+  [191] setlocal 16
+  [193] getlocal 16
+  [195] getglobal 56 ............................ <AntalObjekt>
+  [198] lteq
+  [199] jmpifz [1025] ........................... repeat with ObjNum = 1 to AntalObjekt
+  [202] getglobal 13 ............................ <spriteNum>
+  [204] getlocal 16 ............................. <ObjNum>
+  [206] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [208] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [211] setlocal 24 ............................. SpriteNr = getaProp(spriteNum, ObjNum)
+  [213] getglobal 66 ............................ <StartTidForObjekt>
+  [216] getlocal 16 ............................. <ObjNum>
+  [218] pusharglist 2 ........................... <StartTidForObjekt, ObjNum>
+  [220] extcall 51 .............................. <getAt(StartTidForObjekt, ObjNum)>
+  [223] setlocal 32 ............................. ObjStartTid = getAt(StartTidForObjekt, ObjNum)
+  [225] getglobal 83 ............................ <SenasteLoopFrame>
+  [228] getlocal 16 ............................. <ObjNum>
+  [230] pusharglist 2 ........................... <SenasteLoopFrame, ObjNum>
+  [232] extcall 51 .............................. <getAt(SenasteLoopFrame, ObjNum)>
+  [235] setlocal 40 ............................. SenastFrame = getAt(SenasteLoopFrame, ObjNum)
+  [237] getlocal 16 ............................. <ObjNum>
+  [239] pusharglistnoret 1 ...................... <ObjNum>
+  [241] extcall 121 ............................. SpecialCheckForKonstruk3(ObjNum)
+  [244] getglobal 54 ............................ <ObjektAktiv>
+  [247] getlocal 16 ............................. <ObjNum>
+  [249] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [251] extcall 51 .............................. <getAt(ObjektAktiv, ObjNum)>
+  [254] setlocal 48 ............................. ObjAktiv = getAt(ObjektAktiv, ObjNum)
+  [256] getglobal 87 ............................ <FrameNr>
+  [259] getlocal 32 ............................. <ObjStartTid>
+  [261] eq ...................................... <FrameNr = ObjStartTid>
+  [262] getlocal 48 ............................. <ObjAktiv>
+  [264] pushint8 1 .............................. <1>
+  [267] eq ...................................... <ObjAktiv = 1>
+  [268] getlocal 48 ............................. <ObjAktiv>
+  [270] pushint8 2 .............................. <2>
+  [273] eq ...................................... <ObjAktiv = 2>
+  [274] or ...................................... <(ObjAktiv = 1) or (ObjAktiv = 2)>
+  [275] and ..................................... <(FrameNr = ObjStartTid) and ((ObjAktiv = 1) or (ObjAktiv = 2))>
+  [276] jmpifz [362] ............................ if (FrameNr = ObjStartTid) and ((ObjAktiv = 1) or (ObjAktiv = 2)) then
+  [279] getlocal 24 ............................. <SpriteNr>
+  [281] pusharglist 1 ........................... <SpriteNr>
+  [283] extcall 151 ............................. <sprite(SpriteNr)>
+  [286] pushint8 1 .............................. <1>
+  [289] setobjprop 152 .......................... sprite(SpriteNr).visible = 1
+  [292] getglobal 54 ............................ <ObjektAktiv>
+  [295] getlocal 16 ............................. <ObjNum>
+  [297] pushint8 3 .............................. <3>
+  [300] pusharglistnoret 3 ...................... <ObjektAktiv, ObjNum, 3>
+  [302] extcall 86 .............................. setAt(ObjektAktiv, ObjNum, 3)
+  [305] getlocal 24 ............................. <SpriteNr>
+  [307] getglobal 70 ............................ <StartbildObjekt2>
+  [310] getlocal 16 ............................. <ObjNum>
+  [312] pusharglist 2 ........................... <StartbildObjekt2, ObjNum>
+  [314] extcall 58 .............................. <getaProp(StartbildObjekt2, ObjNum)>
+  [317] pushint8 4 .............................. <4>
+  [320] set 6 ................................... set the castNum of sprite SpriteNr to getaProp(StartbildObjekt2, ObjNum)
+  [322] getglobal 65 ............................ <ObjektSound>
+  [325] getlocal 16 ............................. <ObjNum>
+  [327] pusharglist 2 ........................... <ObjektSound, ObjNum>
+  [329] extcall 51 .............................. <getAt(ObjektSound, ObjNum)>
+  [332] pushzero ................................ <0>
+  [333] gt ...................................... <getAt(ObjektSound, ObjNum) > 0>
+  [334] jmpifz [362] ............................ if getAt(ObjektSound, ObjNum) > 0 then
+  [337] getglobal 65 ............................ <ObjektSound>
+  [340] getlocal 16 ............................. <ObjNum>
+  [342] pusharglist 2 ........................... <ObjektSound, ObjNum>
+  [344] extcall 51 .............................. <getAt(ObjektSound, ObjNum)>
+  [347] pusharglist 1 ........................... <getAt(ObjektSound, ObjNum)>
+  [349] extcall 90 .............................. <cast(getAt(ObjektSound, ObjNum))>
+  [352] pusharglistnoret 1 ...................... <cast(getAt(ObjektSound, ObjNum))>
+  [354] extcall 42 .............................. puppetSound(cast(getAt(ObjektSound, ObjNum)))
+  [357] getlocal 16 ............................. <ObjNum>
+  [359] setglobal 123 ........................... SenasteLjud = ObjNum
+  [362] pushzero ................................ <0>
+  [363] setlocal 56 ............................. LoopResultat = 0
+  [365] getlocal 48 ............................. <ObjAktiv>
+  [367] pushint8 3 .............................. <3>
+  [370] eq ...................................... <ObjAktiv = 3>
+  [371] jmpifz [1014] ........................... if ObjAktiv = 3 then
+  [374] getglobal 13 ............................ <spriteNum>
+  [376] getlocal 16 ............................. <ObjNum>
+  [378] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [380] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [383] setlocal 24 ............................. SpriteNr = getaProp(spriteNum, ObjNum)
+  [385] getglobal 77 ............................ <OknBildCounter>
+  [388] getlocal 16 ............................. <ObjNum>
+  [390] getglobal 77 ............................ <OknBildCounter>
+  [393] getlocal 16 ............................. <ObjNum>
+  [395] pusharglist 2 ........................... <OknBildCounter, ObjNum>
+  [397] extcall 51 .............................. <getAt(OknBildCounter, ObjNum)>
+  [400] pushint8 1 .............................. <1>
+  [403] add ..................................... <getAt(OknBildCounter, ObjNum) + 1>
+  [404] pusharglistnoret 3 ...................... <OknBildCounter, ObjNum, getAt(OknBildCounter, ObjNum) + 1>
+  [406] extcall 86 .............................. setAt(OknBildCounter, ObjNum, getAt(OknBildCounter, ObjNum) + 1)
+  [409] getglobal 77 ............................ <OknBildCounter>
+  [412] getlocal 16 ............................. <ObjNum>
+  [414] pusharglist 2 ........................... <OknBildCounter, ObjNum>
+  [416] extcall 51 .............................. <getAt(OknBildCounter, ObjNum)>
+  [419] getglobal 74 ............................ <Oknggr>
+  [422] getlocal 16 ............................. <ObjNum>
+  [424] pusharglist 2 ........................... <Oknggr, ObjNum>
+  [426] extcall 51 .............................. <getAt(Oknggr, ObjNum)>
+  [429] gt ...................................... <getAt(OknBildCounter, ObjNum) > getAt(Oknggr, ObjNum)>
+  [430] jmpifz [1014] ........................... if getAt(OknBildCounter, ObjNum) > getAt(Oknggr, ObjNum) then
+  [433] pushint8 1 .............................. <1>
+  [436] setlocal 56 ............................. LoopResultat = 1
+  [438] getglobal 77 ............................ <OknBildCounter>
+  [441] getlocal 16 ............................. <ObjNum>
+  [443] pushzero ................................ <0>
+  [444] pusharglistnoret 3 ...................... <OknBildCounter, ObjNum, 0>
+  [446] extcall 86 .............................. setAt(OknBildCounter, ObjNum, 0)
+  [449] getglobal 80 ............................ <AntalggrCounter>
+  [452] getlocal 16 ............................. <ObjNum>
+  [454] getglobal 80 ............................ <AntalggrCounter>
+  [457] getlocal 16 ............................. <ObjNum>
+  [459] pusharglist 2 ........................... <AntalggrCounter, ObjNum>
+  [461] extcall 58 .............................. <getaProp(AntalggrCounter, ObjNum)>
+  [464] pushint8 1 .............................. <1>
+  [467] add ..................................... <getaProp(AntalggrCounter, ObjNum) + 1>
+  [468] pusharglistnoret 3 ...................... <AntalggrCounter, ObjNum, getaProp(AntalggrCounter, ObjNum) + 1>
+  [470] extcall 86 .............................. setAt(AntalggrCounter, ObjNum, getaProp(AntalggrCounter, ObjNum) + 1)
+  [473] getglobal 82 ............................ <LoopCounter>
+  [476] getlocal 16 ............................. <ObjNum>
+  [478] pusharglist 2 ........................... <LoopCounter, ObjNum>
+  [480] extcall 51 .............................. <getAt(LoopCounter, ObjNum)>
+  [483] pushzero ................................ <0>
+  [484] gt ...................................... <getAt(LoopCounter, ObjNum) > 0>
+  [485] jmpifz [500] ............................ if getAt(LoopCounter, ObjNum) > 0 then
+  [488] getglobal 79 ............................ <AntalggrEfterLoop>
+  [491] getlocal 16 ............................. <ObjNum>
+  [493] pusharglist 2 ........................... <AntalggrEfterLoop, ObjNum>
+  [495] extcall 51 .............................. <getAt(AntalggrEfterLoop, ObjNum)>
+  [498] setlocal 64 ............................. KollaMedggr = getAt(AntalggrEfterLoop, ObjNum)
+  [500] getglobal 82 ............................ <LoopCounter>
+  [503] getlocal 16 ............................. <ObjNum>
+  [505] pusharglist 2 ........................... <LoopCounter, ObjNum>
+  [507] extcall 51 .............................. <getAt(LoopCounter, ObjNum)>
+  [510] pushzero ................................ <0>
+  [511] eq ...................................... <getAt(LoopCounter, ObjNum) = 0>
+  [512] jmpifz [527] ............................ if getAt(LoopCounter, ObjNum) = 0 then
+  [515] getglobal 78 ............................ <AntalggrObjekt>
+  [518] getlocal 16 ............................. <ObjNum>
+  [520] pusharglist 2 ........................... <AntalggrObjekt, ObjNum>
+  [522] extcall 51 .............................. <getAt(AntalggrObjekt, ObjNum)>
+  [525] setlocal 64 ............................. KollaMedggr = getAt(AntalggrObjekt, ObjNum)
+  [527] getglobal 80 ............................ <AntalggrCounter>
+  [530] getlocal 16 ............................. <ObjNum>
+  [532] pusharglist 2 ........................... <AntalggrCounter, ObjNum>
+  [534] extcall 51 .............................. <getAt(AntalggrCounter, ObjNum)>
+  [537] getlocal 64 ............................. <KollaMedggr>
+  [539] gteq .................................... <getAt(AntalggrCounter, ObjNum) >= KollaMedggr>
+  [540] jmpifz [624] ............................ if getAt(AntalggrCounter, ObjNum) >= KollaMedggr then
+  [543] getglobal 82 ............................ <LoopCounter>
+  [546] getlocal 16 ............................. <ObjNum>
+  [548] getglobal 82 ............................ <LoopCounter>
+  [551] getlocal 16 ............................. <ObjNum>
+  [553] pusharglist 2 ........................... <LoopCounter, ObjNum>
+  [555] extcall 58 .............................. <getaProp(LoopCounter, ObjNum)>
+  [558] pushint8 1 .............................. <1>
+  [561] add ..................................... <getaProp(LoopCounter, ObjNum) + 1>
+  [562] pusharglistnoret 3 ...................... <LoopCounter, ObjNum, getaProp(LoopCounter, ObjNum) + 1>
+  [564] extcall 86 .............................. setAt(LoopCounter, ObjNum, getaProp(LoopCounter, ObjNum) + 1)
+  [567] getglobal 82 ............................ <LoopCounter>
+  [570] getlocal 16 ............................. <ObjNum>
+  [572] pusharglist 2 ........................... <LoopCounter, ObjNum>
+  [574] extcall 51 .............................. <getAt(LoopCounter, ObjNum)>
+  [577] getglobal 81 ............................ <AntalLoopObjekt>
+  [580] getlocal 16 ............................. <ObjNum>
+  [582] pusharglist 2 ........................... <AntalLoopObjekt, ObjNum>
+  [584] extcall 51 .............................. <getAt(AntalLoopObjekt, ObjNum)>
+  [587] gteq .................................... <getAt(LoopCounter, ObjNum) >= getAt(AntalLoopObjekt, ObjNum)>
+  [588] jmpifz [619] ............................ if getAt(LoopCounter, ObjNum) >= getAt(AntalLoopObjekt, ObjNum) then / else
+  [591] pushint8 3 .............................. <3>
+  [594] setlocal 56 ............................. LoopResultat = 3
+  [596] getglobal 69 ............................ <SlutForObjekt>
+  [599] getlocal 16 ............................. <ObjNum>
+  [601] pusharglist 2 ........................... <SlutForObjekt, ObjNum>
+  [603] extcall 58 .............................. <getaProp(SlutForObjekt, ObjNum)>
+  [606] pushzero ................................ <0>
+  [607] eq ...................................... <getaProp(SlutForObjekt, ObjNum) = 0>
+  [608] jmpifz [616] ............................ if getaProp(SlutForObjekt, ObjNum) = 0 then
+  [611] pushint8 4 .............................. <4>
+  [614] setlocal 56 ............................. LoopResultat = 4
+  [616] jmp [624]
+  [619] pushint8 5 .............................. <5>
+  [622] setlocal 56 ............................. LoopResultat = 5
+  [624] getlocal 56 ............................. <LoopResultat>
+  [626] pushint8 1 .............................. <1>
+  [629] eq ...................................... <LoopResultat = 1>
+  [630] jmpifz [731] ............................ if LoopResultat = 1 then
+  [633] getglobal 76 ............................ <OknBild>
+  [636] getlocal 16 ............................. <ObjNum>
+  [638] pusharglist 2 ........................... <OknBild, ObjNum>
+  [640] extcall 51 .............................. <getAt(OknBild, ObjNum)>
+  [643] pushzero ................................ <0>
+  [644] gt ...................................... <getAt(OknBild, ObjNum) > 0>
+  [645] jmpifz [681] ............................ if getAt(OknBild, ObjNum) > 0 then
+  [648] getlocal 24 ............................. <SpriteNr>
+  [650] pushint8 4 .............................. <4>
+  [653] get 6 ................................... <the castNum of sprite SpriteNr>
+  [655] setlocal 72 ............................. CastNR = the castNum of sprite SpriteNr
+  [657] getlocal 72 ............................. <CastNR>
+  [659] getglobal 76 ............................ <OknBild>
+  [662] getlocal 16 ............................. <ObjNum>
+  [664] pusharglist 2 ........................... <OknBild, ObjNum>
+  [666] extcall 51 .............................. <getAt(OknBild, ObjNum)>
+  [669] add ..................................... <CastNR + getAt(OknBild, ObjNum)>
+  [670] setlocal 72 ............................. CastNR = CastNR + getAt(OknBild, ObjNum)
+  [672] getlocal 24 ............................. <SpriteNr>
+  [674] getlocal 72 ............................. <CastNR>
+  [676] pushint8 4 .............................. <4>
+  [679] set 6 ................................... set the castNum of sprite SpriteNr to CastNR
+  [681] getlocal 24 ............................. <SpriteNr>
+  [683] getlocal 24 ............................. <SpriteNr>
+  [685] pushint8 13 ............................. <13>
+  [688] get 6 ................................... <the locH of sprite SpriteNr>
+  [690] getglobal 72 ............................ <OknX>
+  [693] getlocal 16 ............................. <ObjNum>
+  [695] pusharglist 2 ........................... <OknX, ObjNum>
+  [697] extcall 58 .............................. <getaProp(OknX, ObjNum)>
+  [700] add ..................................... <the locH of sprite SpriteNr + getaProp(OknX, ObjNum)>
+  [701] pushint8 13 ............................. <13>
+  [704] set 6 ................................... set the locH of sprite SpriteNr to the locH of sprite SpriteNr + getaProp(OknX, ObjNum)
+  [706] getlocal 24 ............................. <SpriteNr>
+  [708] getlocal 24 ............................. <SpriteNr>
+  [710] pushint8 14 ............................. <14>
+  [713] get 6 ................................... <the locV of sprite SpriteNr>
+  [715] getglobal 73 ............................ <OknY>
+  [718] getlocal 16 ............................. <ObjNum>
+  [720] pusharglist 2 ........................... <OknY, ObjNum>
+  [722] extcall 58 .............................. <getaProp(OknY, ObjNum)>
+  [725] add ..................................... <the locV of sprite SpriteNr + getaProp(OknY, ObjNum)>
+  [726] pushint8 14 ............................. <14>
+  [729] set 6 ................................... set the locV of sprite SpriteNr to the locV of sprite SpriteNr + getaProp(OknY, ObjNum)
+  [731] getlocal 56 ............................. <LoopResultat>
+  [733] pushint8 3 .............................. <3>
+  [736] eq ...................................... <LoopResultat = 3>
+  [737] jmpifz [784] ............................ if LoopResultat = 3 then
+  [740] getglobal 54 ............................ <ObjektAktiv>
+  [743] getlocal 16 ............................. <ObjNum>
+  [745] pushint8 4 .............................. <4>
+  [748] pusharglistnoret 3 ...................... <ObjektAktiv, ObjNum, 4>
+  [750] extcall 86 .............................. setAt(ObjektAktiv, ObjNum, 4)
+  [753] getglobal 122 ........................... <SlutLjud>
+  [756] getlocal 16 ............................. <ObjNum>
+  [758] pusharglist 2 ........................... <SlutLjud, ObjNum>
+  [760] extcall 51 .............................. <getAt(SlutLjud, ObjNum)>
+  [763] pushint8 1 .............................. <1>
+  [766] inv ..................................... <-1>
+  [767] eq ...................................... <getAt(SlutLjud, ObjNum) = -1>
+  [768] getglobal 123 ........................... <SenasteLjud>
+  [771] getlocal 16 ............................. <ObjNum>
+  [773] eq ...................................... <SenasteLjud = ObjNum>
+  [774] and ..................................... <(getAt(SlutLjud, ObjNum) = -1) and (SenasteLjud = ObjNum)>
+  [775] jmpifz [784] ............................ if (getAt(SlutLjud, ObjNum) = -1) and (SenasteLjud = ObjNum) then
+  [778] pushzero ................................ <0>
+  [779] pusharglistnoret 1 ...................... <0>
+  [781] extcall 42 .............................. puppetSound(0)
+  [784] getlocal 56 ............................. <LoopResultat>
+  [786] pushint8 4 .............................. <4>
+  [789] eq ...................................... <LoopResultat = 4>
+  [790] jmpifz [855] ............................ if LoopResultat = 4 then
+  [793] getglobal 13 ............................ <spriteNum>
+  [795] getlocal 16 ............................. <ObjNum>
+  [797] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [799] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [802] pusharglist 1 ........................... <getaProp(spriteNum, ObjNum)>
+  [804] extcall 151 ............................. <sprite(getaProp(spriteNum, ObjNum))>
+  [807] pushzero ................................ <0>
+  [808] setobjprop 152 .......................... sprite(getaProp(spriteNum, ObjNum)).visible = 0
+  [811] getglobal 54 ............................ <ObjektAktiv>
+  [814] getlocal 16 ............................. <ObjNum>
+  [816] pushint8 4 .............................. <4>
+  [819] pusharglistnoret 3 ...................... <ObjektAktiv, ObjNum, 4>
+  [821] extcall 86 .............................. setAt(ObjektAktiv, ObjNum, 4)
+  [824] getglobal 122 ........................... <SlutLjud>
+  [827] getlocal 16 ............................. <ObjNum>
+  [829] pusharglist 2 ........................... <SlutLjud, ObjNum>
+  [831] extcall 51 .............................. <getAt(SlutLjud, ObjNum)>
+  [834] pushint8 1 .............................. <1>
+  [837] inv ..................................... <-1>
+  [838] eq ...................................... <getAt(SlutLjud, ObjNum) = -1>
+  [839] getglobal 123 ........................... <SenasteLjud>
+  [842] getlocal 16 ............................. <ObjNum>
+  [844] eq ...................................... <SenasteLjud = ObjNum>
+  [845] and ..................................... <(getAt(SlutLjud, ObjNum) = -1) and (SenasteLjud = ObjNum)>
+  [846] jmpifz [855] ............................ if (getAt(SlutLjud, ObjNum) = -1) and (SenasteLjud = ObjNum) then
+  [849] pushzero ................................ <0>
+  [850] pusharglistnoret 1 ...................... <0>
+  [852] extcall 42 .............................. puppetSound(0)
+  [855] getlocal 56 ............................. <LoopResultat>
+  [857] pushint8 5 .............................. <5>
+  [860] eq ...................................... <LoopResultat = 5>
+  [861] jmpifz [1014] ........................... if LoopResultat = 5 then
+  [864] getglobal 80 ............................ <AntalggrCounter>
+  [867] getlocal 16 ............................. <ObjNum>
+  [869] pushzero ................................ <0>
+  [870] pusharglistnoret 3 ...................... <AntalggrCounter, ObjNum, 0>
+  [872] extcall 86 .............................. setAt(AntalggrCounter, ObjNum, 0)
+  [875] getglobal 13 ............................ <spriteNum>
+  [877] getlocal 16 ............................. <ObjNum>
+  [879] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [881] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [884] getglobal 71 ............................ <StartbildEfterLoop>
+  [887] getlocal 16 ............................. <ObjNum>
+  [889] pusharglist 2 ........................... <StartbildEfterLoop, ObjNum>
+  [891] extcall 58 .............................. <getaProp(StartbildEfterLoop, ObjNum)>
+  [894] pushint8 4 .............................. <4>
+  [897] set 6 ................................... set the castNum of sprite getaProp(spriteNum, ObjNum) to getaProp(StartbildEfterLoop, ObjNum)
+  [899] getglobal 13 ............................ <spriteNum>
+  [901] getlocal 16 ............................. <ObjNum>
+  [903] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [905] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [908] setlocal 24 ............................. SpriteNr = getaProp(spriteNum, ObjNum)
+  [910] getglobal 75 ............................ <LoopTyp>
+  [913] getlocal 16 ............................. <ObjNum>
+  [915] pusharglist 2 ........................... <LoopTyp, ObjNum>
+  [917] extcall 51 .............................. <getAt(LoopTyp, ObjNum)>
+  [920] pushint8 2 .............................. <2>
+  [923] eq ...................................... <getAt(LoopTyp, ObjNum) = 2>
+  [924] jmpifz [980] ............................ if getAt(LoopTyp, ObjNum) = 2 then
+  [927] getlocal 24 ............................. <SpriteNr>
+  [929] getlocal 24 ............................. <SpriteNr>
+  [931] pushint8 13 ............................. <13>
+  [934] get 6 ................................... <the locH of sprite SpriteNr>
+  [936] getglobal 72 ............................ <OknX>
+  [939] getlocal 16 ............................. <ObjNum>
+  [941] pusharglist 2 ........................... <OknX, ObjNum>
+  [943] extcall 58 .............................. <getaProp(OknX, ObjNum)>
+  [946] add ..................................... <the locH of sprite SpriteNr + getaProp(OknX, ObjNum)>
+  [947] pushint8 13 ............................. <13>
+  [950] set 6 ................................... set the locH of sprite SpriteNr to the locH of sprite SpriteNr + getaProp(OknX, ObjNum)
+  [952] getlocal 24 ............................. <SpriteNr>
+  [954] getlocal 24 ............................. <SpriteNr>
+  [956] pushint8 14 ............................. <14>
+  [959] get 6 ................................... <the locV of sprite SpriteNr>
+  [961] getglobal 73 ............................ <OknY>
+  [964] getlocal 16 ............................. <ObjNum>
+  [966] pusharglist 2 ........................... <OknY, ObjNum>
+  [968] extcall 58 .............................. <getaProp(OknY, ObjNum)>
+  [971] add ..................................... <the locV of sprite SpriteNr + getaProp(OknY, ObjNum)>
+  [972] pushint8 14 ............................. <14>
+  [975] set 6 ................................... set the locV of sprite SpriteNr to the locV of sprite SpriteNr + getaProp(OknY, ObjNum)
+  [977] jmp [1014] .............................. next repeat
+  [980] getlocal 24 ............................. <SpriteNr>
+  [982] getglobal 61 ............................ <StartXPos>
+  [985] getlocal 16 ............................. <ObjNum>
+  [987] pusharglist 2 ........................... <StartXPos, ObjNum>
+  [989] extcall 58 .............................. <getaProp(StartXPos, ObjNum)>
+  [992] pushint8 13 ............................. <13>
+  [995] set 6 ................................... set the locH of sprite SpriteNr to getaProp(StartXPos, ObjNum)
+  [997] getlocal 24 ............................. <SpriteNr>
+  [999] getglobal 62 ............................ <StartYPos>
+  [1002] getlocal 16 ............................ <ObjNum>
+  [1004] pusharglist 2 .......................... <StartYPos, ObjNum>
+  [1006] extcall 58 ............................. <getaProp(StartYPos, ObjNum)>
+  [1009] pushint8 14 ............................ <14>
+  [1012] set 6 .................................. set the locV of sprite SpriteNr to getaProp(StartYPos, ObjNum)
+  [1014] pushint8 1
+  [1017] getlocal 16
+  [1019] add
+  [1020] setlocal 16
+  [1022] endrepeat [193]
+  [1025] pusharglistnoret 0 ..................... <>
+  [1027] extcall 8 .............................. updateStage()
+  [1029] pusharglistnoret 0 ..................... <>
+  [1031] extcall 24 ............................. startTimer()
+  [1033] pushint8 34 ............................ <34>
+  [1036] get 7 .................................. <the timer>
+  [1038] pushint8 2 ............................. <2>
+  [1041] lt ..................................... <the timer < 2>
+  [1042] jmpifz [1052] .......................... repeat while the timer < 2
+  [1045] pusharglistnoret 0 ..................... <>
+  [1047] extcall 91 ............................. nothing()
+  [1050] endrepeat [1033]
+  [1052] pushint8 1 ............................. <1>
+  [1055] setglobal 33 ........................... UseDelay = 1
+  [1058] getglobal 87 ........................... <FrameNr>
+  [1061] getglobal 68 ........................... <EndOfMovie>
+  [1064] gt ..................................... <FrameNr > EndOfMovie>
+  [1065] jmpifz [1073] .......................... if FrameNr > EndOfMovie then
+  [1068] pushint8 1 ............................. <1>
+  [1071] setlocal 0 ............................. EndKonstrukt = 1
+  [1073] endrepeat [146]
+  [1076] pusharglistnoret 0 ..................... <>
+  [1078] extcall 92 ............................. RESETCOUNTERS()
+  [1081] ret
+end

@@ -1,0 +1,152 @@
+on updateGameObjects
+  [  0] getglobal 31 ............................ <UNIObjectList>
+  [  2] pusharglist 0 ........................... <[]>
+  [  4] pushlist ................................ <[]>
+  [  5] eq ...................................... <UNIObjectList = []>
+  [  6] jmpifz [ 14] ............................ if UNIObjectList = [] then
+  [  9] pusharglistnoret 0 ...................... <>
+  [ 11] extcall 60 .............................. return 
+  [ 14] pusharglist 0 ........................... <[]>
+  [ 16] pushlist ................................ <[]>
+  [ 17] setlocal 0 .............................. UNIreturn = []
+  [ 19] pusharglist 0 ........................... <>
+  [ 21] extcall 142 ............................. <UNIcheckActiveObjects()>
+  [ 24] setlocal 0 .............................. UNIreturn = UNIcheckActiveObjects()
+  [ 26] getlocal 0 .............................. <UNIreturn>
+  [ 28] pushint8 1 .............................. <1>
+  [ 31] pusharglist 2 ........................... <UNIreturn, 1>
+  [ 33] objcall 5 ............................... <UNIreturn[1]>
+  [ 35] setlocal 8 .............................. soundsToPlay = UNIreturn[1]
+  [ 37] getlocal 0 .............................. <UNIreturn>
+  [ 39] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 2 ...................... <UNIreturn, 1>
+  [ 44] extcall 143 ............................. deleteAt(UNIreturn, 1)
+  [ 47] getlocal 0 .............................. <UNIreturn>
+  [ 49] pushint8 1 .............................. <1>
+  [ 52] pusharglist 2 ........................... <UNIreturn, 1>
+  [ 54] objcall 5 ............................... <UNIreturn[1]>
+  [ 56] setlocal 16 ............................. chainedObjects = UNIreturn[1]
+  [ 58] getlocal 0 .............................. <UNIreturn>
+  [ 60] pushint8 1 .............................. <1>
+  [ 63] pusharglistnoret 2 ...................... <UNIreturn, 1>
+  [ 65] extcall 143 ............................. deleteAt(UNIreturn, 1)
+  [ 68] getlocal 0 .............................. <UNIreturn>
+  [ 70] pusharglist 1 ........................... <UNIreturn>
+  [ 72] extcall 73 .............................. <count(UNIreturn)>
+  [ 75] pushzero ................................ <0>
+  [ 76] gt ...................................... <count(UNIreturn) > 0>
+  [ 77] jmpifz [324] ............................ if count(UNIreturn) > 0 then
+  [ 80] pusharglist 0 ........................... <[]>
+  [ 82] pushlist ................................ <[]>
+  [ 83] setlocal 24 ............................. updatedObjects = []
+  [ 85] getlocal 0 .............................. <UNIreturn>
+  [ 87] pusharglist 1 ........................... <UNIreturn>
+  [ 89] extcall 73 .............................. <count(UNIreturn)>
+  [ 92] setlocal 32 ............................. Antal = count(UNIreturn)
+  [ 94] pushint8 1 .............................. <1>
+  [ 97] setlocal 40
+  [ 99] getlocal 40
+  [101] getlocal 32 ............................. <Antal>
+  [103] lteq
+  [104] jmpifz [299] ............................ repeat with i = 1 to Antal
+  [107] getlocal 0 .............................. <UNIreturn>
+  [109] getlocal 40 ............................. <i>
+  [111] pusharglist 2 ........................... <UNIreturn, i>
+  [113] objcall 5 ............................... <UNIreturn[i]>
+  [115] setlocal 48 ............................. Smatris = UNIreturn[i]
+  [117] getlocal 48 ............................. <Smatris>
+  [119] pusharglist 0 ........................... <[]>
+  [121] pushlist ................................ <[]>
+  [122] nteq .................................... <Smatris <> []>
+  [123] jmpifz [288] ............................ if Smatris <> [] then
+  [126] getlocal 48 ............................. <Smatris>
+  [128] pushint8 1 .............................. <1>
+  [131] pusharglist 2 ........................... <Smatris, 1>
+  [133] objcall 5 ............................... <Smatris[1]>
+  [135] setlocal 56 ............................. Nr = Smatris[1]
+  [137] getlocal 24 ............................. <updatedObjects>
+  [139] getlocal 56 ............................. <Nr>
+  [141] pusharglistnoret 2 ...................... <updatedObjects, Nr>
+  [143] extcall 2 ............................... add(updatedObjects, Nr)
+  [145] getglobal 1 ............................. <gameObjectList>
+  [147] getlocal 56 ............................. <Nr>
+  [149] pusharglist 2 ........................... <gameObjectList, Nr>
+  [151] objcall 5 ............................... <gameObjectList[Nr]>
+  [153] setlocal 64 ............................. tObj = gameObjectList[Nr]
+  [155] getlocal 64 ............................. <tObj>
+  [157] getlocal 48 ............................. <Smatris>
+  [159] pushint8 2 .............................. <2>
+  [162] pusharglist 2 ........................... <Smatris, 2>
+  [164] objcall 5 ............................... <Smatris[2]>
+  [166] setobjprop 115 .......................... tObj.posX = Smatris[2]
+  [169] getlocal 64 ............................. <tObj>
+  [171] getlocal 48 ............................. <Smatris>
+  [173] pushint8 3 .............................. <3>
+  [176] pusharglist 2 ........................... <Smatris, 3>
+  [178] objcall 5 ............................... <Smatris[3]>
+  [180] setobjprop 116 .......................... tObj.posY = Smatris[3]
+  [183] getlocal 48 ............................. <Smatris>
+  [185] pushint8 4 .............................. <4>
+  [188] pusharglist 2 ........................... <Smatris, 4>
+  [190] objcall 5 ............................... <Smatris[4]>
+  [192] setlocal 72 ............................. AktCastmember = Smatris[4]
+  [194] getlocal 64 ............................. <tObj>
+  [196] getlocal 72 ............................. <AktCastmember>
+  [198] setobjprop 117 .......................... tObj.AktBild = AktCastmember
+  [201] getlocal 64 ............................. <tObj>
+  [203] getlocal 48 ............................. <Smatris>
+  [205] pushint8 5 .............................. <5>
+  [208] pusharglist 2 ........................... <Smatris, 5>
+  [210] objcall 5 ............................... <Smatris[5]>
+  [212] setobjprop 110 .......................... tObj.aktiv = Smatris[5]
+  [215] getlocal 72 ............................. <AktCastmember>
+  [217] pushzero ................................ <0>
+  [218] eq ...................................... <AktCastmember = 0>
+  [219] jmpifz [234] ............................ if AktCastmember = 0 then
+  [222] getlocal 64 ............................. <tObj>
+  [224] getobjprop 75 ........................... <tObj.SpriteNr>
+  [227] pushint8 35 ............................. <35>
+  [230] get 6 ................................... <the memberNum of sprite tObj.SpriteNr>
+  [232] setlocal 72 ............................. AktCastmember = the memberNum of sprite tObj.SpriteNr
+  [234] getlocal 64 ............................. <tObj>
+  [236] getobjprop 75 ........................... <tObj.SpriteNr>
+  [239] setlocal 80 ............................. SpNr = tObj.SpriteNr
+  [241] getlocal 80 ............................. <SpNr>
+  [243] pusharglist 1 ........................... <SpNr>
+  [245] extcall 76 .............................. <sprite(SpNr)>
+  [248] getlocal 64 ............................. <tObj>
+  [250] getobjprop 115 .......................... <tObj.posX>
+  [253] getlocal 64 ............................. <tObj>
+  [255] getobjprop 116 .......................... <tObj.posY>
+  [258] pusharglist 2 ........................... <tObj.posX, tObj.posY>
+  [260] extcall 27 .............................. <point(tObj.posX, tObj.posY)>
+  [262] setobjprop 146 .......................... sprite(SpNr).loc = point(tObj.posX, tObj.posY)
+  [265] getlocal 64 ............................. <tObj>
+  [267] getobjprop 109 .......................... <tObj.CastName>
+  [270] setlocal 88 ............................. CastName = tObj.CastName
+  [272] getlocal 80 ............................. <SpNr>
+  [274] getlocal 72 ............................. <AktCastmember>
+  [276] getlocal 88 ............................. <CastName>
+  [278] pusharglist 2 ........................... <AktCastmember, CastName>
+  [280] extcall 147 ............................. <member(AktCastmember, CastName)>
+  [283] pushint8 37 ............................. <37>
+  [286] set 6 ................................... set the member of sprite SpNr to member(AktCastmember, CastName)
+  [288] pushint8 1
+  [291] getlocal 40
+  [293] add
+  [294] setlocal 40
+  [296] endrepeat [ 99]
+  [299] getlocal 8 .............................. <soundsToPlay>
+  [301] getlocal 24 ............................. <updatedObjects>
+  [303] pusharglistnoret 2 ...................... <soundsToPlay, updatedObjects>
+  [305] extcall 181 ............................. soundEngine(soundsToPlay, updatedObjects)
+  [308] getlocal 16 ............................. <chainedObjects>
+  [310] pusharglist 0 ........................... <[]>
+  [312] pushlist ................................ <[]>
+  [313] nteq .................................... <chainedObjects <> []>
+  [314] jmpifz [324] ............................ if chainedObjects <> [] then
+  [317] getlocal 16 ............................. <chainedObjects>
+  [319] pusharglistnoret 1 ...................... <chainedObjects>
+  [321] extcall 144 ............................. createChainedObjects(chainedObjects)
+  [324] ret
+end

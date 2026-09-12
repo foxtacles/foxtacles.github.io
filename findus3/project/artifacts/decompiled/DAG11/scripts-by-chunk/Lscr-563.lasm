@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"sill">
+  [  2] pusharglistnoret 1 ...................... <"sill">
+  [  4] extcall 36 .............................. puppetSound("sill")
+  [  7] ret
+end

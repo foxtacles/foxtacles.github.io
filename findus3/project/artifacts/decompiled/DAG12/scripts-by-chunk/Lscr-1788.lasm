@@ -1,0 +1,430 @@
+on UNIcheckActiveObjects
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. UNIreturn = []
+  [  5] pusharglist 0 ........................... <[]>
+  [  7] pushlist ................................ <[]>
+  [  8] setlocal 8 .............................. soundList = []
+  [ 10] getglobal 1 ............................. <UNIObjectList>
+  [ 12] pusharglist 1 ........................... <UNIObjectList>
+  [ 14] extcall 42 .............................. <count(UNIObjectList)>
+  [ 17] setlocal 16 ............................. NumberOfRepeats = count(UNIObjectList)
+  [ 19] pushint8 1 .............................. <1>
+  [ 22] setlocal 24
+  [ 24] getlocal 24
+  [ 26] getlocal 16 ............................. <NumberOfRepeats>
+  [ 28] lteq
+  [ 29] jmpifz [865] ............................ repeat with i = 1 to NumberOfRepeats
+  [ 32] pusharglist 0 ........................... <[]>
+  [ 34] pushlist ................................ <[]>
+  [ 35] setlocal 32 ............................. thisReturn = []
+  [ 37] getglobal 1 ............................. <UNIObjectList>
+  [ 39] getlocal 24 ............................. <i>
+  [ 41] pusharglist 2 ........................... <UNIObjectList, i>
+  [ 43] objcall 43 .............................. <UNIObjectList[i]>
+  [ 46] setlocal 40 ............................. tObj = UNIObjectList[i]
+  [ 48] pushint8 34 ............................. <34>
+  [ 51] get 7 ................................... <the timer>
+  [ 53] getlocal 40 ............................. <tObj>
+  [ 55] getobjprop 14 ........................... <tObj.UNIoldPicTimer>
+  [ 57] lt ...................................... <the timer < tObj.UNIoldPicTimer>
+  [ 58] jmpifz [ 64] ............................ if the timer < tObj.UNIoldPicTimer then
+  [ 61] jmp [854] ............................... next repeat
+  [ 64] getlocal 40 ............................. <tObj>
+  [ 66] getlocal 40 ............................. <tObj>
+  [ 68] getobjprop 31 ........................... <tObj.UNIaktStep>
+  [ 70] pushint8 1 .............................. <1>
+  [ 73] add ..................................... <tObj.UNIaktStep + 1>
+  [ 74] setobjprop 31 ........................... tObj.UNIaktStep = tObj.UNIaktStep + 1
+  [ 76] getlocal 40 ............................. <tObj>
+  [ 78] getobjprop 11 ........................... <tObj.UNImotionType>
+  [ 80] setlocal 48 ............................. thisMotionType = tObj.UNImotionType
+  [ 82] getlocal 40 ............................. <tObj>
+  [ 84] getobjprop 35 ........................... <tObj.UNIpathList>
+  [ 87] setlocal 56 ............................. thisPath = tObj.UNIpathList
+  [ 89] getlocal 48 ............................. <thisMotionType>
+  [ 91] peek 0 .................................. case thisMotionType of
+  [ 93] pushint8 1 .............................. <1>
+  [ 96] nteq
+  [ 97] jmpifz [109] ............................ (case) 1, ...
+  [100] peek 0
+  [102] pushint8 2 .............................. <2>
+  [105] eq
+  [106] jmpifz [517] ............................ (case) ..., 2:
+  [109] getlocal 40 ............................. <tObj>
+  [111] getobjprop 31 ........................... <tObj.UNIaktStep>
+  [113] pushint8 1 .............................. <1>
+  [116] eq ...................................... <tObj.UNIaktStep = 1>
+  [117] jmpifz [163] ............................ if tObj.UNIaktStep = 1 then / else
+  [120] getlocal 40 ............................. <tObj>
+  [122] getobjprop 173 .......................... <tObj.UNIaktPic>
+  [125] getlocal 40 ............................. <tObj>
+  [127] getobjprop 25 ........................... <tObj.UNIBasePic>
+  [129] sub ..................................... <tObj.UNIaktPic - tObj.UNIBasePic>
+  [130] setlocal 64 ............................. oldAktPic = tObj.UNIaktPic - tObj.UNIBasePic
+  [132] getlocal 24 ............................. <i>
+  [134] getlocal 48 ............................. <thisMotionType>
+  [136] pusharglistnoret 2 ...................... <i, thisMotionType>
+  [138] extcall 45 .............................. UNIfixSteps(i, thisMotionType)
+  [141] getlocal 24 ............................. <i>
+  [143] pusharglistnoret 1 ...................... <i>
+  [145] extcall 46 .............................. UNIfixAngle(i)
+  [148] getlocal 40 ............................. <tObj>
+  [150] getlocal 40 ............................. <tObj>
+  [152] getobjprop 25 ........................... <tObj.UNIBasePic>
+  [154] getlocal 64 ............................. <oldAktPic>
+  [156] add ..................................... <tObj.UNIBasePic + oldAktPic>
+  [157] setobjprop 173 .......................... tObj.UNIaktPic = tObj.UNIBasePic + oldAktPic
+  [160] jmp [491]
+  [163] getlocal 40 ............................. <tObj>
+  [165] getobjprop 31 ........................... <tObj.UNIaktStep>
+  [167] getlocal 40 ............................. <tObj>
+  [169] getobjprop 30 ........................... <tObj.UNInumberOfSteps>
+  [171] eq ...................................... <tObj.UNIaktStep = tObj.UNInumberOfSteps>
+  [172] jmpifz [442] ............................ if tObj.UNIaktStep = tObj.UNInumberOfSteps then / else
+  [175] getlocal 40 ............................. <tObj>
+  [177] getlocal 40 ............................. <tObj>
+  [179] getobjprop 18 ........................... <tObj.UNIStopX>
+  [181] setobjprop 27 ........................... tObj.UNIaktX = tObj.UNIStopX
+  [183] getlocal 40 ............................. <tObj>
+  [185] getlocal 40 ............................. <tObj>
+  [187] getobjprop 19 ........................... <tObj.UNIStopY>
+  [189] setobjprop 28 ........................... tObj.UNIaktY = tObj.UNIStopY
+  [191] getlocal 56 ............................. <thisPath>
+  [193] getlocal 40 ............................. <tObj>
+  [195] getobjprop 18 ........................... <tObj.UNIStopX>
+  [197] getlocal 40 ............................. <tObj>
+  [199] getobjprop 19 ........................... <tObj.UNIStopY>
+  [201] pusharglist 2 ........................... <tObj.UNIStopX, tObj.UNIStopY>
+  [203] extcall 48 .............................. <point(tObj.UNIStopX, tObj.UNIStopY)>
+  [206] pusharglist 2 ........................... <thisPath, point(tObj.UNIStopX, tObj.UNIStopY)>
+  [208] extcall 47 .............................. <getPos(thisPath, point(tObj.UNIStopX, tObj.UNIStopY))>
+  [211] setlocal 72 ............................. thisPoint = getPos(thisPath, point(tObj.UNIStopX, tObj.UNIStopY))
+  [213] getlocal 24 ............................. <i>
+  [215] pusharglistnoret 1 ...................... <i>
+  [217] extcall 49 .............................. UNIfixCast(i)
+  [220] getlocal 72 ............................. <thisPoint>
+  [222] pushint8 1 .............................. <1>
+  [225] eq ...................................... <thisPoint = 1>
+  [226] getlocal 72 ............................. <thisPoint>
+  [228] getlocal 56 ............................. <thisPath>
+  [230] pusharglist 1 ........................... <thisPath>
+  [232] extcall 42 .............................. <count(thisPath)>
+  [235] eq ...................................... <thisPoint = count(thisPath)>
+  [236] or ...................................... <(thisPoint = 1) or (thisPoint = count(thisPath))>
+  [237] jmpifz [434] ............................ if (thisPoint = 1) or (thisPoint = count(thisPath)) then / else
+  [240] getlocal 40 ............................. <tObj>
+  [242] getobjprop 37 ........................... <tObj.UNIendPointCounter>
+  [245] peek 0 .................................. case tObj.UNIendPointCounter of
+  [247] pushint8 1 .............................. <1>
+  [250] eq
+  [251] jmpifz [361] ............................ (case) 1:
+  [254] getlocal 40 ............................. <tObj>
+  [256] pushzero ................................ <0>
+  [257] setobjprop 4 ............................ tObj.UNIactive = 0
+  [259] getlocal 40 ............................. <tObj>
+  [261] getobjprop 9 ............................ <tObj.UNIstandSequens>
+  [263] pushzero ................................ <0>
+  [264] nteq .................................... <tObj.UNIstandSequens <> 0>
+  [265] jmpifz [358] ............................ if tObj.UNIstandSequens <> 0 then
+  [268] getlocal 40 ............................. <tObj>
+  [270] getobjprop 22 ........................... <tObj.UNIanimationAngles>
+  [272] pushint8 1 .............................. <1>
+  [275] eq ...................................... <tObj.UNIanimationAngles = 1>
+  [276] jmpifz [285] ............................ if tObj.UNIanimationAngles = 1 then / else
+  [279] pushzero ................................ <0>
+  [280] setlocal 80 ............................. thisAngle = 0
+  [282] jmp [346]
+  [285] getlocal 40 ............................. <tObj>
+  [287] getobjprop 24 ........................... <tObj.UNIaktAngle>
+  [289] setlocal 88 ............................. angle = tObj.UNIaktAngle
+  [291] pushint8 360 ............................ <360>
+  [294] pusharglist 1 ........................... <360>
+  [296] extcall 50 .............................. <float(360)>
+  [299] getlocal 40 ............................. <tObj>
+  [301] getobjprop 22 ........................... <tObj.UNIanimationAngles>
+  [303] pusharglist 1 ........................... <tObj.UNIanimationAngles>
+  [305] extcall 50 .............................. <float(tObj.UNIanimationAngles)>
+  [308] div ..................................... <float(360) / float(tObj.UNIanimationAngles)>
+  [309] setlocal 96 ............................. degPerFig = float(360) / float(tObj.UNIanimationAngles)
+  [311] getlocal 88 ............................. <angle>
+  [313] pusharglist 1 ........................... <angle>
+  [315] extcall 50 .............................. <float(angle)>
+  [318] getlocal 96 ............................. <degPerFig>
+  [320] pusharglist 1 ........................... <degPerFig>
+  [322] extcall 50 .............................. <float(degPerFig)>
+  [325] div ..................................... <float(angle) / float(degPerFig)>
+  [326] pusharglist 1 ........................... <float(angle) / float(degPerFig)>
+  [328] extcall 51 .............................. <integer(float(angle) / float(degPerFig))>
+  [331] setlocal 80 ............................. thisAngle = integer(float(angle) / float(degPerFig))
+  [333] getlocal 80 ............................. <thisAngle>
+  [335] getlocal 40 ............................. <tObj>
+  [337] getobjprop 22 ........................... <tObj.UNIanimationAngles>
+  [339] eq ...................................... <thisAngle = tObj.UNIanimationAngles>
+  [340] jmpifz [346] ............................ if thisAngle = tObj.UNIanimationAngles then
+  [343] pushzero ................................ <0>
+  [344] setlocal 80 ............................. thisAngle = 0
+  [346] getlocal 40 ............................. <tObj>
+  [348] getlocal 40 ............................. <tObj>
+  [350] getobjprop 9 ............................ <tObj.UNIstandSequens>
+  [352] getlocal 80 ............................. <thisAngle>
+  [354] add ..................................... <tObj.UNIstandSequens + thisAngle>
+  [355] setobjprop 173 .......................... tObj.UNIaktPic = tObj.UNIstandSequens + thisAngle
+  [358] jmp [429]
+  [361] peek 0
+  [363] pushint8 1 .............................. <1>
+  [366] inv ..................................... <-1>
+  [367] eq
+  [368] jmpifz [390] ............................ (case) (-1):
+  [371] getlocal 40 ............................. <tObj>
+  [373] pushzero ................................ <0>
+  [374] setobjprop 31 ........................... tObj.UNIaktStep = 0
+  [376] getlocal 40 ............................. <tObj>
+  [378] getlocal 40 ............................. <tObj>
+  [380] getobjprop 36 ........................... <tObj.UNIpathDirection>
+  [383] inv ..................................... <-tObj.UNIpathDirection>
+  [384] setobjprop 36 ........................... tObj.UNIpathDirection = -tObj.UNIpathDirection
+  [387] jmp [429] ............................... (case) otherwise:
+  [390] getlocal 40 ............................. <tObj>
+  [392] getlocal 40 ............................. <tObj>
+  [394] getobjprop 37 ........................... <tObj.UNIendPointCounter>
+  [397] pushint8 1 .............................. <1>
+  [400] sub ..................................... <tObj.UNIendPointCounter - 1>
+  [401] setobjprop 37 ........................... tObj.UNIendPointCounter = tObj.UNIendPointCounter - 1
+  [404] getlocal 48 ............................. <thisMotionType>
+  [406] pushint8 1 .............................. <1>
+  [409] eq ...................................... <thisMotionType = 1>
+  [410] jmpifz [424] ............................ if thisMotionType = 1 then
+  [413] getlocal 40 ............................. <tObj>
+  [415] getlocal 40 ............................. <tObj>
+  [417] getobjprop 36 ........................... <tObj.UNIpathDirection>
+  [420] inv ..................................... <-tObj.UNIpathDirection>
+  [421] setobjprop 36 ........................... tObj.UNIpathDirection = -tObj.UNIpathDirection
+  [424] getlocal 40 ............................. <tObj>
+  [426] pushzero ................................ <0>
+  [427] setobjprop 31 ........................... tObj.UNIaktStep = 0
+  [429] pop 1 ................................... end case
+  [431] jmp [439]
+  [434] getlocal 40 ............................. <tObj>
+  [436] pushzero ................................ <0>
+  [437] setobjprop 31 ........................... tObj.UNIaktStep = 0
+  [439] jmp [491]
+  [442] getlocal 40 ............................. <tObj>
+  [444] getlocal 40 ............................. <tObj>
+  [446] getobjprop 27 ........................... <tObj.UNIaktX>
+  [448] getlocal 40 ............................. <tObj>
+  [450] getobjprop 32 ........................... <tObj.UNIDX>
+  [453] add ..................................... <tObj.UNIaktX + tObj.UNIDX>
+  [454] setobjprop 27 ........................... tObj.UNIaktX = tObj.UNIaktX + tObj.UNIDX
+  [456] getlocal 40 ............................. <tObj>
+  [458] getlocal 40 ............................. <tObj>
+  [460] getobjprop 28 ........................... <tObj.UNIaktY>
+  [462] getlocal 40 ............................. <tObj>
+  [464] getobjprop 33 ........................... <tObj.UNIDY>
+  [467] add ..................................... <tObj.UNIaktY + tObj.UNIDY>
+  [468] setobjprop 28 ........................... tObj.UNIaktY = tObj.UNIaktY + tObj.UNIDY
+  [470] getlocal 40 ............................. <tObj>
+  [472] getobjprop 31 ........................... <tObj.UNIaktStep>
+  [474] getlocal 40 ............................. <tObj>
+  [476] getobjprop 21 ........................... <tObj.UNIchangeCastAfter>
+  [478] mod ..................................... <tObj.UNIaktStep mod tObj.UNIchangeCastAfter>
+  [479] pushzero ................................ <0>
+  [480] eq ...................................... <(tObj.UNIaktStep mod tObj.UNIchangeCastAfter) = 0>
+  [481] jmpifz [491] ............................ if (tObj.UNIaktStep mod tObj.UNIchangeCastAfter) = 0 then
+  [484] getlocal 24 ............................. <i>
+  [486] pusharglistnoret 1 ...................... <i>
+  [488] extcall 49 .............................. UNIfixCast(i)
+  [491] getlocal 40 ............................. <tObj>
+  [493] getobjprop 13 ........................... <tObj.UniFrameTime>
+  [495] getlocal 40 ............................. <tObj>
+  [497] getobjprop 15 ........................... <tObj.UNIm>
+  [499] mul ..................................... <tObj.UniFrameTime * tObj.UNIm>
+  [500] pushint8 34 ............................. <34>
+  [503] get 7 ................................... <the timer>
+  [505] add ..................................... <(tObj.UniFrameTime * tObj.UNIm) + the timer>
+  [506] setlocal 104 ............................ newTimer = (tObj.UniFrameTime * tObj.UNIm) + the timer
+  [508] getlocal 40 ............................. <tObj>
+  [510] getlocal 104 ............................ <newTimer>
+  [512] setobjprop 14 ........................... tObj.UNIoldPicTimer = newTimer
+  [514] jmp [799]
+  [517] peek 0
+  [519] pushint8 3 .............................. <3>
+  [522] nteq
+  [523] jmpifz [535] ............................ (case) 3, ...
+  [526] peek 0
+  [528] pushint8 4 .............................. <4>
+  [531] eq
+  [532] jmpifz [783] ............................ (case) ..., 4:
+  [535] getlocal 56 ............................. <thisPath>
+  [537] pusharglist 1 ........................... <thisPath>
+  [539] extcall 42 .............................. <count(thisPath)>
+  [542] setlocal 112 ............................ listSize = count(thisPath)
+  [544] getlocal 56 ............................. <thisPath>
+  [546] getlocal 40 ............................. <tObj>
+  [548] getobjprop 27 ........................... <tObj.UNIaktX>
+  [550] getlocal 40 ............................. <tObj>
+  [552] getobjprop 28 ........................... <tObj.UNIaktY>
+  [554] pusharglist 2 ........................... <tObj.UNIaktX, tObj.UNIaktY>
+  [556] extcall 48 .............................. <point(tObj.UNIaktX, tObj.UNIaktY)>
+  [559] pusharglist 2 ........................... <thisPath, point(tObj.UNIaktX, tObj.UNIaktY)>
+  [561] extcall 47 .............................. <getPos(thisPath, point(tObj.UNIaktX, tObj.UNIaktY))>
+  [564] setlocal 120 ............................ listPosition = getPos(thisPath, point(tObj.UNIaktX, tObj.UNIaktY))
+  [566] getlocal 40 ............................. <tObj>
+  [568] pushzero ................................ <0>
+  [569] setobjprop 31 ........................... tObj.UNIaktStep = 0
+  [571] getlocal 120 ............................ <listPosition>
+  [573] getlocal 40 ............................. <tObj>
+  [575] getobjprop 36 ........................... <tObj.UNIpathDirection>
+  [578] add ..................................... <listPosition + tObj.UNIpathDirection>
+  [579] setlocal 128 ............................ nextPosition = listPosition + tObj.UNIpathDirection
+  [581] getlocal 128 ............................ <nextPosition>
+  [583] getlocal 112 ............................ <listSize>
+  [585] gt ...................................... <nextPosition > listSize>
+  [586] getlocal 48 ............................. <thisMotionType>
+  [588] pushint8 4 .............................. <4>
+  [591] eq ...................................... <thisMotionType = 4>
+  [592] and ..................................... <(nextPosition > listSize) and (thisMotionType = 4)>
+  [593] jmpifz [604] ............................ if (nextPosition > listSize) and (thisMotionType = 4) then / else
+  [596] pushint8 1 .............................. <1>
+  [599] setlocal 128 ............................ nextPosition = 1
+  [601] jmp [671]
+  [604] getlocal 128 ............................ <nextPosition>
+  [606] getlocal 112 ............................ <listSize>
+  [608] gt ...................................... <nextPosition > listSize>
+  [609] getlocal 48 ............................. <thisMotionType>
+  [611] pushint8 3 .............................. <3>
+  [614] eq ...................................... <thisMotionType = 3>
+  [615] and ..................................... <(nextPosition > listSize) and (thisMotionType = 3)>
+  [616] jmpifz [641] ............................ if (nextPosition > listSize) and (thisMotionType = 3) then / else
+  [619] getlocal 112 ............................ <listSize>
+  [621] pushint8 1 .............................. <1>
+  [624] sub ..................................... <listSize - 1>
+  [625] setlocal 128 ............................ nextPosition = listSize - 1
+  [627] getlocal 40 ............................. <tObj>
+  [629] getlocal 40 ............................. <tObj>
+  [631] getobjprop 36 ........................... <tObj.UNIpathDirection>
+  [634] inv ..................................... <-tObj.UNIpathDirection>
+  [635] setobjprop 36 ........................... tObj.UNIpathDirection = -tObj.UNIpathDirection
+  [638] jmp [671]
+  [641] getlocal 128 ............................ <nextPosition>
+  [643] pushzero ................................ <0>
+  [644] eq ...................................... <nextPosition = 0>
+  [645] getlocal 48 ............................. <thisMotionType>
+  [647] pushint8 3 .............................. <3>
+  [650] eq ...................................... <thisMotionType = 3>
+  [651] and ..................................... <(nextPosition = 0) and (thisMotionType = 3)>
+  [652] jmpifz [671] ............................ if (nextPosition = 0) and (thisMotionType = 3) then
+  [655] pushint8 2 .............................. <2>
+  [658] setlocal 128 ............................ nextPosition = 2
+  [660] getlocal 40 ............................. <tObj>
+  [662] getlocal 40 ............................. <tObj>
+  [664] getobjprop 36 ........................... <tObj.UNIpathDirection>
+  [667] inv ..................................... <-tObj.UNIpathDirection>
+  [668] setobjprop 36 ........................... tObj.UNIpathDirection = -tObj.UNIpathDirection
+  [671] getlocal 56 ............................. <thisPath>
+  [673] getlocal 128 ............................ <nextPosition>
+  [675] pusharglist 2 ........................... <thisPath, nextPosition>
+  [677] extcall 43 .............................. <getAt(thisPath, nextPosition)>
+  [680] setlocal 136 ............................ nextPoint = getAt(thisPath, nextPosition)
+  [682] getlocal 40 ............................. <tObj>
+  [684] getlocal 136 ............................ <nextPoint>
+  [686] getobjprop 52 ........................... <nextPoint.locH>
+  [689] setobjprop 27 ........................... tObj.UNIaktX = nextPoint.locH
+  [691] getlocal 40 ............................. <tObj>
+  [693] getlocal 136 ............................ <nextPoint>
+  [695] getobjprop 53 ........................... <nextPoint.locV>
+  [698] setobjprop 28 ........................... tObj.UNIaktY = nextPoint.locV
+  [700] getlocal 128 ............................ <nextPosition>
+  [702] pushint8 1 .............................. <1>
+  [705] eq ...................................... <nextPosition = 1>
+  [706] getlocal 128 ............................ <nextPosition>
+  [708] getlocal 112 ............................ <listSize>
+  [710] eq ...................................... <nextPosition = listSize>
+  [711] or ...................................... <(nextPosition = 1) or (nextPosition = listSize)>
+  [712] jmpifz [771] ............................ if (nextPosition = 1) or (nextPosition = listSize) then
+  [715] getlocal 40 ............................. <tObj>
+  [717] getobjprop 37 ........................... <tObj.UNIendPointCounter>
+  [720] peek 0 .................................. case tObj.UNIendPointCounter of
+  [722] pushint8 1 .............................. <1>
+  [725] eq
+  [726] jmpifz [737] ............................ (case) 1:
+  [729] getlocal 40 ............................. <tObj>
+  [731] pushzero ................................ <0>
+  [732] setobjprop 4 ............................ tObj.UNIactive = 0
+  [734] jmp [769]
+  [737] peek 0
+  [739] pushint8 1 .............................. <1>
+  [742] inv ..................................... <-1>
+  [743] eq
+  [744] jmpifz [755] ............................ (case) (-1):
+  [747] pusharglistnoret 0 ...................... <>
+  [749] extcall 54 .............................. nothing()
+  [752] jmp [769] ............................... (case) otherwise:
+  [755] getlocal 40 ............................. <tObj>
+  [757] getlocal 40 ............................. <tObj>
+  [759] getobjprop 37 ........................... <tObj.UNIendPointCounter>
+  [762] pushint8 1 .............................. <1>
+  [765] sub ..................................... <tObj.UNIendPointCounter - 1>
+  [766] setobjprop 37 ........................... tObj.UNIendPointCounter = tObj.UNIendPointCounter - 1
+  [769] pop 1 ................................... end case
+  [771] getlocal 24 ............................. <i>
+  [773] getlocal 128 ............................ <nextPosition>
+  [775] pusharglistnoret 2 ...................... <i, nextPosition>
+  [777] extcall 55 .............................. UNIfixCastJump(i, nextPosition)
+  [780] jmp [799]
+  [783] peek 0
+  [785] pushint8 6 .............................. <6>
+  [788] eq
+  [789] jmpifz [799] ............................ (case) 6:
+  [792] getlocal 24 ............................. <i>
+  [794] pusharglistnoret 1 ...................... <i>
+  [796] extcall 57 .............................. UniStillAnimationTimed(i)
+  [799] pop 1 ................................... end case
+  [801] getlocal 24 ............................. <i>
+  [803] pusharglist 1 ........................... <i>
+  [805] extcall 179 ............................. <UNIcheckSoundTriggers(i)>
+  [808] setlocal 144 ............................ soundToStart = UNIcheckSoundTriggers(i)
+  [810] getlocal 8 .............................. <soundList>
+  [812] getlocal 144 ............................ <soundToStart>
+  [814] pusharglistnoret 2 ...................... <soundList, soundToStart>
+  [816] extcall 44 .............................. add(soundList, soundToStart)
+  [819] getlocal 40 ............................. <tObj>
+  [821] getobjprop 3 ............................ <tObj.UNIobjectNr>
+  [823] getlocal 40 ............................. <tObj>
+  [825] getobjprop 27 ........................... <tObj.UNIaktX>
+  [827] getlocal 40 ............................. <tObj>
+  [829] getobjprop 28 ........................... <tObj.UNIaktY>
+  [831] getlocal 40 ............................. <tObj>
+  [833] getobjprop 173 .......................... <tObj.UNIaktPic>
+  [836] getlocal 40 ............................. <tObj>
+  [838] getobjprop 4 ............................ <tObj.UNIactive>
+  [840] pusharglist 5 ........................... <[tObj.UNIobjectNr, tObj.UNIaktX, tObj.UNIaktY, tObj.UNIaktPic, tObj.UNIactive]>
+  [842] pushlist ................................ <[tObj.UNIobjectNr, tObj.UNIaktX, tObj.UNIaktY, tObj.UNIaktPic, tObj.UNIactive]>
+  [843] setlocal 32 ............................. thisReturn = [tObj.UNIobjectNr, tObj.UNIaktX, tObj.UNIaktY, tObj.UNIaktPic, tObj.UNIactive]
+  [845] getlocal 0 .............................. <UNIreturn>
+  [847] getlocal 32 ............................. <thisReturn>
+  [849] pusharglistnoret 2 ...................... <UNIreturn, thisReturn>
+  [851] extcall 44 .............................. add(UNIreturn, thisReturn)
+  [854] pushint8 1
+  [857] getlocal 24
+  [859] add
+  [860] setlocal 24
+  [862] endrepeat [ 24]
+  [865] pusharglist 0 ........................... <>
+  [867] extcall 58 .............................. <UniKillObj()>
+  [870] setlocal 152 ............................ newlyActivatedObjects = UniKillObj()
+  [872] getlocal 0 .............................. <UNIreturn>
+  [874] pushint8 1 .............................. <1>
+  [877] getlocal 152 ............................ <newlyActivatedObjects>
+  [879] pusharglistnoret 3 ...................... <UNIreturn, 1, newlyActivatedObjects>
+  [881] extcall 59 .............................. addAt(UNIreturn, 1, newlyActivatedObjects)
+  [884] getlocal 0 .............................. <UNIreturn>
+  [886] pushint8 1 .............................. <1>
+  [889] getlocal 8 .............................. <soundList>
+  [891] pusharglistnoret 3 ...................... <UNIreturn, 1, soundList>
+  [893] extcall 59 .............................. addAt(UNIreturn, 1, soundList)
+  [896] getlocal 0 .............................. <UNIreturn>
+  [898] pusharglistnoret 1 ...................... <UNIreturn>
+  [900] extcall 39 .............................. return UNIreturn
+  [903] ret
+end

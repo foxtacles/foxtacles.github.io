@@ -1,0 +1,1096 @@
+global plats, aktiv, ove, fyfyra, fyfem, fysex, fysju, fyatta, fynio, fetio, feett, fetva, fetre, fefyra, fefem, fesex, fesju, featta, fenio, setio, seett, setva, setre, sefyra, sefem, sesex
+
+on idle
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 2 ............................ <the mouseUp>
+  [  4] jmpifz [309] ............................ if the mouseUp then / else
+  [  7] pushint8 44 ............................. <44>
+  [ 10] pusharglist 1 ........................... <44>
+  [ 12] extcall 4 ............................... <rollOver(44)>
+  [ 14] pushint8 45 ............................. <45>
+  [ 17] pusharglist 1 ........................... <45>
+  [ 19] extcall 4 ............................... <rollOver(45)>
+  [ 21] or ...................................... <rollOver(44) or rollOver(45)>
+  [ 22] pushint8 46 ............................. <46>
+  [ 25] pusharglist 1 ........................... <46>
+  [ 27] extcall 4 ............................... <rollOver(46)>
+  [ 29] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46)>
+  [ 30] pushint8 47 ............................. <47>
+  [ 33] pusharglist 1 ........................... <47>
+  [ 35] extcall 4 ............................... <rollOver(47)>
+  [ 37] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47)>
+  [ 38] pushint8 48 ............................. <48>
+  [ 41] pusharglist 1 ........................... <48>
+  [ 43] extcall 4 ............................... <rollOver(48)>
+  [ 45] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48)>
+  [ 46] pushint8 49 ............................. <49>
+  [ 49] pusharglist 1 ........................... <49>
+  [ 51] extcall 4 ............................... <rollOver(49)>
+  [ 53] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49)>
+  [ 54] pushint8 50 ............................. <50>
+  [ 57] pusharglist 1 ........................... <50>
+  [ 59] extcall 4 ............................... <rollOver(50)>
+  [ 61] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50)>
+  [ 62] pushint8 51 ............................. <51>
+  [ 65] pusharglist 1 ........................... <51>
+  [ 67] extcall 4 ............................... <rollOver(51)>
+  [ 69] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51)>
+  [ 70] pushint8 52 ............................. <52>
+  [ 73] pusharglist 1 ........................... <52>
+  [ 75] extcall 4 ............................... <rollOver(52)>
+  [ 77] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52)>
+  [ 78] pushint8 53 ............................. <53>
+  [ 81] pusharglist 1 ........................... <53>
+  [ 83] extcall 4 ............................... <rollOver(53)>
+  [ 85] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53)>
+  [ 86] pushint8 54 ............................. <54>
+  [ 89] pusharglist 1 ........................... <54>
+  [ 91] extcall 4 ............................... <rollOver(54)>
+  [ 93] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54)>
+  [ 94] pushint8 55 ............................. <55>
+  [ 97] pusharglist 1 ........................... <55>
+  [ 99] extcall 4 ............................... <rollOver(55)>
+  [101] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55)>
+  [102] pushint8 56 ............................. <56>
+  [105] pusharglist 1 ........................... <56>
+  [107] extcall 4 ............................... <rollOver(56)>
+  [109] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56)>
+  [110] pushint8 57 ............................. <57>
+  [113] pusharglist 1 ........................... <57>
+  [115] extcall 4 ............................... <rollOver(57)>
+  [117] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57)>
+  [118] pushint8 58 ............................. <58>
+  [121] pusharglist 1 ........................... <58>
+  [123] extcall 4 ............................... <rollOver(58)>
+  [125] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58)>
+  [126] pushint8 59 ............................. <59>
+  [129] pusharglist 1 ........................... <59>
+  [131] extcall 4 ............................... <rollOver(59)>
+  [133] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59)>
+  [134] pushint8 60 ............................. <60>
+  [137] pusharglist 1 ........................... <60>
+  [139] extcall 4 ............................... <rollOver(60)>
+  [141] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60)>
+  [142] pushint8 61 ............................. <61>
+  [145] pusharglist 1 ........................... <61>
+  [147] extcall 4 ............................... <rollOver(61)>
+  [149] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61)>
+  [150] pushint8 62 ............................. <62>
+  [153] pusharglist 1 ........................... <62>
+  [155] extcall 4 ............................... <rollOver(62)>
+  [157] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62)>
+  [158] pushint8 63 ............................. <63>
+  [161] pusharglist 1 ........................... <63>
+  [163] extcall 4 ............................... <rollOver(63)>
+  [165] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63)>
+  [166] pushint8 64 ............................. <64>
+  [169] pusharglist 1 ........................... <64>
+  [171] extcall 4 ............................... <rollOver(64)>
+  [173] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63) or rollOver(64)>
+  [174] jmpifz [193] ............................ if rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63) or rollOver(64) then / else
+  [177] pushint8 34 ............................. <34>
+  [180] pushint8 37 ............................. <37>
+  [183] pusharglist 2 ........................... <[34, 37]>
+  [185] pushlist ................................ <[34, 37]>
+  [186] pusharglistnoret 1 ...................... <[34, 37]>
+  [188] extcall 5 ............................... cursor([34, 37])
+  [190] jmp [232]
+  [193] pushint8 40 ............................. <40>
+  [196] pusharglist 1 ........................... <40>
+  [198] extcall 4 ............................... <rollOver(40)>
+  [200] pushint8 41 ............................. <41>
+  [203] pusharglist 1 ........................... <41>
+  [205] extcall 4 ............................... <rollOver(41)>
+  [207] or ...................................... <rollOver(40) or rollOver(41)>
+  [208] jmpifz [227] ............................ if rollOver(40) or rollOver(41) then / else
+  [211] pushint8 33 ............................. <33>
+  [214] pushint8 36 ............................. <36>
+  [217] pusharglist 2 ........................... <[33, 36]>
+  [219] pushlist ................................ <[33, 36]>
+  [220] pusharglistnoret 1 ...................... <[33, 36]>
+  [222] extcall 5 ............................... cursor([33, 36])
+  [224] jmp [232]
+  [227] pushzero ................................ <0>
+  [228] pusharglistnoret 1 ...................... <0>
+  [230] extcall 5 ............................... cursor(0)
+  [232] pushint8 40 ............................. <40>
+  [235] pusharglist 1 ........................... <40>
+  [237] extcall 4 ............................... <rollOver(40)>
+  [239] jmpifz [257] ............................ if rollOver(40) then / else
+  [242] pushint8 40 ............................. <40>
+  [245] pusharglist 1 ........................... <40>
+  [247] extcall 6 ............................... <sprite(40)>
+  [249] pushint8 1 .............................. <1>
+  [252] setobjprop 7 ............................ sprite(40).visible = 1
+  [254] jmp [267]
+  [257] pushint8 40 ............................. <40>
+  [260] pusharglist 1 ........................... <40>
+  [262] extcall 6 ............................... <sprite(40)>
+  [264] pushzero ................................ <0>
+  [265] setobjprop 7 ............................ sprite(40).visible = 0
+  [267] pushint8 41 ............................. <41>
+  [270] pusharglist 1 ........................... <41>
+  [272] extcall 4 ............................... <rollOver(41)>
+  [274] jmpifz [292] ............................ if rollOver(41) then / else
+  [277] pushint8 41 ............................. <41>
+  [280] pusharglist 1 ........................... <41>
+  [282] extcall 6 ............................... <sprite(41)>
+  [284] pushint8 1 .............................. <1>
+  [287] setobjprop 7 ............................ sprite(41).visible = 1
+  [289] jmp [302]
+  [292] pushint8 41 ............................. <41>
+  [295] pusharglist 1 ........................... <41>
+  [297] extcall 6 ............................... <sprite(41)>
+  [299] pushzero ................................ <0>
+  [300] setobjprop 7 ............................ sprite(41).visible = 0
+  [302] pusharglistnoret 0 ...................... <>
+  [304] extcall 8 ............................... updateStage()
+  [306] jmp [534]
+  [309] pushint8 44 ............................. <44>
+  [312] pusharglist 1 ........................... <44>
+  [314] extcall 4 ............................... <rollOver(44)>
+  [316] pushint8 45 ............................. <45>
+  [319] pusharglist 1 ........................... <45>
+  [321] extcall 4 ............................... <rollOver(45)>
+  [323] or ...................................... <rollOver(44) or rollOver(45)>
+  [324] pushint8 46 ............................. <46>
+  [327] pusharglist 1 ........................... <46>
+  [329] extcall 4 ............................... <rollOver(46)>
+  [331] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46)>
+  [332] pushint8 47 ............................. <47>
+  [335] pusharglist 1 ........................... <47>
+  [337] extcall 4 ............................... <rollOver(47)>
+  [339] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47)>
+  [340] pushint8 48 ............................. <48>
+  [343] pusharglist 1 ........................... <48>
+  [345] extcall 4 ............................... <rollOver(48)>
+  [347] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48)>
+  [348] pushint8 49 ............................. <49>
+  [351] pusharglist 1 ........................... <49>
+  [353] extcall 4 ............................... <rollOver(49)>
+  [355] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49)>
+  [356] pushint8 50 ............................. <50>
+  [359] pusharglist 1 ........................... <50>
+  [361] extcall 4 ............................... <rollOver(50)>
+  [363] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50)>
+  [364] pushint8 51 ............................. <51>
+  [367] pusharglist 1 ........................... <51>
+  [369] extcall 4 ............................... <rollOver(51)>
+  [371] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51)>
+  [372] pushint8 52 ............................. <52>
+  [375] pusharglist 1 ........................... <52>
+  [377] extcall 4 ............................... <rollOver(52)>
+  [379] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52)>
+  [380] pushint8 53 ............................. <53>
+  [383] pusharglist 1 ........................... <53>
+  [385] extcall 4 ............................... <rollOver(53)>
+  [387] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53)>
+  [388] pushint8 54 ............................. <54>
+  [391] pusharglist 1 ........................... <54>
+  [393] extcall 4 ............................... <rollOver(54)>
+  [395] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54)>
+  [396] pushint8 55 ............................. <55>
+  [399] pusharglist 1 ........................... <55>
+  [401] extcall 4 ............................... <rollOver(55)>
+  [403] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55)>
+  [404] pushint8 56 ............................. <56>
+  [407] pusharglist 1 ........................... <56>
+  [409] extcall 4 ............................... <rollOver(56)>
+  [411] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56)>
+  [412] pushint8 57 ............................. <57>
+  [415] pusharglist 1 ........................... <57>
+  [417] extcall 4 ............................... <rollOver(57)>
+  [419] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57)>
+  [420] pushint8 58 ............................. <58>
+  [423] pusharglist 1 ........................... <58>
+  [425] extcall 4 ............................... <rollOver(58)>
+  [427] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58)>
+  [428] pushint8 59 ............................. <59>
+  [431] pusharglist 1 ........................... <59>
+  [433] extcall 4 ............................... <rollOver(59)>
+  [435] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59)>
+  [436] pushint8 60 ............................. <60>
+  [439] pusharglist 1 ........................... <60>
+  [441] extcall 4 ............................... <rollOver(60)>
+  [443] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60)>
+  [444] pushint8 61 ............................. <61>
+  [447] pusharglist 1 ........................... <61>
+  [449] extcall 4 ............................... <rollOver(61)>
+  [451] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61)>
+  [452] pushint8 62 ............................. <62>
+  [455] pusharglist 1 ........................... <62>
+  [457] extcall 4 ............................... <rollOver(62)>
+  [459] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62)>
+  [460] pushint8 63 ............................. <63>
+  [463] pusharglist 1 ........................... <63>
+  [465] extcall 4 ............................... <rollOver(63)>
+  [467] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63)>
+  [468] pushint8 64 ............................. <64>
+  [471] pusharglist 1 ........................... <64>
+  [473] extcall 4 ............................... <rollOver(64)>
+  [475] or ...................................... <rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63) or rollOver(64)>
+  [476] jmpifz [495] ............................ if rollOver(44) or rollOver(45) or rollOver(46) or rollOver(47) or rollOver(48) or rollOver(49) or rollOver(50) or rollOver(51) or rollOver(52) or rollOver(53) or rollOver(54) or rollOver(55) or rollOver(56) or rollOver(57) or rollOver(58) or rollOver(59) or rollOver(60) or rollOver(61) or rollOver(62) or rollOver(63) or rollOver(64) then / else
+  [479] pushint8 35 ............................. <35>
+  [482] pushint8 38 ............................. <38>
+  [485] pusharglist 2 ........................... <[35, 38]>
+  [487] pushlist ................................ <[35, 38]>
+  [488] pusharglistnoret 1 ...................... <[35, 38]>
+  [490] extcall 5 ............................... cursor([35, 38])
+  [492] jmp [534]
+  [495] pushint8 40 ............................. <40>
+  [498] pusharglist 1 ........................... <40>
+  [500] extcall 4 ............................... <rollOver(40)>
+  [502] pushint8 41 ............................. <41>
+  [505] pusharglist 1 ........................... <41>
+  [507] extcall 4 ............................... <rollOver(41)>
+  [509] or ...................................... <rollOver(40) or rollOver(41)>
+  [510] jmpifz [529] ............................ if rollOver(40) or rollOver(41) then / else
+  [513] pushint8 33 ............................. <33>
+  [516] pushint8 36 ............................. <36>
+  [519] pusharglist 2 ........................... <[33, 36]>
+  [521] pushlist ................................ <[33, 36]>
+  [522] pusharglistnoret 1 ...................... <[33, 36]>
+  [524] extcall 5 ............................... cursor([33, 36])
+  [526] jmp [534]
+  [529] pushzero ................................ <0>
+  [530] pusharglistnoret 1 ...................... <0>
+  [532] extcall 5 ............................... cursor(0)
+  [534] pushint8 12 ............................. <12>
+  [537] getglobal 9 ............................. <aktiv>
+  [539] pushint8 33 ............................. <33>
+  [542] get 6 ................................... <the loc of sprite aktiv>
+  [544] pushint8 33 ............................. <33>
+  [547] set 6 ................................... set the loc of sprite 12 to the loc of sprite aktiv
+  [549] pushint8 70 ............................. <70>
+  [552] getglobal 9 ............................. <aktiv>
+  [554] pushint8 33 ............................. <33>
+  [557] get 6 ................................... <the loc of sprite aktiv>
+  [559] pushint8 33 ............................. <33>
+  [562] set 6 ................................... set the loc of sprite 70 to the loc of sprite aktiv
+  [564] pusharglistnoret 0 ...................... <>
+  [566] extcall 8 ............................... updateStage()
+  [568] ret
+end
+
+on mouseDown
+  [  0] getglobal 10 ............................ <ove>
+  [  2] pushint8 1 .............................. <1>
+  [  5] eq ...................................... <ove = 1>
+  [  6] jmpifz [ 10] ............................ if ove = 1 then
+  [  9] ret ..................................... exit
+  [ 10] pusharglist 0 ........................... <>
+  [ 12] thebuiltin 11 ........................... <the clickOn>
+  [ 14] pushint8 43 ............................. <43>
+  [ 17] gt ...................................... <the clickOn > 43>
+  [ 18] pusharglist 0 ........................... <>
+  [ 20] thebuiltin 11 ........................... <the clickOn>
+  [ 22] pushint8 65 ............................. <65>
+  [ 25] lt ...................................... <the clickOn < 65>
+  [ 26] and ..................................... <(the clickOn > 43) and (the clickOn < 65)>
+  [ 27] jmpifz [620] ............................ if (the clickOn > 43) and (the clickOn < 65) then / else
+  [ 30] pusharglist 0 ........................... <>
+  [ 32] thebuiltin 11 ........................... <the clickOn>
+  [ 34] setglobal 9 ............................. aktiv = the clickOn
+  [ 36] getglobal 9 ............................. <aktiv>
+  [ 38] pushint8 35 ............................. <35>
+  [ 41] get 6 ................................... <the memberNum of sprite aktiv>
+  [ 43] setlocal 0 .............................. aktivCast = the memberNum of sprite aktiv
+  [ 45] getglobal 9 ............................. <aktiv>
+  [ 47] pushint8 1 .............................. <1>
+  [ 50] pusharglistnoret 2 ...................... <aktiv, 1>
+  [ 52] extcall 12 .............................. puppetSprite(aktiv, 1)
+  [ 54] getglobal 9 ............................. <aktiv>
+  [ 56] pusharglist 1 ........................... <aktiv>
+  [ 58] extcall 6 ............................... <sprite(aktiv)>
+  [ 60] pushint8 1 .............................. <1>
+  [ 63] setobjprop 7 ............................ sprite(aktiv).visible = 1
+  [ 65] pushint8 70 ............................. <70>
+  [ 68] getlocal 0 .............................. <aktivCast>
+  [ 70] pushint8 35 ............................. <35>
+  [ 73] set 6 ................................... set the memberNum of sprite 70 to aktivCast
+  [ 75] pushint8 70 ............................. <70>
+  [ 78] getglobal 9 ............................. <aktiv>
+  [ 80] pushint8 33 ............................. <33>
+  [ 83] get 6 ................................... <the loc of sprite aktiv>
+  [ 85] pushint8 33 ............................. <33>
+  [ 88] set 6 ................................... set the loc of sprite 70 to the loc of sprite aktiv
+  [ 90] pushint8 70 ............................. <70>
+  [ 93] pusharglist 1 ........................... <70>
+  [ 95] extcall 6 ............................... <sprite(70)>
+  [ 97] pushint8 1 .............................. <1>
+  [100] setobjprop 7 ............................ sprite(70).visible = 1
+  [102] pusharglistnoret 0 ...................... <>
+  [104] extcall 8 ............................... updateStage()
+  [106] pushint8 12 ............................. <12>
+  [109] pushint8 1 .............................. <1>
+  [112] pusharglistnoret 2 ...................... <12, 1>
+  [114] extcall 12 .............................. puppetSprite(12, 1)
+  [116] getglobal 9 ............................. <aktiv>
+  [118] pushint8 44 ............................. <44>
+  [121] eq ...................................... <aktiv = 44>
+  [122] jmpifz [140] ............................ if aktiv = 44 then / else
+  [125] pushint8 574 ............................ <574>
+  [128] pushint8 258 ............................ <258>
+  [131] pusharglist 2 ........................... <574, 258>
+  [133] extcall 13 .............................. <point(574, 258)>
+  [135] setglobal 14 ............................ plats = point(574, 258)
+  [137] jmp [617]
+  [140] getglobal 9 ............................. <aktiv>
+  [142] pushint8 45 ............................. <45>
+  [145] eq ...................................... <aktiv = 45>
+  [146] jmpifz [164] ............................ if aktiv = 45 then / else
+  [149] pushint8 589 ............................ <589>
+  [152] pushint8 258 ............................ <258>
+  [155] pusharglist 2 ........................... <589, 258>
+  [157] extcall 13 .............................. <point(589, 258)>
+  [159] setglobal 14 ............................ plats = point(589, 258)
+  [161] jmp [617]
+  [164] getglobal 9 ............................. <aktiv>
+  [166] pushint8 46 ............................. <46>
+  [169] eq ...................................... <aktiv = 46>
+  [170] jmpifz [188] ............................ if aktiv = 46 then / else
+  [173] pushint8 603 ............................ <603>
+  [176] pushint8 258 ............................ <258>
+  [179] pusharglist 2 ........................... <603, 258>
+  [181] extcall 13 .............................. <point(603, 258)>
+  [183] setglobal 14 ............................ plats = point(603, 258)
+  [185] jmp [617]
+  [188] getglobal 9 ............................. <aktiv>
+  [190] pushint8 47 ............................. <47>
+  [193] eq ...................................... <aktiv = 47>
+  [194] jmpifz [212] ............................ if aktiv = 47 then / else
+  [197] pushint8 575 ............................ <575>
+  [200] pushint8 269 ............................ <269>
+  [203] pusharglist 2 ........................... <575, 269>
+  [205] extcall 13 .............................. <point(575, 269)>
+  [207] setglobal 14 ............................ plats = point(575, 269)
+  [209] jmp [617]
+  [212] getglobal 9 ............................. <aktiv>
+  [214] pushint8 48 ............................. <48>
+  [217] eq ...................................... <aktiv = 48>
+  [218] jmpifz [236] ............................ if aktiv = 48 then / else
+  [221] pushint8 589 ............................ <589>
+  [224] pushint8 269 ............................ <269>
+  [227] pusharglist 2 ........................... <589, 269>
+  [229] extcall 13 .............................. <point(589, 269)>
+  [231] setglobal 14 ............................ plats = point(589, 269)
+  [233] jmp [617]
+  [236] getglobal 9 ............................. <aktiv>
+  [238] pushint8 49 ............................. <49>
+  [241] eq ...................................... <aktiv = 49>
+  [242] jmpifz [260] ............................ if aktiv = 49 then / else
+  [245] pushint8 603 ............................ <603>
+  [248] pushint8 270 ............................ <270>
+  [251] pusharglist 2 ........................... <603, 270>
+  [253] extcall 13 .............................. <point(603, 270)>
+  [255] setglobal 14 ............................ plats = point(603, 270)
+  [257] jmp [617]
+  [260] getglobal 9 ............................. <aktiv>
+  [262] pushint8 50 ............................. <50>
+  [265] eq ...................................... <aktiv = 50>
+  [266] jmpifz [284] ............................ if aktiv = 50 then / else
+  [269] pushint8 575 ............................ <575>
+  [272] pushint8 281 ............................ <281>
+  [275] pusharglist 2 ........................... <575, 281>
+  [277] extcall 13 .............................. <point(575, 281)>
+  [279] setglobal 14 ............................ plats = point(575, 281)
+  [281] jmp [617]
+  [284] getglobal 9 ............................. <aktiv>
+  [286] pushint8 51 ............................. <51>
+  [289] eq ...................................... <aktiv = 51>
+  [290] jmpifz [308] ............................ if aktiv = 51 then / else
+  [293] pushint8 590 ............................ <590>
+  [296] pushint8 281 ............................ <281>
+  [299] pusharglist 2 ........................... <590, 281>
+  [301] extcall 13 .............................. <point(590, 281)>
+  [303] setglobal 14 ............................ plats = point(590, 281)
+  [305] jmp [617]
+  [308] getglobal 9 ............................. <aktiv>
+  [310] pushint8 52 ............................. <52>
+  [313] eq ...................................... <aktiv = 52>
+  [314] jmpifz [332] ............................ if aktiv = 52 then / else
+  [317] pushint8 603 ............................ <603>
+  [320] pushint8 282 ............................ <282>
+  [323] pusharglist 2 ........................... <603, 282>
+  [325] extcall 13 .............................. <point(603, 282)>
+  [327] setglobal 14 ............................ plats = point(603, 282)
+  [329] jmp [617]
+  [332] getglobal 9 ............................. <aktiv>
+  [334] pushint8 53 ............................. <53>
+  [337] eq ...................................... <aktiv = 53>
+  [338] jmpifz [356] ............................ if aktiv = 53 then / else
+  [341] pushint8 576 ............................ <576>
+  [344] pushint8 292 ............................ <292>
+  [347] pusharglist 2 ........................... <576, 292>
+  [349] extcall 13 .............................. <point(576, 292)>
+  [351] setglobal 14 ............................ plats = point(576, 292)
+  [353] jmp [617]
+  [356] getglobal 9 ............................. <aktiv>
+  [358] pushint8 54 ............................. <54>
+  [361] eq ...................................... <aktiv = 54>
+  [362] jmpifz [380] ............................ if aktiv = 54 then / else
+  [365] pushint8 589 ............................ <589>
+  [368] pushint8 293 ............................ <293>
+  [371] pusharglist 2 ........................... <589, 293>
+  [373] extcall 13 .............................. <point(589, 293)>
+  [375] setglobal 14 ............................ plats = point(589, 293)
+  [377] jmp [617]
+  [380] getglobal 9 ............................. <aktiv>
+  [382] pushint8 55 ............................. <55>
+  [385] eq ...................................... <aktiv = 55>
+  [386] jmpifz [404] ............................ if aktiv = 55 then / else
+  [389] pushint8 603 ............................ <603>
+  [392] pushint8 294 ............................ <294>
+  [395] pusharglist 2 ........................... <603, 294>
+  [397] extcall 13 .............................. <point(603, 294)>
+  [399] setglobal 14 ............................ plats = point(603, 294)
+  [401] jmp [617]
+  [404] getglobal 9 ............................. <aktiv>
+  [406] pushint8 56 ............................. <56>
+  [409] eq ...................................... <aktiv = 56>
+  [410] jmpifz [428] ............................ if aktiv = 56 then / else
+  [413] pushint8 536 ............................ <536>
+  [416] pushint8 388 ............................ <388>
+  [419] pusharglist 2 ........................... <536, 388>
+  [421] extcall 13 .............................. <point(536, 388)>
+  [423] setglobal 14 ............................ plats = point(536, 388)
+  [425] jmp [617]
+  [428] getglobal 9 ............................. <aktiv>
+  [430] pushint8 57 ............................. <57>
+  [433] eq ...................................... <aktiv = 57>
+  [434] jmpifz [452] ............................ if aktiv = 57 then / else
+  [437] pushint8 533 ............................ <533>
+  [440] pushint8 385 ............................ <385>
+  [443] pusharglist 2 ........................... <533, 385>
+  [445] extcall 13 .............................. <point(533, 385)>
+  [447] setglobal 14 ............................ plats = point(533, 385)
+  [449] jmp [617]
+  [452] getglobal 9 ............................. <aktiv>
+  [454] pushint8 58 ............................. <58>
+  [457] eq ...................................... <aktiv = 58>
+  [458] jmpifz [476] ............................ if aktiv = 58 then / else
+  [461] pushint8 530 ............................ <530>
+  [464] pushint8 382 ............................ <382>
+  [467] pusharglist 2 ........................... <530, 382>
+  [469] extcall 13 .............................. <point(530, 382)>
+  [471] setglobal 14 ............................ plats = point(530, 382)
+  [473] jmp [617]
+  [476] getglobal 9 ............................. <aktiv>
+  [478] pushint8 59 ............................. <59>
+  [481] eq ...................................... <aktiv = 59>
+  [482] jmpifz [500] ............................ if aktiv = 59 then / else
+  [485] pushint8 590 ............................ <590>
+  [488] pushint8 351 ............................ <351>
+  [491] pusharglist 2 ........................... <590, 351>
+  [493] extcall 13 .............................. <point(590, 351)>
+  [495] setglobal 14 ............................ plats = point(590, 351)
+  [497] jmp [617]
+  [500] getglobal 9 ............................. <aktiv>
+  [502] pushint8 60 ............................. <60>
+  [505] eq ...................................... <aktiv = 60>
+  [506] jmpifz [524] ............................ if aktiv = 60 then / else
+  [509] pushint8 587 ............................ <587>
+  [512] pushint8 348 ............................ <348>
+  [515] pusharglist 2 ........................... <587, 348>
+  [517] extcall 13 .............................. <point(587, 348)>
+  [519] setglobal 14 ............................ plats = point(587, 348)
+  [521] jmp [617]
+  [524] getglobal 9 ............................. <aktiv>
+  [526] pushint8 61 ............................. <61>
+  [529] eq ...................................... <aktiv = 61>
+  [530] jmpifz [548] ............................ if aktiv = 61 then / else
+  [533] pushint8 584 ............................ <584>
+  [536] pushint8 345 ............................ <345>
+  [539] pusharglist 2 ........................... <584, 345>
+  [541] extcall 13 .............................. <point(584, 345)>
+  [543] setglobal 14 ............................ plats = point(584, 345)
+  [545] jmp [617]
+  [548] getglobal 9 ............................. <aktiv>
+  [550] pushint8 62 ............................. <62>
+  [553] eq ...................................... <aktiv = 62>
+  [554] jmpifz [572] ............................ if aktiv = 62 then / else
+  [557] pushint8 597 ............................ <597>
+  [560] pushint8 387 ............................ <387>
+  [563] pusharglist 2 ........................... <597, 387>
+  [565] extcall 13 .............................. <point(597, 387)>
+  [567] setglobal 14 ............................ plats = point(597, 387)
+  [569] jmp [617]
+  [572] getglobal 9 ............................. <aktiv>
+  [574] pushint8 63 ............................. <63>
+  [577] eq ...................................... <aktiv = 63>
+  [578] jmpifz [596] ............................ if aktiv = 63 then / else
+  [581] pushint8 594 ............................ <594>
+  [584] pushint8 384 ............................ <384>
+  [587] pusharglist 2 ........................... <594, 384>
+  [589] extcall 13 .............................. <point(594, 384)>
+  [591] setglobal 14 ............................ plats = point(594, 384)
+  [593] jmp [617]
+  [596] getglobal 9 ............................. <aktiv>
+  [598] pushint8 64 ............................. <64>
+  [601] eq ...................................... <aktiv = 64>
+  [602] jmpifz [617] ............................ if aktiv = 64 then
+  [605] pushint8 591 ............................ <591>
+  [608] pushint8 381 ............................ <381>
+  [611] pusharglist 2 ........................... <591, 381>
+  [613] extcall 13 .............................. <point(591, 381)>
+  [615] setglobal 14 ............................ plats = point(591, 381)
+  [617] jmp [859]
+  [620] pushint8 40 ............................. <40>
+  [623] pusharglist 1 ........................... <40>
+  [625] extcall 4 ............................... <rollOver(40)>
+  [627] jmpifz [759] ............................ if rollOver(40) then / else
+  [630] pusharglist 0 ........................... <>
+  [632] thebuiltin 1 ............................ <the mouseDown>
+  [634] jmpifz [697] ............................ repeat while the mouseDown
+  [637] pushint8 40 ............................. <40>
+  [640] pusharglist 1 ........................... <40>
+  [642] extcall 4 ............................... <rollOver(40)>
+  [644] jmpifz [675] ............................ if rollOver(40) then / else
+  [647] pushint8 40 ............................. <40>
+  [650] pusharglist 1 ........................... <40>
+  [652] extcall 6 ............................... <sprite(40)>
+  [654] pushint8 1 .............................. <1>
+  [657] setobjprop 7 ............................ sprite(40).visible = 1
+  [659] pushint8 33 ............................. <33>
+  [662] pushint8 36 ............................. <36>
+  [665] pusharglist 2 ........................... <[33, 36]>
+  [667] pushlist ................................ <[33, 36]>
+  [668] pusharglistnoret 1 ...................... <[33, 36]>
+  [670] extcall 5 ............................... cursor([33, 36])
+  [672] jmp [690]
+  [675] pushint8 40 ............................. <40>
+  [678] pusharglist 1 ........................... <40>
+  [680] extcall 6 ............................... <sprite(40)>
+  [682] pushzero ................................ <0>
+  [683] setobjprop 7 ............................ sprite(40).visible = 0
+  [685] pushzero ................................ <0>
+  [686] pusharglistnoret 1 ...................... <0>
+  [688] extcall 5 ............................... cursor(0)
+  [690] pusharglistnoret 0 ...................... <>
+  [692] extcall 8 ............................... updateStage()
+  [694] endrepeat [630]
+  [697] pushint8 40 ............................. <40>
+  [700] pusharglist 1 ........................... <40>
+  [702] extcall 4 ............................... <rollOver(40)>
+  [704] jmpifz [756] ............................ if rollOver(40) then
+  [707] pushzero ................................ <0>
+  [708] setglobal 9 ............................. aktiv = 0
+  [710] pushint8 21 ............................. <21>
+  [713] setlocal 8
+  [715] getlocal 8
+  [717] pushint8 64 ............................. <64>
+  [720] lteq
+  [721] jmpifz [743] ............................ repeat with k = 21 to 64
+  [724] getlocal 8 .............................. <k>
+  [726] pushint8 1 .............................. <1>
+  [729] pusharglistnoret 2 ...................... <k, 1>
+  [731] extcall 12 .............................. puppetSprite(k, 1)
+  [733] pushint8 1
+  [736] getlocal 8
+  [738] add
+  [739] setlocal 8
+  [741] endrepeat [715]
+  [743] pushint8 10 ............................. <10>
+  [746] pusharglistnoret 1 ...................... <10>
+  [748] extcall 15 .............................. puppetTransition(10)
+  [750] pushcons 0 .............................. <"vidare">
+  [752] pusharglistnoret 1 ...................... <"vidare">
+  [754] extcall 16 .............................. go("vidare")
+  [756] jmp [859]
+  [759] pushint8 41 ............................. <41>
+  [762] pusharglist 1 ........................... <41>
+  [764] extcall 4 ............................... <rollOver(41)>
+  [766] jmpifz [856] ............................ if rollOver(41) then / else
+  [769] pusharglist 0 ........................... <>
+  [771] thebuiltin 1 ............................ <the mouseDown>
+  [773] jmpifz [836] ............................ repeat while the mouseDown
+  [776] pushint8 41 ............................. <41>
+  [779] pusharglist 1 ........................... <41>
+  [781] extcall 4 ............................... <rollOver(41)>
+  [783] jmpifz [814] ............................ if rollOver(41) then / else
+  [786] pushint8 41 ............................. <41>
+  [789] pusharglist 1 ........................... <41>
+  [791] extcall 6 ............................... <sprite(41)>
+  [793] pushint8 1 .............................. <1>
+  [796] setobjprop 7 ............................ sprite(41).visible = 1
+  [798] pushint8 33 ............................. <33>
+  [801] pushint8 36 ............................. <36>
+  [804] pusharglist 2 ........................... <[33, 36]>
+  [806] pushlist ................................ <[33, 36]>
+  [807] pusharglistnoret 1 ...................... <[33, 36]>
+  [809] extcall 5 ............................... cursor([33, 36])
+  [811] jmp [829]
+  [814] pushint8 41 ............................. <41>
+  [817] pusharglist 1 ........................... <41>
+  [819] extcall 6 ............................... <sprite(41)>
+  [821] pushzero ................................ <0>
+  [822] setobjprop 7 ............................ sprite(41).visible = 0
+  [824] pushzero ................................ <0>
+  [825] pusharglistnoret 1 ...................... <0>
+  [827] extcall 5 ............................... cursor(0)
+  [829] pusharglistnoret 0 ...................... <>
+  [831] extcall 8 ............................... updateStage()
+  [833] endrepeat [769]
+  [836] pushzero ................................ <0>
+  [837] setglobal 9 ............................. aktiv = 0
+  [839] pushint8 41 ............................. <41>
+  [842] pusharglist 1 ........................... <41>
+  [844] extcall 4 ............................... <rollOver(41)>
+  [846] jmpifz [853] ............................ if rollOver(41) then
+  [849] pusharglistnoret 0 ...................... <>
+  [851] extcall 17 .............................. omstart()
+  [853] jmp [859]
+  [856] pushzero ................................ <0>
+  [857] setglobal 9 ............................. aktiv = 0
+  [859] ret
+end
+
+on mouseUp
+  [  0] getglobal 9 ............................. <aktiv>
+  [  2] pushzero ................................ <0>
+  [  3] gt ...................................... <aktiv > 0>
+  [  4] jmpifz [ 18] ............................ if aktiv > 0 then
+  [  7] getglobal 9 ............................. <aktiv>
+  [  9] pusharglist 1 ........................... <aktiv>
+  [ 11] extcall 6 ............................... <sprite(aktiv)>
+  [ 13] pushint8 1 .............................. <1>
+  [ 16] setobjprop 7 ............................ sprite(aktiv).visible = 1
+  [ 18] pushint8 70 ............................. <70>
+  [ 21] pusharglist 1 ........................... <70>
+  [ 23] extcall 6 ............................... <sprite(70)>
+  [ 25] pushzero ................................ <0>
+  [ 26] setobjprop 7 ............................ sprite(70).visible = 0
+  [ 28] pusharglistnoret 0 ...................... <>
+  [ 30] extcall 8 ............................... updateStage()
+  [ 32] pusharglistnoret 0 ...................... <>
+  [ 34] extcall 8 ............................... updateStage()
+  [ 36] getglobal 9 ............................. <aktiv>
+  [ 38] pushzero ................................ <0>
+  [ 39] nteq .................................... <aktiv <> 0>
+  [ 40] jmpifz [946] ............................ if aktiv <> 0 then
+  [ 43] getglobal 9 ............................. <aktiv>
+  [ 45] pushint8 43 ............................. <43>
+  [ 48] gt ...................................... <aktiv > 43>
+  [ 49] getglobal 9 ............................. <aktiv>
+  [ 51] pushint8 56 ............................. <56>
+  [ 54] lt ...................................... <aktiv < 56>
+  [ 55] and ..................................... <(aktiv > 43) and (aktiv < 56)>
+  [ 56] pushint8 12 ............................. <12>
+  [ 59] pushint8 2 .............................. <2>
+  [ 62] ontospr ................................. <sprite 12 intersects 2>
+  [ 63] and ..................................... <(aktiv > 43) and (aktiv < 56) and sprite 12 intersects 2>
+  [ 64] jmpifz [276] ............................ if (aktiv > 43) and (aktiv < 56) and sprite 12 intersects 2 then / else
+  [ 67] pushint8 3 .............................. <3>
+  [ 70] pusharglist 1 ........................... <3>
+  [ 72] extcall 21 .............................. <random(3)>
+  [ 74] pushint8 1 .............................. <1>
+  [ 77] eq ...................................... <random(3) = 1>
+  [ 78] jmpifz [ 95] ............................ if random(3) = 1 then
+  [ 81] pushcons 8 .............................. <"bra">
+  [ 83] pushint8 2 .............................. <2>
+  [ 86] pusharglist 1 ........................... <2>
+  [ 88] extcall 21 .............................. <random(2)>
+  [ 90] joinstr ................................. <"bra" & random(2)>
+  [ 91] pusharglistnoret 1 ...................... <"bra" & random(2)>
+  [ 93] extcall 22 .............................. puppetSound("bra" & random(2))
+  [ 95] getglobal 9 ............................. <aktiv>
+  [ 97] pushint8 44 ............................. <44>
+  [100] eq ...................................... <aktiv = 44>
+  [101] jmpifz [109] ............................ if aktiv = 44 then
+  [104] pushint8 1 .............................. <1>
+  [107] setglobal 30 ............................ fyfyra = 1
+  [109] getglobal 9 ............................. <aktiv>
+  [111] pushint8 45 ............................. <45>
+  [114] eq ...................................... <aktiv = 45>
+  [115] jmpifz [123] ............................ if aktiv = 45 then
+  [118] pushint8 1 .............................. <1>
+  [121] setglobal 31 ............................ fyfem = 1
+  [123] getglobal 9 ............................. <aktiv>
+  [125] pushint8 46 ............................. <46>
+  [128] eq ...................................... <aktiv = 46>
+  [129] jmpifz [138] ............................ if aktiv = 46 then
+  [132] pushint8 1 .............................. <1>
+  [135] setglobal 32 ............................ fysex = 1
+  [138] getglobal 9 ............................. <aktiv>
+  [140] pushint8 47 ............................. <47>
+  [143] eq ...................................... <aktiv = 47>
+  [144] jmpifz [153] ............................ if aktiv = 47 then
+  [147] pushint8 1 .............................. <1>
+  [150] setglobal 33 ............................ fysju = 1
+  [153] getglobal 9 ............................. <aktiv>
+  [155] pushint8 48 ............................. <48>
+  [158] eq ...................................... <aktiv = 48>
+  [159] jmpifz [168] ............................ if aktiv = 48 then
+  [162] pushint8 1 .............................. <1>
+  [165] setglobal 34 ............................ fyatta = 1
+  [168] getglobal 9 ............................. <aktiv>
+  [170] pushint8 49 ............................. <49>
+  [173] eq ...................................... <aktiv = 49>
+  [174] jmpifz [183] ............................ if aktiv = 49 then
+  [177] pushint8 1 .............................. <1>
+  [180] setglobal 35 ............................ fynio = 1
+  [183] getglobal 9 ............................. <aktiv>
+  [185] pushint8 50 ............................. <50>
+  [188] eq ...................................... <aktiv = 50>
+  [189] jmpifz [198] ............................ if aktiv = 50 then
+  [192] pushint8 1 .............................. <1>
+  [195] setglobal 36 ............................ fetio = 1
+  [198] getglobal 9 ............................. <aktiv>
+  [200] pushint8 51 ............................. <51>
+  [203] eq ...................................... <aktiv = 51>
+  [204] jmpifz [213] ............................ if aktiv = 51 then
+  [207] pushint8 1 .............................. <1>
+  [210] setglobal 37 ............................ feett = 1
+  [213] getglobal 9 ............................. <aktiv>
+  [215] pushint8 52 ............................. <52>
+  [218] eq ...................................... <aktiv = 52>
+  [219] jmpifz [228] ............................ if aktiv = 52 then
+  [222] pushint8 1 .............................. <1>
+  [225] setglobal 38 ............................ fetva = 1
+  [228] getglobal 9 ............................. <aktiv>
+  [230] pushint8 53 ............................. <53>
+  [233] eq ...................................... <aktiv = 53>
+  [234] jmpifz [243] ............................ if aktiv = 53 then
+  [237] pushint8 1 .............................. <1>
+  [240] setglobal 39 ............................ fetre = 1
+  [243] getglobal 9 ............................. <aktiv>
+  [245] pushint8 54 ............................. <54>
+  [248] eq ...................................... <aktiv = 54>
+  [249] jmpifz [258] ............................ if aktiv = 54 then
+  [252] pushint8 1 .............................. <1>
+  [255] setglobal 40 ............................ fefyra = 1
+  [258] getglobal 9 ............................. <aktiv>
+  [260] pushint8 55 ............................. <55>
+  [263] eq ...................................... <aktiv = 55>
+  [264] jmpifz [273] ............................ if aktiv = 55 then
+  [267] pushint8 1 .............................. <1>
+  [270] setglobal 41 ............................ fefem = 1
+  [273] jmp [766]
+  [276] getglobal 9 ............................. <aktiv>
+  [278] pushint8 55 ............................. <55>
+  [281] gt ...................................... <aktiv > 55>
+  [282] getglobal 9 ............................. <aktiv>
+  [284] pushint8 65 ............................. <65>
+  [287] lt ...................................... <aktiv < 65>
+  [288] and ..................................... <(aktiv > 55) and (aktiv < 65)>
+  [289] pushint8 12 ............................. <12>
+  [292] pushint8 3 .............................. <3>
+  [295] ontospr ................................. <sprite 12 intersects 3>
+  [296] and ..................................... <(aktiv > 55) and (aktiv < 65) and sprite 12 intersects 3>
+  [297] jmpifz [466] ............................ if (aktiv > 55) and (aktiv < 65) and sprite 12 intersects 3 then / else
+  [300] pushint8 4 .............................. <4>
+  [303] pusharglist 1 ........................... <4>
+  [305] extcall 21 .............................. <random(4)>
+  [307] pushint8 1 .............................. <1>
+  [310] eq ...................................... <random(4) = 1>
+  [311] jmpifz [328] ............................ if random(4) = 1 then
+  [314] pushcons 16 ............................. <"bra">
+  [316] pushint8 2 .............................. <2>
+  [319] pusharglist 1 ........................... <2>
+  [321] extcall 21 .............................. <random(2)>
+  [323] joinstr ................................. <"bra" & random(2)>
+  [324] pusharglistnoret 1 ...................... <"bra" & random(2)>
+  [326] extcall 22 .............................. puppetSound("bra" & random(2))
+  [328] getglobal 9 ............................. <aktiv>
+  [330] pushint8 56 ............................. <56>
+  [333] eq ...................................... <aktiv = 56>
+  [334] jmpifz [343] ............................ if aktiv = 56 then
+  [337] pushint8 1 .............................. <1>
+  [340] setglobal 42 ............................ fesex = 1
+  [343] getglobal 9 ............................. <aktiv>
+  [345] pushint8 57 ............................. <57>
+  [348] eq ...................................... <aktiv = 57>
+  [349] jmpifz [358] ............................ if aktiv = 57 then
+  [352] pushint8 1 .............................. <1>
+  [355] setglobal 43 ............................ fesju = 1
+  [358] getglobal 9 ............................. <aktiv>
+  [360] pushint8 58 ............................. <58>
+  [363] eq ...................................... <aktiv = 58>
+  [364] jmpifz [373] ............................ if aktiv = 58 then
+  [367] pushint8 1 .............................. <1>
+  [370] setglobal 44 ............................ featta = 1
+  [373] getglobal 9 ............................. <aktiv>
+  [375] pushint8 59 ............................. <59>
+  [378] eq ...................................... <aktiv = 59>
+  [379] jmpifz [388] ............................ if aktiv = 59 then
+  [382] pushint8 1 .............................. <1>
+  [385] setglobal 45 ............................ fenio = 1
+  [388] getglobal 9 ............................. <aktiv>
+  [390] pushint8 60 ............................. <60>
+  [393] eq ...................................... <aktiv = 60>
+  [394] jmpifz [403] ............................ if aktiv = 60 then
+  [397] pushint8 1 .............................. <1>
+  [400] setglobal 46 ............................ setio = 1
+  [403] getglobal 9 ............................. <aktiv>
+  [405] pushint8 61 ............................. <61>
+  [408] eq ...................................... <aktiv = 61>
+  [409] jmpifz [418] ............................ if aktiv = 61 then
+  [412] pushint8 1 .............................. <1>
+  [415] setglobal 47 ............................ seett = 1
+  [418] getglobal 9 ............................. <aktiv>
+  [420] pushint8 62 ............................. <62>
+  [423] eq ...................................... <aktiv = 62>
+  [424] jmpifz [433] ............................ if aktiv = 62 then
+  [427] pushint8 1 .............................. <1>
+  [430] setglobal 48 ............................ setva = 1
+  [433] getglobal 9 ............................. <aktiv>
+  [435] pushint8 63 ............................. <63>
+  [438] eq ...................................... <aktiv = 63>
+  [439] jmpifz [448] ............................ if aktiv = 63 then
+  [442] pushint8 1 .............................. <1>
+  [445] setglobal 49 ............................ setre = 1
+  [448] getglobal 9 ............................. <aktiv>
+  [450] pushint8 64 ............................. <64>
+  [453] eq ...................................... <aktiv = 64>
+  [454] jmpifz [463] ............................ if aktiv = 64 then
+  [457] pushint8 1 .............................. <1>
+  [460] setglobal 50 ............................ sefyra = 1
+  [463] jmp [766]
+  [466] pushint8 2 .............................. <2>
+  [469] pusharglist 1 ........................... <2>
+  [471] extcall 21 .............................. <random(2)>
+  [473] pushint8 1 .............................. <1>
+  [476] eq ...................................... <random(2) = 1>
+  [477] jmpifz [486] ............................ if random(2) = 1 then
+  [480] pushcons 24 ............................. <"fel">
+  [482] pusharglistnoret 1 ...................... <"fel">
+  [484] extcall 22 .............................. puppetSound("fel")
+  [486] getglobal 9 ............................. <aktiv>
+  [488] getglobal 14 ............................ <plats>
+  [490] pushint8 33 ............................. <33>
+  [493] set 6 ................................... set the loc of sprite aktiv to plats
+  [495] getglobal 9 ............................. <aktiv>
+  [497] pushint8 44 ............................. <44>
+  [500] eq ...................................... <aktiv = 44>
+  [501] jmpifz [507] ............................ if aktiv = 44 then
+  [504] pushzero ................................ <0>
+  [505] setglobal 30 ............................ fyfyra = 0
+  [507] getglobal 9 ............................. <aktiv>
+  [509] pushint8 45 ............................. <45>
+  [512] eq ...................................... <aktiv = 45>
+  [513] jmpifz [519] ............................ if aktiv = 45 then
+  [516] pushzero ................................ <0>
+  [517] setglobal 31 ............................ fyfem = 0
+  [519] getglobal 9 ............................. <aktiv>
+  [521] pushint8 46 ............................. <46>
+  [524] eq ...................................... <aktiv = 46>
+  [525] jmpifz [532] ............................ if aktiv = 46 then
+  [528] pushzero ................................ <0>
+  [529] setglobal 32 ............................ fysex = 0
+  [532] getglobal 9 ............................. <aktiv>
+  [534] pushint8 47 ............................. <47>
+  [537] eq ...................................... <aktiv = 47>
+  [538] jmpifz [545] ............................ if aktiv = 47 then
+  [541] pushzero ................................ <0>
+  [542] setglobal 33 ............................ fysju = 0
+  [545] getglobal 9 ............................. <aktiv>
+  [547] pushint8 48 ............................. <48>
+  [550] eq ...................................... <aktiv = 48>
+  [551] jmpifz [558] ............................ if aktiv = 48 then
+  [554] pushzero ................................ <0>
+  [555] setglobal 34 ............................ fyatta = 0
+  [558] getglobal 9 ............................. <aktiv>
+  [560] pushint8 49 ............................. <49>
+  [563] eq ...................................... <aktiv = 49>
+  [564] jmpifz [571] ............................ if aktiv = 49 then
+  [567] pushzero ................................ <0>
+  [568] setglobal 35 ............................ fynio = 0
+  [571] getglobal 9 ............................. <aktiv>
+  [573] pushint8 50 ............................. <50>
+  [576] eq ...................................... <aktiv = 50>
+  [577] jmpifz [584] ............................ if aktiv = 50 then
+  [580] pushzero ................................ <0>
+  [581] setglobal 36 ............................ fetio = 0
+  [584] getglobal 9 ............................. <aktiv>
+  [586] pushint8 51 ............................. <51>
+  [589] eq ...................................... <aktiv = 51>
+  [590] jmpifz [597] ............................ if aktiv = 51 then
+  [593] pushzero ................................ <0>
+  [594] setglobal 37 ............................ feett = 0
+  [597] getglobal 9 ............................. <aktiv>
+  [599] pushint8 52 ............................. <52>
+  [602] eq ...................................... <aktiv = 52>
+  [603] jmpifz [610] ............................ if aktiv = 52 then
+  [606] pushzero ................................ <0>
+  [607] setglobal 38 ............................ fetva = 0
+  [610] getglobal 9 ............................. <aktiv>
+  [612] pushint8 53 ............................. <53>
+  [615] eq ...................................... <aktiv = 53>
+  [616] jmpifz [623] ............................ if aktiv = 53 then
+  [619] pushzero ................................ <0>
+  [620] setglobal 39 ............................ fetre = 0
+  [623] getglobal 9 ............................. <aktiv>
+  [625] pushint8 54 ............................. <54>
+  [628] eq ...................................... <aktiv = 54>
+  [629] jmpifz [636] ............................ if aktiv = 54 then
+  [632] pushzero ................................ <0>
+  [633] setglobal 40 ............................ fefyra = 0
+  [636] getglobal 9 ............................. <aktiv>
+  [638] pushint8 55 ............................. <55>
+  [641] eq ...................................... <aktiv = 55>
+  [642] jmpifz [649] ............................ if aktiv = 55 then
+  [645] pushzero ................................ <0>
+  [646] setglobal 41 ............................ fefem = 0
+  [649] getglobal 9 ............................. <aktiv>
+  [651] pushint8 56 ............................. <56>
+  [654] eq ...................................... <aktiv = 56>
+  [655] jmpifz [662] ............................ if aktiv = 56 then
+  [658] pushzero ................................ <0>
+  [659] setglobal 42 ............................ fesex = 0
+  [662] getglobal 9 ............................. <aktiv>
+  [664] pushint8 57 ............................. <57>
+  [667] eq ...................................... <aktiv = 57>
+  [668] jmpifz [675] ............................ if aktiv = 57 then
+  [671] pushzero ................................ <0>
+  [672] setglobal 43 ............................ fesju = 0
+  [675] getglobal 9 ............................. <aktiv>
+  [677] pushint8 58 ............................. <58>
+  [680] eq ...................................... <aktiv = 58>
+  [681] jmpifz [688] ............................ if aktiv = 58 then
+  [684] pushzero ................................ <0>
+  [685] setglobal 44 ............................ featta = 0
+  [688] getglobal 9 ............................. <aktiv>
+  [690] pushint8 59 ............................. <59>
+  [693] eq ...................................... <aktiv = 59>
+  [694] jmpifz [701] ............................ if aktiv = 59 then
+  [697] pushzero ................................ <0>
+  [698] setglobal 45 ............................ fenio = 0
+  [701] getglobal 9 ............................. <aktiv>
+  [703] pushint8 60 ............................. <60>
+  [706] eq ...................................... <aktiv = 60>
+  [707] jmpifz [714] ............................ if aktiv = 60 then
+  [710] pushzero ................................ <0>
+  [711] setglobal 46 ............................ setio = 0
+  [714] getglobal 9 ............................. <aktiv>
+  [716] pushint8 61 ............................. <61>
+  [719] eq ...................................... <aktiv = 61>
+  [720] jmpifz [727] ............................ if aktiv = 61 then
+  [723] pushzero ................................ <0>
+  [724] setglobal 47 ............................ seett = 0
+  [727] getglobal 9 ............................. <aktiv>
+  [729] pushint8 62 ............................. <62>
+  [732] eq ...................................... <aktiv = 62>
+  [733] jmpifz [740] ............................ if aktiv = 62 then
+  [736] pushzero ................................ <0>
+  [737] setglobal 48 ............................ setva = 0
+  [740] getglobal 9 ............................. <aktiv>
+  [742] pushint8 63 ............................. <63>
+  [745] eq ...................................... <aktiv = 63>
+  [746] jmpifz [753] ............................ if aktiv = 63 then
+  [749] pushzero ................................ <0>
+  [750] setglobal 49 ............................ setre = 0
+  [753] getglobal 9 ............................. <aktiv>
+  [755] pushint8 64 ............................. <64>
+  [758] eq ...................................... <aktiv = 64>
+  [759] jmpifz [766] ............................ if aktiv = 64 then
+  [762] pushzero ................................ <0>
+  [763] setglobal 50 ............................ sefyra = 0
+  [766] getglobal 30 ............................ <fyfyra>
+  [768] pushint8 1 .............................. <1>
+  [771] eq ...................................... <fyfyra = 1>
+  [772] getglobal 31 ............................ <fyfem>
+  [774] pushint8 1 .............................. <1>
+  [777] eq ...................................... <fyfem = 1>
+  [778] and ..................................... <(fyfyra = 1) and (fyfem = 1)>
+  [779] getglobal 32 ............................ <fysex>
+  [782] pushint8 1 .............................. <1>
+  [785] eq ...................................... <fysex = 1>
+  [786] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1)>
+  [787] getglobal 33 ............................ <fysju>
+  [790] pushint8 1 .............................. <1>
+  [793] eq ...................................... <fysju = 1>
+  [794] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1)>
+  [795] getglobal 34 ............................ <fyatta>
+  [798] pushint8 1 .............................. <1>
+  [801] eq ...................................... <fyatta = 1>
+  [802] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1)>
+  [803] getglobal 35 ............................ <fynio>
+  [806] pushint8 1 .............................. <1>
+  [809] eq ...................................... <fynio = 1>
+  [810] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1)>
+  [811] getglobal 36 ............................ <fetio>
+  [814] pushint8 1 .............................. <1>
+  [817] eq ...................................... <fetio = 1>
+  [818] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1)>
+  [819] getglobal 37 ............................ <feett>
+  [822] pushint8 1 .............................. <1>
+  [825] eq ...................................... <feett = 1>
+  [826] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1)>
+  [827] getglobal 38 ............................ <fetva>
+  [830] pushint8 1 .............................. <1>
+  [833] eq ...................................... <fetva = 1>
+  [834] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1)>
+  [835] getglobal 39 ............................ <fetre>
+  [838] pushint8 1 .............................. <1>
+  [841] eq ...................................... <fetre = 1>
+  [842] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1)>
+  [843] getglobal 40 ............................ <fefyra>
+  [846] pushint8 1 .............................. <1>
+  [849] eq ...................................... <fefyra = 1>
+  [850] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1)>
+  [851] getglobal 41 ............................ <fefem>
+  [854] pushint8 1 .............................. <1>
+  [857] eq ...................................... <fefem = 1>
+  [858] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1)>
+  [859] getglobal 42 ............................ <fesex>
+  [862] pushint8 1 .............................. <1>
+  [865] eq ...................................... <fesex = 1>
+  [866] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1)>
+  [867] getglobal 43 ............................ <fesju>
+  [870] pushint8 1 .............................. <1>
+  [873] eq ...................................... <fesju = 1>
+  [874] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1)>
+  [875] getglobal 44 ............................ <featta>
+  [878] pushint8 1 .............................. <1>
+  [881] eq ...................................... <featta = 1>
+  [882] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1)>
+  [883] getglobal 45 ............................ <fenio>
+  [886] pushint8 1 .............................. <1>
+  [889] eq ...................................... <fenio = 1>
+  [890] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1)>
+  [891] getglobal 46 ............................ <setio>
+  [894] pushint8 1 .............................. <1>
+  [897] eq ...................................... <setio = 1>
+  [898] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1)>
+  [899] getglobal 47 ............................ <seett>
+  [902] pushint8 1 .............................. <1>
+  [905] eq ...................................... <seett = 1>
+  [906] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1) and (seett = 1)>
+  [907] getglobal 48 ............................ <setva>
+  [910] pushint8 1 .............................. <1>
+  [913] eq ...................................... <setva = 1>
+  [914] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1) and (seett = 1) and (setva = 1)>
+  [915] getglobal 49 ............................ <setre>
+  [918] pushint8 1 .............................. <1>
+  [921] eq ...................................... <setre = 1>
+  [922] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1) and (seett = 1) and (setva = 1) and (setre = 1)>
+  [923] getglobal 50 ............................ <sefyra>
+  [926] pushint8 1 .............................. <1>
+  [929] eq ...................................... <sefyra = 1>
+  [930] and ..................................... <(fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1) and (seett = 1) and (setva = 1) and (setre = 1) and (sefyra = 1)>
+  [931] jmpifz [946] ............................ if (fyfyra = 1) and (fyfem = 1) and (fysex = 1) and (fysju = 1) and (fyatta = 1) and (fynio = 1) and (fetio = 1) and (feett = 1) and (fetva = 1) and (fetre = 1) and (fefyra = 1) and (fefem = 1) and (fesex = 1) and (fesju = 1) and (featta = 1) and (fenio = 1) and (setio = 1) and (seett = 1) and (setva = 1) and (setre = 1) and (sefyra = 1) then
+  [934] pushcons 32 ............................. <"klart2.aif">
+  [936] pusharglistnoret 1 ...................... <"klart2.aif">
+  [938] extcall 22 .............................. puppetSound("klart2.aif")
+  [940] pushcons 40 ............................. <"klar">
+  [942] pusharglistnoret 1 ...................... <"klar">
+  [944] extcall 16 .............................. go("klar")
+  [946] pusharglistnoret 0 ...................... <>
+  [948] extcall 8 ............................... updateStage()
+  [950] ret
+end
+
+on exitFrame
+  [  0] pushzero ................................ <0>
+  [  1] setglobal 10 ............................ ove = 0
+  [  3] pushint8 15 ............................. <15>
+  [  6] pusharglistnoret 1 ...................... <15>
+  [  8] extcall 23 .............................. puppetTempo(15)
+  [ 10] pusharglistnoret 0 ...................... <>
+  [ 12] extcall 8 ............................... updateStage()
+  [ 14] pusharglist 0 ........................... <>
+  [ 16] thebuiltin 24 ........................... <the frame>
+  [ 18] pusharglistnoret 1 ...................... <the frame>
+  [ 20] extcall 16 .............................. go(the frame)
+  [ 22] ret
+end

@@ -1,0 +1,233 @@
+global gameObjectList, UNIObjectList
+
+on clearObject Nr
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. deleteList = []
+  [  5] getparam 0 .............................. <Nr>
+  [  7] pusharglist 1 ........................... <Nr>
+  [  9] extcall 173 ............................. <integerp(Nr)>
+  [ 12] jmpifz [ 22] ............................ if integerp(Nr) then
+  [ 15] getparam 0 .............................. <Nr>
+  [ 17] pusharglist 1 ........................... <[Nr]>
+  [ 19] pushlist ................................ <[Nr]>
+  [ 20] setparam 0 .............................. Nr = [Nr]
+  [ 22] pushint8 1 .............................. <1>
+  [ 25] setlocal 8
+  [ 27] getlocal 8
+  [ 29] getparam 0 .............................. <Nr>
+  [ 31] pusharglist 1 ........................... <Nr>
+  [ 33] extcall 108 ............................. <count(Nr)>
+  [ 36] lteq
+  [ 37] jmpifz [132] ............................ repeat with i = 1 to count(Nr)
+  [ 40] pushint8 1 .............................. <1>
+  [ 43] setlocal 16
+  [ 45] getlocal 16
+  [ 47] getglobal 60 ............................ <UNIObjectList>
+  [ 50] pusharglist 1 ........................... <UNIObjectList>
+  [ 52] extcall 108 ............................. <count(UNIObjectList)>
+  [ 55] lteq
+  [ 56] jmpifz [121] ............................ repeat with j = 1 to count(UNIObjectList)
+  [ 59] getglobal 60 ............................ <UNIObjectList>
+  [ 62] getlocal 16 ............................. <j>
+  [ 64] pusharglist 2 ........................... <UNIObjectList, j>
+  [ 66] objcall 41 .............................. <UNIObjectList[j]>
+  [ 69] setlocal 24 ............................. tUNIobj = UNIObjectList[j]
+  [ 71] getlocal 24 ............................. <tUNIobj>
+  [ 73] getobjprop 109 .......................... <tUNIobj.UNIobjectNr>
+  [ 76] getparam 0 .............................. <Nr>
+  [ 78] getlocal 8 .............................. <i>
+  [ 80] pusharglist 2 ........................... <Nr, i>
+  [ 82] objcall 41 .............................. <Nr[i]>
+  [ 85] eq ...................................... <tUNIobj.UNIobjectNr = Nr[i]>
+  [ 86] jmpifz [110] ............................ if tUNIobj.UNIobjectNr = Nr[i] then
+  [ 89] getlocal 0 .............................. <deleteList>
+  [ 91] getparam 0 .............................. <Nr>
+  [ 93] getlocal 8 .............................. <i>
+  [ 95] pusharglist 2 ........................... <Nr, i>
+  [ 97] objcall 41 .............................. <Nr[i]>
+  [100] getlocal 16 ............................. <j>
+  [102] pusharglist 2 ........................... <[Nr[i], j]>
+  [104] pushlist ................................ <[Nr[i], j]>
+  [105] pusharglistnoret 2 ...................... <deleteList, [Nr[i], j]>
+  [107] extcall 144 ............................. add(deleteList, [Nr[i], j])
+  [110] pushint8 1
+  [113] getlocal 16
+  [115] add
+  [116] setlocal 16
+  [118] endrepeat [ 45]
+  [121] pushint8 1
+  [124] getlocal 8
+  [126] add
+  [127] setlocal 8
+  [129] endrepeat [ 27]
+  [132] getlocal 0 .............................. <deleteList>
+  [134] pusharglist 1 ........................... <deleteList>
+  [136] extcall 108 ............................. <count(deleteList)>
+  [139] setlocal 32 ............................. theSize = count(deleteList)
+  [141] getlocal 32 ............................. <theSize>
+  [143] jmpifz [264] ............................ if theSize then
+  [146] getlocal 0 .............................. <deleteList>
+  [148] pusharglistnoret 1 ...................... <deleteList>
+  [150] extcall 174 ............................. sort(deleteList)
+  [153] getlocal 32 ............................. <theSize>
+  [155] setlocal 40
+  [157] getlocal 40
+  [159] pushint8 1 .............................. <1>
+  [162] gteq
+  [163] jmpifz [264] ............................ repeat with k = theSize down to 1
+  [166] getglobal 40 ............................ <gameObjectList>
+  [169] getlocal 0 .............................. <deleteList>
+  [171] getlocal 40 ............................. <k>
+  [173] pusharglist 2 ........................... <deleteList, k>
+  [175] objcall 41 .............................. <deleteList[k]>
+  [178] pushint8 1 .............................. <1>
+  [181] pusharglist 2 ........................... <deleteList[k], 1>
+  [183] objcall 41 .............................. <deleteList[k][1]>
+  [186] pusharglist 2 ........................... <gameObjectList, deleteList[k][1]>
+  [188] objcall 41 .............................. <gameObjectList[deleteList[k][1]]>
+  [191] setlocal 48 ............................. tObj = gameObjectList[deleteList[k][1]]
+  [193] getglobal 60 ............................ <UNIObjectList>
+  [196] getlocal 0 .............................. <deleteList>
+  [198] getlocal 40 ............................. <k>
+  [200] pusharglist 2 ........................... <deleteList, k>
+  [202] objcall 41 .............................. <deleteList[k]>
+  [205] pushint8 2 .............................. <2>
+  [208] pusharglist 2 ........................... <deleteList[k], 2>
+  [210] objcall 41 .............................. <deleteList[k][2]>
+  [213] pusharglistnoret 2 ...................... <UNIObjectList, deleteList[k][2]>
+  [215] extcall 110 ............................. deleteAt(UNIObjectList, deleteList[k][2])
+  [218] getlocal 48 ............................. <tObj>
+  [220] pushzero ................................ <0>
+  [221] setobjprop 175 .......................... tObj.Active = 0
+  [224] getlocal 48 ............................. <tObj>
+  [226] pushzero ................................ <0>
+  [227] setobjprop 176 .......................... tObj.activeAction = 0
+  [230] getlocal 48 ............................. <tObj>
+  [232] getobjprop 103 .......................... <tObj.SpriteNr>
+  [235] pushint8 1000 ........................... <1000>
+  [238] inv ..................................... <-1000>
+  [239] pushint8 1000 ........................... <1000>
+  [242] inv ..................................... <-1000>
+  [243] pusharglist 2 ........................... <-1000, -1000>
+  [245] extcall 65 .............................. <point(-1000, -1000)>
+  [248] pushint8 33 ............................. <33>
+  [251] set 6 ................................... set the loc of sprite the SpriteNr of tObj to point(-1000, -1000)
+  [253] pushint8 -1
+  [256] getlocal 40
+  [258] add
+  [259] setlocal 40
+  [261] endrepeat [157]
+  [264] ret
+end
+
+on stopObject Nr
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. deleteList = []
+  [  5] getparam 0 .............................. <Nr>
+  [  7] pusharglist 1 ........................... <Nr>
+  [  9] extcall 173 ............................. <integerp(Nr)>
+  [ 12] jmpifz [ 22] ............................ if integerp(Nr) then
+  [ 15] getparam 0 .............................. <Nr>
+  [ 17] pusharglist 1 ........................... <[Nr]>
+  [ 19] pushlist ................................ <[Nr]>
+  [ 20] setparam 0 .............................. Nr = [Nr]
+  [ 22] pushint8 1 .............................. <1>
+  [ 25] setlocal 8
+  [ 27] getlocal 8
+  [ 29] getparam 0 .............................. <Nr>
+  [ 31] pusharglist 1 ........................... <Nr>
+  [ 33] extcall 108 ............................. <count(Nr)>
+  [ 36] lteq
+  [ 37] jmpifz [132] ............................ repeat with i = 1 to count(Nr)
+  [ 40] pushint8 1 .............................. <1>
+  [ 43] setlocal 16
+  [ 45] getlocal 16
+  [ 47] getglobal 60 ............................ <UNIObjectList>
+  [ 50] pusharglist 1 ........................... <UNIObjectList>
+  [ 52] extcall 108 ............................. <count(UNIObjectList)>
+  [ 55] lteq
+  [ 56] jmpifz [121] ............................ repeat with j = 1 to count(UNIObjectList)
+  [ 59] getglobal 60 ............................ <UNIObjectList>
+  [ 62] getlocal 16 ............................. <j>
+  [ 64] pusharglist 2 ........................... <UNIObjectList, j>
+  [ 66] objcall 41 .............................. <UNIObjectList[j]>
+  [ 69] setlocal 24 ............................. tUNIobj = UNIObjectList[j]
+  [ 71] getlocal 24 ............................. <tUNIobj>
+  [ 73] getobjprop 109 .......................... <tUNIobj.UNIobjectNr>
+  [ 76] getparam 0 .............................. <Nr>
+  [ 78] getlocal 8 .............................. <i>
+  [ 80] pusharglist 2 ........................... <Nr, i>
+  [ 82] objcall 41 .............................. <Nr[i]>
+  [ 85] eq ...................................... <tUNIobj.UNIobjectNr = Nr[i]>
+  [ 86] jmpifz [110] ............................ if tUNIobj.UNIobjectNr = Nr[i] then
+  [ 89] getlocal 0 .............................. <deleteList>
+  [ 91] getparam 0 .............................. <Nr>
+  [ 93] getlocal 8 .............................. <i>
+  [ 95] pusharglist 2 ........................... <Nr, i>
+  [ 97] objcall 41 .............................. <Nr[i]>
+  [100] getlocal 16 ............................. <j>
+  [102] pusharglist 2 ........................... <[Nr[i], j]>
+  [104] pushlist ................................ <[Nr[i], j]>
+  [105] pusharglistnoret 2 ...................... <deleteList, [Nr[i], j]>
+  [107] extcall 144 ............................. add(deleteList, [Nr[i], j])
+  [110] pushint8 1
+  [113] getlocal 16
+  [115] add
+  [116] setlocal 16
+  [118] endrepeat [ 45]
+  [121] pushint8 1
+  [124] getlocal 8
+  [126] add
+  [127] setlocal 8
+  [129] endrepeat [ 27]
+  [132] getlocal 0 .............................. <deleteList>
+  [134] pusharglist 1 ........................... <deleteList>
+  [136] extcall 108 ............................. <count(deleteList)>
+  [139] setlocal 32 ............................. theSize = count(deleteList)
+  [141] getlocal 32 ............................. <theSize>
+  [143] jmpifz [241] ............................ if theSize then
+  [146] getlocal 0 .............................. <deleteList>
+  [148] pusharglistnoret 1 ...................... <deleteList>
+  [150] extcall 174 ............................. sort(deleteList)
+  [153] getlocal 32 ............................. <theSize>
+  [155] setlocal 40
+  [157] getlocal 40
+  [159] pushint8 1 .............................. <1>
+  [162] gteq
+  [163] jmpifz [241] ............................ repeat with k = theSize down to 1
+  [166] getglobal 40 ............................ <gameObjectList>
+  [169] getlocal 0 .............................. <deleteList>
+  [171] getlocal 40 ............................. <k>
+  [173] pusharglist 2 ........................... <deleteList, k>
+  [175] objcall 41 .............................. <deleteList[k]>
+  [178] pushint8 1 .............................. <1>
+  [181] pusharglist 2 ........................... <deleteList[k], 1>
+  [183] objcall 41 .............................. <deleteList[k][1]>
+  [186] pusharglist 2 ........................... <gameObjectList, deleteList[k][1]>
+  [188] objcall 41 .............................. <gameObjectList[deleteList[k][1]]>
+  [191] setlocal 48 ............................. tObj = gameObjectList[deleteList[k][1]]
+  [193] getglobal 60 ............................ <UNIObjectList>
+  [196] getlocal 0 .............................. <deleteList>
+  [198] getlocal 40 ............................. <k>
+  [200] pusharglist 2 ........................... <deleteList, k>
+  [202] objcall 41 .............................. <deleteList[k]>
+  [205] pushint8 2 .............................. <2>
+  [208] pusharglist 2 ........................... <deleteList[k], 2>
+  [210] objcall 41 .............................. <deleteList[k][2]>
+  [213] pusharglistnoret 2 ...................... <UNIObjectList, deleteList[k][2]>
+  [215] extcall 110 ............................. deleteAt(UNIObjectList, deleteList[k][2])
+  [218] getlocal 48 ............................. <tObj>
+  [220] pushzero ................................ <0>
+  [221] setobjprop 175 .......................... tObj.Active = 0
+  [224] getlocal 48 ............................. <tObj>
+  [226] pushzero ................................ <0>
+  [227] setobjprop 176 .......................... tObj.activeAction = 0
+  [230] pushint8 -1
+  [233] getlocal 40
+  [235] add
+  [236] setlocal 40
+  [238] endrepeat [157]
+  [241] ret
+end

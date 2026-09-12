@@ -1,0 +1,130 @@
+property ObjectNr, SpriteNr, PixelPerSteg, BytBildVidSteg, AnimVinklar, aktivAction, Animation_bilder, FrameTime, CastName, CastIntervall, StartcastNr, SlutcastNr, picsPerAngle, standSequens, soundSequens, aktiv, Talande, AktAvsnitt, AktReplikNr, Node, PathList, posX, posY, AktBild, DraOK, onScreen, DragBild, m
+
+on new me
+  [  0] pushzero ................................ <0>
+  [  1] setprop 105 ............................. ObjectNr = 0
+  [  4] pushzero ................................ <0>
+  [  5] setprop 75 .............................. SpriteNr = 0
+  [  8] pushzero ................................ <0>
+  [  9] setprop 106 ............................. PixelPerSteg = 0
+  [ 12] pushzero ................................ <0>
+  [ 13] setprop 107 ............................. BytBildVidSteg = 0
+  [ 16] pushzero ................................ <0>
+  [ 17] setprop 108 ............................. AnimVinklar = 0
+  [ 20] pushzero ................................ <0>
+  [ 21] setprop 16 .............................. aktivAction = 0
+  [ 23] pusharglist 0 ........................... <[]>
+  [ 25] pushlist ................................ <[]>
+  [ 26] setprop 9 ............................... Animation_bilder = []
+  [ 28] pusharglist 0 ........................... <[]>
+  [ 30] pushlist ................................ <[]>
+  [ 31] setprop 10 .............................. FrameTime = []
+  [ 33] pushzero ................................ <0>
+  [ 34] setprop 109 ............................. CastName = 0
+  [ 37] pusharglist 0 ........................... <[]>
+  [ 39] pushlist ................................ <[]>
+  [ 40] setprop 13 .............................. CastIntervall = []
+  [ 42] pusharglist 0 ........................... <[]>
+  [ 44] pushlist ................................ <[]>
+  [ 45] setprop 11 .............................. StartcastNr = []
+  [ 47] pusharglist 0 ........................... <[]>
+  [ 49] pushlist ................................ <[]>
+  [ 50] setprop 12 .............................. SlutcastNr = []
+  [ 52] pusharglist 0 ........................... <[]>
+  [ 54] pushlist ................................ <[]>
+  [ 55] setprop 14 .............................. picsPerAngle = []
+  [ 57] pusharglist 0 ........................... <[]>
+  [ 59] pushlist ................................ <[]>
+  [ 60] setprop 15 .............................. standSequens = []
+  [ 62] pusharglist 0 ........................... <[]>
+  [ 64] pushlist ................................ <[]>
+  [ 65] setprop 175 ............................. soundSequens = []
+  [ 68] pushzero ................................ <0>
+  [ 69] setprop 110 ............................. aktiv = 0
+  [ 72] pushzero ................................ <0>
+  [ 73] setprop 17 .............................. Talande = 0
+  [ 75] pushzero ................................ <0>
+  [ 76] setprop 111 ............................. AktAvsnitt = 0
+  [ 79] pushzero ................................ <0>
+  [ 80] setprop 112 ............................. AktReplikNr = 0
+  [ 83] pushzero ................................ <0>
+  [ 84] setprop 113 ............................. Node = 0
+  [ 87] pushzero ................................ <0>
+  [ 88] setprop 114 ............................. PathList = 0
+  [ 91] pushzero ................................ <0>
+  [ 92] setprop 115 ............................. posX = 0
+  [ 95] pushzero ................................ <0>
+  [ 96] setprop 116 ............................. posY = 0
+  [ 99] pushzero ................................ <0>
+  [100] setprop 117 ............................. AktBild = 0
+  [103] pushzero ................................ <0>
+  [104] setprop 118 ............................. DraOK = 0
+  [107] pushzero ................................ <0>
+  [108] setprop 119 ............................. onScreen = 0
+  [111] pushzero ................................ <0>
+  [112] setprop 120 ............................. DragBild = 0
+  [115] pushint8 4 .............................. <4>
+  [118] setprop 121 ............................. m = 4
+  [121] getparam 0 .............................. <me>
+  [123] pusharglistnoret 1 ...................... <me>
+  [125] extcall 60 .............................. return me
+  [128] ret
+end
+
+on initSveaObject me, obNr, sprNr, pixels, bytBild, vinklar
+  [  0] getparam 8 .............................. <obNr>
+  [  2] setprop 105 ............................. ObjectNr = obNr
+  [  5] getparam 16 ............................. <sprNr>
+  [  7] setprop 75 .............................. SpriteNr = sprNr
+  [ 10] getparam 24 ............................. <pixels>
+  [ 12] setprop 106 ............................. PixelPerSteg = pixels
+  [ 15] getparam 32 ............................. <bytBild>
+  [ 17] setprop 107 ............................. BytBildVidSteg = bytBild
+  [ 20] getparam 40 ............................. <vinklar>
+  [ 22] setprop 108 ............................. AnimVinklar = vinklar
+  [ 25] ret
+end
+
+on initSveaObjectPosition me, X, Y, Bild, cast
+  [  0] getparam 16 ............................. <Y>
+  [  2] setprop 116 ............................. posY = Y
+  [  5] getparam 8 .............................. <X>
+  [  7] setprop 115 ............................. posX = X
+  [ 10] getparam 24 ............................. <Bild>
+  [ 12] setprop 117 ............................. AktBild = Bild
+  [ 15] getparam 32 ............................. <cast>
+  [ 17] setprop 109 ............................. CastName = cast
+  [ 20] ret
+end
+
+on initSveaObjectAnimation me, intervall, start, stop, pixPerANgle, animationPix, times
+  [  0] getparam 8 .............................. <intervall>
+  [  2] setprop 13 .............................. CastIntervall = intervall
+  [  4] getparam 16 ............................. <start>
+  [  6] setprop 11 .............................. StartcastNr = start
+  [  8] getparam 24 ............................. <stop>
+  [ 10] setprop 12 .............................. SlutcastNr = stop
+  [ 12] getparam 32 ............................. <pixPerANgle>
+  [ 14] setprop 14 .............................. picsPerAngle = pixPerANgle
+  [ 16] getparam 40 ............................. <animationPix>
+  [ 18] setprop 9 ............................... Animation_bilder = animationPix
+  [ 20] getparam 48 ............................. <times>
+  [ 22] setprop 10 .............................. FrameTime = times
+  [ 24] ret
+end
+
+on initSveaObjectFlags me, drag, Onscrn, dragPic
+  [  0] getparam 8 .............................. <drag>
+  [  2] setprop 118 ............................. DraOK = drag
+  [  5] getparam 16 ............................. <Onscrn>
+  [  7] setprop 119 ............................. onScreen = Onscrn
+  [ 10] getparam 24 ............................. <dragPic>
+  [ 12] setprop 120 ............................. DragBild = dragPic
+  [ 15] ret
+end
+
+on initSveaObjectNode me, theNode
+  [  0] getparam 8 .............................. <theNode>
+  [  2] setprop 113 ............................. Node = theNode
+  [  5] ret
+end

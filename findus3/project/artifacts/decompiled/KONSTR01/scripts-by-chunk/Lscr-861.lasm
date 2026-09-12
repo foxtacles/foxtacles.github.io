@@ -1,0 +1,7 @@
+on mouseDown
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 51 ........................... <the clickOn>
+  [  4] pusharglistnoret 1 ...................... <the clickOn>
+  [  6] extcall 1 ............................... mus(the clickOn)
+  [  8] ret
+end

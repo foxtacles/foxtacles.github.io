@@ -1,0 +1,107 @@
+on UNImoveInParabol totalSteps, curve, startX, startY, stopX, stopY
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. returnList = []
+  [  5] pushcons 0 .............................. <10.0>
+  [  7] setlocal 8 .............................. gravity = 10.0
+  [  9] pushcons 8 .............................. <10.0>
+  [ 11] getparam 8 .............................. <curve>
+  [ 13] pusharglist 1 ........................... <curve>
+  [ 15] extcall 50 .............................. <float(curve)>
+  [ 18] mul ..................................... <10.0 * float(curve)>
+  [ 19] setlocal 16 ............................. totalStepsTime = 10.0 * float(curve)
+  [ 21] getparam 32 ............................. <stopX>
+  [ 23] getparam 16 ............................. <startX>
+  [ 25] sub ..................................... <stopX - startX>
+  [ 26] setlocal 24 ............................. dx = stopX - startX
+  [ 28] getparam 40 ............................. <stopY>
+  [ 30] getparam 24 ............................. <startY>
+  [ 32] sub ..................................... <stopY - startY>
+  [ 33] setlocal 32 ............................. dy = stopY - startY
+  [ 35] getlocal 24 ............................. <dx>
+  [ 37] getlocal 16 ............................. <totalStepsTime>
+  [ 39] div ..................................... <dx / totalStepsTime>
+  [ 40] pusharglist 1 ........................... <dx / totalStepsTime>
+  [ 42] extcall 50 .............................. <float(dx / totalStepsTime)>
+  [ 45] setlocal 40 ............................. velXstart = float(dx / totalStepsTime)
+  [ 47] getlocal 32 ............................. <dy>
+  [ 49] pushcons 16 ............................. <0.5>
+  [ 51] getlocal 8 .............................. <gravity>
+  [ 53] mul ..................................... <0.5 * gravity>
+  [ 54] getlocal 16 ............................. <totalStepsTime>
+  [ 56] mul ..................................... <0.5 * gravity * totalStepsTime>
+  [ 57] getlocal 16 ............................. <totalStepsTime>
+  [ 59] mul ..................................... <0.5 * gravity * totalStepsTime * totalStepsTime>
+  [ 60] sub ..................................... <dy - (0.5 * gravity * totalStepsTime * totalStepsTime)>
+  [ 61] pusharglist 1 ........................... <dy - (0.5 * gravity * totalStepsTime * totalStepsTime)>
+  [ 63] extcall 50 .............................. <float(dy - (0.5 * gravity * totalStepsTime * totalStepsTime))>
+  [ 66] getlocal 16 ............................. <totalStepsTime>
+  [ 68] pusharglist 1 ........................... <totalStepsTime>
+  [ 70] extcall 50 .............................. <float(totalStepsTime)>
+  [ 73] div ..................................... <float(dy - (0.5 * gravity * totalStepsTime * totalStepsTime)) / float(totalStepsTime)>
+  [ 74] setlocal 48 ............................. velYstart = float(dy - (0.5 * gravity * totalStepsTime * totalStepsTime)) / float(totalStepsTime)
+  [ 76] pushint8 1 .............................. <1>
+  [ 79] setlocal 56
+  [ 81] getlocal 56
+  [ 83] getparam 0 .............................. <totalSteps>
+  [ 85] lteq
+  [ 86] jmpifz [194] ............................ repeat with thisStep = 1 to totalSteps
+  [ 89] getlocal 56 ............................. <thisStep>
+  [ 91] pusharglist 1 ........................... <thisStep>
+  [ 93] extcall 50 .............................. <float(thisStep)>
+  [ 96] getparam 0 .............................. <totalSteps>
+  [ 98] pusharglist 1 ........................... <totalSteps>
+  [100] extcall 50 .............................. <float(totalSteps)>
+  [103] div ..................................... <float(thisStep) / float(totalSteps)>
+  [104] getlocal 16 ............................. <totalStepsTime>
+  [106] mul ..................................... <float(thisStep) / float(totalSteps) * totalStepsTime>
+  [107] setlocal 64 ............................. thisStepTime = float(thisStep) / float(totalSteps) * totalStepsTime
+  [109] getlocal 40 ............................. <velXstart>
+  [111] getlocal 64 ............................. <thisStepTime>
+  [113] mul ..................................... <velXstart * thisStepTime>
+  [114] getparam 16 ............................. <startX>
+  [116] add ..................................... <(velXstart * thisStepTime) + startX>
+  [117] pusharglist 1 ........................... <(velXstart * thisStepTime) + startX>
+  [119] extcall 51 .............................. <integer((velXstart * thisStepTime) + startX)>
+  [122] setlocal 72 ............................. newX = integer((velXstart * thisStepTime) + startX)
+  [124] pushcons 24 ............................. <0.5>
+  [126] getlocal 8 .............................. <gravity>
+  [128] mul ..................................... <0.5 * gravity>
+  [129] getlocal 64 ............................. <thisStepTime>
+  [131] mul ..................................... <0.5 * gravity * thisStepTime>
+  [132] getlocal 64 ............................. <thisStepTime>
+  [134] mul ..................................... <0.5 * gravity * thisStepTime * thisStepTime>
+  [135] getlocal 48 ............................. <velYstart>
+  [137] getlocal 64 ............................. <thisStepTime>
+  [139] mul ..................................... <velYstart * thisStepTime>
+  [140] add ..................................... <(0.5 * gravity * thisStepTime * thisStepTime) + (velYstart * thisStepTime)>
+  [141] getparam 24 ............................. <startY>
+  [143] add ..................................... <(0.5 * gravity * thisStepTime * thisStepTime) + (velYstart * thisStepTime) + startY>
+  [144] pusharglist 1 ........................... <(0.5 * gravity * thisStepTime * thisStepTime) + (velYstart * thisStepTime) + startY>
+  [146] extcall 51 .............................. <integer((0.5 * gravity * thisStepTime * thisStepTime) + (velYstart * thisStepTime) + startY)>
+  [149] setlocal 80 ............................. newY = integer((0.5 * gravity * thisStepTime * thisStepTime) + (velYstart * thisStepTime) + startY)
+  [151] getlocal 64 ............................. <thisStepTime>
+  [153] getlocal 16 ............................. <totalStepsTime>
+  [155] gteq .................................... <thisStepTime >= totalStepsTime>
+  [156] jmpifz [167] ............................ if thisStepTime >= totalStepsTime then
+  [159] getparam 32 ............................. <stopX>
+  [161] setlocal 72 ............................. newX = stopX
+  [163] getparam 40 ............................. <stopY>
+  [165] setlocal 80 ............................. newY = stopY
+  [167] getlocal 0 .............................. <returnList>
+  [169] getlocal 72 ............................. <newX>
+  [171] getlocal 80 ............................. <newY>
+  [173] pusharglist 2 ........................... <newX, newY>
+  [175] extcall 48 .............................. <point(newX, newY)>
+  [178] pusharglistnoret 2 ...................... <returnList, point(newX, newY)>
+  [180] extcall 44 .............................. add(returnList, point(newX, newY))
+  [183] pushint8 1
+  [186] getlocal 56
+  [188] add
+  [189] setlocal 56
+  [191] endrepeat [ 81]
+  [194] getlocal 0 .............................. <returnList>
+  [196] pusharglistnoret 1 ...................... <returnList>
+  [198] extcall 39 .............................. return returnList
+  [201] ret
+end

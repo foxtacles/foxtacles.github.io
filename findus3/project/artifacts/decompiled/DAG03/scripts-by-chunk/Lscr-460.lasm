@@ -1,0 +1,114 @@
+global click, lastClick, grundlistan, slumplistan, score, lastscore, allaklarade, varde, antalkvar
+
+on Wait hurmycket
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 25 ........................... <the ticks>
+  [  4] setlocal 0 .............................. nu = the ticks
+  [  6] pusharglist 0 ........................... <>
+  [  8] thebuiltin 25 ........................... <the ticks>
+  [ 10] getlocal 0 .............................. <nu>
+  [ 12] sub ..................................... <the ticks - nu>
+  [ 13] getparam 0 .............................. <hurmycket>
+  [ 15] lt ...................................... <(the ticks - nu) < hurmycket>
+  [ 16] jmpifz [ 21] ............................ repeat while (the ticks - nu) < hurmycket
+  [ 19] endrepeat [  6]
+  [ 21] ret
+end
+
+on borjaom
+  [  0] pushint8 44 ............................. <44>
+  [  2] pushint8 1 .............................. <1>
+  [  4] pushint8 25 ............................. <25>
+  [  6] set 6 ................................... set the visible of sprite 44 to 1
+  [  8] pushint8 45 ............................. <45>
+  [ 10] pushint8 1 .............................. <1>
+  [ 12] pushint8 25 ............................. <25>
+  [ 14] set 6 ................................... set the visible of sprite 45 to 1
+  [ 16] pushint8 46 ............................. <46>
+  [ 18] pushint8 1 .............................. <1>
+  [ 20] pushint8 25 ............................. <25>
+  [ 22] set 6 ................................... set the visible of sprite 46 to 1
+  [ 24] pushint8 12 ............................. <12>
+  [ 26] setglobal 37 ............................ antalkvar = 12
+  [ 28] pushint8 45 ............................. <45>
+  [ 30] pushint8 70 ............................. <70>
+  [ 32] getglobal 37 ............................ <antalkvar>
+  [ 34] add ..................................... <70 + antalkvar>
+  [ 35] pushint8 4 .............................. <4>
+  [ 37] set 6 ................................... set the castNum of sprite 45 to 70 + antalkvar
+  [ 39] pushcons 0 .............................. <"DAG03_E_FNISS.AIF">
+  [ 41] pushcons 8 .............................. <"DAG03_E_HIN003E.AIF">
+  [ 43] pushcons 16 ............................. <"DAG03_E_KUCELIKU.AIF">
+  [ 45] pushcons 24 ............................. <"DAG03_E_OLJ002D.AIF">
+  [ 47] pushcons 32 ............................. <"DAG03_E_OLJ002D.AIF">
+  [ 49] pushcons 40 ............................. <"DAG03_E_PRUTT.AIF">
+  [ 51] pushcons 48 ............................. <"DAG03_E_TJUTER.AIF">
+  [ 53] pushcons 56 ............................. <"DAG03_E_URK.AIF">
+  [ 55] pushcons 64 ............................. <"DAG03_E_FNISS.AIF">
+  [ 57] pushcons 72 ............................. <"DAG03_E_PANGPIP.AIF">
+  [ 59] pushcons 80 ............................. <"DAG03_E_KUL005G.AIF">
+  [ 61] pushcons 88 ............................. <"DAG03_E_KUL005G.AIF">
+  [ 63] pushcons 96 ............................. <"DAG03_E_HIN003E.AIF">
+  [ 65] pushcons 104 ............................ <"DAG03_E_HOU-HO.AIF">
+  [ 67] pushcons 112 ............................ <"DAG03_E_HOU-HO.AIF">
+  [ 69] pushcons 120 ............................ <"DAG03_E_KUCELIKU.AIF">
+  [ 71] pushcons 128 ............................ <"DAG03_E_URK.AIF">
+  [ 73] pushcons 136 ............................ <"DAG03_E_TRUMPET2.AIF">
+  [ 75] pushcons 144 ............................ <"DAG03_E_TRUMPET2.AIF">
+  [ 77] pushcons 152 ............................ <"DAG03_E_TJUTER.AIF">
+  [ 79] pushcons 160 ............................ <"DAG03_E_SKRATT.AIF">
+  [ 81] pushcons 168 ............................ <"DAG03_E_SKRATT.AIF">
+  [ 83] pushcons 176 ............................ <"DAG03_E_PRUTT.AIF">
+  [ 85] pushcons 184 ............................ <"DAG03_E_PANGPIP.AIF">
+  [ 87] pusharglist 24 .......................... <["DAG03_E_FNISS.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_URK.AIF", "DAG03_E_FNISS.AIF", "DAG03_E_PANGPIP.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_URK.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_PANGPIP.AIF"]>
+  [ 89] pushlist ................................ <["DAG03_E_FNISS.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_URK.AIF", "DAG03_E_FNISS.AIF", "DAG03_E_PANGPIP.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_URK.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_PANGPIP.AIF"]>
+  [ 90] setglobal 29 ............................ grundlistan = ["DAG03_E_FNISS.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_OLJ002D.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_URK.AIF", "DAG03_E_FNISS.AIF", "DAG03_E_PANGPIP.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_KUL005G.AIF", "DAG03_E_HIN003E.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_HOU-HO.AIF", "DAG03_E_KUCELIKU.AIF", "DAG03_E_URK.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TRUMPET2.AIF", "DAG03_E_TJUTER.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_SKRATT.AIF", "DAG03_E_PRUTT.AIF", "DAG03_E_PANGPIP.AIF"]
+  [ 92] pusharglist 0 ........................... <[]>
+  [ 94] pushlist ................................ <[]>
+  [ 95] setglobal 4 ............................. slumplistan = []
+  [ 97] pushint8 1 .............................. <1>
+  [ 99] setlocal 0
+  [101] getlocal 0
+  [103] pushint8 24 ............................. <24>
+  [105] lteq
+  [106] jmpifz [157] ............................ repeat with i = 1 to 24
+  [109] pushint8 25 ............................. <25>
+  [111] getlocal 0 .............................. <i>
+  [113] sub ..................................... <25 - i>
+  [114] pusharglist 1 ........................... <25 - i>
+  [116] extcall 17 .............................. <random(25 - i)>
+  [118] setlocal 8 .............................. tal = random(25 - i)
+  [120] getglobal 29 ............................ <grundlistan>
+  [122] getlocal 8 .............................. <tal>
+  [124] pusharglist 2 ........................... <grundlistan, tal>
+  [126] extcall 3 ............................... <getAt(grundlistan, tal)>
+  [128] setglobal 30 ............................ varde = getAt(grundlistan, tal)
+  [130] getglobal 4 ............................. <slumplistan>
+  [132] getlocal 0 .............................. <i>
+  [134] getglobal 30 ............................ <varde>
+  [136] pusharglistnoret 3 ...................... <slumplistan, i, varde>
+  [138] extcall 31 .............................. addAt(slumplistan, i, varde)
+  [140] getglobal 29 ............................ <grundlistan>
+  [142] getlocal 8 .............................. <tal>
+  [144] pusharglistnoret 2 ...................... <grundlistan, tal>
+  [146] extcall 32 .............................. deleteAt(grundlistan, tal)
+  [148] pushint8 1
+  [150] getlocal 0
+  [152] add
+  [153] setlocal 0
+  [155] endrepeat [101]
+  [157] getglobal 4 ............................. <slumplistan>
+  [159] pusharglistnoret 1 ...................... <slumplistan>
+  [161] extcall 13 .............................. put slumplistan
+  [163] pushzero ................................ <0>
+  [164] setglobal 7 ............................. click = 0
+  [166] pushzero ................................ <0>
+  [167] setglobal 6 ............................. lastClick = 0
+  [169] pushzero ................................ <0>
+  [170] setglobal 9 ............................. score = 0
+  [172] pushzero ................................ <0>
+  [173] setglobal 8 ............................. lastscore = 0
+  [175] pushint8 1 .............................. <1>
+  [177] setglobal 16 ............................ allaklarade = 1
+  [179] ret
+end

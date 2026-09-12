@@ -1,0 +1,3 @@
+on SpecialCheckForKonstruk3 ObjNum
+  [  0] ret
+end

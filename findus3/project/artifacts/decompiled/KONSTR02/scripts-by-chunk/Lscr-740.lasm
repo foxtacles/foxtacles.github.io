@@ -1,0 +1,15 @@
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 5 ............................... startTimer()
+  [  4] pusharglistnoret 0 ...................... <>
+  [  6] extcall 6 ............................... init()
+  [  8] pusharglistnoret 0 ...................... <>
+  [ 10] extcall 7 ............................... init2()
+  [ 12] pusharglistnoret 0 ...................... <>
+  [ 14] extcall 8 ............................... PlaceraUtObjekt()
+  [ 16] pusharglistnoret 0 ...................... <>
+  [ 18] extcall 9 ............................... updateStage()
+  [ 20] pushzero ................................ <0>
+  [ 21] setglobal 10 ............................ IntroSound = 0
+  [ 23] ret
+end

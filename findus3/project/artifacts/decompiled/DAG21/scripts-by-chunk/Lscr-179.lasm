@@ -1,0 +1,67 @@
+global gTileSprite, gGameSize, gEmptyPos, gGameTime
+
+on mouseUp
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 52 ........................... <the clickOn>
+  [  4] setlocal 0 .............................. sp = the clickOn
+  [  6] getlocal 0 .............................. <sp>
+  [  8] getglobal 9 ............................. <gTileSprite>
+  [ 10] gteq .................................... <sp >= gTileSprite>
+  [ 11] getlocal 0 .............................. <sp>
+  [ 13] getglobal 9 ............................. <gTileSprite>
+  [ 15] getglobal 7 ............................. <gGameSize>
+  [ 17] getglobal 7 ............................. <gGameSize>
+  [ 19] mul ..................................... <gGameSize * gGameSize>
+  [ 20] add ..................................... <gTileSprite + (gGameSize * gGameSize)>
+  [ 21] lt ...................................... <sp < (gTileSprite + (gGameSize * gGameSize))>
+  [ 22] and ..................................... <(sp >= gTileSprite) and (sp < (gTileSprite + (gGameSize * gGameSize)))>
+  [ 23] jmpifz [118] ............................ if (sp >= gTileSprite) and (sp < (gTileSprite + (gGameSize * gGameSize))) then
+  [ 26] getlocal 0 .............................. <sp>
+  [ 28] getglobal 9 ............................. <gTileSprite>
+  [ 30] sub ..................................... <sp - gTileSprite>
+  [ 31] pushint8 1 .............................. <1>
+  [ 33] add ..................................... <sp - gTileSprite + 1>
+  [ 34] setlocal 0 .............................. sp = sp - gTileSprite + 1
+  [ 36] pushcons 0 .............................. <"sp=">
+  [ 38] getlocal 0 .............................. <sp>
+  [ 40] joinstr ................................. <"sp=" & sp>
+  [ 41] pusharglistnoret 1 ...................... <"sp=" & sp>
+  [ 43] extcall 53 .............................. put "sp=" & sp
+  [ 45] getlocal 0 .............................. <sp>
+  [ 47] pusharglist 1 ........................... <sp>
+  [ 49] extcall 2 ............................... <movetile(sp)>
+  [ 51] jmpifz [104] ............................ if movetile(sp) then / else
+  [ 54] pushcons 8 .............................. <"OK!">
+  [ 56] pusharglistnoret 1 ...................... <"OK!">
+  [ 58] extcall 53 .............................. put "OK!"
+  [ 60] pusharglistnoret 0 ...................... <>
+  [ 62] extcall 1 ............................... render_game()
+  [ 64] pusharglist 0 ........................... <>
+  [ 66] extcall 5 ............................... <check_completed()>
+  [ 68] jmpifz [101] ............................ if check_completed() then
+  [ 71] getglobal 47 ............................ <gGameTime>
+  [ 73] pushcons 16 ............................. <" sekunder.">
+  [ 75] joinstr ................................. <gGameTime & " sekunder.">
+  [ 76] pushcons 24 ............................. <"result_field">
+  [ 78] pushzero ................................ <0>
+  [ 79] put 22 .................................. put gGameTime & " sekunder." into field "result_field"
+  [ 81] pushsymb 80 ............................. <#stop>
+  [ 83] pushint8 2 .............................. <2>
+  [ 85] pusharglistnoret 2 ...................... <2>
+  [ 87] extcall 81 .............................. sound stop 2
+  [ 89] pushcons 32 ............................. <"klart.aif">
+  [ 91] pusharglistnoret 1 ...................... <"klart.aif">
+  [ 93] extcall 54 .............................. puppetSound("klart.aif")
+  [ 95] pushcons 40 ............................. <"gamecompleted">
+  [ 97] pusharglistnoret 1 ...................... <"gamecompleted">
+  [ 99] extcall 46 .............................. go("gamecompleted")
+  [101] jmp [118]
+  [104] pushint8 1 .............................. <1>
+  [106] pushint8 33 ............................. <33>
+  [108] pusharglistnoret 2 ...................... <1, 33>
+  [110] extcall 54 .............................. puppetSound(1, 33)
+  [112] pushcons 48 ............................. <"NOPE!">
+  [114] pusharglistnoret 1 ...................... <"NOPE!">
+  [116] extcall 53 .............................. put "NOPE!"
+  [118] ret
+end

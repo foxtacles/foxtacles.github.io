@@ -1,0 +1,49 @@
+on SpinWheel Nr
+  [  0] getglobal 18 ............................ <AktWheelStep>
+  [  2] getparam 0 .............................. <Nr>
+  [  4] getglobal 18 ............................ <AktWheelStep>
+  [  6] getparam 0 .............................. <Nr>
+  [  8] pusharglist 2 ........................... <AktWheelStep, Nr>
+  [ 10] objcall 10 .............................. <AktWheelStep[Nr]>
+  [ 12] pushint8 1 .............................. <1>
+  [ 15] add ..................................... <AktWheelStep[Nr] + 1>
+  [ 16] pusharglistnoret 3 ...................... <AktWheelStep, Nr, AktWheelStep[Nr] + 1>
+  [ 18] objcall 19 .............................. AktWheelStep[Nr] = AktWheelStep[Nr] + 1
+  [ 20] getglobal 18 ............................ <AktWheelStep>
+  [ 22] getparam 0 .............................. <Nr>
+  [ 24] pusharglist 2 ........................... <AktWheelStep, Nr>
+  [ 26] objcall 10 .............................. <AktWheelStep[Nr]>
+  [ 28] getglobal 20 ............................ <AntalWheelBilder>
+  [ 30] getparam 0 .............................. <Nr>
+  [ 32] pusharglist 2 ........................... <AntalWheelBilder, Nr>
+  [ 34] objcall 10 .............................. <AntalWheelBilder[Nr]>
+  [ 36] gteq .................................... <AktWheelStep[Nr] >= AntalWheelBilder[Nr]>
+  [ 37] jmpifz [ 49] ............................ if AktWheelStep[Nr] >= AntalWheelBilder[Nr] then
+  [ 40] getglobal 18 ............................ <AktWheelStep>
+  [ 42] getparam 0 .............................. <Nr>
+  [ 44] pushzero ................................ <0>
+  [ 45] pusharglistnoret 3 ...................... <AktWheelStep, Nr, 0>
+  [ 47] objcall 19 .............................. AktWheelStep[Nr] = 0
+  [ 49] getglobal 21 ............................ <StartWheelCast>
+  [ 51] getparam 0 .............................. <Nr>
+  [ 53] pusharglist 2 ........................... <StartWheelCast, Nr>
+  [ 55] objcall 10 .............................. <StartWheelCast[Nr]>
+  [ 57] getglobal 18 ............................ <AktWheelStep>
+  [ 59] getparam 0 .............................. <Nr>
+  [ 61] pusharglist 2 ........................... <AktWheelStep, Nr>
+  [ 63] objcall 10 .............................. <AktWheelStep[Nr]>
+  [ 65] add ..................................... <StartWheelCast[Nr] + AktWheelStep[Nr]>
+  [ 66] setlocal 0 .............................. CNr = StartWheelCast[Nr] + AktWheelStep[Nr]
+  [ 68] getglobal 9 ............................. <WheelSpriteNr>
+  [ 70] getparam 0 .............................. <Nr>
+  [ 72] pusharglist 2 ........................... <WheelSpriteNr, Nr>
+  [ 74] objcall 10 .............................. <WheelSpriteNr[Nr]>
+  [ 76] pusharglist 1 ........................... <WheelSpriteNr[Nr]>
+  [ 78] extcall 22 .............................. <sprite(WheelSpriteNr[Nr])>
+  [ 80] getlocal 0 .............................. <CNr>
+  [ 82] pushcons 0 .............................. <"HjulMaskin">
+  [ 84] pusharglist 2 ........................... <CNr, "HjulMaskin">
+  [ 86] extcall 23 .............................. <member(CNr, "HjulMaskin")>
+  [ 88] setobjprop 23 ........................... sprite(WheelSpriteNr[Nr]).member = member(CNr, "HjulMaskin")
+  [ 90] ret
+end

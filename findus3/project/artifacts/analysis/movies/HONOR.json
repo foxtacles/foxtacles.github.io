@@ -1,0 +1,720 @@
+{
+  "name": "HONOR",
+  "input": "artifacts/disc/MAIN/HONOR.CXT",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 0,
+    "movieLeft": 0,
+    "movieBottom": 0,
+    "movieRight": 0,
+    "minMember": 1,
+    "maxMember": 39,
+    "field9": 0,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 0,
+    "commentSize": 0,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 0,
+    "bitDepth": 0,
+    "field17": 0,
+    "field18": 0,
+    "field19": 0,
+    "directorVersion": 1406,
+    "field21": 0,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 0,
+    "platform": 1,
+    "protection": 32683,
+    "field29": 60,
+    "checksum": 2722818838
+  },
+  "cast_libraries": [
+    {
+      "name": "External",
+      "filePath": "",
+      "id": 1024,
+      "minMember": 1,
+      "maxMember": 39
+    }
+  ],
+  "member_types": {
+    "bitmap": 39
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 1,
+      "chunk_id": 126,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "1anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 136,
+          "castID": 126,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 2,
+      "chunk_id": 125,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "1anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 137,
+          "castID": 125,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 3,
+      "chunk_id": 123,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "1anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 138,
+          "castID": 123,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 4,
+      "chunk_id": 122,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "2anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 139,
+          "castID": 122,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 5,
+      "chunk_id": 120,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "2anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 140,
+          "castID": 120,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 6,
+      "chunk_id": 119,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "2anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 141,
+          "castID": 119,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 7,
+      "chunk_id": 117,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "3anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 142,
+          "castID": 117,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 8,
+      "chunk_id": 116,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "3anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 143,
+          "castID": 116,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 9,
+      "chunk_id": 114,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "3anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 144,
+          "castID": 114,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 10,
+      "chunk_id": 113,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "4anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 145,
+          "castID": 113,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 11,
+      "chunk_id": 112,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "4anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 146,
+          "castID": 112,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 12,
+      "chunk_id": 110,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "4anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 147,
+          "castID": 110,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 13,
+      "chunk_id": 109,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "5anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 148,
+          "castID": 109,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 14,
+      "chunk_id": 107,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "5anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 149,
+          "castID": 107,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 15,
+      "chunk_id": 106,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "5anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 150,
+          "castID": 106,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 16,
+      "chunk_id": 104,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "6anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 151,
+          "castID": 104,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 17,
+      "chunk_id": 103,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "6anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 152,
+          "castID": 103,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 18,
+      "chunk_id": 101,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "6anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 153,
+          "castID": 101,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 19,
+      "chunk_id": 100,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "7anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 154,
+          "castID": 100,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 20,
+      "chunk_id": 98,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "7anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 155,
+          "castID": 98,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 21,
+      "chunk_id": 97,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "7anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 156,
+          "castID": 97,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 22,
+      "chunk_id": 95,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "8anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 157,
+          "castID": 95,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 23,
+      "chunk_id": 94,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "8anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 158,
+          "castID": 94,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 24,
+      "chunk_id": 92,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "8anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 159,
+          "castID": 92,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 25,
+      "chunk_id": 91,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "9anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 160,
+          "castID": 91,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 26,
+      "chunk_id": 89,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "9anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 161,
+          "castID": 89,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 27,
+      "chunk_id": 88,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "9anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 162,
+          "castID": 88,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 28,
+      "chunk_id": 86,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "10anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 163,
+          "castID": 86,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 29,
+      "chunk_id": 85,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "10anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 164,
+          "castID": 85,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 30,
+      "chunk_id": 83,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "10anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 165,
+          "castID": 83,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 31,
+      "chunk_id": 82,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "11anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 166,
+          "castID": 82,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 32,
+      "chunk_id": 80,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "11anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 167,
+          "castID": 80,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 33,
+      "chunk_id": 79,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "11anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 168,
+          "castID": 79,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 34,
+      "chunk_id": 77,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "12anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 169,
+          "castID": 77,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 35,
+      "chunk_id": 76,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "12anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 170,
+          "castID": 76,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 36,
+      "chunk_id": 74,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "12anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 171,
+          "castID": 74,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 37,
+      "chunk_id": 73,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "13anim_1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 172,
+          "castID": 73,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 38,
+      "chunk_id": 71,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "13anim_2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 173,
+          "castID": 71,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 39,
+      "chunk_id": 70,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "13anim_3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 174,
+          "castID": 70,
+          "fourCC": "BITD"
+        }
+      ]
+    }
+  ],
+  "scripts": [],
+  "labels": [],
+  "filmloops": [],
+  "texts": []
+}

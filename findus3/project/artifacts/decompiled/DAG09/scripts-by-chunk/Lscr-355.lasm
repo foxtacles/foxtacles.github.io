@@ -1,0 +1,9 @@
+on beginSprite me
+  [  0] getparam 0 .............................. <me>
+  [  2] getobjprop 60 ........................... <me.spriteNum>
+  [  5] pusharglist 1 ........................... <me.spriteNum>
+  [  7] extcall 42 .............................. <sprite(me.spriteNum)>
+  [ 10] pushint8 12 ............................. <12>
+  [ 13] setobjprop 61 ........................... sprite(me.spriteNum).locZ = 12
+  [ 16] ret
+end

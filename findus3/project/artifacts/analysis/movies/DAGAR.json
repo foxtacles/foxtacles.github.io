@@ -1,0 +1,907 @@
+{
+  "name": "DAGAR",
+  "input": "artifacts/disc/MAIN/DAGAR.CXT",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 0,
+    "movieLeft": 0,
+    "movieBottom": 0,
+    "movieRight": 0,
+    "minMember": 1,
+    "maxMember": 50,
+    "field9": 1,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 0,
+    "commentSize": 0,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 0,
+    "bitDepth": 0,
+    "field17": 0,
+    "field18": 0,
+    "field19": 101081,
+    "directorVersion": 1406,
+    "field21": 0,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 0,
+    "platform": 1,
+    "protection": 23713,
+    "field29": 60,
+    "checksum": 1019141190
+  },
+  "cast_libraries": [
+    {
+      "name": "External",
+      "filePath": "",
+      "id": 1024,
+      "minMember": 1,
+      "maxMember": 50
+    }
+  ],
+  "member_types": {
+    "bitmap": 50
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 1,
+      "chunk_id": 159,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "01",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 169,
+          "castID": 159,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 2,
+      "chunk_id": 156,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "02",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 170,
+          "castID": 156,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 3,
+      "chunk_id": 154,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "03",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 171,
+          "castID": 154,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 4,
+      "chunk_id": 153,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "04",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 172,
+          "castID": 153,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 5,
+      "chunk_id": 151,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "05",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 173,
+          "castID": 151,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 6,
+      "chunk_id": 150,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "06",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 174,
+          "castID": 150,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 7,
+      "chunk_id": 148,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "07",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 175,
+          "castID": 148,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 8,
+      "chunk_id": 147,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "08",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 176,
+          "castID": 147,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 9,
+      "chunk_id": 145,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "09",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 177,
+          "castID": 145,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 10,
+      "chunk_id": 144,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "10",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 178,
+          "castID": 144,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 11,
+      "chunk_id": 142,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "11",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 179,
+          "castID": 142,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 12,
+      "chunk_id": 141,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "12",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 180,
+          "castID": 141,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 13,
+      "chunk_id": 139,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "13",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 181,
+          "castID": 139,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 14,
+      "chunk_id": 138,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "14",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 182,
+          "castID": 138,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 15,
+      "chunk_id": 136,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "15",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 183,
+          "castID": 136,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 16,
+      "chunk_id": 135,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "16",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 184,
+          "castID": 135,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 17,
+      "chunk_id": 133,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "17",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 185,
+          "castID": 133,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 18,
+      "chunk_id": 132,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "18",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 186,
+          "castID": 132,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 19,
+      "chunk_id": 130,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "19",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 187,
+          "castID": 130,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 20,
+      "chunk_id": 129,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "20",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 188,
+          "castID": 129,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 21,
+      "chunk_id": 127,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "21",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 189,
+          "castID": 127,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 22,
+      "chunk_id": 126,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "22",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 190,
+          "castID": 126,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 23,
+      "chunk_id": 124,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "23",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 191,
+          "castID": 124,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 24,
+      "chunk_id": 123,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "24",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 192,
+          "castID": 123,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 25,
+      "chunk_id": 121,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "25",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 193,
+          "castID": 121,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 26,
+      "chunk_id": 86,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag01",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 194,
+          "castID": 86,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 27,
+      "chunk_id": 89,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag02",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 195,
+          "castID": 89,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 28,
+      "chunk_id": 92,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag03",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 196,
+          "castID": 92,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 29,
+      "chunk_id": 95,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag04",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 197,
+          "castID": 95,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 30,
+      "chunk_id": 98,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag05",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 198,
+          "castID": 98,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 31,
+      "chunk_id": 101,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag06",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 199,
+          "castID": 101,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 32,
+      "chunk_id": 104,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag07",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 200,
+          "castID": 104,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 33,
+      "chunk_id": 107,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag08",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 201,
+          "castID": 107,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 34,
+      "chunk_id": 110,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag09",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 202,
+          "castID": 110,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 35,
+      "chunk_id": 113,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag10",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 203,
+          "castID": 113,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 36,
+      "chunk_id": 116,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag11",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 204,
+          "castID": 116,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 37,
+      "chunk_id": 119,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag12",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 205,
+          "castID": 119,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 38,
+      "chunk_id": 122,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag13",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 206,
+          "castID": 122,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 39,
+      "chunk_id": 125,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag14",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 207,
+          "castID": 125,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 40,
+      "chunk_id": 128,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag15",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 208,
+          "castID": 128,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 41,
+      "chunk_id": 131,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag16",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 209,
+          "castID": 131,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 42,
+      "chunk_id": 134,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag17",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 210,
+          "castID": 134,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 43,
+      "chunk_id": 137,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag18",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 211,
+          "castID": 137,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 44,
+      "chunk_id": 140,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag19",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 212,
+          "castID": 140,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 45,
+      "chunk_id": 143,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag20",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 213,
+          "castID": 143,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 46,
+      "chunk_id": 146,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag21",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 214,
+          "castID": 146,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 47,
+      "chunk_id": 149,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag22",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 215,
+          "castID": 149,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 48,
+      "chunk_id": 152,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag23",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 216,
+          "castID": 152,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 49,
+      "chunk_id": 155,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "dag24",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 217,
+          "castID": 155,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 50,
+      "chunk_id": 158,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "pix",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 218,
+          "castID": 158,
+          "fourCC": "BITD"
+        }
+      ]
+    }
+  ],
+  "scripts": [],
+  "labels": [],
+  "filmloops": [],
+  "texts": []
+}

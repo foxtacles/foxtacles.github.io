@@ -1,0 +1,201 @@
+global gPath, gPathLen, gPathPos, gPathDist, gNumObjects, gOldX, gOldY, gDragX, gDragY, gSortList, gEditSortList, gObjectList, gFindus, gFindusGhost, gGran, gLastTicks
+
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 76 .............................. checkButtons()
+  [  5] pusharglistnoret 0 ...................... <>
+  [  7] extcall 84 .............................. checkSound()
+  [ 10] pushint8 34 ............................. <34>
+  [ 13] get 7 ................................... <the timer>
+  [ 15] setlocal 0 .............................. t = the timer
+  [ 17] getlocal 0 .............................. <t>
+  [ 19] getglobal 68 ............................ <gLastTicks>
+  [ 22] sub ..................................... <t - gLastTicks>
+  [ 23] setlocal 8 .............................. deltaTicks = t - gLastTicks
+  [ 25] getlocal 0 .............................. <t>
+  [ 27] setglobal 68 ............................ gLastTicks = t
+  [ 30] getlocal 8 .............................. <deltaTicks>
+  [ 32] pushint8 6 .............................. <6>
+  [ 35] lteq .................................... <deltaTicks <= 6>
+  [ 36] jmpifz [ 47] ............................ if deltaTicks <= 6 then / else
+  [ 39] pushint8 1 .............................. <1>
+  [ 42] setlocal 16 ............................. spd = 1
+  [ 44] jmp [ 86]
+  [ 47] getlocal 8 .............................. <deltaTicks>
+  [ 49] pushint8 8 .............................. <8>
+  [ 52] lteq .................................... <deltaTicks <= 8>
+  [ 53] jmpifz [ 64] ............................ if deltaTicks <= 8 then / else
+  [ 56] pushint8 2 .............................. <2>
+  [ 59] setlocal 16 ............................. spd = 2
+  [ 61] jmp [ 86]
+  [ 64] getlocal 8 .............................. <deltaTicks>
+  [ 66] pushint8 14 ............................. <14>
+  [ 69] lteq .................................... <deltaTicks <= 14>
+  [ 70] jmpifz [ 81] ............................ if deltaTicks <= 14 then / else
+  [ 73] pushint8 3 .............................. <3>
+  [ 76] setlocal 16 ............................. spd = 3
+  [ 78] jmp [ 86]
+  [ 81] pushint8 4 .............................. <4>
+  [ 84] setlocal 16 ............................. spd = 4
+  [ 86] getglobal 59 ............................ <gFindus>
+  [ 89] getobjprop 22 ........................... <gFindus.spriteNum>
+  [ 91] pushint8 34 ............................. <34>
+  [ 94] get 6 ................................... <the rect of sprite gFindus.spriteNum>
+  [ 96] setlocal 24 ............................. r = the rect of sprite gFindus.spriteNum
+  [ 98] pusharglist 0 ........................... <>
+  [100] thebuiltin 51 ........................... <the mouseH>
+  [103] pusharglist 0 ........................... <>
+  [105] thebuiltin 52 ........................... <the mouseV>
+  [108] pusharglist 2 ........................... <the mouseH, the mouseV>
+  [110] extcall 6 ............................... <point(the mouseH, the mouseV)>
+  [112] setlocal 32 ............................. p = point(the mouseH, the mouseV)
+  [114] getlocal 32 ............................. <p>
+  [116] getlocal 24 ............................. <r>
+  [118] pusharglist 2 ........................... <p, r>
+  [120] extcall 73 .............................. <inside(p, r)>
+  [123] jmpifz [144] ............................ if inside(p, r) then / else
+  [126] pushint8 28 ............................. <28>
+  [129] pushint8 29 ............................. <29>
+  [132] pusharglist 2 ........................... <28, 29>
+  [134] extcall 4 ............................... <list(28, 29)>
+  [136] pusharglistnoret 1 ...................... <list(28, 29)>
+  [138] extcall 78 .............................. cursor(list(28, 29))
+  [141] jmp [149]
+  [144] pusharglistnoret 0 ...................... <>
+  [146] extcall 88 .............................. checkCursor()
+  [149] pusharglistnoret 0 ...................... <>
+  [151] extcall 14 .............................. positionObjects()
+  [153] pushint8 10 ............................. <10>
+  [156] getglobal 33 ............................ <gSortList>
+  [159] pusharglistnoret 2 ...................... <10, gSortList>
+  [161] extcall 32 .............................. sortObjects(10, gSortList)
+  [164] getglobal 7 ............................. <gPathPos>
+  [166] getlocal 16 ............................. <spd>
+  [168] add ..................................... <gPathPos + spd>
+  [169] setglobal 7 ............................. gPathPos = gPathPos + spd
+  [171] getglobal 7 ............................. <gPathPos>
+  [173] getglobal 2 ............................. <gPathLen>
+  [175] gt ...................................... <gPathPos > gPathLen>
+  [176] jmpifz [186] ............................ if gPathPos > gPathLen then
+  [179] getglobal 7 ............................. <gPathPos>
+  [181] getglobal 2 ............................. <gPathLen>
+  [183] sub ..................................... <gPathPos - gPathLen>
+  [184] setglobal 7 ............................. gPathPos = gPathPos - gPathLen
+  [186] pushint8 1 .............................. <1>
+  [189] getglobal 2 ............................. <gPathLen>
+  [191] getglobal 7 ............................. <gPathPos>
+  [193] pusharglist 2 ........................... <gPathLen, gPathPos>
+  [195] extcall 58 .............................. <min(gPathLen, gPathPos)>
+  [198] pusharglist 2 ........................... <1, min(gPathLen, gPathPos)>
+  [200] extcall 67 .............................. <max(1, min(gPathLen, gPathPos))>
+  [203] setglobal 7 ............................. gPathPos = max(1, min(gPathLen, gPathPos))
+  [205] pusharglist 0 ........................... <>
+  [207] thebuiltin 48 ........................... <the mouseDown>
+  [210] getlocal 32 ............................. <p>
+  [212] getlocal 24 ............................. <r>
+  [214] pusharglist 2 ........................... <p, r>
+  [216] extcall 73 .............................. <inside(p, r)>
+  [219] and ..................................... <the mouseDown and inside(p, r)>
+  [220] jmpifz [451] ............................ if the mouseDown and inside(p, r) then / else
+  [223] pushint8 13 ............................. <13>
+  [226] setlocal 40
+  [228] getlocal 40
+  [230] pushint8 15 ............................. <15>
+  [233] lteq
+  [234] jmpifz [258] ............................ repeat with i = 13 to 15
+  [237] getlocal 40 ............................. <i>
+  [239] pusharglist 1 ........................... <i>
+  [241] extcall 113 ............................. <sprite(i)>
+  [244] pushzero ................................ <0>
+  [245] setobjprop 114 .......................... sprite(i).visible = 0
+  [248] pushint8 1
+  [251] getlocal 40
+  [253] add
+  [254] setlocal 40
+  [256] endrepeat [228]
+  [258] getglobal 63 ............................ <gFindusGhost>
+  [261] getglobal 59 ............................ <gFindus>
+  [264] getobjprop 24 ........................... <gFindus.currpos>
+  [266] pusharglistnoret 2 ...................... <gFindusGhost, gFindus.currpos>
+  [268] extcall 20 .............................. setpos(gFindusGhost, gFindus.currpos)
+  [270] getglobal 63 ............................ <gFindusGhost>
+  [273] pushint8 13 ............................. <13>
+  [276] setobjprop 23 ........................... gFindusGhost.castNum = 13
+  [278] pushint8 1 .............................. <1>
+  [281] inv ..................................... <-1>
+  [282] setglobal 49 ............................ gOldX = -1
+  [285] pushint8 1 .............................. <1>
+  [288] inv ..................................... <-1>
+  [289] setglobal 50 ............................ gOldY = -1
+  [292] pusharglist 0 ........................... <>
+  [294] thebuiltin 51 ........................... <the mouseH>
+  [297] getglobal 59 ............................ <gFindus>
+  [300] getobjprop 24 ........................... <gFindus.currpos>
+  [302] getobjprop 60 ........................... <gFindus.currpos.locH>
+  [305] sub ..................................... <the mouseH - gFindus.currpos.locH>
+  [306] setglobal 56 ............................ gDragX = the mouseH - gFindus.currpos.locH
+  [309] pusharglist 0 ........................... <>
+  [311] thebuiltin 52 ........................... <the mouseV>
+  [314] getglobal 59 ............................ <gFindus>
+  [317] getobjprop 24 ........................... <gFindus.currpos>
+  [319] getobjprop 44 ........................... <gFindus.currpos.locV>
+  [322] sub ..................................... <the mouseV - gFindus.currpos.locV>
+  [323] setglobal 57 ............................ gDragY = the mouseV - gFindus.currpos.locV
+  [326] pushint8 80 ............................. <80>
+  [329] pushint8 560 ............................ <560>
+  [332] pusharglist 0 ........................... <>
+  [334] thebuiltin 51 ........................... <the mouseH>
+  [337] getglobal 56 ............................ <gDragX>
+  [340] sub ..................................... <the mouseH - gDragX>
+  [341] pusharglist 2 ........................... <560, the mouseH - gDragX>
+  [343] extcall 58 .............................. <min(560, the mouseH - gDragX)>
+  [346] pusharglist 2 ........................... <80, min(560, the mouseH - gDragX)>
+  [348] extcall 67 .............................. <max(80, min(560, the mouseH - gDragX))>
+  [351] setlocal 48 ............................. X = max(80, min(560, the mouseH - gDragX))
+  [353] pushint8 150 ............................ <150>
+  [356] pushint8 400 ............................ <400>
+  [359] pusharglist 0 ........................... <>
+  [361] thebuiltin 52 ........................... <the mouseV>
+  [364] getglobal 57 ............................ <gDragY>
+  [367] sub ..................................... <the mouseV - gDragY>
+  [368] pusharglist 2 ........................... <400, the mouseV - gDragY>
+  [370] extcall 58 .............................. <min(400, the mouseV - gDragY)>
+  [373] pusharglist 2 ........................... <150, min(400, the mouseV - gDragY)>
+  [375] extcall 67 .............................. <max(150, min(400, the mouseV - gDragY))>
+  [378] setlocal 56 ............................. Y = max(150, min(400, the mouseV - gDragY))
+  [380] pushint8 1 .............................. <1>
+  [383] setglobal 7 ............................. gPathPos = 1
+  [385] pushint8 1 .............................. <1>
+  [388] setglobal 2 ............................. gPathLen = 1
+  [390] getglobal 3 ............................. <gPath>
+  [392] getglobal 7 ............................. <gPathPos>
+  [394] getlocal 48 ............................. <X>
+  [396] getlocal 56 ............................. <Y>
+  [398] pusharglist 2 ........................... <X, Y>
+  [400] extcall 6 ............................... <point(X, Y)>
+  [402] pusharglistnoret 3 ...................... <gPath, gPathPos, point(X, Y)>
+  [404] extcall 53 .............................. setAt(gPath, gPathPos, point(X, Y))
+  [407] getlocal 48 ............................. <X>
+  [409] setglobal 49 ............................ gOldX = X
+  [412] getlocal 56 ............................. <Y>
+  [414] setglobal 50 ............................ gOldY = Y
+  [417] pushint8 10 ............................. <10>
+  [420] getglobal 61 ............................ <gEditSortList>
+  [423] pusharglistnoret 2 ...................... <10, gEditSortList>
+  [425] extcall 32 .............................. sortObjects(10, gEditSortList)
+  [428] pushint8 37 ............................. <37>
+  [431] pushint8 38 ............................. <38>
+  [434] pusharglist 2 ........................... <[37, 38]>
+  [436] pushlist ................................ <[37, 38]>
+  [437] pusharglistnoret 1 ...................... <[37, 38]>
+  [439] extcall 78 .............................. cursor([37, 38])
+  [442] pushcons 0 .............................. <"dragging">
+  [444] pusharglistnoret 1 ...................... <"dragging">
+  [446] extcall 1 ............................... go("dragging")
+  [448] jmp [459]
+  [451] pusharglist 0 ........................... <>
+  [453] thebuiltin 18 ........................... <the frame>
+  [455] pusharglistnoret 1 ...................... <the frame>
+  [457] extcall 1 ............................... go(the frame)
+  [459] ret
+end

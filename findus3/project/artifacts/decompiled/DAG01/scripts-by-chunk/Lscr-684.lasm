@@ -1,0 +1,11 @@
+on exitFrame
+  [  0] pushint8 2 .............................. <2>
+  [  2] pusharglist 1 ........................... <2>
+  [  4] extcall 80 .............................. <soundBusy(2)>
+  [  6] jmpifz [ 17] ............................ if soundBusy(2) then
+  [  9] pusharglist 0 ........................... <>
+  [ 11] thebuiltin 86 ........................... <the frame>
+  [ 13] pusharglistnoret 1 ...................... <the frame>
+  [ 15] extcall 70 .............................. go(the frame)
+  [ 17] ret
+end

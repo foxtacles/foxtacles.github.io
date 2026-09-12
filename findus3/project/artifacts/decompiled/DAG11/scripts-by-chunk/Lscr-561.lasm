@@ -1,0 +1,942 @@
+global klar, ove, aktiv, spriteEtt, spriteTva, spriteTre, rimEtt, rimTva, rimTre, rimFyra, posEtt, posTva, posTre, rPosEtt, rPosTva, rPosTre, rPosFyra
+
+on idle
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 2 ............................ <the mouseUp>
+  [  4] jmpifz [292] ............................ if the mouseUp then / else
+  [  7] getglobal 56 ............................ <spriteEtt>
+  [ 10] pusharglist 1 ........................... <spriteEtt>
+  [ 12] extcall 4 ............................... <rollOver(spriteEtt)>
+  [ 14] getglobal 56 ............................ <spriteEtt>
+  [ 17] pushint8 30 ............................. <30>
+  [ 20] get 6 ................................... <the moveableSprite of sprite spriteEtt>
+  [ 22] pushint8 1 .............................. <1>
+  [ 25] eq ...................................... <the moveableSprite of sprite spriteEtt = 1>
+  [ 26] and ..................................... <rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)>
+  [ 27] getglobal 66 ............................ <spriteTva>
+  [ 30] pusharglist 1 ........................... <spriteTva>
+  [ 32] extcall 4 ............................... <rollOver(spriteTva)>
+  [ 34] getglobal 66 ............................ <spriteTva>
+  [ 37] pushint8 30 ............................. <30>
+  [ 40] get 6 ................................... <the moveableSprite of sprite spriteTva>
+  [ 42] pushint8 1 .............................. <1>
+  [ 45] eq ...................................... <the moveableSprite of sprite spriteTva = 1>
+  [ 46] and ..................................... <rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)>
+  [ 47] or ...................................... <(rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1))>
+  [ 48] getglobal 62 ............................ <spriteTre>
+  [ 51] pusharglist 1 ........................... <spriteTre>
+  [ 53] extcall 4 ............................... <rollOver(spriteTre)>
+  [ 55] getglobal 62 ............................ <spriteTre>
+  [ 58] pushint8 30 ............................. <30>
+  [ 61] get 6 ................................... <the moveableSprite of sprite spriteTre>
+  [ 63] pushint8 1 .............................. <1>
+  [ 66] eq ...................................... <the moveableSprite of sprite spriteTre = 1>
+  [ 67] and ..................................... <rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1)>
+  [ 68] or ...................................... <(rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)) or (rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1))>
+  [ 69] jmpifz [ 88] ............................ if (rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)) or (rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1)) then / else
+  [ 72] pushint8 34 ............................. <34>
+  [ 75] pushint8 37 ............................. <37>
+  [ 78] pusharglist 2 ........................... <[34, 37]>
+  [ 80] pushlist ................................ <[34, 37]>
+  [ 81] pusharglistnoret 1 ...................... <[34, 37]>
+  [ 83] extcall 5 ............................... cursor([34, 37])
+  [ 85] jmp [207]
+  [ 88] pushint8 22 ............................. <22>
+  [ 91] pusharglist 1 ........................... <22>
+  [ 93] extcall 4 ............................... <rollOver(22)>
+  [ 95] pushint8 23 ............................. <23>
+  [ 98] pusharglist 1 ........................... <23>
+  [100] extcall 4 ............................... <rollOver(23)>
+  [102] or ...................................... <rollOver(22) or rollOver(23)>
+  [103] getglobal 68 ............................ <rimEtt>
+  [106] pusharglist 1 ........................... <rimEtt>
+  [108] extcall 4 ............................... <rollOver(rimEtt)>
+  [110] getglobal 68 ............................ <rimEtt>
+  [113] pusharglist 1 ........................... <rimEtt>
+  [115] extcall 73 .............................. <sprite(rimEtt)>
+  [118] getobjprop 53 ........................... <sprite(rimEtt).visible>
+  [121] pushint8 1 .............................. <1>
+  [124] eq ...................................... <sprite(rimEtt).visible = 1>
+  [125] and ..................................... <rollOver(rimEtt) and (sprite(rimEtt).visible = 1)>
+  [126] or ...................................... <rollOver(22) or rollOver(23) or (rollOver(rimEtt) and (sprite(rimEtt).visible = 1))>
+  [127] getglobal 64 ............................ <rimTva>
+  [130] pusharglist 1 ........................... <rimTva>
+  [132] extcall 4 ............................... <rollOver(rimTva)>
+  [134] getglobal 64 ............................ <rimTva>
+  [137] pusharglist 1 ........................... <rimTva>
+  [139] extcall 73 .............................. <sprite(rimTva)>
+  [142] getobjprop 53 ........................... <sprite(rimTva).visible>
+  [145] pushint8 1 .............................. <1>
+  [148] eq ...................................... <sprite(rimTva).visible = 1>
+  [149] and ..................................... <rollOver(rimTva) and (sprite(rimTva).visible = 1)>
+  [150] or ...................................... <rollOver(22) or rollOver(23) or (rollOver(rimEtt) and (sprite(rimEtt).visible = 1)) or (rollOver(rimTva) and (sprite(rimTva).visible = 1))>
+  [151] getglobal 60 ............................ <rimTre>
+  [154] pusharglist 1 ........................... <rimTre>
+  [156] extcall 4 ............................... <rollOver(rimTre)>
+  [158] getglobal 60 ............................ <rimTre>
+  [161] pusharglist 1 ........................... <rimTre>
+  [163] extcall 73 .............................. <sprite(rimTre)>
+  [166] getobjprop 53 ........................... <sprite(rimTre).visible>
+  [169] pushint8 1 .............................. <1>
+  [172] eq ...................................... <sprite(rimTre).visible = 1>
+  [173] and ..................................... <rollOver(rimTre) and (sprite(rimTre).visible = 1)>
+  [174] or ...................................... <rollOver(22) or rollOver(23) or (rollOver(rimEtt) and (sprite(rimEtt).visible = 1)) or (rollOver(rimTva) and (sprite(rimTva).visible = 1)) or (rollOver(rimTre) and (sprite(rimTre).visible = 1))>
+  [175] getglobal 57 ............................ <rimFyra>
+  [178] pusharglist 1 ........................... <rimFyra>
+  [180] extcall 4 ............................... <rollOver(rimFyra)>
+  [182] or ...................................... <rollOver(22) or rollOver(23) or (rollOver(rimEtt) and (sprite(rimEtt).visible = 1)) or (rollOver(rimTva) and (sprite(rimTva).visible = 1)) or (rollOver(rimTre) and (sprite(rimTre).visible = 1)) or rollOver(rimFyra)>
+  [183] jmpifz [202] ............................ if rollOver(22) or rollOver(23) or (rollOver(rimEtt) and (sprite(rimEtt).visible = 1)) or (rollOver(rimTva) and (sprite(rimTva).visible = 1)) or (rollOver(rimTre) and (sprite(rimTre).visible = 1)) or rollOver(rimFyra) then / else
+  [186] pushint8 33 ............................. <33>
+  [189] pushint8 36 ............................. <36>
+  [192] pusharglist 2 ........................... <[33, 36]>
+  [194] pushlist ................................ <[33, 36]>
+  [195] pusharglistnoret 1 ...................... <[33, 36]>
+  [197] extcall 5 ............................... cursor([33, 36])
+  [199] jmp [207]
+  [202] pushzero ................................ <0>
+  [203] pusharglistnoret 1 ...................... <0>
+  [205] extcall 5 ............................... cursor(0)
+  [207] pushint8 22 ............................. <22>
+  [210] pusharglist 1 ........................... <22>
+  [212] extcall 4 ............................... <rollOver(22)>
+  [214] jmpifz [234] ............................ if rollOver(22) then / else
+  [217] pushint8 22 ............................. <22>
+  [220] pusharglist 1 ........................... <22>
+  [222] extcall 73 .............................. <sprite(22)>
+  [225] pushint8 1 .............................. <1>
+  [228] setobjprop 53 ........................... sprite(22).visible = 1
+  [231] jmp [246]
+  [234] pushint8 22 ............................. <22>
+  [237] pusharglist 1 ........................... <22>
+  [239] extcall 73 .............................. <sprite(22)>
+  [242] pushzero ................................ <0>
+  [243] setobjprop 53 ........................... sprite(22).visible = 0
+  [246] pushint8 23 ............................. <23>
+  [249] pusharglist 1 ........................... <23>
+  [251] extcall 4 ............................... <rollOver(23)>
+  [253] jmpifz [273] ............................ if rollOver(23) then / else
+  [256] pushint8 23 ............................. <23>
+  [259] pusharglist 1 ........................... <23>
+  [261] extcall 73 .............................. <sprite(23)>
+  [264] pushint8 1 .............................. <1>
+  [267] setobjprop 53 ........................... sprite(23).visible = 1
+  [270] jmp [285]
+  [273] pushint8 23 ............................. <23>
+  [276] pusharglist 1 ........................... <23>
+  [278] extcall 73 .............................. <sprite(23)>
+  [281] pushzero ................................ <0>
+  [282] setobjprop 53 ........................... sprite(23).visible = 0
+  [285] pusharglistnoret 0 ...................... <>
+  [287] extcall 6 ............................... updateStage()
+  [289] jmp [412]
+  [292] getglobal 56 ............................ <spriteEtt>
+  [295] pusharglist 1 ........................... <spriteEtt>
+  [297] extcall 4 ............................... <rollOver(spriteEtt)>
+  [299] getglobal 56 ............................ <spriteEtt>
+  [302] pushint8 30 ............................. <30>
+  [305] get 6 ................................... <the moveableSprite of sprite spriteEtt>
+  [307] pushint8 1 .............................. <1>
+  [310] eq ...................................... <the moveableSprite of sprite spriteEtt = 1>
+  [311] and ..................................... <rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)>
+  [312] getglobal 66 ............................ <spriteTva>
+  [315] pusharglist 1 ........................... <spriteTva>
+  [317] extcall 4 ............................... <rollOver(spriteTva)>
+  [319] getglobal 66 ............................ <spriteTva>
+  [322] pushint8 30 ............................. <30>
+  [325] get 6 ................................... <the moveableSprite of sprite spriteTva>
+  [327] pushint8 1 .............................. <1>
+  [330] eq ...................................... <the moveableSprite of sprite spriteTva = 1>
+  [331] and ..................................... <rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)>
+  [332] or ...................................... <(rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1))>
+  [333] getglobal 62 ............................ <spriteTre>
+  [336] pusharglist 1 ........................... <spriteTre>
+  [338] extcall 4 ............................... <rollOver(spriteTre)>
+  [340] getglobal 62 ............................ <spriteTre>
+  [343] pushint8 30 ............................. <30>
+  [346] get 6 ................................... <the moveableSprite of sprite spriteTre>
+  [348] pushint8 1 .............................. <1>
+  [351] eq ...................................... <the moveableSprite of sprite spriteTre = 1>
+  [352] and ..................................... <rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1)>
+  [353] or ...................................... <(rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)) or (rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1))>
+  [354] jmpifz [373] ............................ if (rollOver(spriteEtt) and (the moveableSprite of sprite spriteEtt = 1)) or (rollOver(spriteTva) and (the moveableSprite of sprite spriteTva = 1)) or (rollOver(spriteTre) and (the moveableSprite of sprite spriteTre = 1)) then / else
+  [357] pushint8 35 ............................. <35>
+  [360] pushint8 38 ............................. <38>
+  [363] pusharglist 2 ........................... <[35, 38]>
+  [365] pushlist ................................ <[35, 38]>
+  [366] pusharglistnoret 1 ...................... <[35, 38]>
+  [368] extcall 5 ............................... cursor([35, 38])
+  [370] jmp [412]
+  [373] pushint8 23 ............................. <23>
+  [376] pusharglist 1 ........................... <23>
+  [378] extcall 4 ............................... <rollOver(23)>
+  [380] pushint8 24 ............................. <24>
+  [383] pusharglist 1 ........................... <24>
+  [385] extcall 4 ............................... <rollOver(24)>
+  [387] or ...................................... <rollOver(23) or rollOver(24)>
+  [388] jmpifz [407] ............................ if rollOver(23) or rollOver(24) then / else
+  [391] pushint8 33 ............................. <33>
+  [394] pushint8 36 ............................. <36>
+  [397] pusharglist 2 ........................... <[33, 36]>
+  [399] pushlist ................................ <[33, 36]>
+  [400] pusharglistnoret 1 ...................... <[33, 36]>
+  [402] extcall 5 ............................... cursor([33, 36])
+  [404] jmp [412]
+  [407] pushzero ................................ <0>
+  [408] pusharglistnoret 1 ...................... <0>
+  [410] extcall 5 ............................... cursor(0)
+  [412] pushint8 1 .............................. <1>
+  [415] getglobal 8 ............................. <aktiv>
+  [417] pushint8 33 ............................. <33>
+  [420] get 6 ................................... <the loc of sprite aktiv>
+  [422] pushint8 33 ............................. <33>
+  [425] set 6 ................................... set the loc of sprite 1 to the loc of sprite aktiv
+  [427] pusharglistnoret 0 ...................... <>
+  [429] extcall 6 ............................... updateStage()
+  [431] ret
+end
+
+on mouseDown
+  [  0] getglobal 41 ............................ <ove>
+  [  3] pushint8 1 .............................. <1>
+  [  6] eq ...................................... <ove = 1>
+  [  7] jmpifz [ 11] ............................ if ove = 1 then
+  [ 10] ret ..................................... exit
+  [ 11] pusharglist 0 ........................... <>
+  [ 13] thebuiltin 7 ............................ <the clickOn>
+  [ 15] pushint8 12 ............................. <12>
+  [ 18] gt ...................................... <the clickOn > 12>
+  [ 19] pusharglist 0 ........................... <>
+  [ 21] thebuiltin 7 ............................ <the clickOn>
+  [ 23] pushint8 22 ............................. <22>
+  [ 26] lt ...................................... <the clickOn < 22>
+  [ 27] and ..................................... <(the clickOn > 12) and (the clickOn < 22)>
+  [ 28] jmpifz [ 37] ............................ if (the clickOn > 12) and (the clickOn < 22) then
+  [ 31] pusharglist 0 ........................... <>
+  [ 33] thebuiltin 7 ............................ <the clickOn>
+  [ 35] setglobal 8 ............................. aktiv = the clickOn
+  [ 37] pushint8 22 ............................. <22>
+  [ 40] pusharglist 1 ........................... <22>
+  [ 42] extcall 4 ............................... <rollOver(22)>
+  [ 44] jmpifz [151] ............................ if rollOver(22) then / else
+  [ 47] pusharglist 0 ........................... <>
+  [ 49] thebuiltin 1 ............................ <the mouseDown>
+  [ 51] jmpifz [118] ............................ repeat while the mouseDown
+  [ 54] pushint8 22 ............................. <22>
+  [ 57] pusharglist 1 ........................... <22>
+  [ 59] extcall 4 ............................... <rollOver(22)>
+  [ 61] jmpifz [ 94] ............................ if rollOver(22) then / else
+  [ 64] pushint8 22 ............................. <22>
+  [ 67] pusharglist 1 ........................... <22>
+  [ 69] extcall 73 .............................. <sprite(22)>
+  [ 72] pushint8 1 .............................. <1>
+  [ 75] setobjprop 53 ........................... sprite(22).visible = 1
+  [ 78] pushint8 33 ............................. <33>
+  [ 81] pushint8 36 ............................. <36>
+  [ 84] pusharglist 2 ........................... <[33, 36]>
+  [ 86] pushlist ................................ <[33, 36]>
+  [ 87] pusharglistnoret 1 ...................... <[33, 36]>
+  [ 89] extcall 5 ............................... cursor([33, 36])
+  [ 91] jmp [111]
+  [ 94] pushint8 22 ............................. <22>
+  [ 97] pusharglist 1 ........................... <22>
+  [ 99] extcall 73 .............................. <sprite(22)>
+  [102] pushzero ................................ <0>
+  [103] setobjprop 53 ........................... sprite(22).visible = 0
+  [106] pushzero ................................ <0>
+  [107] pusharglistnoret 1 ...................... <0>
+  [109] extcall 5 ............................... cursor(0)
+  [111] pusharglistnoret 0 ...................... <>
+  [113] extcall 6 ............................... updateStage()
+  [115] endrepeat [ 47]
+  [118] pushint8 22 ............................. <22>
+  [121] pusharglist 1 ........................... <22>
+  [123] extcall 4 ............................... <rollOver(22)>
+  [125] jmpifz [148] ............................ if rollOver(22) then
+  [128] pushint8 4 .............................. <4>
+  [131] pusharglistnoret 1 ...................... <4>
+  [133] extcall 5 ............................... cursor(4)
+  [135] pushint8 10 ............................. <10>
+  [138] pusharglistnoret 1 ...................... <10>
+  [140] extcall 25 .............................. puppetTransition(10)
+  [142] pushcons 0 .............................. <"vidare">
+  [144] pusharglistnoret 1 ...................... <"vidare">
+  [146] extcall 12 .............................. go("vidare")
+  [148] jmp [317]
+  [151] pushint8 23 ............................. <23>
+  [154] pusharglist 1 ........................... <23>
+  [156] extcall 4 ............................... <rollOver(23)>
+  [158] jmpifz [317] ............................ if rollOver(23) then
+  [161] pusharglist 0 ........................... <>
+  [163] thebuiltin 1 ............................ <the mouseDown>
+  [165] jmpifz [232] ............................ repeat while the mouseDown
+  [168] pushint8 23 ............................. <23>
+  [171] pusharglist 1 ........................... <23>
+  [173] extcall 4 ............................... <rollOver(23)>
+  [175] jmpifz [208] ............................ if rollOver(23) then / else
+  [178] pushint8 23 ............................. <23>
+  [181] pusharglist 1 ........................... <23>
+  [183] extcall 73 .............................. <sprite(23)>
+  [186] pushint8 1 .............................. <1>
+  [189] setobjprop 53 ........................... sprite(23).visible = 1
+  [192] pushint8 33 ............................. <33>
+  [195] pushint8 36 ............................. <36>
+  [198] pusharglist 2 ........................... <[33, 36]>
+  [200] pushlist ................................ <[33, 36]>
+  [201] pusharglistnoret 1 ...................... <[33, 36]>
+  [203] extcall 5 ............................... cursor([33, 36])
+  [205] jmp [225]
+  [208] pushint8 23 ............................. <23>
+  [211] pusharglist 1 ........................... <23>
+  [213] extcall 73 .............................. <sprite(23)>
+  [216] pushzero ................................ <0>
+  [217] setobjprop 53 ........................... sprite(23).visible = 0
+  [220] pushzero ................................ <0>
+  [221] pusharglistnoret 1 ...................... <0>
+  [223] extcall 5 ............................... cursor(0)
+  [225] pusharglistnoret 0 ...................... <>
+  [227] extcall 6 ............................... updateStage()
+  [229] endrepeat [161]
+  [232] pushint8 23 ............................. <23>
+  [235] pusharglist 1 ........................... <23>
+  [237] extcall 4 ............................... <rollOver(23)>
+  [239] jmpifz [317] ............................ if rollOver(23) then
+  [242] pushint8 3 .............................. <3>
+  [245] setlocal 0
+  [247] getlocal 0
+  [249] pushint8 21 ............................. <21>
+  [252] lteq
+  [253] jmpifz [295] ............................ repeat with k = 3 to 21
+  [256] getlocal 0 .............................. <k>
+  [258] pushzero ................................ <0>
+  [259] pusharglistnoret 2 ...................... <k, 0>
+  [261] extcall 9 ............................... puppetSprite(k, 0)
+  [263] getlocal 0 .............................. <k>
+  [265] pusharglist 1 ........................... <k>
+  [267] extcall 73 .............................. <sprite(k)>
+  [270] pushint8 1000 ........................... <1000>
+  [273] inv ..................................... <-1000>
+  [274] pushint8 1000 ........................... <1000>
+  [277] inv ..................................... <-1000>
+  [278] pusharglist 2 ........................... <-1000, -1000>
+  [280] extcall 10 .............................. <point(-1000, -1000)>
+  [282] setobjprop 20 ........................... sprite(k).loc = point(-1000, -1000)
+  [284] pushint8 1
+  [287] getlocal 0
+  [289] add
+  [290] setlocal 0
+  [292] endrepeat [247]
+  [295] pushint8 12 ............................. <12>
+  [298] pusharglist 1 ........................... <12>
+  [300] extcall 73 .............................. <sprite(12)>
+  [303] pushint8 1 .............................. <1>
+  [306] setobjprop 53 ........................... sprite(12).visible = 1
+  [309] pusharglistnoret 0 ...................... <>
+  [311] extcall 6 ............................... updateStage()
+  [313] pusharglistnoret 0 ...................... <>
+  [315] extcall 13 .............................. omstart()
+  [317] ret
+end
+
+on mouseUp
+  [  0] pushint8 105 ............................ <105>
+  [  3] pushint8 145 ............................ <145>
+  [  6] pusharglist 2 ........................... <105, 145>
+  [  8] extcall 10 .............................. <point(105, 145)>
+  [ 10] pushint8 109 ............................ <109>
+  [ 13] pushint8 300 ............................ <300>
+  [ 16] pusharglist 2 ........................... <109, 300>
+  [ 18] extcall 10 .............................. <point(109, 300)>
+  [ 20] pushint8 525 ............................ <525>
+  [ 23] pushint8 180 ............................ <180>
+  [ 26] pusharglist 2 ........................... <525, 180>
+  [ 28] extcall 10 .............................. <point(525, 180)>
+  [ 30] pushint8 522 ............................ <522>
+  [ 33] pushint8 333 ............................ <333>
+  [ 36] pusharglist 2 ........................... <522, 333>
+  [ 38] extcall 10 .............................. <point(522, 333)>
+  [ 40] pusharglist 4 ........................... <[point(105, 145), point(109, 300), point(525, 180), point(522, 333)]>
+  [ 42] pushlist ................................ <[point(105, 145), point(109, 300), point(525, 180), point(522, 333)]>
+  [ 43] setlocal 0 .............................. rplatslist = [point(105, 145), point(109, 300), point(525, 180), point(522, 333)]
+  [ 45] getglobal 8 ............................. <aktiv>
+  [ 47] peek 0 .................................. case aktiv of
+  [ 49] getglobal 56 ............................ <spriteEtt>
+  [ 52] eq
+  [ 53] jmpifz [448] ............................ (case) spriteEtt:
+  [ 56] pushint8 1 .............................. <1>
+  [ 59] getglobal 68 ............................ <rimEtt>
+  [ 62] ontospr ................................. <sprite 1 intersects rimEtt>
+  [ 63] jmpifz [347] ............................ if sprite 1 intersects rimEtt then / else
+  [ 66] getglobal 56 ............................ <spriteEtt>
+  [ 69] pushint8 35 ............................. <35>
+  [ 72] get 6 ................................... <the memberNum of sprite spriteEtt>
+  [ 74] setlocal 8 .............................. oldEtt = the memberNum of sprite spriteEtt
+  [ 76] getglobal 68 ............................ <rimEtt>
+  [ 79] pushint8 33 ............................. <33>
+  [ 82] get 6 ................................... <the loc of sprite rimEtt>
+  [ 84] setlocal 16 ............................. platsen = the loc of sprite rimEtt
+  [ 86] getlocal 16 ............................. <platsen>
+  [ 88] peek 0 .................................. case platsen of
+  [ 90] getlocal 0 .............................. <rplatslist>
+  [ 92] pushint8 1 .............................. <1>
+  [ 95] pusharglist 2 ........................... <rplatslist, 1>
+  [ 97] extcall 47 .............................. <getAt(rplatslist, 1)>
+  [100] eq
+  [101] jmpifz [124] ............................ (case) getAt(rplatslist, 1):
+  [104] getglobal 56 ............................ <spriteEtt>
+  [107] pushcons 8 .............................. <"paket1">
+  [109] pusharglist 1 ........................... <"paket1">
+  [111] extcall 17 .............................. <member("paket1")>
+  [113] getobjprop 76 ........................... <member("paket1").memberNum>
+  [116] pushint8 35 ............................. <35>
+  [119] set 6 ................................... set the memberNum of sprite spriteEtt to member("paket1").memberNum
+  [121] jmp [229]
+  [124] peek 0
+  [126] getlocal 0 .............................. <rplatslist>
+  [128] pushint8 2 .............................. <2>
+  [131] pusharglist 2 ........................... <rplatslist, 2>
+  [133] extcall 47 .............................. <getAt(rplatslist, 2)>
+  [136] eq
+  [137] jmpifz [160] ............................ (case) getAt(rplatslist, 2):
+  [140] getglobal 56 ............................ <spriteEtt>
+  [143] pushcons 16 ............................. <"paket2">
+  [145] pusharglist 1 ........................... <"paket2">
+  [147] extcall 17 .............................. <member("paket2")>
+  [149] getobjprop 76 ........................... <member("paket2").memberNum>
+  [152] pushint8 35 ............................. <35>
+  [155] set 6 ................................... set the memberNum of sprite spriteEtt to member("paket2").memberNum
+  [157] jmp [229]
+  [160] peek 0
+  [162] getlocal 0 .............................. <rplatslist>
+  [164] pushint8 3 .............................. <3>
+  [167] pusharglist 2 ........................... <rplatslist, 3>
+  [169] extcall 47 .............................. <getAt(rplatslist, 3)>
+  [172] eq
+  [173] jmpifz [196] ............................ (case) getAt(rplatslist, 3):
+  [176] getglobal 56 ............................ <spriteEtt>
+  [179] pushcons 24 ............................. <"paket3">
+  [181] pusharglist 1 ........................... <"paket3">
+  [183] extcall 17 .............................. <member("paket3")>
+  [185] getobjprop 76 ........................... <member("paket3").memberNum>
+  [188] pushint8 35 ............................. <35>
+  [191] set 6 ................................... set the memberNum of sprite spriteEtt to member("paket3").memberNum
+  [193] jmp [229]
+  [196] peek 0
+  [198] getlocal 0 .............................. <rplatslist>
+  [200] pushint8 4 .............................. <4>
+  [203] pusharglist 2 ........................... <rplatslist, 4>
+  [205] extcall 47 .............................. <getAt(rplatslist, 4)>
+  [208] eq
+  [209] jmpifz [229] ............................ (case) getAt(rplatslist, 4):
+  [212] getglobal 56 ............................ <spriteEtt>
+  [215] pushcons 32 ............................. <"paket4">
+  [217] pusharglist 1 ........................... <"paket4">
+  [219] extcall 17 .............................. <member("paket4")>
+  [221] getobjprop 76 ........................... <member("paket4").memberNum>
+  [224] pushint8 35 ............................. <35>
+  [227] set 6 ................................... set the memberNum of sprite spriteEtt to member("paket4").memberNum
+  [229] pop 1 ................................... end case
+  [231] getglobal 56 ............................ <spriteEtt>
+  [234] getglobal 68 ............................ <rimEtt>
+  [237] pushint8 33 ............................. <33>
+  [240] get 6 ................................... <the loc of sprite rimEtt>
+  [242] pushint8 33 ............................. <33>
+  [245] set 6 ................................... set the loc of sprite spriteEtt to the loc of sprite rimEtt
+  [247] getglobal 68 ............................ <rimEtt>
+  [250] pusharglist 1 ........................... <rimEtt>
+  [252] extcall 73 .............................. <sprite(rimEtt)>
+  [255] pushzero ................................ <0>
+  [256] setobjprop 53 ........................... sprite(rimEtt).visible = 0
+  [259] getglobal 56 ............................ <spriteEtt>
+  [262] pushzero ................................ <0>
+  [263] pushint8 30 ............................. <30>
+  [266] set 6 ................................... set the moveableSprite of sprite spriteEtt to 0
+  [268] getglobal 35 ............................ <klar>
+  [271] pushint8 1 .............................. <1>
+  [274] add ..................................... <klar + 1>
+  [275] setglobal 35 ............................ klar = klar + 1
+  [278] pushzero ................................ <0>
+  [279] pusharglistnoret 1 ...................... <0>
+  [281] extcall 36 .............................. puppetSound(0)
+  [284] pushint8 4 .............................. <4>
+  [287] pusharglist 1 ........................... <4>
+  [289] extcall 38 .............................. <random(4)>
+  [292] pushint8 1 .............................. <1>
+  [295] eq ...................................... <random(4) = 1>
+  [296] jmpifz [318] ............................ if random(4) = 1 then / else
+  [299] pushcons 40 ............................. <"bra">
+  [301] pushint8 5 .............................. <5>
+  [304] pusharglist 1 ........................... <5>
+  [306] extcall 38 .............................. <random(5)>
+  [309] joinstr ................................. <"bra" & random(5)>
+  [310] pusharglistnoret 1 ...................... <"bra" & random(5)>
+  [312] extcall 36 .............................. puppetSound("bra" & random(5))
+  [315] jmp [344]
+  [318] getglobal 35 ............................ <klar>
+  [321] pushint8 3 .............................. <3>
+  [324] eq ...................................... <klar = 3>
+  [325] jmpifz [344] ............................ if klar = 3 then
+  [328] pushcons 48 ............................. <"bra">
+  [330] pushint8 5 .............................. <5>
+  [333] pusharglist 1 ........................... <5>
+  [335] extcall 38 .............................. <random(5)>
+  [338] joinstr ................................. <"bra" & random(5)>
+  [339] pusharglistnoret 1 ...................... <"bra" & random(5)>
+  [341] extcall 36 .............................. puppetSound("bra" & random(5))
+  [344] jmp [445]
+  [347] pushint8 1 .............................. <1>
+  [350] getglobal 64 ............................ <rimTva>
+  [353] ontospr ................................. <sprite 1 intersects rimTva>
+  [354] pushint8 1 .............................. <1>
+  [357] getglobal 60 ............................ <rimTre>
+  [360] ontospr ................................. <sprite 1 intersects rimTre>
+  [361] or ...................................... <sprite 1 intersects rimTva or sprite 1 intersects rimTre>
+  [362] pushint8 1 .............................. <1>
+  [365] getglobal 57 ............................ <rimFyra>
+  [368] ontospr ................................. <sprite 1 intersects rimFyra>
+  [369] or ...................................... <sprite 1 intersects rimTva or sprite 1 intersects rimTre or sprite 1 intersects rimFyra>
+  [370] jmpifz [434] ............................ if sprite 1 intersects rimTva or sprite 1 intersects rimTre or sprite 1 intersects rimFyra then / else
+  [373] pushzero ................................ <0>
+  [374] pusharglistnoret 1 ...................... <0>
+  [376] extcall 5 ............................... cursor(0)
+  [378] pushint8 1 .............................. <1>
+  [381] pushcons 56 ............................. <"fel">
+  [383] pushint8 3 .............................. <3>
+  [386] pusharglist 1 ........................... <3>
+  [388] extcall 38 .............................. <random(3)>
+  [391] joinstr ................................. <"fel" & random(3)>
+  [392] pusharglistnoret 2 ...................... <1, "fel" & random(3)>
+  [394] extcall 36 .............................. puppetSound(1, "fel" & random(3))
+  [397] pushint8 1 .............................. <1>
+  [400] pusharglist 1 ........................... <1>
+  [402] extcall 83 .............................. <soundBusy(1)>
+  [405] jmpifz [420] ............................ repeat while soundBusy(1)
+  [408] pusharglist 0 ........................... <>
+  [410] thebuiltin 1 ............................ <the mouseDown>
+  [412] jmpifz [418] ............................ if the mouseDown then
+  [415] jmp [420] ............................... exit repeat
+  [418] endrepeat [397]
+  [420] getglobal 56 ............................ <spriteEtt>
+  [423] getglobal 69 ............................ <posEtt>
+  [426] pushint8 33 ............................. <33>
+  [429] set 6 ................................... set the loc of sprite spriteEtt to posEtt
+  [431] jmp [445]
+  [434] getglobal 56 ............................ <spriteEtt>
+  [437] getglobal 69 ............................ <posEtt>
+  [440] pushint8 33 ............................. <33>
+  [443] set 6 ................................... set the loc of sprite spriteEtt to posEtt
+  [445] jmp [1247]
+  [448] peek 0
+  [450] getglobal 66 ............................ <spriteTva>
+  [453] eq
+  [454] jmpifz [849] ............................ (case) spriteTva:
+  [457] pushint8 1 .............................. <1>
+  [460] getglobal 64 ............................ <rimTva>
+  [463] ontospr ................................. <sprite 1 intersects rimTva>
+  [464] jmpifz [748] ............................ if sprite 1 intersects rimTva then / else
+  [467] getglobal 56 ............................ <spriteEtt>
+  [470] pushint8 35 ............................. <35>
+  [473] get 6 ................................... <the memberNum of sprite spriteEtt>
+  [475] setlocal 24 ............................. oldTva = the memberNum of sprite spriteEtt
+  [477] getglobal 64 ............................ <rimTva>
+  [480] pushint8 33 ............................. <33>
+  [483] get 6 ................................... <the loc of sprite rimTva>
+  [485] setlocal 16 ............................. platsen = the loc of sprite rimTva
+  [487] getlocal 16 ............................. <platsen>
+  [489] peek 0 .................................. case platsen of
+  [491] getlocal 0 .............................. <rplatslist>
+  [493] pushint8 1 .............................. <1>
+  [496] pusharglist 2 ........................... <rplatslist, 1>
+  [498] extcall 47 .............................. <getAt(rplatslist, 1)>
+  [501] eq
+  [502] jmpifz [525] ............................ (case) getAt(rplatslist, 1):
+  [505] getglobal 66 ............................ <spriteTva>
+  [508] pushcons 64 ............................. <"paket1">
+  [510] pusharglist 1 ........................... <"paket1">
+  [512] extcall 17 .............................. <member("paket1")>
+  [514] getobjprop 76 ........................... <member("paket1").memberNum>
+  [517] pushint8 35 ............................. <35>
+  [520] set 6 ................................... set the memberNum of sprite spriteTva to member("paket1").memberNum
+  [522] jmp [630]
+  [525] peek 0
+  [527] getlocal 0 .............................. <rplatslist>
+  [529] pushint8 2 .............................. <2>
+  [532] pusharglist 2 ........................... <rplatslist, 2>
+  [534] extcall 47 .............................. <getAt(rplatslist, 2)>
+  [537] eq
+  [538] jmpifz [561] ............................ (case) getAt(rplatslist, 2):
+  [541] getglobal 66 ............................ <spriteTva>
+  [544] pushcons 72 ............................. <"paket2">
+  [546] pusharglist 1 ........................... <"paket2">
+  [548] extcall 17 .............................. <member("paket2")>
+  [550] getobjprop 76 ........................... <member("paket2").memberNum>
+  [553] pushint8 35 ............................. <35>
+  [556] set 6 ................................... set the memberNum of sprite spriteTva to member("paket2").memberNum
+  [558] jmp [630]
+  [561] peek 0
+  [563] getlocal 0 .............................. <rplatslist>
+  [565] pushint8 3 .............................. <3>
+  [568] pusharglist 2 ........................... <rplatslist, 3>
+  [570] extcall 47 .............................. <getAt(rplatslist, 3)>
+  [573] eq
+  [574] jmpifz [597] ............................ (case) getAt(rplatslist, 3):
+  [577] getglobal 66 ............................ <spriteTva>
+  [580] pushcons 80 ............................. <"paket3">
+  [582] pusharglist 1 ........................... <"paket3">
+  [584] extcall 17 .............................. <member("paket3")>
+  [586] getobjprop 76 ........................... <member("paket3").memberNum>
+  [589] pushint8 35 ............................. <35>
+  [592] set 6 ................................... set the memberNum of sprite spriteTva to member("paket3").memberNum
+  [594] jmp [630]
+  [597] peek 0
+  [599] getlocal 0 .............................. <rplatslist>
+  [601] pushint8 4 .............................. <4>
+  [604] pusharglist 2 ........................... <rplatslist, 4>
+  [606] extcall 47 .............................. <getAt(rplatslist, 4)>
+  [609] eq
+  [610] jmpifz [630] ............................ (case) getAt(rplatslist, 4):
+  [613] getglobal 66 ............................ <spriteTva>
+  [616] pushcons 88 ............................. <"paket4">
+  [618] pusharglist 1 ........................... <"paket4">
+  [620] extcall 17 .............................. <member("paket4")>
+  [622] getobjprop 76 ........................... <member("paket4").memberNum>
+  [625] pushint8 35 ............................. <35>
+  [628] set 6 ................................... set the memberNum of sprite spriteTva to member("paket4").memberNum
+  [630] pop 1 ................................... end case
+  [632] getglobal 66 ............................ <spriteTva>
+  [635] getglobal 64 ............................ <rimTva>
+  [638] pushint8 33 ............................. <33>
+  [641] get 6 ................................... <the loc of sprite rimTva>
+  [643] pushint8 33 ............................. <33>
+  [646] set 6 ................................... set the loc of sprite spriteTva to the loc of sprite rimTva
+  [648] getglobal 64 ............................ <rimTva>
+  [651] pusharglist 1 ........................... <rimTva>
+  [653] extcall 73 .............................. <sprite(rimTva)>
+  [656] pushzero ................................ <0>
+  [657] setobjprop 53 ........................... sprite(rimTva).visible = 0
+  [660] getglobal 66 ............................ <spriteTva>
+  [663] pushzero ................................ <0>
+  [664] pushint8 30 ............................. <30>
+  [667] set 6 ................................... set the moveableSprite of sprite spriteTva to 0
+  [669] getglobal 35 ............................ <klar>
+  [672] pushint8 1 .............................. <1>
+  [675] add ..................................... <klar + 1>
+  [676] setglobal 35 ............................ klar = klar + 1
+  [679] pushzero ................................ <0>
+  [680] pusharglistnoret 1 ...................... <0>
+  [682] extcall 36 .............................. puppetSound(0)
+  [685] pushint8 4 .............................. <4>
+  [688] pusharglist 1 ........................... <4>
+  [690] extcall 38 .............................. <random(4)>
+  [693] pushint8 1 .............................. <1>
+  [696] eq ...................................... <random(4) = 1>
+  [697] jmpifz [719] ............................ if random(4) = 1 then / else
+  [700] pushcons 96 ............................. <"bra">
+  [702] pushint8 5 .............................. <5>
+  [705] pusharglist 1 ........................... <5>
+  [707] extcall 38 .............................. <random(5)>
+  [710] joinstr ................................. <"bra" & random(5)>
+  [711] pusharglistnoret 1 ...................... <"bra" & random(5)>
+  [713] extcall 36 .............................. puppetSound("bra" & random(5))
+  [716] jmp [745]
+  [719] getglobal 35 ............................ <klar>
+  [722] pushint8 3 .............................. <3>
+  [725] eq ...................................... <klar = 3>
+  [726] jmpifz [745] ............................ if klar = 3 then
+  [729] pushcons 104 ............................ <"bra">
+  [731] pushint8 5 .............................. <5>
+  [734] pusharglist 1 ........................... <5>
+  [736] extcall 38 .............................. <random(5)>
+  [739] joinstr ................................. <"bra" & random(5)>
+  [740] pusharglistnoret 1 ...................... <"bra" & random(5)>
+  [742] extcall 36 .............................. puppetSound("bra" & random(5))
+  [745] jmp [846]
+  [748] pushint8 1 .............................. <1>
+  [751] getglobal 68 ............................ <rimEtt>
+  [754] ontospr ................................. <sprite 1 intersects rimEtt>
+  [755] pushint8 1 .............................. <1>
+  [758] getglobal 60 ............................ <rimTre>
+  [761] ontospr ................................. <sprite 1 intersects rimTre>
+  [762] or ...................................... <sprite 1 intersects rimEtt or sprite 1 intersects rimTre>
+  [763] pushint8 1 .............................. <1>
+  [766] getglobal 57 ............................ <rimFyra>
+  [769] ontospr ................................. <sprite 1 intersects rimFyra>
+  [770] or ...................................... <sprite 1 intersects rimEtt or sprite 1 intersects rimTre or sprite 1 intersects rimFyra>
+  [771] jmpifz [835] ............................ if sprite 1 intersects rimEtt or sprite 1 intersects rimTre or sprite 1 intersects rimFyra then / else
+  [774] pushzero ................................ <0>
+  [775] pusharglistnoret 1 ...................... <0>
+  [777] extcall 5 ............................... cursor(0)
+  [779] pushint8 1 .............................. <1>
+  [782] pushcons 112 ............................ <"fel">
+  [784] pushint8 3 .............................. <3>
+  [787] pusharglist 1 ........................... <3>
+  [789] extcall 38 .............................. <random(3)>
+  [792] joinstr ................................. <"fel" & random(3)>
+  [793] pusharglistnoret 2 ...................... <1, "fel" & random(3)>
+  [795] extcall 36 .............................. puppetSound(1, "fel" & random(3))
+  [798] pushint8 1 .............................. <1>
+  [801] pusharglist 1 ........................... <1>
+  [803] extcall 83 .............................. <soundBusy(1)>
+  [806] jmpifz [821] ............................ repeat while soundBusy(1)
+  [809] pusharglist 0 ........................... <>
+  [811] thebuiltin 1 ............................ <the mouseDown>
+  [813] jmpifz [819] ............................ if the mouseDown then
+  [816] jmp [821] ............................... exit repeat
+  [819] endrepeat [798]
+  [821] getglobal 66 ............................ <spriteTva>
+  [824] getglobal 65 ............................ <posTva>
+  [827] pushint8 33 ............................. <33>
+  [830] set 6 ................................... set the loc of sprite spriteTva to posTva
+  [832] jmp [846]
+  [835] getglobal 66 ............................ <spriteTva>
+  [838] getglobal 65 ............................ <posTva>
+  [841] pushint8 33 ............................. <33>
+  [844] set 6 ................................... set the loc of sprite spriteTva to posTva
+  [846] jmp [1247]
+  [849] peek 0
+  [851] getglobal 62 ............................ <spriteTre>
+  [854] eq
+  [855] jmpifz [1247] ........................... (case) spriteTre:
+  [858] pushint8 1 .............................. <1>
+  [861] getglobal 60 ............................ <rimTre>
+  [864] ontospr ................................. <sprite 1 intersects rimTre>
+  [865] jmpifz [1149] ........................... if sprite 1 intersects rimTre then / else
+  [868] getglobal 56 ............................ <spriteEtt>
+  [871] pushint8 35 ............................. <35>
+  [874] get 6 ................................... <the memberNum of sprite spriteEtt>
+  [876] setlocal 32 ............................. oldTre = the memberNum of sprite spriteEtt
+  [878] getglobal 60 ............................ <rimTre>
+  [881] pushint8 33 ............................. <33>
+  [884] get 6 ................................... <the loc of sprite rimTre>
+  [886] setlocal 16 ............................. platsen = the loc of sprite rimTre
+  [888] getlocal 16 ............................. <platsen>
+  [890] peek 0 .................................. case platsen of
+  [892] getlocal 0 .............................. <rplatslist>
+  [894] pushint8 1 .............................. <1>
+  [897] pusharglist 2 ........................... <rplatslist, 1>
+  [899] extcall 47 .............................. <getAt(rplatslist, 1)>
+  [902] eq
+  [903] jmpifz [926] ............................ (case) getAt(rplatslist, 1):
+  [906] getglobal 62 ............................ <spriteTre>
+  [909] pushcons 120 ............................ <"paket1">
+  [911] pusharglist 1 ........................... <"paket1">
+  [913] extcall 17 .............................. <member("paket1")>
+  [915] getobjprop 76 ........................... <member("paket1").memberNum>
+  [918] pushint8 35 ............................. <35>
+  [921] set 6 ................................... set the memberNum of sprite spriteTre to member("paket1").memberNum
+  [923] jmp [1031]
+  [926] peek 0
+  [928] getlocal 0 .............................. <rplatslist>
+  [930] pushint8 2 .............................. <2>
+  [933] pusharglist 2 ........................... <rplatslist, 2>
+  [935] extcall 47 .............................. <getAt(rplatslist, 2)>
+  [938] eq
+  [939] jmpifz [962] ............................ (case) getAt(rplatslist, 2):
+  [942] getglobal 62 ............................ <spriteTre>
+  [945] pushcons 128 ............................ <"paket2">
+  [947] pusharglist 1 ........................... <"paket2">
+  [949] extcall 17 .............................. <member("paket2")>
+  [951] getobjprop 76 ........................... <member("paket2").memberNum>
+  [954] pushint8 35 ............................. <35>
+  [957] set 6 ................................... set the memberNum of sprite spriteTre to member("paket2").memberNum
+  [959] jmp [1031]
+  [962] peek 0
+  [964] getlocal 0 .............................. <rplatslist>
+  [966] pushint8 3 .............................. <3>
+  [969] pusharglist 2 ........................... <rplatslist, 3>
+  [971] extcall 47 .............................. <getAt(rplatslist, 3)>
+  [974] eq
+  [975] jmpifz [998] ............................ (case) getAt(rplatslist, 3):
+  [978] getglobal 62 ............................ <spriteTre>
+  [981] pushcons 136 ............................ <"paket3">
+  [983] pusharglist 1 ........................... <"paket3">
+  [985] extcall 17 .............................. <member("paket3")>
+  [987] getobjprop 76 ........................... <member("paket3").memberNum>
+  [990] pushint8 35 ............................. <35>
+  [993] set 6 ................................... set the memberNum of sprite spriteTre to member("paket3").memberNum
+  [995] jmp [1031]
+  [998] peek 0
+  [1000] getlocal 0 ............................. <rplatslist>
+  [1002] pushint8 4 ............................. <4>
+  [1005] pusharglist 2 .......................... <rplatslist, 4>
+  [1007] extcall 47 ............................. <getAt(rplatslist, 4)>
+  [1010] eq
+  [1011] jmpifz [1031] .......................... (case) getAt(rplatslist, 4):
+  [1014] getglobal 62 ........................... <spriteTre>
+  [1017] pushcons 144 ........................... <"paket4">
+  [1019] pusharglist 1 .......................... <"paket4">
+  [1021] extcall 17 ............................. <member("paket4")>
+  [1023] getobjprop 76 .......................... <member("paket4").memberNum>
+  [1026] pushint8 35 ............................ <35>
+  [1029] set 6 .................................. set the memberNum of sprite spriteTre to member("paket4").memberNum
+  [1031] pop 1 .................................. end case
+  [1033] getglobal 62 ........................... <spriteTre>
+  [1036] getglobal 60 ........................... <rimTre>
+  [1039] pushint8 33 ............................ <33>
+  [1042] get 6 .................................. <the loc of sprite rimTre>
+  [1044] pushint8 33 ............................ <33>
+  [1047] set 6 .................................. set the loc of sprite spriteTre to the loc of sprite rimTre
+  [1049] getglobal 60 ........................... <rimTre>
+  [1052] pusharglist 1 .......................... <rimTre>
+  [1054] extcall 73 ............................. <sprite(rimTre)>
+  [1057] pushzero ............................... <0>
+  [1058] setobjprop 53 .......................... sprite(rimTre).visible = 0
+  [1061] getglobal 62 ........................... <spriteTre>
+  [1064] pushzero ............................... <0>
+  [1065] pushint8 30 ............................ <30>
+  [1068] set 6 .................................. set the moveableSprite of sprite spriteTre to 0
+  [1070] getglobal 35 ........................... <klar>
+  [1073] pushint8 1 ............................. <1>
+  [1076] add .................................... <klar + 1>
+  [1077] setglobal 35 ........................... klar = klar + 1
+  [1080] pushzero ............................... <0>
+  [1081] pusharglistnoret 1 ..................... <0>
+  [1083] extcall 36 ............................. puppetSound(0)
+  [1086] pushint8 4 ............................. <4>
+  [1089] pusharglist 1 .......................... <4>
+  [1091] extcall 38 ............................. <random(4)>
+  [1094] pushint8 1 ............................. <1>
+  [1097] eq ..................................... <random(4) = 1>
+  [1098] jmpifz [1120] .......................... if random(4) = 1 then / else
+  [1101] pushcons 152 ........................... <"bra">
+  [1103] pushint8 5 ............................. <5>
+  [1106] pusharglist 1 .......................... <5>
+  [1108] extcall 38 ............................. <random(5)>
+  [1111] joinstr ................................ <"bra" & random(5)>
+  [1112] pusharglistnoret 1 ..................... <"bra" & random(5)>
+  [1114] extcall 36 ............................. puppetSound("bra" & random(5))
+  [1117] jmp [1146]
+  [1120] getglobal 35 ........................... <klar>
+  [1123] pushint8 3 ............................. <3>
+  [1126] eq ..................................... <klar = 3>
+  [1127] jmpifz [1146] .......................... if klar = 3 then
+  [1130] pushcons 160 ........................... <"bra">
+  [1132] pushint8 5 ............................. <5>
+  [1135] pusharglist 1 .......................... <5>
+  [1137] extcall 38 ............................. <random(5)>
+  [1140] joinstr ................................ <"bra" & random(5)>
+  [1141] pusharglistnoret 1 ..................... <"bra" & random(5)>
+  [1143] extcall 36 ............................. puppetSound("bra" & random(5))
+  [1146] jmp [1247]
+  [1149] pushint8 1 ............................. <1>
+  [1152] getglobal 68 ........................... <rimEtt>
+  [1155] ontospr ................................ <sprite 1 intersects rimEtt>
+  [1156] pushint8 1 ............................. <1>
+  [1159] getglobal 64 ........................... <rimTva>
+  [1162] ontospr ................................ <sprite 1 intersects rimTva>
+  [1163] or ..................................... <sprite 1 intersects rimEtt or sprite 1 intersects rimTva>
+  [1164] pushint8 1 ............................. <1>
+  [1167] getglobal 57 ........................... <rimFyra>
+  [1170] ontospr ................................ <sprite 1 intersects rimFyra>
+  [1171] or ..................................... <sprite 1 intersects rimEtt or sprite 1 intersects rimTva or sprite 1 intersects rimFyra>
+  [1172] jmpifz [1236] .......................... if sprite 1 intersects rimEtt or sprite 1 intersects rimTva or sprite 1 intersects rimFyra then / else
+  [1175] pushzero ............................... <0>
+  [1176] pusharglistnoret 1 ..................... <0>
+  [1178] extcall 5 .............................. cursor(0)
+  [1180] pushint8 1 ............................. <1>
+  [1183] pushcons 168 ........................... <"fel">
+  [1185] pushint8 3 ............................. <3>
+  [1188] pusharglist 1 .......................... <3>
+  [1190] extcall 38 ............................. <random(3)>
+  [1193] joinstr ................................ <"fel" & random(3)>
+  [1194] pusharglistnoret 2 ..................... <1, "fel" & random(3)>
+  [1196] extcall 36 ............................. puppetSound(1, "fel" & random(3))
+  [1199] pushint8 1 ............................. <1>
+  [1202] pusharglist 1 .......................... <1>
+  [1204] extcall 83 ............................. <soundBusy(1)>
+  [1207] jmpifz [1222] .......................... repeat while soundBusy(1)
+  [1210] pusharglist 0 .......................... <>
+  [1212] thebuiltin 1 ........................... <the mouseDown>
+  [1214] jmpifz [1220] .......................... if the mouseDown then
+  [1217] jmp [1222] ............................. exit repeat
+  [1220] endrepeat [1199]
+  [1222] getglobal 62 ........................... <spriteTre>
+  [1225] getglobal 61 ........................... <posTre>
+  [1228] pushint8 33 ............................ <33>
+  [1231] set 6 .................................. set the loc of sprite spriteTre to posTre
+  [1233] jmp [1247]
+  [1236] getglobal 62 ........................... <spriteTre>
+  [1239] getglobal 61 ........................... <posTre>
+  [1242] pushint8 33 ............................ <33>
+  [1245] set 6 .................................. set the loc of sprite spriteTre to posTre
+  [1247] pop 1 .................................. end case
+  [1249] pushint8 2 ............................. <2>
+  [1252] setglobal 8 ............................ aktiv = 2
+  [1254] pusharglistnoret 0 ..................... <>
+  [1256] extcall 6 .............................. updateStage()
+  [1258] getglobal 35 ........................... <klar>
+  [1261] pushint8 3 ............................. <3>
+  [1264] eq ..................................... <klar = 3>
+  [1265] jmpifz [1393] .......................... if klar = 3 then
+  [1268] pushzero ............................... <0>
+  [1269] pusharglistnoret 1 ..................... <0>
+  [1271] extcall 5 .............................. cursor(0)
+  [1273] getglobal 56 ........................... <spriteEtt>
+  [1276] getlocal 8 ............................. <oldEtt>
+  [1278] pushint8 35 ............................ <35>
+  [1281] set 6 .................................. set the memberNum of sprite spriteEtt to oldEtt
+  [1283] getglobal 66 ........................... <spriteTva>
+  [1286] getlocal 24 ............................ <oldTva>
+  [1288] pushint8 35 ............................ <35>
+  [1291] set 6 .................................. set the memberNum of sprite spriteTva to oldTva
+  [1293] getglobal 62 ........................... <spriteTre>
+  [1296] getlocal 32 ............................ <oldTre>
+  [1298] pushint8 35 ............................ <35>
+  [1301] set 6 .................................. set the memberNum of sprite spriteTre to oldTre
+  [1303] pushint8 3 ............................. <3>
+  [1306] setlocal 40
+  [1308] getlocal 40
+  [1310] pushint8 21 ............................ <21>
+  [1313] lteq
+  [1314] jmpifz [1356] .......................... repeat with k = 3 to 21
+  [1317] getlocal 40 ............................ <k>
+  [1319] pushzero ............................... <0>
+  [1320] pusharglistnoret 2 ..................... <k, 0>
+  [1322] extcall 9 .............................. puppetSprite(k, 0)
+  [1324] getlocal 40 ............................ <k>
+  [1326] pusharglist 1 .......................... <k>
+  [1328] extcall 73 ............................. <sprite(k)>
+  [1331] pushint8 1000 .......................... <1000>
+  [1334] inv .................................... <-1000>
+  [1335] pushint8 1000 .......................... <1000>
+  [1338] inv .................................... <-1000>
+  [1339] pusharglist 2 .......................... <-1000, -1000>
+  [1341] extcall 10 ............................. <point(-1000, -1000)>
+  [1343] setobjprop 20 .......................... sprite(k).loc = point(-1000, -1000)
+  [1345] pushint8 1
+  [1348] getlocal 40
+  [1350] add
+  [1351] setlocal 40
+  [1353] endrepeat [1308]
+  [1356] pushint8 1 ............................. <1>
+  [1359] pusharglist 1 .......................... <1>
+  [1361] extcall 83 ............................. <soundBusy(1)>
+  [1364] jmpifz [1379] .......................... repeat while soundBusy(1)
+  [1367] pusharglist 0 .......................... <>
+  [1369] thebuiltin 1 ........................... <the mouseDown>
+  [1371] jmpifz [1377] .......................... if the mouseDown then
+  [1374] jmp [1379] ............................. exit repeat
+  [1377] endrepeat [1356]
+  [1379] pushcons 176 ........................... <"klart.aif">
+  [1381] pusharglistnoret 1 ..................... <"klart.aif">
+  [1383] extcall 36 ............................. puppetSound("klart.aif")
+  [1386] pushcons 184 ........................... <"klar">
+  [1388] pusharglistnoret 1 ..................... <"klar">
+  [1390] extcall 12 ............................. go("klar")
+  [1392] ret .................................... exit
+  [1393] ret
+end
+
+on exitFrame
+  [  0] pushzero ................................ <0>
+  [  1] setglobal 41 ............................ ove = 0
+  [  4] pushint8 15 ............................. <15>
+  [  7] pusharglistnoret 1 ...................... <15>
+  [  9] extcall 14 .............................. puppetTempo(15)
+  [ 11] pusharglistnoret 0 ...................... <>
+  [ 13] extcall 6 ............................... updateStage()
+  [ 15] pusharglist 0 ........................... <>
+  [ 17] thebuiltin 15 ........................... <the frame>
+  [ 19] pusharglistnoret 1 ...................... <the frame>
+  [ 21] extcall 12 .............................. go(the frame)
+  [ 23] ret
+end

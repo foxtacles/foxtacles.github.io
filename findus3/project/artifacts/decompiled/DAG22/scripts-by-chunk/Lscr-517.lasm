@@ -1,0 +1,14 @@
+global gAntalPynt, gPyntSprite, gFarg
+
+on exitFrame
+  [  0] pushzero ................................ <0>
+  [  1] pusharglistnoret 1 ...................... <0>
+  [  3] extcall 30 .............................. moveCursor(0)
+  [  5] pusharglistnoret 0 ...................... <>
+  [  7] extcall 19 .............................. checkButtons()
+  [  9] pusharglist 0 ........................... <>
+  [ 11] thebuiltin 6 ............................ <the frame>
+  [ 13] pusharglistnoret 1 ...................... <the frame>
+  [ 15] extcall 7 ............................... go(the frame)
+  [ 17] ret
+end

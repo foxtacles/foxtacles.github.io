@@ -1,0 +1,10 @@
+on mouseUp
+  [  0] pushint8 10 ............................. <10>
+  [  2] pushzero ................................ <0>
+  [  3] pusharglistnoret 2 ...................... <10, 0>
+  [  5] extcall 33 .............................. puppetSprite(10, 0)
+  [  7] pushcons 0 .............................. <"startgame">
+  [  9] pusharglistnoret 1 ...................... <"startgame">
+  [ 11] extcall 70 .............................. go("startgame")
+  [ 13] ret
+end

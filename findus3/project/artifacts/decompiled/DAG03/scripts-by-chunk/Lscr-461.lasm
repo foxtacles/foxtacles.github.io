@@ -1,0 +1,10 @@
+on mouseUp
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 28 .............................. startTimer()
+  [  4] pusharglistnoret 0 ...................... <>
+  [  6] extcall 1 ............................... borjaom()
+  [  8] pushsymb 36 ............................. <#previous>
+  [ 10] pusharglistnoret 1 ...................... <#previous>
+  [ 12] extcall 22 .............................. go(#previous)
+  [ 14] ret
+end

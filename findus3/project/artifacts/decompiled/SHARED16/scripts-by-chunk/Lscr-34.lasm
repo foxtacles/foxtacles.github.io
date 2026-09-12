@@ -1,0 +1,17 @@
+on SetGuldFeather
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 1 ............................... WriteSkattFile()
+  [  4] ret
+end
+
+on AddGuldFeather
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 0 ............................... ReadSkattFile()
+  [  4] getglobal 13 ............................ <gAntalGuldFeather>
+  [  6] pushint8 1 .............................. <1>
+  [  8] add ..................................... <gAntalGuldFeather + 1>
+  [  9] setglobal 13 ............................ gAntalGuldFeather = gAntalGuldFeather + 1
+  [ 11] pusharglistnoret 0 ...................... <>
+  [ 13] extcall 1 ............................... WriteSkattFile()
+  [ 15] ret
+end

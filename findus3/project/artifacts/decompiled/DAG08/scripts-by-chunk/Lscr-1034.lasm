@@ -1,0 +1,113 @@
+on KollaOmMonsterFinns
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 20 ........................... <the mouseH>
+  [  4] setlocal 0 .............................. Mx = the mouseH
+  [  6] pusharglist 0 ........................... <>
+  [  8] thebuiltin 21 ........................... <the mouseV>
+  [ 10] setlocal 8 .............................. My = the mouseV
+  [ 12] pushzero ................................ <0>
+  [ 13] setglobal 46 ............................ HittatMonster = 0
+  [ 16] pushint8 35 ............................. <35>
+  [ 19] setlocal 16 ............................. Tol = 35
+  [ 21] pushint8 1 .............................. <1>
+  [ 24] setlocal 24
+  [ 26] getlocal 24
+  [ 28] pushint8 3 .............................. <3>
+  [ 31] lteq
+  [ 32] jmpifz [129] ............................ repeat with i = 1 to 3
+  [ 35] getglobal 34 ............................ <SlumpMonsterList>
+  [ 38] getlocal 24 ............................. <i>
+  [ 40] pusharglist 2 ........................... <SlumpMonsterList, i>
+  [ 42] extcall 37 .............................. <getAt(SlumpMonsterList, i)>
+  [ 45] setlocal 32 ............................. m = getAt(SlumpMonsterList, i)
+  [ 47] getglobal 27 ............................ <MonsterPos>
+  [ 49] getlocal 32 ............................. <m>
+  [ 51] pusharglist 2 ........................... <MonsterPos, m>
+  [ 53] extcall 37 .............................. <getAt(MonsterPos, m)>
+  [ 56] getobjprop 47 ........................... <getAt(MonsterPos, m).locH>
+  [ 59] setlocal 40 ............................. MonX = getAt(MonsterPos, m).locH
+  [ 61] getglobal 27 ............................ <MonsterPos>
+  [ 63] getlocal 32 ............................. <m>
+  [ 65] pusharglist 2 ........................... <MonsterPos, m>
+  [ 67] extcall 37 .............................. <getAt(MonsterPos, m)>
+  [ 70] getobjprop 48 ........................... <getAt(MonsterPos, m).locV>
+  [ 73] setlocal 48 ............................. MonY = getAt(MonsterPos, m).locV
+  [ 75] getlocal 0 .............................. <Mx>
+  [ 77] getlocal 40 ............................. <MonX>
+  [ 79] getlocal 16 ............................. <Tol>
+  [ 81] sub ..................................... <MonX - Tol>
+  [ 82] gt ...................................... <Mx > (MonX - Tol)>
+  [ 83] getlocal 0 .............................. <Mx>
+  [ 85] getlocal 40 ............................. <MonX>
+  [ 87] getlocal 16 ............................. <Tol>
+  [ 89] add ..................................... <MonX + Tol>
+  [ 90] lt ...................................... <Mx < (MonX + Tol)>
+  [ 91] and ..................................... <(Mx > (MonX - Tol)) and (Mx < (MonX + Tol))>
+  [ 92] getlocal 8 .............................. <My>
+  [ 94] getlocal 48 ............................. <MonY>
+  [ 96] getlocal 16 ............................. <Tol>
+  [ 98] sub ..................................... <MonY - Tol>
+  [ 99] gt ...................................... <My > (MonY - Tol)>
+  [100] and ..................................... <(Mx > (MonX - Tol)) and (Mx < (MonX + Tol)) and (My > (MonY - Tol))>
+  [101] getlocal 8 .............................. <My>
+  [103] getlocal 48 ............................. <MonY>
+  [105] getlocal 16 ............................. <Tol>
+  [107] add ..................................... <MonY + Tol>
+  [108] lt ...................................... <My < (MonY + Tol)>
+  [109] and ..................................... <(Mx > (MonX - Tol)) and (Mx < (MonX + Tol)) and (My > (MonY - Tol)) and (My < (MonY + Tol))>
+  [110] jmpifz [118] ............................ if (Mx > (MonX - Tol)) and (Mx < (MonX + Tol)) and (My > (MonY - Tol)) and (My < (MonY + Tol)) then
+  [113] getlocal 32 ............................. <m>
+  [115] setglobal 46 ............................ HittatMonster = m
+  [118] pushint8 1
+  [121] getlocal 24
+  [123] add
+  [124] setlocal 24
+  [126] endrepeat [ 26]
+  [129] pushint8 1 .............................. <1>
+  [132] setlocal 24
+  [134] getlocal 24
+  [136] getglobal 13 ............................ <AntalHittade>
+  [138] lteq
+  [139] jmpifz [173] ............................ repeat with i = 1 to AntalHittade
+  [142] getglobal 46 ............................ <HittatMonster>
+  [145] getglobal 31 ............................ <HittadeMonster>
+  [147] getlocal 24 ............................. <i>
+  [149] pusharglist 2 ........................... <HittadeMonster, i>
+  [151] extcall 37 .............................. <getAt(HittadeMonster, i)>
+  [154] eq ...................................... <HittatMonster = getAt(HittadeMonster, i)>
+  [155] jmpifz [162] ............................ if HittatMonster = getAt(HittadeMonster, i) then
+  [158] pushzero ................................ <0>
+  [159] setglobal 46 ............................ HittatMonster = 0
+  [162] pushint8 1
+  [165] getlocal 24
+  [167] add
+  [168] setlocal 24
+  [170] endrepeat [134]
+  [173] getglobal 46 ............................ <HittatMonster>
+  [176] pushzero ................................ <0>
+  [177] gt ...................................... <HittatMonster > 0>
+  [178] jmpifz [226] ............................ if HittatMonster > 0 then
+  [181] getlocal 0 .............................. <Mx>
+  [183] getlocal 8 .............................. <My>
+  [185] pusharglist 2 ........................... <Mx, My>
+  [187] extcall 18 .............................. <point(Mx, My)>
+  [189] getglobal 27 ............................ <MonsterPos>
+  [191] getlocal 32 ............................. <m>
+  [193] pusharglist 2 ........................... <MonsterPos, m>
+  [195] extcall 37 .............................. <getAt(MonsterPos, m)>
+  [198] getlocal 16 ............................. <Tol>
+  [200] sub ..................................... <getAt(MonsterPos, m) - Tol>
+  [201] pusharglistnoret 2 ...................... <point(Mx, My), getAt(MonsterPos, m) - Tol>
+  [203] extcall 36 .............................. put point(Mx, My), getAt(MonsterPos, m) - Tol
+  [206] pushzero ................................ <0>
+  [207] setglobal 33 ............................ Hittatggr = 0
+  [210] pushint8 1 .............................. <1>
+  [213] setglobal 2 ............................. HittatAktiv = 1
+  [215] getglobal 13 ............................ <AntalHittade>
+  [217] pushint8 1 .............................. <1>
+  [220] add ..................................... <AntalHittade + 1>
+  [221] setglobal 13 ............................ AntalHittade = AntalHittade + 1
+  [223] pushzero ................................ <0>
+  [224] setglobal 8 ............................. BildTimer = 0
+  [226] ret
+end

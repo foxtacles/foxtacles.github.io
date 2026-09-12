@@ -1,0 +1,11 @@
+on DelayHandler tid
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 24 .............................. startTimer()
+  [  4] pushint8 34 ............................. <34>
+  [  6] get 7 ................................... <the timer>
+  [  8] getparam 0 .............................. <tid>
+  [ 10] lt ...................................... <the timer < tid>
+  [ 11] jmpifz [ 16] ............................ repeat while the timer < tid
+  [ 14] endrepeat [  4]
+  [ 16] ret
+end

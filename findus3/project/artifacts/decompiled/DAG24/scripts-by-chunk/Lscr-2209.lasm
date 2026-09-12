@@ -1,0 +1,9 @@
+on exitFrame
+  [  0] pushint8 1 .............................. <1>
+  [  3] pusharglistnoret 1 ...................... <1>
+  [  5] extcall 26 .............................. InitDragAvsnitt(1)
+  [  7] pushint8 2 .............................. <2>
+  [ 10] pusharglistnoret 1 ...................... <2>
+  [ 12] extcall 27 .............................. DisplayDragDjur(2)
+  [ 14] ret
+end

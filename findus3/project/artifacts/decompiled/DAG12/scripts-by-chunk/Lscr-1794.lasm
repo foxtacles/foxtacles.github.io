@@ -1,0 +1,311 @@
+on UNIcreateUniObject ObjectNr, MotionType, EPC, path, CS, chain, SS
+  [  0] pushint8 1 .............................. <1>
+  [  3] setlocal 0
+  [  5] getlocal 0
+  [  7] getglobal 1 ............................. <UNIObjectList>
+  [  9] pusharglist 1 ........................... <UNIObjectList>
+  [ 11] extcall 42 .............................. <count(UNIObjectList)>
+  [ 14] lteq
+  [ 15] jmpifz [ 63] ............................ repeat with i = 1 to count(UNIObjectList)
+  [ 18] getglobal 1 ............................. <UNIObjectList>
+  [ 20] getlocal 0 .............................. <i>
+  [ 22] pusharglist 2 ........................... <UNIObjectList, i>
+  [ 24] objcall 43 .............................. <UNIObjectList[i]>
+  [ 27] getobjprop 3 ............................ <UNIObjectList[i].UNIobjectNr>
+  [ 29] getparam 0 .............................. <ObjectNr>
+  [ 31] eq ...................................... <UNIObjectList[i].UNIobjectNr = ObjectNr>
+  [ 32] jmpifz [ 52] ............................ if UNIObjectList[i].UNIobjectNr = ObjectNr then
+  [ 35] getglobal 1 ............................. <UNIObjectList>
+  [ 37] getlocal 0 .............................. <i>
+  [ 39] pusharglistnoret 2 ...................... <UNIObjectList, i>
+  [ 41] extcall 118 ............................. deleteAt(UNIObjectList, i)
+  [ 44] getlocal 0 .............................. <i>
+  [ 46] pushint8 1 .............................. <1>
+  [ 49] sub ..................................... <i - 1>
+  [ 50] setlocal 0 .............................. i = i - 1
+  [ 52] pushint8 1
+  [ 55] getlocal 0
+  [ 57] add
+  [ 58] setlocal 0
+  [ 60] endrepeat [  5]
+  [ 63] pushcons 0 .............................. <"UniInitObjects">
+  [ 65] pusharglist 1 ........................... <"UniInitObjects">
+  [ 67] extcall 119 ............................. <script("UniInitObjects")>
+  [ 70] pusharglist 1 ........................... <script("UniInitObjects")>
+  [ 72] extcall 2 ............................... <new(script("UniInitObjects"))>
+  [ 74] setlocal 8 .............................. uniobj = new(script("UniInitObjects"))
+  [ 76] getglobal 1 ............................. <UNIObjectList>
+  [ 78] getlocal 8 .............................. <uniobj>
+  [ 80] pusharglistnoret 2 ...................... <UNIObjectList, uniobj>
+  [ 82] extcall 44 .............................. add(UNIObjectList, uniobj)
+  [ 85] getglobal 1 ............................. <UNIObjectList>
+  [ 87] getglobal 1 ............................. <UNIObjectList>
+  [ 89] pusharglist 1 ........................... <UNIObjectList>
+  [ 91] extcall 42 .............................. <count(UNIObjectList)>
+  [ 94] pusharglist 2 ........................... <UNIObjectList, count(UNIObjectList)>
+  [ 96] objcall 43 .............................. <UNIObjectList[count(UNIObjectList)]>
+  [ 99] setlocal 16 ............................. tObj = UNIObjectList[count(UNIObjectList)]
+  [101] getglobal 120 ........................... <gameObjectList>
+  [104] getparam 0 .............................. <ObjectNr>
+  [106] pusharglist 2 ........................... <gameObjectList, ObjectNr>
+  [108] objcall 43 .............................. <gameObjectList[ObjectNr]>
+  [111] setlocal 24 ............................. sourceObj = gameObjectList[ObjectNr]
+  [113] getlocal 16 ............................. <tObj>
+  [115] pushint8 1 .............................. <1>
+  [118] setobjprop 4 ............................ tObj.UNIactive = 1
+  [120] getlocal 16 ............................. <tObj>
+  [122] getlocal 24 ............................. <sourceObj>
+  [124] getobjprop 121 .......................... <sourceObj.AnimVinklar>
+  [127] setobjprop 22 ........................... tObj.UNIanimationAngles = sourceObj.AnimVinklar
+  [129] getlocal 16 ............................. <tObj>
+  [131] getlocal 24 ............................. <sourceObj>
+  [133] getobjprop 122 .......................... <sourceObj.PixelPerSteg>
+  [136] setobjprop 20 ........................... tObj.UNIpixelsPerStep = sourceObj.PixelPerSteg
+  [138] getlocal 16 ............................. <tObj>
+  [140] getlocal 24 ............................. <sourceObj>
+  [142] getobjprop 123 .......................... <sourceObj.BytBildVidSteg>
+  [145] setobjprop 21 ........................... tObj.UNIchangeCastAfter = sourceObj.BytBildVidSteg
+  [147] getlocal 16 ............................. <tObj>
+  [149] getlocal 24 ............................. <sourceObj>
+  [151] getobjprop 124 .......................... <sourceObj.m>
+  [154] setobjprop 15 ........................... tObj.UNIm = sourceObj.m
+  [156] getlocal 16 ............................. <tObj>
+  [158] getlocal 24 ............................. <sourceObj>
+  [160] getobjprop 125 .......................... <sourceObj.DraOK>
+  [163] setobjprop 34 ........................... tObj.UNIdraggable = sourceObj.DraOK
+  [166] getlocal 16 ............................. <tObj>
+  [168] getparam 24 ............................. <path>
+  [170] setobjprop 35 ........................... tObj.UNIpathList = path
+  [173] getlocal 16 ............................. <tObj>
+  [175] getparam 24 ............................. <path>
+  [177] pushint8 1 .............................. <1>
+  [180] pusharglist 2 ........................... <path, 1>
+  [182] objcall 43 .............................. <path[1]>
+  [185] getobjprop 52 ........................... <path[1].locH>
+  [188] setobjprop 27 ........................... tObj.UNIaktX = path[1].locH
+  [190] getlocal 16 ............................. <tObj>
+  [192] getparam 24 ............................. <path>
+  [194] pushint8 1 .............................. <1>
+  [197] pusharglist 2 ........................... <path, 1>
+  [199] objcall 43 .............................. <path[1]>
+  [202] getobjprop 53 ........................... <path[1].locV>
+  [205] setobjprop 28 ........................... tObj.UNIaktY = path[1].locV
+  [207] getlocal 16 ............................. <tObj>
+  [209] getparam 0 .............................. <ObjectNr>
+  [211] setobjprop 3 ............................ tObj.UNIobjectNr = ObjectNr
+  [213] getlocal 16 ............................. <tObj>
+  [215] getparam 8 .............................. <MotionType>
+  [217] setobjprop 11 ........................... tObj.UNImotionType = MotionType
+  [219] getlocal 16 ............................. <tObj>
+  [221] getparam 16 ............................. <EPC>
+  [223] setobjprop 37 ........................... tObj.UNIendPointCounter = EPC
+  [226] getlocal 16 ............................. <tObj>
+  [228] getparam 32 ............................. <CS>
+  [230] setobjprop 10 ........................... tObj.UniAction = CS
+  [232] getparam 40 ............................. <chain>
+  [234] pusharglist 1 ........................... <chain>
+  [236] extcall 126 ............................. <listp(chain)>
+  [239] getparam 40 ............................. <chain>
+  [241] pusharglist 0 ........................... <[]>
+  [243] pushlist ................................ <[]>
+  [244] nteq .................................... <chain <> []>
+  [245] and ..................................... <listp(chain) and (chain <> [])>
+  [246] jmpifz [256] ............................ if listp(chain) and (chain <> []) then
+  [249] getlocal 16 ............................. <tObj>
+  [251] getparam 40 ............................. <chain>
+  [253] setobjprop 38 ........................... tObj.UNIchain = chain
+  [256] getparam 48 ............................. <SS>
+  [258] pusharglist 1 ........................... <SS>
+  [260] extcall 168 ............................. <integerp(SS)>
+  [263] jmpifz [360] ............................ if integerp(SS) then
+  [266] getlocal 24 ............................. <sourceObj>
+  [268] pushsymb 174 ............................ <#soundSequens>
+  [271] getparam 48 ............................. <SS>
+  [273] pusharglist 3 ........................... <sourceObj, #soundSequens, SS>
+  [275] objcall 129 ............................. <sourceObj.soundSequens[SS]>
+  [278] setlocal 32 ............................. soundData = sourceObj.soundSequens[SS]
+  [280] getlocal 32 ............................. <soundData>
+  [282] pushint8 1 .............................. <1>
+  [285] pusharglist 2 ........................... <soundData, 1>
+  [287] objcall 43 .............................. <soundData[1]>
+  [290] setlocal 40 ............................. code = soundData[1]
+  [292] getlocal 16 ............................. <tObj>
+  [294] getlocal 32 ............................. <soundData>
+  [296] pushint8 3 .............................. <3>
+  [299] pusharglist 2 ........................... <soundData, 3>
+  [301] objcall 43 .............................. <soundData[3]>
+  [304] setobjprop 176 .......................... tObj.UNIsounds = soundData[3]
+  [307] getlocal 40 ............................. <code>
+  [309] peek 0 .................................. case code of
+  [311] pushcons 8 .............................. <"P">
+  [313] eq
+  [314] jmpifz [335] ............................ (case) "P":
+  [317] getlocal 16 ............................. <tObj>
+  [319] getlocal 32 ............................. <soundData>
+  [321] pushint8 2 .............................. <2>
+  [324] pusharglist 2 ........................... <soundData, 2>
+  [326] objcall 43 .............................. <soundData[2]>
+  [329] setobjprop 190 .......................... tObj.UNIsoundTriggerP = soundData[2]
+  [332] jmp [358]
+  [335] peek 0
+  [337] pushcons 16 ............................. <"C">
+  [339] eq
+  [340] jmpifz [358] ............................ (case) "C":
+  [343] getlocal 16 ............................. <tObj>
+  [345] getlocal 32 ............................. <soundData>
+  [347] pushint8 2 .............................. <2>
+  [350] pusharglist 2 ........................... <soundData, 2>
+  [352] objcall 43 .............................. <soundData[2]>
+  [355] setobjprop 191 .......................... tObj.UNIsoundTriggerC = soundData[2]
+  [358] pop 1 ................................... end case
+  [360] getlocal 24 ............................. <sourceObj>
+  [362] getparam 32 ............................. <CS>
+  [364] setobjprop 127 .......................... sourceObj.aktivAction = CS
+  [367] getparam 8 .............................. <MotionType>
+  [369] peek 0 .................................. case MotionType of
+  [371] pushint8 1 .............................. <1>
+  [374] nteq
+  [375] jmpifz [387] ............................ (case) 1, ...
+  [378] peek 0
+  [380] pushint8 2 .............................. <2>
+  [383] eq
+  [384] jmpifz [510] ............................ (case) ..., 2:
+  [387] getlocal 16 ............................. <tObj>
+  [389] getlocal 24 ............................. <sourceObj>
+  [391] pushsymb 128 ............................ <#StartcastNr>
+  [394] getparam 32 ............................. <CS>
+  [396] pusharglist 3 ........................... <sourceObj, #StartcastNr, CS>
+  [398] objcall 129 ............................. <sourceObj.StartcastNr[CS]>
+  [401] setobjprop 7 ............................ tObj.UNIstartCastNr = sourceObj.StartcastNr[CS]
+  [403] getlocal 16 ............................. <tObj>
+  [405] getlocal 24 ............................. <sourceObj>
+  [407] pushsymb 130 ............................ <#SlutcastNr>
+  [410] getparam 32 ............................. <CS>
+  [412] pusharglist 3 ........................... <sourceObj, #SlutcastNr, CS>
+  [414] objcall 129 ............................. <sourceObj.SlutcastNr[CS]>
+  [417] setobjprop 8 ............................ tObj.UNIstopCastNr = sourceObj.SlutcastNr[CS]
+  [419] getlocal 16 ............................. <tObj>
+  [421] getlocal 24 ............................. <sourceObj>
+  [423] pushsymb 131 ............................ <#CastIntervall>
+  [426] getparam 32 ............................. <CS>
+  [428] pusharglist 3 ........................... <sourceObj, #CastIntervall, CS>
+  [430] objcall 129 ............................. <sourceObj.CastIntervall[CS]>
+  [433] setobjprop 6 ............................ tObj.UNIcastIntervall = sourceObj.CastIntervall[CS]
+  [435] getlocal 16 ............................. <tObj>
+  [437] getobjprop 8 ............................ <tObj.UNIstopCastNr>
+  [439] getlocal 16 ............................. <tObj>
+  [441] getobjprop 7 ............................ <tObj.UNIstartCastNr>
+  [443] sub ..................................... <tObj.UNIstopCastNr - tObj.UNIstartCastNr>
+  [444] pushint8 1 .............................. <1>
+  [447] add ..................................... <tObj.UNIstopCastNr - tObj.UNIstartCastNr + 1>
+  [448] setlocal 48 ............................. picSpread = tObj.UNIstopCastNr - tObj.UNIstartCastNr + 1
+  [450] getlocal 48 ............................. <picSpread>
+  [452] getlocal 16 ............................. <tObj>
+  [454] getobjprop 6 ............................ <tObj.UNIcastIntervall>
+  [456] add ..................................... <picSpread + tObj.UNIcastIntervall>
+  [457] getlocal 16 ............................. <tObj>
+  [459] getobjprop 22 ........................... <tObj.UNIanimationAngles>
+  [461] div ..................................... <(picSpread + tObj.UNIcastIntervall) / tObj.UNIanimationAngles>
+  [462] setlocal 56 ............................. picTotal = (picSpread + tObj.UNIcastIntervall) / tObj.UNIanimationAngles
+  [464] getlocal 16 ............................. <tObj>
+  [466] getlocal 56 ............................. <picTotal>
+  [468] getlocal 16 ............................. <tObj>
+  [470] getobjprop 6 ............................ <tObj.UNIcastIntervall>
+  [472] sub ..................................... <picTotal - tObj.UNIcastIntervall>
+  [473] setobjprop 23 ........................... tObj.UNIpicsPerAngle = picTotal - tObj.UNIcastIntervall
+  [475] getlocal 16 ............................. <tObj>
+  [477] getlocal 24 ............................. <sourceObj>
+  [479] pushsymb 132 ............................ <#FrameTime>
+  [482] getparam 32 ............................. <CS>
+  [484] pusharglist 3 ........................... <sourceObj, #FrameTime, CS>
+  [486] objcall 129 ............................. <sourceObj.FrameTime[CS]>
+  [489] setobjprop 13 ........................... tObj.UniFrameTime = sourceObj.FrameTime[CS]
+  [491] getlocal 16 ............................. <tObj>
+  [493] getlocal 24 ............................. <sourceObj>
+  [495] pushsymb 133 ............................ <#standSequens>
+  [498] getparam 32 ............................. <CS>
+  [500] pusharglist 3 ........................... <sourceObj, #standSequens, CS>
+  [502] objcall 129 ............................. <sourceObj.standSequens[CS]>
+  [505] setobjprop 9 ............................ tObj.UNIstandSequens = sourceObj.standSequens[CS]
+  [507] jmp [680]
+  [510] peek 0
+  [512] pushint8 3 .............................. <3>
+  [515] nteq
+  [516] jmpifz [528] ............................ (case) 3, ...
+  [519] peek 0
+  [521] pushint8 4 .............................. <4>
+  [524] eq
+  [525] jmpifz [563] ............................ (case) ..., 4:
+  [528] getlocal 16 ............................. <tObj>
+  [530] getlocal 24 ............................. <sourceObj>
+  [532] pushsymb 134 ............................ <#Animation_bilder>
+  [535] getparam 32 ............................. <CS>
+  [537] pusharglist 3 ........................... <sourceObj, #Animation_bilder, CS>
+  [539] objcall 129 ............................. <sourceObj.Animation_bilder[CS]>
+  [542] setobjprop 12 ........................... tObj.UNIanimationPics = sourceObj.Animation_bilder[CS]
+  [544] getlocal 16 ............................. <tObj>
+  [546] getlocal 24 ............................. <sourceObj>
+  [548] pushsymb 132 ............................ <#FrameTime>
+  [551] getparam 32 ............................. <CS>
+  [553] pusharglist 3 ........................... <sourceObj, #FrameTime, CS>
+  [555] objcall 129 ............................. <sourceObj.FrameTime[CS]>
+  [558] setobjprop 13 ........................... tObj.UniFrameTime = sourceObj.FrameTime[CS]
+  [560] jmp [680]
+  [563] peek 0
+  [565] pushint8 5 .............................. <5>
+  [568] eq
+  [569] jmpifz [639] ............................ (case) 5:
+  [572] getlocal 16 ............................. <tObj>
+  [574] getlocal 24 ............................. <sourceObj>
+  [576] pushsymb 128 ............................ <#StartcastNr>
+  [579] getparam 32 ............................. <CS>
+  [581] pusharglist 3 ........................... <sourceObj, #StartcastNr, CS>
+  [583] objcall 129 ............................. <sourceObj.StartcastNr[CS]>
+  [586] setobjprop 7 ............................ tObj.UNIstartCastNr = sourceObj.StartcastNr[CS]
+  [588] getlocal 16 ............................. <tObj>
+  [590] getlocal 24 ............................. <sourceObj>
+  [592] pushsymb 130 ............................ <#SlutcastNr>
+  [595] getparam 32 ............................. <CS>
+  [597] pusharglist 3 ........................... <sourceObj, #SlutcastNr, CS>
+  [599] objcall 129 ............................. <sourceObj.SlutcastNr[CS]>
+  [602] setobjprop 8 ............................ tObj.UNIstopCastNr = sourceObj.SlutcastNr[CS]
+  [604] getlocal 16 ............................. <tObj>
+  [606] getlocal 24 ............................. <sourceObj>
+  [608] pushsymb 132 ............................ <#FrameTime>
+  [611] getparam 32 ............................. <CS>
+  [613] pusharglist 3 ........................... <sourceObj, #FrameTime, CS>
+  [615] objcall 129 ............................. <sourceObj.FrameTime[CS]>
+  [618] setobjprop 13 ........................... tObj.UniFrameTime = sourceObj.FrameTime[CS]
+  [620] getlocal 16 ............................. <tObj>
+  [622] getlocal 24 ............................. <sourceObj>
+  [624] pushsymb 133 ............................ <#standSequens>
+  [627] getparam 32 ............................. <CS>
+  [629] pusharglist 3 ........................... <sourceObj, #standSequens, CS>
+  [631] objcall 129 ............................. <sourceObj.standSequens[CS]>
+  [634] setobjprop 9 ............................ tObj.UNIstandSequens = sourceObj.standSequens[CS]
+  [636] jmp [680]
+  [639] peek 0
+  [641] pushint8 6 .............................. <6>
+  [644] eq
+  [645] jmpifz [680] ............................ (case) 6:
+  [648] getlocal 16 ............................. <tObj>
+  [650] getlocal 24 ............................. <sourceObj>
+  [652] pushsymb 132 ............................ <#FrameTime>
+  [655] getparam 32 ............................. <CS>
+  [657] pusharglist 3 ........................... <sourceObj, #FrameTime, CS>
+  [659] objcall 129 ............................. <sourceObj.FrameTime[CS]>
+  [662] setobjprop 13 ........................... tObj.UniFrameTime = sourceObj.FrameTime[CS]
+  [664] getlocal 16 ............................. <tObj>
+  [666] getlocal 24 ............................. <sourceObj>
+  [668] pushsymb 134 ............................ <#Animation_bilder>
+  [671] getparam 32 ............................. <CS>
+  [673] pusharglist 3 ........................... <sourceObj, #Animation_bilder, CS>
+  [675] objcall 129 ............................. <sourceObj.Animation_bilder[CS]>
+  [678] setobjprop 12 ........................... tObj.UNIanimationPics = sourceObj.Animation_bilder[CS]
+  [680] pop 1 ................................... end case
+  [682] getlocal 16 ............................. <tObj>
+  [684] pushint8 34 ............................. <34>
+  [687] get 7 ................................... <the timer>
+  [689] setobjprop 14 ........................... tObj.UNIoldPicTimer = the timer
+  [691] ret
+end

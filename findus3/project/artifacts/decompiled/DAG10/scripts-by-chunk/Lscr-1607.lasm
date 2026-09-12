@@ -1,0 +1,13 @@
+on PreloadSounds
+  [  0] pushint8 24 ............................. <24>
+  [  3] pushcons 0 .............................. <"julAudio">
+  [  5] pusharglist 2 ........................... <24, "julAudio">
+  [  7] extcall 45 .............................. <member(24, "julAudio")>
+  [ 10] pushint8 39 ............................. <39>
+  [ 13] pushcons 8 .............................. <"julAudio">
+  [ 15] pusharglist 2 ........................... <39, "julAudio">
+  [ 17] extcall 45 .............................. <member(39, "julAudio")>
+  [ 20] pusharglistnoret 2 ...................... <member(24, "julAudio"), member(39, "julAudio")>
+  [ 22] extcall 167 ............................. preloadMember(member(24, "julAudio"), member(39, "julAudio"))
+  [ 25] ret
+end

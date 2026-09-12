@@ -1,0 +1,58 @@
+on KorLjudVantaMus Kanal, Ljud
+  [  0] getparam 0 .............................. <Kanal>
+  [  2] getparam 8 .............................. <Ljud>
+  [  4] pusharglistnoret 2 ...................... <Kanal, Ljud>
+  [  6] extcall 49 .............................. puppetSound(Kanal, Ljud)
+  [  9] pushzero ................................ <0>
+  [ 10] setlocal 0 .............................. KnappTryckt = 0
+  [ 12] pusharglist 0 ........................... <>
+  [ 14] thebuiltin 50 ........................... <the mouseDown>
+  [ 17] pushint8 1 .............................. <1>
+  [ 20] eq ...................................... <the mouseDown = 1>
+  [ 21] jmpifz [ 26] ............................ repeat while the mouseDown = 1
+  [ 24] endrepeat [ 12]
+  [ 26] getparam 0 .............................. <Kanal>
+  [ 28] pusharglist 1 ........................... <Kanal>
+  [ 30] extcall 75 .............................. <soundBusy(Kanal)>
+  [ 33] getlocal 0 .............................. <KnappTryckt>
+  [ 35] pushzero ................................ <0>
+  [ 36] eq ...................................... <KnappTryckt = 0>
+  [ 37] and ..................................... <soundBusy(Kanal) and (KnappTryckt = 0)>
+  [ 38] jmpifz [ 61] ............................ repeat while soundBusy(Kanal) and (KnappTryckt = 0)
+  [ 41] pusharglist 0 ........................... <>
+  [ 43] thebuiltin 50 ........................... <the mouseDown>
+  [ 46] pushint8 1 .............................. <1>
+  [ 49] eq ...................................... <the mouseDown = 1>
+  [ 50] jmpifz [ 58] ............................ if the mouseDown = 1 then
+  [ 53] pushint8 1 .............................. <1>
+  [ 56] setlocal 0 .............................. KnappTryckt = 1
+  [ 58] endrepeat [ 26]
+  [ 61] getparam 0 .............................. <Kanal>
+  [ 63] pushzero ................................ <0>
+  [ 64] pusharglistnoret 2 ...................... <Kanal, 0>
+  [ 66] extcall 49 .............................. puppetSound(Kanal, 0)
+  [ 69] ret
+end
+
+on KorLjudOchVanta Kanal, Ljud
+  [  0] getparam 0 .............................. <Kanal>
+  [  2] getparam 8 .............................. <Ljud>
+  [  4] pusharglistnoret 2 ...................... <Kanal, Ljud>
+  [  6] extcall 49 .............................. puppetSound(Kanal, Ljud)
+  [  9] pushzero ................................ <0>
+  [ 10] setlocal 0 .............................. KnappTryckt = 0
+  [ 12] getparam 0 .............................. <Kanal>
+  [ 14] pusharglist 1 ........................... <Kanal>
+  [ 16] extcall 75 .............................. <soundBusy(Kanal)>
+  [ 19] jmpifz [ 29] ............................ repeat while soundBusy(Kanal)
+  [ 22] pusharglistnoret 0 ...................... <>
+  [ 24] extcall 79 .............................. nothing()
+  [ 27] endrepeat [ 12]
+  [ 29] pusharglist 0 ........................... <>
+  [ 31] thebuiltin 50 ........................... <the mouseDown>
+  [ 34] pushint8 1 .............................. <1>
+  [ 37] eq ...................................... <the mouseDown = 1>
+  [ 38] jmpifz [ 43] ............................ repeat while the mouseDown = 1
+  [ 41] endrepeat [ 29]
+  [ 43] ret
+end

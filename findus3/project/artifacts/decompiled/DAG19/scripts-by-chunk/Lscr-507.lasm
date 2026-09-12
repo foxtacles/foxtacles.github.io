@@ -1,0 +1,212 @@
+on is_in_list sak, lista
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getparam 8 .............................. <lista>
+  [  8] pusharglist 1 ........................... <lista>
+  [ 10] extcall 19 .............................. <count(lista)>
+  [ 12] lteq
+  [ 13] jmpifz [ 45] ............................ repeat with X = 1 to count(lista)
+  [ 16] getparam 8 .............................. <lista>
+  [ 18] getlocal 0 .............................. <X>
+  [ 20] pusharglist 2 ........................... <lista, X>
+  [ 22] extcall 18 .............................. <getAt(lista, X)>
+  [ 24] getparam 0 .............................. <sak>
+  [ 26] eq ...................................... <getAt(lista, X) = sak>
+  [ 27] jmpifz [ 36] ............................ if getAt(lista, X) = sak then
+  [ 30] getlocal 0 .............................. <X>
+  [ 32] pusharglistnoret 1 ...................... <X>
+  [ 34] extcall 22 .............................. return X
+  [ 36] pushint8 1
+  [ 38] getlocal 0
+  [ 40] add
+  [ 41] setlocal 0
+  [ 43] endrepeat [  4]
+  [ 45] pushzero ................................ <0>
+  [ 46] pusharglistnoret 1 ...................... <0>
+  [ 48] extcall 22 .............................. return 0
+  [ 50] ret
+end
+
+on deletefromlist sak, lista
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getparam 8 .............................. <lista>
+  [  8] pusharglist 1 ........................... <lista>
+  [ 10] extcall 19 .............................. <count(lista)>
+  [ 12] lteq
+  [ 13] jmpifz [ 50] ............................ repeat with X = 1 to count(lista)
+  [ 16] getparam 8 .............................. <lista>
+  [ 18] getlocal 0 .............................. <X>
+  [ 20] pusharglist 2 ........................... <lista, X>
+  [ 22] extcall 18 .............................. <getAt(lista, X)>
+  [ 24] getparam 0 .............................. <sak>
+  [ 26] eq ...................................... <getAt(lista, X) = sak>
+  [ 27] jmpifz [ 41] ............................ if getAt(lista, X) = sak then
+  [ 30] getparam 8 .............................. <lista>
+  [ 32] getlocal 0 .............................. <X>
+  [ 34] pusharglistnoret 2 ...................... <lista, X>
+  [ 36] extcall 20 .............................. deleteAt(lista, X)
+  [ 38] jmp [ 50] ............................... exit repeat
+  [ 41] pushint8 1
+  [ 43] getlocal 0
+  [ 45] add
+  [ 46] setlocal 0
+  [ 48] endrepeat [  4]
+  [ 50] ret
+end
+
+on crlist first, last, loop
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. utlist = []
+  [  5] getparam 0 .............................. <first>
+  [  7] getparam 8 .............................. <last>
+  [  9] lt ...................................... <first < last>
+  [ 10] jmpifz [ 82] ............................ if first < last then / else
+  [ 13] getparam 0 .............................. <first>
+  [ 15] setlocal 8
+  [ 17] getlocal 8
+  [ 19] getparam 8 .............................. <last>
+  [ 21] lteq
+  [ 22] jmpifz [ 42] ............................ repeat with X = first to last
+  [ 25] getlocal 0 .............................. <utlist>
+  [ 27] getlocal 8 .............................. <X>
+  [ 29] pusharglistnoret 2 ...................... <utlist, X>
+  [ 31] extcall 15 .............................. add(utlist, X)
+  [ 33] pushint8 1
+  [ 35] getlocal 8
+  [ 37] add
+  [ 38] setlocal 8
+  [ 40] endrepeat [ 17]
+  [ 42] getparam 16 ............................. <loop>
+  [ 44] jmpifz [ 79] ............................ if loop then
+  [ 47] getparam 8 .............................. <last>
+  [ 49] pushint8 1 .............................. <1>
+  [ 51] sub ..................................... <last - 1>
+  [ 52] setlocal 8
+  [ 54] getlocal 8
+  [ 56] getparam 0 .............................. <first>
+  [ 58] gteq
+  [ 59] jmpifz [ 79] ............................ repeat with X = last - 1 down to first
+  [ 62] getlocal 0 .............................. <utlist>
+  [ 64] getlocal 8 .............................. <X>
+  [ 66] pusharglistnoret 2 ...................... <utlist, X>
+  [ 68] extcall 15 .............................. add(utlist, X)
+  [ 70] pushint8 -1
+  [ 72] getlocal 8
+  [ 74] add
+  [ 75] setlocal 8
+  [ 77] endrepeat [ 54]
+  [ 79] jmp [148]
+  [ 82] getparam 0 .............................. <first>
+  [ 84] setlocal 8
+  [ 86] getlocal 8
+  [ 88] getparam 8 .............................. <last>
+  [ 90] gteq
+  [ 91] jmpifz [111] ............................ repeat with X = first down to last
+  [ 94] getlocal 0 .............................. <utlist>
+  [ 96] getlocal 8 .............................. <X>
+  [ 98] pusharglistnoret 2 ...................... <utlist, X>
+  [100] extcall 15 .............................. add(utlist, X)
+  [102] pushint8 -1
+  [104] getlocal 8
+  [106] add
+  [107] setlocal 8
+  [109] endrepeat [ 86]
+  [111] getparam 16 ............................. <loop>
+  [113] jmpifz [148] ............................ if loop then
+  [116] getparam 8 .............................. <last>
+  [118] pushint8 1 .............................. <1>
+  [120] add ..................................... <last + 1>
+  [121] setlocal 8
+  [123] getlocal 8
+  [125] getparam 0 .............................. <first>
+  [127] lteq
+  [128] jmpifz [148] ............................ repeat with X = last + 1 to first
+  [131] getlocal 0 .............................. <utlist>
+  [133] getlocal 8 .............................. <X>
+  [135] pusharglistnoret 2 ...................... <utlist, X>
+  [137] extcall 15 .............................. add(utlist, X)
+  [139] pushint8 1
+  [141] getlocal 8
+  [143] add
+  [144] setlocal 8
+  [146] endrepeat [123]
+  [148] getlocal 0 .............................. <utlist>
+  [150] pusharglistnoret 1 ...................... <utlist>
+  [152] extcall 22 .............................. return utlist
+  [154] ret
+end
+
+on listcopy list1
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. list2 = []
+  [  5] getparam 0 .............................. <list1>
+  [  7] peek 0
+  [  9] pusharglist 1
+  [ 11] extcall 19
+  [ 13] pushint8 1
+  [ 15] peek 0
+  [ 17] peek 2
+  [ 19] lteq
+  [ 20] jmpifz [ 46] ............................ repeat with ordnr in list1
+  [ 23] peek 2
+  [ 25] peek 1
+  [ 27] pusharglist 2
+  [ 29] extcall 18
+  [ 31] setlocal 8
+  [ 33] getlocal 0 .............................. <list2>
+  [ 35] getlocal 8 .............................. <ordnr>
+  [ 37] pusharglistnoret 2 ...................... <list2, ordnr>
+  [ 39] extcall 15 .............................. add(list2, ordnr)
+  [ 41] pushint8 1
+  [ 43] add
+  [ 44] endrepeat [ 15]
+  [ 46] pop 3
+  [ 48] getlocal 0 .............................. <list2>
+  [ 50] pusharglistnoret 1 ...................... <list2>
+  [ 52] extcall 22 .............................. return list2
+  [ 54] ret
+end
+
+on fill_list lista, Antal, varde
+  [  0] getparam 0 .............................. <lista>
+  [  2] pusharglist 1 ........................... <lista>
+  [  4] extcall 19 .............................. <count(lista)>
+  [  6] getparam 8 .............................. <Antal>
+  [  8] eq ...................................... <count(lista) = Antal>
+  [  9] getparam 0 .............................. <lista>
+  [ 11] pusharglist 1 ........................... <lista>
+  [ 13] extcall 19 .............................. <count(lista)>
+  [ 15] getparam 8 .............................. <Antal>
+  [ 17] gt ...................................... <count(lista) > Antal>
+  [ 18] or ...................................... <(count(lista) = Antal) or (count(lista) > Antal)>
+  [ 19] jmpifz [ 31] ............................ if (count(lista) = Antal) or (count(lista) > Antal) then / else
+  [ 22] getparam 0 .............................. <lista>
+  [ 24] pusharglistnoret 1 ...................... <lista>
+  [ 26] extcall 22 .............................. return lista
+  [ 28] jmp [ 68]
+  [ 31] getparam 0 .............................. <lista>
+  [ 33] pusharglist 1 ........................... <lista>
+  [ 35] extcall 19 .............................. <count(lista)>
+  [ 37] getparam 8 .............................. <Antal>
+  [ 39] lt ...................................... <count(lista) < Antal>
+  [ 40] jmpifz [ 62] ............................ repeat while count(lista) < Antal
+  [ 43] getparam 0 .............................. <lista>
+  [ 45] getparam 0 .............................. <lista>
+  [ 47] pusharglist 1 ........................... <lista>
+  [ 49] extcall 19 .............................. <count(lista)>
+  [ 51] pushint8 1 .............................. <1>
+  [ 53] add ..................................... <count(lista) + 1>
+  [ 54] getparam 16 ............................. <varde>
+  [ 56] pusharglistnoret 3 ...................... <lista, count(lista) + 1, varde>
+  [ 58] extcall 50 .............................. addAt(lista, count(lista) + 1, varde)
+  [ 60] endrepeat [ 31]
+  [ 62] getparam 0 .............................. <lista>
+  [ 64] pusharglistnoret 1 ...................... <lista>
+  [ 66] extcall 22 .............................. return lista
+  [ 68] ret
+end

@@ -1,0 +1,7 @@
+on gameStage2
+  [  0] getglobal 36 ............................ <gameStage>
+  [  3] pushcons 0 .............................. <0.5>
+  [  5] add ..................................... <gameStage + 0.5>
+  [  6] setglobal 36 ............................ gameStage = gameStage + 0.5
+  [  9] ret
+end

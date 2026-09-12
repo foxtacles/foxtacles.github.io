@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushint8 3 .............................. <3>
+  [  3] pusharglistnoret 1 ...................... <3>
+  [  5] extcall 1 ............................... CheckWheelLoc(3)
+  [  7] ret
+end

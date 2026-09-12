@@ -1,0 +1,91 @@
+global findusSpriteNumber, findusStep, maxFindusRight, maxFindusLeft, startFindusCastNumber, stopFindusCastNumber, changePictureSpeed, findusCounter, FindusNr
+
+on moveFindus
+  [  0] getglobal 62 ............................ <findusSpriteNumber>
+  [  3] pushint8 13 ............................. <13>
+  [  6] get 6 ................................... <the locH of sprite findusSpriteNumber>
+  [  8] pusharglist 0 ........................... <>
+  [ 10] thebuiltin 119 .......................... <the mouseH>
+  [ 13] lt ...................................... <the locH of sprite findusSpriteNumber < the mouseH>
+  [ 14] jmpifz [ 22] ............................ if the locH of sprite findusSpriteNumber < the mouseH then
+  [ 17] pushint8 1 .............................. <1>
+  [ 20] setlocal 0 .............................. direction = 1
+  [ 22] getglobal 62 ............................ <findusSpriteNumber>
+  [ 25] pushint8 13 ............................. <13>
+  [ 28] get 6 ................................... <the locH of sprite findusSpriteNumber>
+  [ 30] pusharglist 0 ........................... <>
+  [ 32] thebuiltin 119 .......................... <the mouseH>
+  [ 35] gt ...................................... <the locH of sprite findusSpriteNumber > the mouseH>
+  [ 36] jmpifz [ 45] ............................ if the locH of sprite findusSpriteNumber > the mouseH then
+  [ 39] pushint8 1 .............................. <1>
+  [ 42] inv ..................................... <-1>
+  [ 43] setlocal 0 .............................. direction = -1
+  [ 45] getglobal 62 ............................ <findusSpriteNumber>
+  [ 48] pushint8 13 ............................. <13>
+  [ 51] get 6 ................................... <the locH of sprite findusSpriteNumber>
+  [ 53] getglobal 83 ............................ <findusStep>
+  [ 56] getlocal 0 .............................. <direction>
+  [ 58] mul ..................................... <findusStep * direction>
+  [ 59] add ..................................... <the locH of sprite findusSpriteNumber + (findusStep * direction)>
+  [ 60] setlocal 8 .............................. newLoch = the locH of sprite findusSpriteNumber + (findusStep * direction)
+  [ 62] getlocal 8 .............................. <newLoch>
+  [ 64] getglobal 81 ............................ <maxFindusRight>
+  [ 67] gt ...................................... <newLoch > maxFindusRight>
+  [ 68] getlocal 8 .............................. <newLoch>
+  [ 70] getglobal 82 ............................ <maxFindusLeft>
+  [ 73] lt ...................................... <newLoch < maxFindusLeft>
+  [ 74] or ...................................... <(newLoch > maxFindusRight) or (newLoch < maxFindusLeft)>
+  [ 75] pusharglist 0 ........................... <>
+  [ 77] thebuiltin 119 .......................... <the mouseH>
+  [ 80] getlocal 8 .............................. <newLoch>
+  [ 82] sub ..................................... <the mouseH - newLoch>
+  [ 83] pusharglist 1 ........................... <the mouseH - newLoch>
+  [ 85] extcall 120 ............................. <abs(the mouseH - newLoch)>
+  [ 88] getglobal 83 ............................ <findusStep>
+  [ 91] lteq .................................... <abs(the mouseH - newLoch) <= findusStep>
+  [ 92] or ...................................... <(newLoch > maxFindusRight) or (newLoch < maxFindusLeft) or (abs(the mouseH - newLoch) <= findusStep)>
+  [ 93] jmpifz [100] ............................ if (newLoch > maxFindusRight) or (newLoch < maxFindusLeft) or (abs(the mouseH - newLoch) <= findusStep) then
+  [ 96] pusharglistnoret 0 ...................... <>
+  [ 98] extcall 15 .............................. return 
+  [100] getglobal 79 ............................ <startFindusCastNumber>
+  [103] getglobal 80 ............................ <stopFindusCastNumber>
+  [106] getlocal 0 .............................. <direction>
+  [108] getglobal 62 ............................ <findusSpriteNumber>
+  [111] getglobal 78 ............................ <findusCounter>
+  [114] getglobal 77 ............................ <changePictureSpeed>
+  [117] pusharglist 6 ........................... <startFindusCastNumber, stopFindusCastNumber, direction, findusSpriteNumber, findusCounter, changePictureSpeed>
+  [119] extcall 26 .............................. <changePicture(startFindusCastNumber, stopFindusCastNumber, direction, findusSpriteNumber, findusCounter, changePictureSpeed)>
+  [121] setglobal 78 ............................ findusCounter = changePicture(startFindusCastNumber, stopFindusCastNumber, direction, findusSpriteNumber, findusCounter, changePictureSpeed)
+  [124] getglobal 81 ............................ <maxFindusRight>
+  [127] getlocal 8 .............................. <newLoch>
+  [129] sub ..................................... <maxFindusRight - newLoch>
+  [130] setlocal 16 ............................. distRight = maxFindusRight - newLoch
+  [132] pushint8 370 ............................ <370>
+  [135] getlocal 16 ............................. <distRight>
+  [137] pushcons 0 .............................. <0.56000000000000005>
+  [139] mul ..................................... <distRight * 0.56000000000000005>
+  [140] sub ..................................... <370 - (distRight * 0.56000000000000005)>
+  [141] setlocal 24 ............................. newLocv = 370 - (distRight * 0.56000000000000005)
+  [143] getlocal 16 ............................. <distRight>
+  [145] getglobal 83 ............................ <findusStep>
+  [148] div ..................................... <distRight / findusStep>
+  [149] pusharglist 1 ........................... <distRight / findusStep>
+  [151] extcall 121 ............................. <integer(distRight / findusStep)>
+  [154] setlocal 32 ............................. Nr = integer(distRight / findusStep)
+  [156] getlocal 32 ............................. <Nr>
+  [158] setglobal 63 ............................ FindusNr = Nr
+  [161] pushint8 4 .............................. <4>
+  [164] pushint8 22 ............................. <22>
+  [167] getlocal 32 ............................. <Nr>
+  [169] add ..................................... <22 + Nr>
+  [170] pushint8 35 ............................. <35>
+  [173] set 6 ................................... set the memberNum of sprite 4 to 22 + Nr
+  [175] getglobal 62 ............................ <findusSpriteNumber>
+  [178] getlocal 8 .............................. <newLoch>
+  [180] getlocal 24 ............................. <newLocv>
+  [182] pusharglist 2 ........................... <newLoch, newLocv>
+  [184] extcall 65 .............................. <point(newLoch, newLocv)>
+  [187] pushint8 33 ............................. <33>
+  [190] set 6 ................................... set the loc of sprite findusSpriteNumber to point(newLoch, newLocv)
+  [192] ret
+end

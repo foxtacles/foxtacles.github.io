@@ -1,0 +1,169 @@
+on removespaces inword
+  [  0] getparam 0 .............................. <inword>
+  [  2] pushcons 0 .............................. <" ">
+  [  4] contains0str ............................ <inword starts " ">
+  [  5] jmpifz [ 34] ............................ if inword starts " " then / else
+  [  8] pushint8 2 .............................. <2>
+  [ 10] getparam 0 .............................. <inword>
+  [ 12] pushint8 1 .............................. <1>
+  [ 14] get 1 ................................... <the number of chars in inword>
+  [ 16] pushzero ................................ <0>
+  [ 17] pushzero ................................ <0>
+  [ 18] pushzero ................................ <0>
+  [ 19] pushzero ................................ <0>
+  [ 20] pushzero ................................ <0>
+  [ 21] pushzero ................................ <0>
+  [ 22] getparam 0 .............................. <inword>
+  [ 24] getchunk ................................ <char 2 to (the number of chars in inword) of inword>
+  [ 25] pusharglist 1 ........................... <char 2 to (the number of chars in inword) of inword>
+  [ 27] localcall 0 ............................. <removespaces(char 2 to (the number of chars in inword) of inword)>
+  [ 29] setlocal 0 .............................. lword = removespaces(char 2 to (the number of chars in inword) of inword)
+  [ 31] jmp [ 89]
+  [ 34] getparam 0 .............................. <inword>
+  [ 36] pushint8 1 .............................. <1>
+  [ 38] get 1 ................................... <the number of chars in inword>
+  [ 40] pushzero ................................ <0>
+  [ 41] pushzero ................................ <0>
+  [ 42] pushzero ................................ <0>
+  [ 43] pushzero ................................ <0>
+  [ 44] pushzero ................................ <0>
+  [ 45] pushzero ................................ <0>
+  [ 46] pushzero ................................ <0>
+  [ 47] getparam 0 .............................. <inword>
+  [ 49] getchunk ................................ <char (the number of chars in inword) of inword>
+  [ 50] pushcons 8 .............................. <" ">
+  [ 52] eq ...................................... <char (the number of chars in inword) of inword = " ">
+  [ 53] jmpifz [ 85] ............................ if char (the number of chars in inword) of inword = " " then / else
+  [ 56] pushint8 1 .............................. <1>
+  [ 58] getparam 0 .............................. <inword>
+  [ 60] pushint8 1 .............................. <1>
+  [ 62] get 1 ................................... <the number of chars in inword>
+  [ 64] pushint8 1 .............................. <1>
+  [ 66] sub ..................................... <the number of chars in inword - 1>
+  [ 67] pushzero ................................ <0>
+  [ 68] pushzero ................................ <0>
+  [ 69] pushzero ................................ <0>
+  [ 70] pushzero ................................ <0>
+  [ 71] pushzero ................................ <0>
+  [ 72] pushzero ................................ <0>
+  [ 73] getparam 0 .............................. <inword>
+  [ 75] getchunk ................................ <char 1 to (the number of chars in inword - 1) of inword>
+  [ 76] pusharglist 1 ........................... <char 1 to (the number of chars in inword - 1) of inword>
+  [ 78] localcall 0 ............................. <removespaces(char 1 to (the number of chars in inword - 1) of inword)>
+  [ 80] setlocal 0 .............................. lword = removespaces(char 1 to (the number of chars in inword - 1) of inword)
+  [ 82] jmp [ 89]
+  [ 85] getparam 0 .............................. <inword>
+  [ 87] setlocal 0 .............................. lword = inword
+  [ 89] getlocal 0 .............................. <lword>
+  [ 91] pusharglistnoret 1 ...................... <lword>
+  [ 93] extcall 22 .............................. return lword
+  [ 95] ret
+end
+
+on removelb inword
+  [  0] getparam 0 .............................. <inword>
+  [  2] pushint8 10 ............................. <10>
+  [  4] pusharglist 1 ........................... <10>
+  [  6] extcall 61 .............................. <numToChar(10)>
+  [  8] contains0str ............................ <inword starts numToChar(10)>
+  [  9] jmpifz [ 38] ............................ if inword starts numToChar(10) then / else
+  [ 12] pushint8 2 .............................. <2>
+  [ 14] getparam 0 .............................. <inword>
+  [ 16] pushint8 1 .............................. <1>
+  [ 18] get 1 ................................... <the number of chars in inword>
+  [ 20] pushzero ................................ <0>
+  [ 21] pushzero ................................ <0>
+  [ 22] pushzero ................................ <0>
+  [ 23] pushzero ................................ <0>
+  [ 24] pushzero ................................ <0>
+  [ 25] pushzero ................................ <0>
+  [ 26] getparam 0 .............................. <inword>
+  [ 28] getchunk ................................ <char 2 to (the number of chars in inword) of inword>
+  [ 29] pusharglist 1 ........................... <char 2 to (the number of chars in inword) of inword>
+  [ 31] localcall 1 ............................. <removelb(char 2 to (the number of chars in inword) of inword)>
+  [ 33] setlocal 0 .............................. lword = removelb(char 2 to (the number of chars in inword) of inword)
+  [ 35] jmp [ 97]
+  [ 38] getparam 0 .............................. <inword>
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] get 1 ................................... <the number of chars in inword>
+  [ 44] pushzero ................................ <0>
+  [ 45] pushzero ................................ <0>
+  [ 46] pushzero ................................ <0>
+  [ 47] pushzero ................................ <0>
+  [ 48] pushzero ................................ <0>
+  [ 49] pushzero ................................ <0>
+  [ 50] pushzero ................................ <0>
+  [ 51] getparam 0 .............................. <inword>
+  [ 53] getchunk ................................ <char (the number of chars in inword) of inword>
+  [ 54] pushint8 10 ............................. <10>
+  [ 56] pusharglist 1 ........................... <10>
+  [ 58] extcall 61 .............................. <numToChar(10)>
+  [ 60] eq ...................................... <char (the number of chars in inword) of inword = numToChar(10)>
+  [ 61] jmpifz [ 93] ............................ if char (the number of chars in inword) of inword = numToChar(10) then / else
+  [ 64] pushint8 1 .............................. <1>
+  [ 66] getparam 0 .............................. <inword>
+  [ 68] pushint8 1 .............................. <1>
+  [ 70] get 1 ................................... <the number of chars in inword>
+  [ 72] pushint8 1 .............................. <1>
+  [ 74] sub ..................................... <the number of chars in inword - 1>
+  [ 75] pushzero ................................ <0>
+  [ 76] pushzero ................................ <0>
+  [ 77] pushzero ................................ <0>
+  [ 78] pushzero ................................ <0>
+  [ 79] pushzero ................................ <0>
+  [ 80] pushzero ................................ <0>
+  [ 81] getparam 0 .............................. <inword>
+  [ 83] getchunk ................................ <char 1 to (the number of chars in inword - 1) of inword>
+  [ 84] pusharglist 1 ........................... <char 1 to (the number of chars in inword - 1) of inword>
+  [ 86] localcall 1 ............................. <removelb(char 1 to (the number of chars in inword - 1) of inword)>
+  [ 88] setlocal 0 .............................. lword = removelb(char 1 to (the number of chars in inword - 1) of inword)
+  [ 90] jmp [ 97]
+  [ 93] getparam 0 .............................. <inword>
+  [ 95] setlocal 0 .............................. lword = inword
+  [ 97] getlocal 0 .............................. <lword>
+  [ 99] pusharglistnoret 1 ...................... <lword>
+  [101] extcall 22 .............................. return lword
+  [103] ret
+end
+
+on is_in_field aline, afield
+  [  0] getparam 8 .............................. <afield>
+  [  2] setlocal 0 .............................. thefield = afield
+  [  4] pushint8 1 .............................. <1>
+  [  6] setlocal 8
+  [  8] getlocal 8
+  [ 10] getparam 8 .............................. <afield>
+  [ 12] pushzero ................................ <0>
+  [ 13] getfield ................................ <field(afield)>
+  [ 14] pushint8 4 .............................. <4>
+  [ 16] get 1 ................................... <the number of lines in field afield>
+  [ 18] lteq
+  [ 19] jmpifz [ 57] ............................ repeat with X = 1 to the number of lines in field afield
+  [ 22] pushzero ................................ <0>
+  [ 23] pushzero ................................ <0>
+  [ 24] pushzero ................................ <0>
+  [ 25] pushzero ................................ <0>
+  [ 26] pushzero ................................ <0>
+  [ 27] pushzero ................................ <0>
+  [ 28] getlocal 8 .............................. <X>
+  [ 30] pushzero ................................ <0>
+  [ 31] getparam 8 .............................. <afield>
+  [ 33] pushzero ................................ <0>
+  [ 34] getfield ................................ <field(afield)>
+  [ 35] getchunk ................................ <line X of field afield>
+  [ 36] getparam 0 .............................. <aline>
+  [ 38] eq ...................................... <line X of field afield = aline>
+  [ 39] jmpifz [ 48] ............................ if line X of field afield = aline then
+  [ 42] pushint8 1 .............................. <1>
+  [ 44] pusharglistnoret 1 ...................... <1>
+  [ 46] extcall 22 .............................. return 1
+  [ 48] pushint8 1
+  [ 50] getlocal 8
+  [ 52] add
+  [ 53] setlocal 8
+  [ 55] endrepeat [  8]
+  [ 57] pushzero ................................ <0>
+  [ 58] pusharglistnoret 1 ...................... <0>
+  [ 60] extcall 22 .............................. return 0
+  [ 62] ret
+end

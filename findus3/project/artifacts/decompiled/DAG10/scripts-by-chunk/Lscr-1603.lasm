@@ -1,0 +1,320 @@
+on checkNrOfBrothers
+  [  0] pushint8 120 ............................ <120>
+  [  3] getglobal 67 ............................ <maxBrothers>
+  [  6] div ..................................... <120 / maxBrothers>
+  [  7] setlocal 0 .............................. timeDiv = 120 / maxBrothers
+  [  9] pushint8 120 ............................ <120>
+  [ 12] getglobal 11 ............................ <clockTime>
+  [ 14] sub ..................................... <120 - clockTime>
+  [ 15] pusharglist 1 ........................... <120 - clockTime>
+  [ 17] extcall 120 ............................. <abs(120 - clockTime)>
+  [ 20] setlocal 8 .............................. passedTime = abs(120 - clockTime)
+  [ 22] getglobal 11 ............................ <clockTime>
+  [ 24] pushint8 20 ............................. <20>
+  [ 27] gt ...................................... <clockTime > 20>
+  [ 28] jmpifz [ 36] ............................ if clockTime > 20 then
+  [ 31] pushint8 4 .............................. <4>
+  [ 34] setlocal 16 ............................. m = 4
+  [ 36] getglobal 11 ............................ <clockTime>
+  [ 38] pushint8 50 ............................. <50>
+  [ 41] gt ...................................... <clockTime > 50>
+  [ 42] jmpifz [ 50] ............................ if clockTime > 50 then
+  [ 45] pushint8 3 .............................. <3>
+  [ 48] setlocal 16 ............................. m = 3
+  [ 50] getglobal 11 ............................ <clockTime>
+  [ 52] pushint8 80 ............................. <80>
+  [ 55] gt ...................................... <clockTime > 80>
+  [ 56] jmpifz [ 64] ............................ if clockTime > 80 then
+  [ 59] pushint8 2 .............................. <2>
+  [ 62] setlocal 16 ............................. m = 2
+  [ 64] getglobal 11 ............................ <clockTime>
+  [ 66] pushint8 100 ............................ <100>
+  [ 69] gt ...................................... <clockTime > 100>
+  [ 70] jmpifz [ 78] ............................ if clockTime > 100 then
+  [ 73] pushint8 1 .............................. <1>
+  [ 76] setlocal 16 ............................. m = 1
+  [ 78] getlocal 8 .............................. <passedTime>
+  [ 80] getlocal 0 .............................. <timeDiv>
+  [ 82] div ..................................... <passedTime / timeDiv>
+  [ 83] getlocal 16 ............................. <m>
+  [ 85] add ..................................... <(passedTime / timeDiv) + m>
+  [ 86] setlocal 24 ............................. a = (passedTime / timeDiv) + m
+  [ 88] getglobal 66 ............................ <numberOfBrothers>
+  [ 91] getlocal 24 ............................. <a>
+  [ 93] lt ...................................... <numberOfBrothers < a>
+  [ 94] getglobal 99 ............................ <LatestBrotherTime>
+  [ 97] getglobal 11 ............................ <clockTime>
+  [ 99] gt ...................................... <LatestBrotherTime > clockTime>
+  [100] and ..................................... <(numberOfBrothers < a) and (LatestBrotherTime > clockTime)>
+  [101] jmpifz [113] ............................ if (numberOfBrothers < a) and (LatestBrotherTime > clockTime) then
+  [104] getglobal 11 ............................ <clockTime>
+  [106] setglobal 99 ............................ LatestBrotherTime = clockTime
+  [109] pusharglistnoret 0 ...................... <>
+  [111] localcall 2 ............................. createBrother()
+  [113] ret
+end
+
+on checkTimeOnBrothers
+  [  0] pushint8 1 .............................. <1>
+  [  3] setlocal 0
+  [  5] getlocal 0
+  [  7] getglobal 97 ............................ <brothersTimer>
+  [ 10] pusharglist 1 ........................... <brothersTimer>
+  [ 12] extcall 108 ............................. <count(brothersTimer)>
+  [ 15] lteq
+  [ 16] jmpifz [199] ............................ repeat with i = 1 to count(brothersTimer)
+  [ 19] getglobal 11 ............................ <clockTime>
+  [ 21] getglobal 97 ............................ <brothersTimer>
+  [ 24] getlocal 0 .............................. <i>
+  [ 26] pusharglist 2 ........................... <brothersTimer, i>
+  [ 28] objcall 41 .............................. <brothersTimer[i]>
+  [ 31] pushint8 6 .............................. <6>
+  [ 34] sub ..................................... <brothersTimer[i] - 6>
+  [ 35] lt ...................................... <clockTime < (brothersTimer[i] - 6)>
+  [ 36] jmpifz [188] ............................ if clockTime < (brothersTimer[i] - 6) then
+  [ 39] getglobal 97 ............................ <brothersTimer>
+  [ 42] getlocal 0 .............................. <i>
+  [ 44] pushzero ................................ <0>
+  [ 45] pusharglistnoret 3 ...................... <brothersTimer, i, 0>
+  [ 47] objcall 141 ............................. brothersTimer[i] = 0
+  [ 50] getglobal 71 ............................ <brothersActive>
+  [ 53] getlocal 0 .............................. <i>
+  [ 55] pusharglist 2 ........................... <brothersActive, i>
+  [ 57] objcall 41 .............................. <brothersActive[i]>
+  [ 60] setlocal 8 .............................. BrorNr = brothersActive[i]
+  [ 62] getglobal 40 ............................ <gameObjectList>
+  [ 65] getlocal 8 .............................. <BrorNr>
+  [ 67] pusharglist 2 ........................... <gameObjectList, BrorNr>
+  [ 69] objcall 41 .............................. <gameObjectList[BrorNr]>
+  [ 72] setlocal 16 ............................. tObj = gameObjectList[BrorNr]
+  [ 74] getlocal 16 ............................. <tObj>
+  [ 76] getobjprop 106 .......................... <tObj.posX>
+  [ 79] setlocal 24 ............................. posX = tObj.posX
+  [ 81] getlocal 16 ............................. <tObj>
+  [ 83] getobjprop 107 .......................... <tObj.posY>
+  [ 86] setlocal 32 ............................. posY = tObj.posY
+  [ 88] pushint8 6 .............................. <6>
+  [ 91] setlocal 40 ............................. NyCS = 6
+  [ 93] getglobal 72 ............................ <BrothersSenasteCast>
+  [ 96] getlocal 8 .............................. <BrorNr>
+  [ 98] pushint8 2 .............................. <2>
+  [101] sub ..................................... <BrorNr - 2>
+  [102] pusharglist 2 ........................... <BrothersSenasteCast, BrorNr - 2>
+  [104] extcall 41 .............................. <getAt(BrothersSenasteCast, BrorNr - 2)>
+  [107] pushint8 1 .............................. <1>
+  [110] eq ...................................... <getAt(BrothersSenasteCast, BrorNr - 2) = 1>
+  [111] jmpifz [119] ............................ if getAt(BrothersSenasteCast, BrorNr - 2) = 1 then
+  [114] pushint8 6 .............................. <6>
+  [117] setlocal 40 ............................. NyCS = 6
+  [119] getglobal 72 ............................ <BrothersSenasteCast>
+  [122] getlocal 8 .............................. <BrorNr>
+  [124] pushint8 2 .............................. <2>
+  [127] sub ..................................... <BrorNr - 2>
+  [128] pusharglist 2 ........................... <BrothersSenasteCast, BrorNr - 2>
+  [130] extcall 41 .............................. <getAt(BrothersSenasteCast, BrorNr - 2)>
+  [133] pushint8 4 .............................. <4>
+  [136] eq ...................................... <getAt(BrothersSenasteCast, BrorNr - 2) = 4>
+  [137] jmpifz [145] ............................ if getAt(BrothersSenasteCast, BrorNr - 2) = 4 then
+  [140] pushint8 7 .............................. <7>
+  [143] setlocal 40 ............................. NyCS = 7
+  [145] getlocal 16 ............................. <tObj>
+  [147] getobjprop 105 .......................... <tObj.aktivAction>
+  [150] pushint8 3 .............................. <3>
+  [153] eq ...................................... <tObj.aktivAction = 3>
+  [154] jmpifz [161] ............................ if tObj.aktivAction = 3 then
+  [157] pusharglistnoret 0 ...................... <>
+  [159] extcall 15 .............................. return 
+  [161] getlocal 8 .............................. <BrorNr>
+  [163] pushint8 6 .............................. <6>
+  [166] pushint8 1 .............................. <1>
+  [169] getlocal 24 ............................. <posX>
+  [171] getlocal 32 ............................. <posY>
+  [173] pusharglist 2 ........................... <posX, posY>
+  [175] extcall 65 .............................. <point(posX, posY)>
+  [178] pusharglist 1 ........................... <[point(posX, posY)]>
+  [180] pushlist ................................ <[point(posX, posY)]>
+  [181] getlocal 40 ............................. <NyCS>
+  [183] pusharglistnoret 5 ...................... <BrorNr, 6, 1, [point(posX, posY)], NyCS>
+  [185] extcall 111 ............................. UNIcreateUniObject(BrorNr, 6, 1, [point(posX, posY)], NyCS)
+  [188] pushint8 1
+  [191] getlocal 0
+  [193] add
+  [194] setlocal 0
+  [196] endrepeat [  5]
+  [199] ret
+end
+
+on createBrother
+  [  0] getglobal 70 ............................ <brothersFree>
+  [  3] pusharglist 1 ........................... <brothersFree>
+  [  5] extcall 108 ............................. <count(brothersFree)>
+  [  8] pushzero ................................ <0>
+  [  9] eq ...................................... <count(brothersFree) = 0>
+  [ 10] getglobal 68 ............................ <brothersPosListFree>
+  [ 13] pusharglist 1 ........................... <brothersPosListFree>
+  [ 15] extcall 108 ............................. <count(brothersPosListFree)>
+  [ 18] pushzero ................................ <0>
+  [ 19] eq ...................................... <count(brothersPosListFree) = 0>
+  [ 20] or ...................................... <(count(brothersFree) = 0) or (count(brothersPosListFree) = 0)>
+  [ 21] jmpifz [ 28] ............................ if (count(brothersFree) = 0) or (count(brothersPosListFree) = 0) then
+  [ 24] pusharglistnoret 0 ...................... <>
+  [ 26] extcall 15 .............................. return 
+  [ 28] getglobal 66 ............................ <numberOfBrothers>
+  [ 31] pushint8 1 .............................. <1>
+  [ 34] add ..................................... <numberOfBrothers + 1>
+  [ 35] setglobal 66 ............................ numberOfBrothers = numberOfBrothers + 1
+  [ 38] getglobal 70 ............................ <brothersFree>
+  [ 41] pusharglist 1 ........................... <brothersFree>
+  [ 43] extcall 108 ............................. <count(brothersFree)>
+  [ 46] setlocal 0 .............................. Nr = count(brothersFree)
+  [ 48] getlocal 0 .............................. <Nr>
+  [ 50] pusharglist 1 ........................... <Nr>
+  [ 52] extcall 6 ............................... <random(Nr)>
+  [ 54] setlocal 8 .............................. pick = random(Nr)
+  [ 56] getglobal 70 ............................ <brothersFree>
+  [ 59] getlocal 8 .............................. <pick>
+  [ 61] pusharglist 2 ........................... <brothersFree, pick>
+  [ 63] objcall 41 .............................. <brothersFree[pick]>
+  [ 66] setlocal 16 ............................. brother = brothersFree[pick]
+  [ 68] getglobal 70 ............................ <brothersFree>
+  [ 71] getlocal 8 .............................. <pick>
+  [ 73] pusharglistnoret 2 ...................... <brothersFree, pick>
+  [ 75] extcall 110 ............................. deleteAt(brothersFree, pick)
+  [ 78] getglobal 71 ............................ <brothersActive>
+  [ 81] getlocal 16 ............................. <brother>
+  [ 83] pusharglistnoret 2 ...................... <brothersActive, brother>
+  [ 85] extcall 144 ............................. add(brothersActive, brother)
+  [ 88] getglobal 97 ............................ <brothersTimer>
+  [ 91] getglobal 11 ............................ <clockTime>
+  [ 93] pusharglistnoret 2 ...................... <brothersTimer, clockTime>
+  [ 95] extcall 144 ............................. add(brothersTimer, clockTime)
+  [ 98] getglobal 68 ............................ <brothersPosListFree>
+  [101] pusharglist 1 ........................... <brothersPosListFree>
+  [103] extcall 108 ............................. <count(brothersPosListFree)>
+  [106] setlocal 24 ............................. theSize = count(brothersPosListFree)
+  [108] pushzero ................................ <0>
+  [109] setlocal 32 ............................. arcOk = 0
+  [111] pushzero ................................ <0>
+  [112] setlocal 40 ............................. ggr = 0
+  [114] getlocal 32 ............................. <arcOk>
+  [116] pushzero ................................ <0>
+  [117] eq ...................................... <arcOk = 0>
+  [118] jmpifz [180] ............................ repeat while arcOk = 0
+  [121] getlocal 24 ............................. <theSize>
+  [123] pusharglist 1 ........................... <theSize>
+  [125] extcall 6 ............................... <random(theSize)>
+  [127] setlocal 48 ............................. thePos = random(theSize)
+  [129] getglobal 68 ............................ <brothersPosListFree>
+  [132] getlocal 48 ............................. <thePos>
+  [134] pusharglist 2 ........................... <brothersPosListFree, thePos>
+  [136] objcall 41 .............................. <brothersPosListFree[thePos]>
+  [139] setlocal 56 ............................. thearc = brothersPosListFree[thePos]
+  [141] getlocal 40 ............................. <ggr>
+  [143] pushint8 1 .............................. <1>
+  [146] add ..................................... <ggr + 1>
+  [147] setlocal 40 ............................. ggr = ggr + 1
+  [149] getlocal 56 ............................. <thearc>
+  [151] getglobal 145 ........................... <LastArc>
+  [154] nteq .................................... <thearc <> LastArc>
+  [155] jmpifz [163] ............................ if thearc <> LastArc then
+  [158] pushint8 1 .............................. <1>
+  [161] setlocal 32 ............................. arcOk = 1
+  [163] getlocal 40 ............................. <ggr>
+  [165] pushint8 600 ............................ <600>
+  [168] eq ...................................... <ggr = 600>
+  [169] jmpifz [177] ............................ if ggr = 600 then
+  [172] pushint8 1 .............................. <1>
+  [175] setlocal 32 ............................. arcOk = 1
+  [177] endrepeat [114]
+  [180] getglobal 68 ............................ <brothersPosListFree>
+  [183] getlocal 48 ............................. <thePos>
+  [185] pusharglistnoret 2 ...................... <brothersPosListFree, thePos>
+  [187] extcall 110 ............................. deleteAt(brothersPosListFree, thePos)
+  [190] getlocal 56 ............................. <thearc>
+  [192] setglobal 145 ........................... LastArc = thearc
+  [195] getglobal 64 ............................ <brothersPosList>
+  [198] getlocal 56 ............................. <thearc>
+  [200] pusharglist 2 ........................... <brothersPosList, thearc>
+  [202] objcall 41 .............................. <brothersPosList[thearc]>
+  [205] setlocal 64 ............................. thePosList = brothersPosList[thearc]
+  [207] getlocal 64 ............................. <thePosList>
+  [209] pusharglist 1 ........................... <thePosList>
+  [211] extcall 108 ............................. <count(thePosList)>
+  [214] setlocal 72 ............................. thePosListSize = count(thePosList)
+  [216] getlocal 72 ............................. <thePosListSize>
+  [218] pusharglist 1 ........................... <thePosListSize>
+  [220] extcall 6 ............................... <random(thePosListSize)>
+  [222] setlocal 80 ............................. thePointInTheArc = random(thePosListSize)
+  [224] getlocal 64 ............................. <thePosList>
+  [226] getlocal 80 ............................. <thePointInTheArc>
+  [228] pusharglist 2 ........................... <thePosList, thePointInTheArc>
+  [230] objcall 41 .............................. <thePosList[thePointInTheArc]>
+  [233] setlocal 88 ............................. thepoint = thePosList[thePointInTheArc]
+  [235] getlocal 56 ............................. <thearc>
+  [237] getlocal 80 ............................. <thePointInTheArc>
+  [239] getlocal 16 ............................. <brother>
+  [241] pusharglist 3 ........................... <[thearc, thePointInTheArc, brother]>
+  [243] pushlist ................................ <[thearc, thePointInTheArc, brother]>
+  [244] setlocal 96 ............................. pointUsed = [thearc, thePointInTheArc, brother]
+  [246] getglobal 69 ............................ <brothersPosListActive>
+  [249] getlocal 96 ............................. <pointUsed>
+  [251] pusharglistnoret 2 ...................... <brothersPosListActive, pointUsed>
+  [253] extcall 144 ............................. add(brothersPosListActive, pointUsed)
+  [256] pushint8 1 .............................. <1>
+  [259] setlocal 104 ............................ CS = 1
+  [261] pushint8 1 .............................. <1>
+  [264] setlocal 112 ............................ SS = 1
+  [266] getlocal 16 ............................. <brother>
+  [268] pushint8 2 .............................. <2>
+  [271] sub ..................................... <brother - 2>
+  [272] pushint8 14 ............................. <14>
+  [275] add ..................................... <brother - 2 + 14>
+  [276] setlocal 120 ............................ chainPos = brother - 2 + 14
+  [278] pushint8 2 .............................. <2>
+  [281] pusharglist 1 ........................... <2>
+  [283] extcall 6 ............................... <random(2)>
+  [285] pushint8 1 .............................. <1>
+  [288] eq ...................................... <random(2) = 1>
+  [289] jmpifz [310] ............................ if random(2) = 1 then
+  [292] pushint8 4 .............................. <4>
+  [295] setlocal 104 ............................ CS = 4
+  [297] getlocal 120 ............................ <chainPos>
+  [299] pushint8 5 .............................. <5>
+  [302] add ..................................... <chainPos + 5>
+  [303] setlocal 120 ............................ chainPos = chainPos + 5
+  [305] pushint8 2 .............................. <2>
+  [308] setlocal 112 ............................ SS = 2
+  [310] getglobal 72 ............................ <BrothersSenasteCast>
+  [313] getlocal 16 ............................. <brother>
+  [315] pushint8 2 .............................. <2>
+  [318] sub ..................................... <brother - 2>
+  [319] getlocal 104 ............................ <CS>
+  [321] pusharglistnoret 3 ...................... <BrothersSenasteCast, brother - 2, CS>
+  [323] extcall 141 ............................. setAt(BrothersSenasteCast, brother - 2, CS)
+  [326] getglobal 75 ............................ <chainList>
+  [329] getlocal 120 ............................ <chainPos>
+  [331] pusharglist 2 ........................... <chainList, chainPos>
+  [333] objcall 41 .............................. <chainList[chainPos]>
+  [336] setlocal 128 ............................ theChainList = chainList[chainPos]
+  [338] getlocal 128 ............................ <theChainList>
+  [340] pushint8 4 .............................. <4>
+  [343] getlocal 88 ............................. <thepoint>
+  [345] pusharglist 1 ........................... <[thepoint]>
+  [347] pushlist ................................ <[thepoint]>
+  [348] pusharglistnoret 3 ...................... <theChainList, 4, [thepoint]>
+  [350] objcall 141 ............................. theChainList[4] = [thepoint]
+  [353] getlocal 16 ............................. <brother>
+  [355] pushint8 6 .............................. <6>
+  [358] pushint8 1 .............................. <1>
+  [361] getlocal 88 ............................. <thepoint>
+  [363] pusharglist 1 ........................... <[thepoint]>
+  [365] pushlist ................................ <[thepoint]>
+  [366] getlocal 104 ............................ <CS>
+  [368] getlocal 120 ............................ <chainPos>
+  [370] pusharglist 1 ........................... <[chainPos]>
+  [372] pushlist ................................ <[chainPos]>
+  [373] getlocal 112 ............................ <SS>
+  [375] pusharglistnoret 7 ...................... <brother, 6, 1, [thepoint], CS, [chainPos], SS>
+  [377] extcall 111 ............................. UNIcreateUniObject(brother, 6, 1, [thepoint], CS, [chainPos], SS)
+  [380] ret
+end

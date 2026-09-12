@@ -1,0 +1,88 @@
+on exitFrame
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 0 ............................ <the mouseDown>
+  [  4] pushint8 1 .............................. <1>
+  [  7] eq ...................................... <the mouseDown = 1>
+  [  8] jmpifz [ 16] ............................ if the mouseDown = 1 then
+  [ 11] pusharglistnoret 0 ...................... <>
+  [ 13] extcall 124 ............................. KOllaKonstrukKnapp()
+  [ 16] pusharglistnoret 0 ...................... <>
+  [ 18] extcall 125 ............................. KollaOmJaNejDjurAktiv()
+  [ 21] pusharglist 0 ........................... <>
+  [ 23] thebuiltin 15 ........................... <the mouseH>
+  [ 25] pushint8 27 ............................. <27>
+  [ 28] pushint8 11 ............................. <11>
+  [ 31] get 6 ................................... <the left of sprite 27>
+  [ 33] gteq .................................... <the mouseH >= the left of sprite 27>
+  [ 34] pusharglist 0 ........................... <>
+  [ 36] thebuiltin 15 ........................... <the mouseH>
+  [ 38] pushint8 27 ............................. <27>
+  [ 41] pushint8 19 ............................. <19>
+  [ 44] get 6 ................................... <the right of sprite 27>
+  [ 46] lteq .................................... <the mouseH <= the right of sprite 27>
+  [ 47] and ..................................... <(the mouseH >= the left of sprite 27) and (the mouseH <= the right of sprite 27)>
+  [ 48] pusharglist 0 ........................... <>
+  [ 50] thebuiltin 16 ........................... <the mouseV>
+  [ 52] pushint8 27 ............................. <27>
+  [ 55] pushint8 23 ............................. <23>
+  [ 58] get 6 ................................... <the top of sprite 27>
+  [ 60] gteq .................................... <the mouseV >= the top of sprite 27>
+  [ 61] and ..................................... <(the mouseH >= the left of sprite 27) and (the mouseH <= the right of sprite 27) and (the mouseV >= the top of sprite 27)>
+  [ 62] pusharglist 0 ........................... <>
+  [ 64] thebuiltin 16 ........................... <the mouseV>
+  [ 66] pushint8 27 ............................. <27>
+  [ 69] pushint8 3 .............................. <3>
+  [ 72] get 6 ................................... <the bottom of sprite 27>
+  [ 74] lteq .................................... <the mouseV <= the bottom of sprite 27>
+  [ 75] and ..................................... <(the mouseH >= the left of sprite 27) and (the mouseH <= the right of sprite 27) and (the mouseV >= the top of sprite 27) and (the mouseV <= the bottom of sprite 27)>
+  [ 76] pusharglist 0 ........................... <>
+  [ 78] thebuiltin 0 ............................ <the mouseDown>
+  [ 80] pushint8 1 .............................. <1>
+  [ 83] eq ...................................... <the mouseDown = 1>
+  [ 84] and ..................................... <(the mouseH >= the left of sprite 27) and (the mouseH <= the right of sprite 27) and (the mouseV >= the top of sprite 27) and (the mouseV <= the bottom of sprite 27) and (the mouseDown = 1)>
+  [ 85] jmpifz [ 92] ............................ if (the mouseH >= the left of sprite 27) and (the mouseH <= the right of sprite 27) and (the mouseV >= the top of sprite 27) and (the mouseV <= the bottom of sprite 27) and (the mouseDown = 1) then
+  [ 88] pusharglistnoret 0 ...................... <>
+  [ 90] extcall 17 .............................. OnOff()
+  [ 92] getglobal 9 ............................. <IntroSound>
+  [ 94] pushzero ................................ <0>
+  [ 95] eq ...................................... <IntroSound = 0>
+  [ 96] pushint8 34 ............................. <34>
+  [ 99] get 7 ................................... <the timer>
+  [101] pushint8 600 ............................ <600>
+  [104] gt ...................................... <the timer > 600>
+  [105] and ..................................... <(IntroSound = 0) and (the timer > 600)>
+  [106] jmpifz [122] ............................ if (IntroSound = 0) and (the timer > 600) then
+  [109] pushint8 4 .............................. <4>
+  [112] pusharglistnoret 1 ...................... <4>
+  [114] extcall 126 ............................. TaFramBortPettson(4)
+  [117] pushint8 1 .............................. <1>
+  [120] setglobal 9 ............................. IntroSound = 1
+  [122] getglobal 18 ............................ <KonstruktionFardig>
+  [124] pushint8 1 .............................. <1>
+  [127] eq ...................................... <KonstruktionFardig = 1>
+  [128] getglobal 19 ............................ <FraganRedanStalld>
+  [130] pushzero ................................ <0>
+  [131] eq ...................................... <FraganRedanStalld = 0>
+  [132] and ..................................... <(KonstruktionFardig = 1) and (FraganRedanStalld = 0)>
+  [133] jmpifz [175] ............................ if (KonstruktionFardig = 1) and (FraganRedanStalld = 0) then
+  [136] pushint8 1 .............................. <1>
+  [139] setglobal 19 ............................ FraganRedanStalld = 1
+  [141] getglobal 127 ........................... <AktRitning>
+  [144] pushint8 1 .............................. <1>
+  [147] add ..................................... <AktRitning + 1>
+  [148] setglobal 127 ........................... AktRitning = AktRitning + 1
+  [151] getglobal 127 ........................... <AktRitning>
+  [154] pushint8 3 .............................. <3>
+  [157] gt ...................................... <AktRitning > 3>
+  [158] jmpifz [167] ............................ if AktRitning > 3 then
+  [161] pushint8 1 .............................. <1>
+  [164] setglobal 127 ........................... AktRitning = 1
+  [167] pushint8 6 .............................. <6>
+  [170] pusharglistnoret 1 ...................... <6>
+  [172] extcall 126 ............................. TaFramBortPettson(6)
+  [175] pusharglist 0 ........................... <>
+  [177] thebuiltin 28 ........................... <the frame>
+  [179] pusharglistnoret 1 ...................... <the frame>
+  [181] extcall 29 .............................. go(the frame)
+  [183] ret
+end

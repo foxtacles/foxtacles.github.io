@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"halsband">
+  [  2] pusharglistnoret 1 ...................... <"halsband">
+  [  4] extcall 36 .............................. puppetSound("halsband")
+  [  7] ret
+end

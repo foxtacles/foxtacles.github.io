@@ -1,0 +1,54 @@
+on UNIfixCastJump ObjectNr, position
+  [  0] getglobal 1 ............................. <UNIObjectList>
+  [  2] getparam 0 .............................. <ObjectNr>
+  [  4] pusharglist 2 ........................... <UNIObjectList, ObjectNr>
+  [  6] extcall 43 .............................. <getAt(UNIObjectList, ObjectNr)>
+  [  9] setglobal 67 ............................ tObj = getAt(UNIObjectList, ObjectNr)
+  [ 12] getglobal 67 ............................ <tObj>
+  [ 15] getobjprop 12 ........................... <tObj.UNIanimationPics>
+  [ 17] setlocal 0 .............................. PicList = tObj.UNIanimationPics
+  [ 19] getlocal 0 .............................. <PicList>
+  [ 21] pusharglist 1 ........................... <PicList>
+  [ 23] extcall 168 ............................. <integerp(PicList)>
+  [ 26] jmpifz [ 40] ............................ if integerp(PicList) then / else
+  [ 29] getglobal 67 ............................ <tObj>
+  [ 32] getlocal 0 .............................. <PicList>
+  [ 34] setobjprop 173 .......................... tObj.UNIaktPic = PicList
+  [ 37] jmp [ 55]
+  [ 40] getglobal 67 ............................ <tObj>
+  [ 43] getlocal 0 .............................. <PicList>
+  [ 45] getparam 8 .............................. <position>
+  [ 47] pusharglist 2 ........................... <PicList, position>
+  [ 49] objcall 43 .............................. <PicList[position]>
+  [ 52] setobjprop 173 .......................... tObj.UNIaktPic = PicList[position]
+  [ 55] getglobal 67 ............................ <tObj>
+  [ 58] getobjprop 13 ........................... <tObj.UniFrameTime>
+  [ 60] setlocal 8 .............................. timeList = tObj.UniFrameTime
+  [ 62] getlocal 8 .............................. <timeList>
+  [ 64] pusharglist 1 ........................... <timeList>
+  [ 66] extcall 168 ............................. <integerp(timeList)>
+  [ 69] jmpifz [ 94] ............................ if integerp(timeList) then / else
+  [ 72] getglobal 67 ............................ <tObj>
+  [ 75] getlocal 8 .............................. <timeList>
+  [ 77] getglobal 67 ............................ <tObj>
+  [ 80] getobjprop 15 ........................... <tObj.UNIm>
+  [ 82] mul ..................................... <timeList * tObj.UNIm>
+  [ 83] pushint8 34 ............................. <34>
+  [ 86] get 7 ................................... <the timer>
+  [ 88] add ..................................... <(timeList * tObj.UNIm) + the timer>
+  [ 89] setobjprop 14 ........................... tObj.UNIoldPicTimer = (timeList * tObj.UNIm) + the timer
+  [ 91] jmp [120]
+  [ 94] getglobal 67 ............................ <tObj>
+  [ 97] getlocal 8 .............................. <timeList>
+  [ 99] getparam 8 .............................. <position>
+  [101] pusharglist 2 ........................... <timeList, position>
+  [103] objcall 43 .............................. <timeList[position]>
+  [106] getglobal 67 ............................ <tObj>
+  [109] getobjprop 15 ........................... <tObj.UNIm>
+  [111] mul ..................................... <timeList[position] * tObj.UNIm>
+  [112] pushint8 34 ............................. <34>
+  [115] get 7 ................................... <the timer>
+  [117] add ..................................... <(timeList[position] * tObj.UNIm) + the timer>
+  [118] setobjprop 14 ........................... tObj.UNIoldPicTimer = (timeList[position] * tObj.UNIm) + the timer
+  [120] ret
+end

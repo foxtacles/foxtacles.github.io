@@ -1,0 +1,48 @@
+on Initram
+  [  0] ret
+end
+
+on PosRam
+  [  0] pushint8 1 .............................. <1>
+  [  3] setlocal 0
+  [  5] getlocal 0
+  [  7] pushint8 4 .............................. <4>
+  [ 10] lteq
+  [ 11] jmpifz [ 91] ............................ repeat with i = 1 to 4
+  [ 14] getglobal 8 ............................. <clSpikSpriteNum>
+  [ 16] getlocal 0 .............................. <i>
+  [ 18] pusharglist 2 ........................... <clSpikSpriteNum, i>
+  [ 20] extcall 43 .............................. <getAt(clSpikSpriteNum, i)>
+  [ 23] pushint8 33 ............................. <33>
+  [ 26] get 6 ................................... <the loc of sprite getAt(clSpikSpriteNum, i)>
+  [ 28] setlocal 8 .............................. temp = the loc of sprite getAt(clSpikSpriteNum, i)
+  [ 30] getlocal 8 .............................. <temp>
+  [ 32] pushint8 1 .............................. <1>
+  [ 35] pusharglist 2 ........................... <temp, 1>
+  [ 37] extcall 43 .............................. <getAt(temp, 1)>
+  [ 40] getglobal 15 ............................ <cXMusTolerans>
+  [ 42] sub ..................................... <getAt(temp, 1) - cXMusTolerans>
+  [ 43] setlocal 16 ............................. tempX = getAt(temp, 1) - cXMusTolerans
+  [ 45] getlocal 8 .............................. <temp>
+  [ 47] pushint8 2 .............................. <2>
+  [ 50] pusharglist 2 ........................... <temp, 2>
+  [ 52] extcall 43 .............................. <getAt(temp, 2)>
+  [ 55] getglobal 16 ............................ <cYMusTolerans>
+  [ 57] sub ..................................... <getAt(temp, 2) - cYMusTolerans>
+  [ 58] setlocal 24 ............................. tempY = getAt(temp, 2) - cYMusTolerans
+  [ 60] pushint8 109 ............................ <109>
+  [ 63] getlocal 0 .............................. <i>
+  [ 65] add ..................................... <109 + i>
+  [ 66] getlocal 16 ............................. <tempX>
+  [ 68] getlocal 24 ............................. <tempY>
+  [ 70] pusharglist 2 ........................... <tempX, tempY>
+  [ 72] extcall 36 .............................. <point(tempX, tempY)>
+  [ 75] pushint8 33 ............................. <33>
+  [ 78] set 6 ................................... set the loc of sprite (109 + i) to point(tempX, tempY)
+  [ 80] pushint8 1
+  [ 83] getlocal 0
+  [ 85] add
+  [ 86] setlocal 0
+  [ 88] endrepeat [  5]
+  [ 91] ret
+end

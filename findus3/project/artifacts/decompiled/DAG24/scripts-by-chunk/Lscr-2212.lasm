@@ -1,0 +1,39 @@
+on fixpos
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. skosprites = []
+  [  5] pusharglist 0 ........................... <[]>
+  [  7] pushlist ................................ <[]>
+  [  8] setlocal 8 .............................. startpos = []
+  [ 10] pushint8 42 ............................. <42>
+  [ 13] setlocal 16
+  [ 15] getlocal 16
+  [ 17] pushint8 80 ............................. <80>
+  [ 20] lteq
+  [ 21] jmpifz [ 68] ............................ repeat with n = 42 to 80
+  [ 24] getlocal 0 .............................. <skosprites>
+  [ 26] getlocal 16 ............................. <n>
+  [ 28] pusharglistnoret 2 ...................... <skosprites, n>
+  [ 30] extcall 83 .............................. append(skosprites, n)
+  [ 33] getlocal 8 .............................. <startpos>
+  [ 35] getlocal 16 ............................. <n>
+  [ 37] pusharglistnoret 2 ...................... <startpos, n>
+  [ 39] extcall 83 .............................. append(startpos, n)
+  [ 42] getlocal 8 .............................. <startpos>
+  [ 44] getlocal 16 ............................. <n>
+  [ 46] pusharglist 1 ........................... <n>
+  [ 48] extcall 4 ............................... <sprite(n)>
+  [ 50] getobjprop 6 ............................ <sprite(n).loc>
+  [ 52] pusharglistnoret 2 ...................... <startpos, sprite(n).loc>
+  [ 54] extcall 83 .............................. append(startpos, sprite(n).loc)
+  [ 57] pushint8 1
+  [ 60] getlocal 16
+  [ 62] add
+  [ 63] setlocal 16
+  [ 65] endrepeat [ 15]
+  [ 68] getlocal 0 .............................. <skosprites>
+  [ 70] getlocal 8 .............................. <startpos>
+  [ 72] pusharglistnoret 2 ...................... <skosprites, startpos>
+  [ 74] extcall 107 ............................. put skosprites, startpos
+  [ 77] ret
+end

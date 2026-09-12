@@ -1,0 +1,185 @@
+{
+  "name": "KICKER",
+  "input": "artifacts/disc/MAIN/KICKER.DXR",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 272,
+    "movieLeft": 320,
+    "movieBottom": 752,
+    "movieRight": 960,
+    "minMember": 1,
+    "maxMember": 3,
+    "field9": 1,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 1,
+    "commentSize": 12,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 255,
+    "bitDepth": 32,
+    "field17": 0,
+    "field18": 1,
+    "field19": 11799,
+    "directorVersion": 1406,
+    "field21": 32,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 12,
+    "platform": 1,
+    "protection": 9591,
+    "field29": 60,
+    "checksum": 606790454
+  },
+  "cast_libraries": [
+    {
+      "name": "Internal",
+      "filePath": "",
+      "preloadSettings": 0,
+      "minMember": 1,
+      "maxMember": 3,
+      "id": 1024
+    }
+  ],
+  "member_types": {
+    "script": 3
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 1,
+      "chunk_id": 19,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 56,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 2,
+      "chunk_id": 29,
+      "type": "script",
+      "type_id": 11,
+      "name": "Kick_Butt",
+      "script_chunk": 55,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 3,
+      "chunk_id": 47,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 57,
+      "children": []
+    }
+  ],
+  "scripts": [
+    {
+      "chunk_id": 57,
+      "path": "artifacts/decompiled/KICKER/scripts-by-chunk/Lscr-57.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 11,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 3,
+          "chunk_id": 47,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 57,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 56,
+      "path": "artifacts/decompiled/KICKER/scripts-by-chunk/Lscr-56.ls",
+      "handler_names": [
+        "startMovie"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 2,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 1,
+          "chunk_id": 19,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 56,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 55,
+      "path": "artifacts/decompiled/KICKER/scripts-by-chunk/Lscr-55.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 4,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 2,
+          "chunk_id": 29,
+          "type": "script",
+          "type_id": 11,
+          "name": "Kick_Butt",
+          "script_chunk": 55,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 54,
+      "path": "artifacts/decompiled/KICKER/scripts-by-chunk/Lscr-54.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": []
+    }
+  ],
+  "labels": [
+    {
+      "frame": 3,
+      "label": "Kick_Butt",
+      "comment": ""
+    }
+  ],
+  "score": {
+    "path": "artifacts/analysis/scores/KICKER.json",
+    "frames": 3,
+    "spans": 2
+  },
+  "filmloops": [],
+  "texts": []
+}

@@ -1,0 +1,230 @@
+global ballALive, ballSpeed, startX, startY, stopX, stopY, animationCounter, animationCounterStart, oldTimer, totalAnimationTime, maxFindusRight, maxFindusLeft, findusStep, startMouseH, newMouseH, findusCounter, elkCounter, elkSpeed, curveLimit, curveFactor, targetHeight, startElk, endElk, startElkSpeed, gravity, changeInstopX, ballLoopCounter, movedElkCounter, changeElkPictureSpeed, ballSpriteNumber, elkSpriteNumber, findusSpriteNumber, mouseMoved, startElkCastNumber, stopElkCastNumber, stopBallCastNumber, ballCastNumber, stopFindusCastNumber, startFindusCastNumber, numberOfPlayers, ElkDirection, standCounter, elkLock, checkLock, rightCurveNr, leftCurveNr, ballSize, ballBroke, clockTime, nextClockChange, currentScoreElk, currentScorePlayer, splatRemoveTime, elkAlive, gameStage, counterWalk, FindusState, AnimFindusCastStart, AnimFindusCastStop, AnimFindusCounter, AntalAnimggr, ElkHitCast, ElkAtStart, MusSlapptKnapp, ElkGameOver, G_ElkFirstTime, LitenFigTimer, LitenFigAktiv
+
+on initvar
+  [  0] pushint8 3 .............................. <3>
+  [  3] setglobal 103 ........................... gameStage = 3
+  [  6] getglobal 2 ............................. <G_ElkFirstTime>
+  [  8] pushint8 1 .............................. <1>
+  [ 11] eq ...................................... <G_ElkFirstTime = 1>
+  [ 12] jmpifz [ 21] ............................ if G_ElkFirstTime = 1 then
+  [ 15] pushint8 1 .............................. <1>
+  [ 18] setglobal 104 ........................... numberOfPlayers = 1
+  [ 21] getmovieprop 6 .......................... <the milliSeconds>
+  [ 23] setglobal 7 ............................. oldTimer = the milliSeconds
+  [ 25] pushint8 121 ............................ <121>
+  [ 28] setglobal 105 ........................... clockTime = 121
+  [ 31] pushint8 34 ............................. <34>
+  [ 34] get 7 ................................... <the timer>
+  [ 36] setglobal 106 ........................... nextClockChange = the timer
+  [ 39] pushint8 1 .............................. <1>
+  [ 42] setglobal 64 ............................ MusSlapptKnapp = 1
+  [ 45] pushint8 1 .............................. <1>
+  [ 48] setglobal 107 ........................... ElkDirection = 1
+  [ 51] pushzero ................................ <0>
+  [ 52] setglobal 43 ............................ currentScoreElk = 0
+  [ 55] pushint8 1 .............................. <1>
+  [ 58] setglobal 108 ........................... movedElkCounter = 1
+  [ 61] pushint8 1 .............................. <1>
+  [ 64] setglobal 102 ........................... elkCounter = 1
+  [ 67] pushint8 30 ............................. <30>
+  [ 70] setglobal 109 ........................... startElkCastNumber = 30
+  [ 73] pushint8 35 ............................. <35>
+  [ 76] setglobal 110 ........................... stopElkCastNumber = 35
+  [ 79] pushint8 3 .............................. <3>
+  [ 82] setglobal 111 ........................... startElkSpeed = 3
+  [ 85] getglobal 111 ........................... <startElkSpeed>
+  [ 88] setglobal 100 ........................... elkSpeed = startElkSpeed
+  [ 91] pushint8 3 .............................. <3>
+  [ 94] setglobal 84 ............................ changeElkPictureSpeed = 3
+  [ 97] pushint8 30 ............................. <30>
+  [100] inv ..................................... <-30>
+  [101] setglobal 99 ............................ startElk = -30
+  [104] pushint8 675 ............................ <675>
+  [107] setglobal 112 ........................... endElk = 675
+  [110] pushint8 1 .............................. <1>
+  [113] setglobal 113 ........................... elkAlive = 1
+  [116] pushzero ................................ <0>
+  [117] setglobal 29 ............................ checkLock = 0
+  [119] pushzero ................................ <0>
+  [120] setglobal 114 ........................... elkLock = 0
+  [123] pushint8 1 .............................. <1>
+  [126] setglobal 115 ........................... standCounter = 1
+  [129] pushint8 9 .............................. <9>
+  [132] setglobal 116 ........................... ElkHitCast = 9
+  [135] pushint8 1 .............................. <1>
+  [138] setglobal 117 ........................... ElkAtStart = 1
+  [141] pushzero ................................ <0>
+  [142] setglobal 10 ............................ ElkGameOver = 0
+  [144] pushcons 0 .............................. <12.0>
+  [146] setglobal 74 ............................ totalAnimationTime = 12.0
+  [149] pushcons 8 .............................. <11.0>
+  [151] setglobal 73 ............................ gravity = 11.0
+  [154] pushcons 16 ............................. <0.22>
+  [156] setglobal 93 ............................ ballSpeed = 0.22
+  [159] pushint8 150 ............................ <150>
+  [162] setglobal 58 ............................ curveLimit = 150
+  [165] pushcons 24 ............................. <0.0007>
+  [167] setglobal 59 ............................ curveFactor = 0.0007
+  [170] pushint8 140 ............................ <140>
+  [173] setglobal 70 ............................ targetHeight = 140
+  [176] pushzero ................................ <0>
+  [177] setglobal 32 ............................ changeInstopX = 0
+  [180] pushzero ................................ <0>
+  [181] setglobal 9 ............................. ballALive = 0
+  [183] pushcons 32 ............................. <0.10000000000000001>
+  [185] setglobal 31 ............................ animationCounterStart = 0.10000000000000001
+  [187] getglobal 31 ............................ <animationCounterStart>
+  [189] setglobal 30 ............................ animationCounter = animationCounterStart
+  [191] pushint8 1 .............................. <1>
+  [194] setglobal 34 ............................ ballLoopCounter = 1
+  [197] pusharglist 0 ........................... <>
+  [199] thebuiltin 54 ........................... <the mouseH>
+  [202] setglobal 55 ............................ startMouseH = the mouseH
+  [205] pushzero ................................ <0>
+  [206] setglobal 33 ............................ mouseMoved = 0
+  [209] pushzero ................................ <0>
+  [210] setglobal 53 ............................ newMouseH = 0
+  [213] pushint8 15 ............................. <15>
+  [216] setglobal 92 ............................ ballCastNumber = 15
+  [219] pushzero ................................ <0>
+  [220] setglobal 65 ............................ startX = 0
+  [223] pushzero ................................ <0>
+  [224] setglobal 68 ............................ stopX = 0
+  [227] pushzero ................................ <0>
+  [228] setglobal 67 ............................ startY = 0
+  [231] pushzero ................................ <0>
+  [232] setglobal 69 ............................ stopY = 0
+  [235] pushzero ................................ <0>
+  [236] setlocal 0 .............................. velYstart = 0
+  [238] pushint8 26 ............................. <26>
+  [241] setglobal 118 ........................... ballSize = 26
+  [244] pushzero ................................ <0>
+  [245] setglobal 38 ............................ ballBroke = 0
+  [248] pushint8 34 ............................. <34>
+  [251] get 7 ................................... <the timer>
+  [253] setglobal 119 ........................... splatRemoveTime = the timer
+  [256] pushzero ................................ <0>
+  [257] setglobal 41 ............................ rightCurveNr = 0
+  [260] pushzero ................................ <0>
+  [261] setglobal 42 ............................ leftCurveNr = 0
+  [264] pushzero ................................ <0>
+  [265] setglobal 45 ............................ currentScorePlayer = 0
+  [268] pushint8 1 .............................. <1>
+  [271] setglobal 120 ........................... counterWalk = 1
+  [274] pushint8 500 ............................ <500>
+  [277] setglobal 77 ............................ maxFindusRight = 500
+  [280] pushint8 100 ............................ <100>
+  [283] setglobal 78 ............................ maxFindusLeft = 100
+  [286] pushint8 4 .............................. <4>
+  [289] setglobal 76 ............................ findusStep = 4
+  [292] pushint8 1 .............................. <1>
+  [295] setglobal 79 ............................ findusCounter = 1
+  [298] pushint8 141 ............................ <141>
+  [301] setglobal 97 ............................ startFindusCastNumber = 141
+  [304] pushint8 144 ............................ <144>
+  [307] setglobal 96 ............................ stopFindusCastNumber = 144
+  [310] pushint8 141 ............................ <141>
+  [313] pushint8 147 ............................ <147>
+  [316] pushint8 152 ............................ <152>
+  [319] pushint8 160 ............................ <160>
+  [322] pusharglist 4 ........................... <[141, 147, 152, 160]>
+  [324] pushlist ................................ <[141, 147, 152, 160]>
+  [325] setglobal 81 ............................ AnimFindusCastStart = [141, 147, 152, 160]
+  [328] pushint8 144 ............................ <144>
+  [331] pushint8 161 ............................ <161>
+  [334] pushint8 158 ............................ <158>
+  [337] pushint8 163 ............................ <163>
+  [340] pusharglist 4 ........................... <[144, 161, 158, 163]>
+  [342] pushlist ................................ <[144, 161, 158, 163]>
+  [343] setglobal 83 ............................ AnimFindusCastStop = [144, 161, 158, 163]
+  [346] pushint8 1 .............................. <1>
+  [349] setglobal 26 ............................ FindusState = 1
+  [351] pushint8 1 .............................. <1>
+  [354] setglobal 95 ............................ AnimFindusCounter = 1
+  [357] pushzero ................................ <0>
+  [358] setglobal 87 ............................ AntalAnimggr = 0
+  [361] pushint8 3 .............................. <3>
+  [364] setglobal 98 ............................ elkSpriteNumber = 3
+  [367] pushint8 25 ............................. <25>
+  [370] setglobal 35 ............................ ballSpriteNumber = 25
+  [373] pushint8 17 ............................. <17>
+  [376] setglobal 66 ............................ findusSpriteNumber = 17
+  [379] getglobal 66 ............................ <findusSpriteNumber>
+  [382] pushint8 240 ............................ <240>
+  [385] pushint8 400 ............................ <400>
+  [388] pusharglist 2 ........................... <240, 400>
+  [390] extcall 39 .............................. <point(240, 400)>
+  [393] pushint8 33 ............................. <33>
+  [396] set 6 ................................... set the loc of sprite findusSpriteNumber to point(240, 400)
+  [398] getglobal 104 ........................... <numberOfPlayers>
+  [401] pushint8 2 .............................. <2>
+  [404] eq ...................................... <numberOfPlayers = 2>
+  [405] jmpifz [430] ............................ if numberOfPlayers = 2 then / else
+  [408] getglobal 98 ............................ <elkSpriteNumber>
+  [411] pushint8 30 ............................. <30>
+  [414] pushint8 140 ............................ <140>
+  [417] pusharglist 2 ........................... <30, 140>
+  [419] extcall 39 .............................. <point(30, 140)>
+  [422] pushint8 33 ............................. <33>
+  [425] set 6 ................................... set the loc of sprite elkSpriteNumber to point(30, 140)
+  [427] jmp [449]
+  [430] getglobal 98 ............................ <elkSpriteNumber>
+  [433] getglobal 99 ............................ <startElk>
+  [436] pushint8 140 ............................ <140>
+  [439] pusharglist 2 ........................... <startElk, 140>
+  [441] extcall 39 .............................. <point(startElk, 140)>
+  [444] pushint8 33 ............................. <33>
+  [447] set 6 ................................... set the loc of sprite elkSpriteNumber to point(startElk, 140)
+  [449] getglobal 66 ............................ <findusSpriteNumber>
+  [452] pushint8 300 ............................ <300>
+  [455] pushint8 430 ............................ <430>
+  [458] pusharglist 2 ........................... <300, 430>
+  [460] extcall 39 .............................. <point(300, 430)>
+  [463] pushint8 33 ............................. <33>
+  [466] set 6 ................................... set the loc of sprite findusSpriteNumber to point(300, 430)
+  [468] pushint8 201 ............................ <201>
+  [471] pushcons 40 ............................. <"julaudio">
+  [473] pusharglist 2 ........................... <201, "julaudio">
+  [475] extcall 126 ............................. <member(201, "julaudio")>
+  [478] pusharglistnoret 1 ...................... <member(201, "julaudio")>
+  [480] extcall 194 ............................. preLoad(member(201, "julaudio"))
+  [483] pushint8 202 ............................ <202>
+  [486] pushcons 48 ............................. <"julaudio">
+  [488] pusharglist 2 ........................... <202, "julaudio">
+  [490] extcall 126 ............................. <member(202, "julaudio")>
+  [493] pusharglistnoret 1 ...................... <member(202, "julaudio")>
+  [495] extcall 194 ............................. preLoad(member(202, "julaudio"))
+  [498] pushint8 203 ............................ <203>
+  [501] pushcons 56 ............................. <"julaudio">
+  [503] pusharglist 2 ........................... <203, "julaudio">
+  [505] extcall 126 ............................. <member(203, "julaudio")>
+  [508] pusharglistnoret 1 ...................... <member(203, "julaudio")>
+  [510] extcall 194 ............................. preLoad(member(203, "julaudio"))
+  [513] pushint8 226 ............................ <226>
+  [516] pushcons 64 ............................. <"julaudio">
+  [518] pusharglist 2 ........................... <226, "julaudio">
+  [520] extcall 126 ............................. <member(226, "julaudio")>
+  [523] pusharglistnoret 1 ...................... <member(226, "julaudio")>
+  [525] extcall 194 ............................. preLoad(member(226, "julaudio"))
+  [528] pushcons 72 ............................. <"Reset">
+  [530] pusharglistnoret 1 ...................... <"Reset">
+  [532] extcall 18 .............................. ADDSCORE("Reset")
+  [534] pushint8 3 .............................. <3>
+  [537] pushint8 40 ............................. <40>
+  [540] pushint8 190 ............................ <190>
+  [543] pushint8 3 .............................. <3>
+  [546] pusharglistnoret 4 ...................... <3, 40, 190, 3>
+  [548] extcall 121 ............................. InitPoangTomte(3, 40, 190, 3)
+  [551] pushzero ................................ <0>
+  [552] pusharglistnoret 1 ...................... <0>
+  [554] extcall 1 ............................... ShowPoangtomte(0)
+  [556] pushint8 1 .............................. <1>
+  [559] pushint8 1 .............................. <1>
+  [562] pusharglistnoret 2 ...................... <1, 1>
+  [564] extcall 196 ............................. ShowSparaFigur(1, 1)
+  [567] pushzero ................................ <0>
+  [568] setglobal 201 ........................... LitenFigTimer = 0
+  [571] pushzero ................................ <0>
+  [572] setglobal 202 ........................... LitenFigAktiv = 0
+  [575] ret
+end

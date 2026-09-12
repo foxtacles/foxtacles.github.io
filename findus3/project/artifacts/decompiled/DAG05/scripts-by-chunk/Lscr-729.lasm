@@ -1,0 +1,7 @@
+on mouseDown
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 98 .............................. updateStage()
+  [  5] pusharglistnoret 0 ...................... <>
+  [  7] extcall 104 ............................. CheckMouseDownEvent()
+  [ 10] ret
+end

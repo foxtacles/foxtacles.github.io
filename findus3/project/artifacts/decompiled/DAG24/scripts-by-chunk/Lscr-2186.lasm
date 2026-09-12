@@ -1,0 +1,94 @@
+on exitFrame
+  [  0] pushint8 34 ............................. <34>
+  [  3] get 7 ................................... <the timer>
+  [  5] getglobal 38 ............................ <TomteMoveTimer>
+  [  8] gt ...................................... <the timer > TomteMoveTimer>
+  [  9] getglobal 39 ............................ <Tomteggr>
+  [ 12] pushzero ................................ <0>
+  [ 13] gt ...................................... <Tomteggr > 0>
+  [ 14] and ..................................... <(the timer > TomteMoveTimer) and (Tomteggr > 0)>
+  [ 15] jmpifz [172] ............................ if (the timer > TomteMoveTimer) and (Tomteggr > 0) then
+  [ 18] pushint8 34 ............................. <34>
+  [ 21] get 7 ................................... <the timer>
+  [ 23] pushint8 10 ............................. <10>
+  [ 26] add ..................................... <the timer + 10>
+  [ 27] setglobal 38 ............................ TomteMoveTimer = the timer + 10
+  [ 30] getglobal 40 ............................ <startsprites>
+  [ 33] pushint8 1 .............................. <1>
+  [ 36] pusharglist 2 ........................... <startsprites, 1>
+  [ 38] objcall 41 .............................. <startsprites[1]>
+  [ 41] pusharglist 1 ........................... <startsprites[1]>
+  [ 43] extcall 4 ............................... <sprite(startsprites[1])>
+  [ 45] getglobal 40 ............................ <startsprites>
+  [ 48] pushint8 1 .............................. <1>
+  [ 51] pusharglist 2 ........................... <startsprites, 1>
+  [ 53] objcall 41 .............................. <startsprites[1]>
+  [ 56] pusharglist 1 ........................... <startsprites[1]>
+  [ 58] extcall 4 ............................... <sprite(startsprites[1])>
+  [ 60] getobjprop 42 ........................... <sprite(startsprites[1]).locH>
+  [ 63] pushint8 1 .............................. <1>
+  [ 66] sub ..................................... <sprite(startsprites[1]).locH - 1>
+  [ 67] setobjprop 42 ........................... sprite(startsprites[1]).locH = sprite(startsprites[1]).locH - 1
+  [ 70] pushint8 1 .............................. <1>
+  [ 73] setlocal 0
+  [ 75] getlocal 0
+  [ 77] pushint8 4 .............................. <4>
+  [ 80] lteq
+  [ 81] jmpifz [148] ............................ repeat with i = 1 to 4
+  [ 84] getglobal 43 ............................ <TomteSprites>
+  [ 87] getlocal 0 .............................. <i>
+  [ 89] pusharglist 2 ........................... <TomteSprites, i>
+  [ 91] objcall 41 .............................. <TomteSprites[i]>
+  [ 94] pushzero ................................ <0>
+  [ 95] gt ...................................... <TomteSprites[i] > 0>
+  [ 96] jmpifz [137] ............................ if TomteSprites[i] > 0 then
+  [ 99] getglobal 43 ............................ <TomteSprites>
+  [102] getlocal 0 .............................. <i>
+  [104] pusharglist 2 ........................... <TomteSprites, i>
+  [106] objcall 41 .............................. <TomteSprites[i]>
+  [109] pusharglist 1 ........................... <TomteSprites[i]>
+  [111] extcall 4 ............................... <sprite(TomteSprites[i])>
+  [113] getglobal 43 ............................ <TomteSprites>
+  [116] getlocal 0 .............................. <i>
+  [118] pusharglist 2 ........................... <TomteSprites, i>
+  [120] objcall 41 .............................. <TomteSprites[i]>
+  [123] pusharglist 1 ........................... <TomteSprites[i]>
+  [125] extcall 4 ............................... <sprite(TomteSprites[i])>
+  [127] getobjprop 42 ........................... <sprite(TomteSprites[i]).locH>
+  [130] pushint8 1 .............................. <1>
+  [133] sub ..................................... <sprite(TomteSprites[i]).locH - 1>
+  [134] setobjprop 42 ........................... sprite(TomteSprites[i]).locH = sprite(TomteSprites[i]).locH - 1
+  [137] pushint8 1
+  [140] getlocal 0
+  [142] add
+  [143] setlocal 0
+  [145] endrepeat [ 75]
+  [148] getglobal 39 ............................ <Tomteggr>
+  [151] pushint8 1 .............................. <1>
+  [154] add ..................................... <Tomteggr + 1>
+  [155] setglobal 39 ............................ Tomteggr = Tomteggr + 1
+  [158] getglobal 39 ............................ <Tomteggr>
+  [161] pushint8 70 ............................. <70>
+  [164] eq ...................................... <Tomteggr = 70>
+  [165] jmpifz [172] ............................ if Tomteggr = 70 then
+  [168] pushzero ................................ <0>
+  [169] setglobal 39 ............................ Tomteggr = 0
+  [172] pushint8 1 .............................. <1>
+  [175] pusharglist 1 ........................... <1>
+  [177] extcall 44 .............................. <soundBusy(1)>
+  [180] pushzero ................................ <0>
+  [181] eq ...................................... <soundBusy(1) = 0>
+  [182] jmpifz [200] ............................ if soundBusy(1) = 0 then / else
+  [185] pusharglist 0 ........................... <>
+  [187] thebuiltin 21 ........................... <the frame>
+  [189] pushint8 1 .............................. <1>
+  [192] add ..................................... <the frame + 1>
+  [193] pusharglistnoret 1 ...................... <the frame + 1>
+  [195] extcall 22 .............................. go(the frame + 1)
+  [197] jmp [208]
+  [200] pusharglist 0 ........................... <>
+  [202] thebuiltin 21 ........................... <the frame>
+  [204] pusharglistnoret 1 ...................... <the frame>
+  [206] extcall 22 .............................. go(the frame)
+  [208] ret
+end

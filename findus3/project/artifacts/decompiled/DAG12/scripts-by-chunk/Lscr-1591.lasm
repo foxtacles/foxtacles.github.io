@@ -1,0 +1,110 @@
+on createChainedObjects chainPos
+  [  0] pushint8 1 .............................. <1>
+  [  3] setlocal 0
+  [  5] getlocal 0
+  [  7] getparam 0 .............................. <chainPos>
+  [  9] pusharglist 1 ........................... <chainPos>
+  [ 11] extcall 73 .............................. <count(chainPos)>
+  [ 14] lteq
+  [ 15] jmpifz [237] ............................ repeat with i = 1 to count(chainPos)
+  [ 18] getparam 0 .............................. <chainPos>
+  [ 20] getlocal 0 .............................. <i>
+  [ 22] pusharglist 2 ........................... <chainPos, i>
+  [ 24] objcall 5 ............................... <chainPos[i]>
+  [ 26] setlocal 8 .............................. thisChainPos = chainPos[i]
+  [ 28] getglobal 35 ............................ <chainList>
+  [ 31] getlocal 8 .............................. <thisChainPos>
+  [ 33] pusharglist 2 ........................... <chainList, thisChainPos>
+  [ 35] objcall 5 ............................... <chainList[thisChainPos]>
+  [ 37] setlocal 16 ............................. thisDataList = chainList[thisChainPos]
+  [ 39] getlocal 16 ............................. <thisDataList>
+  [ 41] pushint8 1 .............................. <1>
+  [ 44] pusharglist 2 ........................... <thisDataList, 1>
+  [ 46] objcall 5 ............................... <thisDataList[1]>
+  [ 48] setlocal 24 ............................. ObjectNr = thisDataList[1]
+  [ 50] getlocal 16 ............................. <thisDataList>
+  [ 52] pushint8 2 .............................. <2>
+  [ 55] pusharglist 2 ........................... <thisDataList, 2>
+  [ 57] objcall 5 ............................... <thisDataList[2]>
+  [ 59] setlocal 32 ............................. Motion = thisDataList[2]
+  [ 61] getlocal 16 ............................. <thisDataList>
+  [ 63] pushint8 3 .............................. <3>
+  [ 66] pusharglist 2 ........................... <thisDataList, 3>
+  [ 68] objcall 5 ............................... <thisDataList[3]>
+  [ 70] setlocal 40 ............................. EPC = thisDataList[3]
+  [ 72] getlocal 16 ............................. <thisDataList>
+  [ 74] pushint8 4 .............................. <4>
+  [ 77] pusharglist 2 ........................... <thisDataList, 4>
+  [ 79] objcall 5 ............................... <thisDataList[4]>
+  [ 81] setlocal 48 ............................. path = thisDataList[4]
+  [ 83] getlocal 16 ............................. <thisDataList>
+  [ 85] pushint8 5 .............................. <5>
+  [ 88] pusharglist 2 ........................... <thisDataList, 5>
+  [ 90] objcall 5 ............................... <thisDataList[5]>
+  [ 92] setlocal 56 ............................. action = thisDataList[5]
+  [ 94] getlocal 16 ............................. <thisDataList>
+  [ 96] pusharglist 1 ........................... <thisDataList>
+  [ 98] extcall 73 .............................. <count(thisDataList)>
+  [101] pushint8 5 .............................. <5>
+  [104] eq ...................................... <count(thisDataList) = 5>
+  [105] jmpifz [126] ............................ if count(thisDataList) = 5 then
+  [108] getlocal 24 ............................. <ObjectNr>
+  [110] getlocal 32 ............................. <Motion>
+  [112] getlocal 40 ............................. <EPC>
+  [114] getlocal 48 ............................. <path>
+  [116] getlocal 56 ............................. <action>
+  [118] pusharglistnoret 5 ...................... <ObjectNr, Motion, EPC, path, action>
+  [120] extcall 86 .............................. UNIcreateUniObject(ObjectNr, Motion, EPC, path, action)
+  [123] jmp [226] ............................... next repeat
+  [126] getlocal 16 ............................. <thisDataList>
+  [128] pusharglist 1 ........................... <thisDataList>
+  [130] extcall 73 .............................. <count(thisDataList)>
+  [133] pushint8 6 .............................. <6>
+  [136] eq ...................................... <count(thisDataList) = 6>
+  [137] jmpifz [171] ............................ if count(thisDataList) = 6 then
+  [140] getlocal 16 ............................. <thisDataList>
+  [142] pushint8 6 .............................. <6>
+  [145] pusharglist 2 ........................... <thisDataList, 6>
+  [147] objcall 5 ............................... <thisDataList[6]>
+  [149] setlocal 64 ............................. chain = thisDataList[6]
+  [151] getlocal 24 ............................. <ObjectNr>
+  [153] getlocal 32 ............................. <Motion>
+  [155] getlocal 40 ............................. <EPC>
+  [157] getlocal 48 ............................. <path>
+  [159] getlocal 56 ............................. <action>
+  [161] getlocal 64 ............................. <chain>
+  [163] pusharglistnoret 6 ...................... <ObjectNr, Motion, EPC, path, action, chain>
+  [165] extcall 86 .............................. UNIcreateUniObject(ObjectNr, Motion, EPC, path, action, chain)
+  [168] jmp [226] ............................... next repeat
+  [171] getlocal 16 ............................. <thisDataList>
+  [173] pusharglist 1 ........................... <thisDataList>
+  [175] extcall 73 .............................. <count(thisDataList)>
+  [178] pushint8 7 .............................. <7>
+  [181] eq ...................................... <count(thisDataList) = 7>
+  [182] jmpifz [226] ............................ if count(thisDataList) = 7 then
+  [185] getlocal 16 ............................. <thisDataList>
+  [187] pushint8 6 .............................. <6>
+  [190] pusharglist 2 ........................... <thisDataList, 6>
+  [192] objcall 5 ............................... <thisDataList[6]>
+  [194] setlocal 64 ............................. chain = thisDataList[6]
+  [196] getlocal 16 ............................. <thisDataList>
+  [198] pushint8 7 .............................. <7>
+  [201] pusharglist 2 ........................... <thisDataList, 7>
+  [203] objcall 5 ............................... <thisDataList[7]>
+  [205] setlocal 72 ............................. SS = thisDataList[7]
+  [207] getlocal 24 ............................. <ObjectNr>
+  [209] getlocal 32 ............................. <Motion>
+  [211] getlocal 40 ............................. <EPC>
+  [213] getlocal 48 ............................. <path>
+  [215] getlocal 56 ............................. <action>
+  [217] getlocal 64 ............................. <chain>
+  [219] getlocal 72 ............................. <SS>
+  [221] pusharglistnoret 7 ...................... <ObjectNr, Motion, EPC, path, action, chain, SS>
+  [223] extcall 86 .............................. UNIcreateUniObject(ObjectNr, Motion, EPC, path, action, chain, SS)
+  [226] pushint8 1
+  [229] getlocal 0
+  [231] add
+  [232] setlocal 0
+  [234] endrepeat [  5]
+  [237] ret
+end

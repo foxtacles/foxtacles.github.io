@@ -1,0 +1,66 @@
+on UniKillObj
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setlocal 0 .............................. returnList = []
+  [  5] pushint8 1 .............................. <1>
+  [  8] setlocal 8
+  [ 10] getlocal 8
+  [ 12] getglobal 1 ............................. <UNIObjectList>
+  [ 14] pusharglist 1 ........................... <UNIObjectList>
+  [ 16] extcall 44 .............................. <count(UNIObjectList)>
+  [ 19] lteq
+  [ 20] jmpifz [128] ............................ repeat with i = 1 to count(UNIObjectList)
+  [ 23] getglobal 1 ............................. <UNIObjectList>
+  [ 25] getlocal 8 .............................. <i>
+  [ 27] pusharglist 2 ........................... <UNIObjectList, i>
+  [ 29] objcall 45 .............................. <UNIObjectList[i]>
+  [ 32] setlocal 16 ............................. tObj = UNIObjectList[i]
+  [ 34] getlocal 16 ............................. <tObj>
+  [ 36] getobjprop 4 ............................ <tObj.UNIactive>
+  [ 38] pushzero ................................ <0>
+  [ 39] eq ...................................... <tObj.UNIactive = 0>
+  [ 40] jmpifz [117] ............................ if tObj.UNIactive = 0 then
+  [ 43] getlocal 16 ............................. <tObj>
+  [ 45] getobjprop 36 ........................... <tObj.UNIchain>
+  [ 48] setlocal 24 ............................. tempChain = tObj.UNIchain
+  [ 50] getlocal 24 ............................. <tempChain>
+  [ 52] pusharglist 0 ........................... <[]>
+  [ 54] pushlist ................................ <[]>
+  [ 55] nteq .................................... <tempChain <> []>
+  [ 56] jmpifz [108] ............................ if tempChain <> [] then
+  [ 59] pushint8 1 .............................. <1>
+  [ 62] setlocal 32
+  [ 64] getlocal 32
+  [ 66] getlocal 24 ............................. <tempChain>
+  [ 68] pusharglist 1 ........................... <tempChain>
+  [ 70] extcall 44 .............................. <count(tempChain)>
+  [ 73] lteq
+  [ 74] jmpifz [108] ............................ repeat with j = 1 to count(tempChain)
+  [ 77] getlocal 24 ............................. <tempChain>
+  [ 79] getlocal 32 ............................. <j>
+  [ 81] pusharglist 2 ........................... <tempChain, j>
+  [ 83] objcall 45 .............................. <tempChain[j]>
+  [ 86] setlocal 40 ............................. thisValue = tempChain[j]
+  [ 88] getlocal 0 .............................. <returnList>
+  [ 90] getlocal 40 ............................. <thisValue>
+  [ 92] pusharglistnoret 2 ...................... <returnList, thisValue>
+  [ 94] extcall 59 .............................. add(returnList, thisValue)
+  [ 97] pushint8 1
+  [100] getlocal 32
+  [102] add
+  [103] setlocal 32
+  [105] endrepeat [ 64]
+  [108] getglobal 1 ............................. <UNIObjectList>
+  [110] getlocal 8 .............................. <i>
+  [112] pusharglistnoret 2 ...................... <UNIObjectList, i>
+  [114] extcall 125 ............................. deleteAt(UNIObjectList, i)
+  [117] pushint8 1
+  [120] getlocal 8
+  [122] add
+  [123] setlocal 8
+  [125] endrepeat [ 10]
+  [128] getlocal 0 .............................. <returnList>
+  [130] pusharglistnoret 1 ...................... <returnList>
+  [132] extcall 41 .............................. return returnList
+  [135] ret
+end

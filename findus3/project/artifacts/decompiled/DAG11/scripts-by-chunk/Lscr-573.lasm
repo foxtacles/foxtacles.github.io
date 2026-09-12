@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"tavla">
+  [  2] pusharglistnoret 1 ...................... <"tavla">
+  [  4] extcall 36 .............................. puppetSound("tavla")
+  [  7] ret
+end

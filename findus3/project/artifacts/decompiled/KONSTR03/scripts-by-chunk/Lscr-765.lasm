@@ -1,0 +1,32 @@
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 6 ............................... init2()
+  [  4] pushint8 1 .............................. <1>
+  [  6] setlocal 0
+  [  8] getlocal 0
+  [ 10] getglobal 56 ............................ <AntalObjekt>
+  [ 12] lteq
+  [ 13] jmpifz [ 52] ............................ repeat with i = 1 to AntalObjekt
+  [ 16] getlocal 0 .............................. <i>
+  [ 18] getglobal 13 ............................ <spriteNum>
+  [ 20] getlocal 0 .............................. <i>
+  [ 22] pusharglist 2 ........................... <spriteNum, i>
+  [ 24] extcall 51 .............................. <getAt(spriteNum, i)>
+  [ 26] pusharglistnoret 2 ...................... <i, getAt(spriteNum, i)>
+  [ 28] extcall 25 .............................. puppetSprite(i, getAt(spriteNum, i))
+  [ 30] getglobal 13 ............................ <spriteNum>
+  [ 32] getlocal 0 .............................. <i>
+  [ 34] pusharglist 2 ........................... <spriteNum, i>
+  [ 36] extcall 51 .............................. <getAt(spriteNum, i)>
+  [ 38] pushzero ................................ <0>
+  [ 39] pushint8 25 ............................. <25>
+  [ 41] set 6 ................................... set the visible of sprite getAt(spriteNum, i) to 0
+  [ 43] pushint8 1
+  [ 45] getlocal 0
+  [ 47] add
+  [ 48] setlocal 0
+  [ 50] endrepeat [  8]
+  [ 52] pushzero ................................ <0>
+  [ 53] setglobal 18 ............................ KonstruktionFardig = 0
+  [ 55] ret
+end

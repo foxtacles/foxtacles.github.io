@@ -1,0 +1,8 @@
+global UNIObjectList
+
+on UNIinitvar
+  [  0] pusharglist 0 ........................... <[]>
+  [  2] pushlist ................................ <[]>
+  [  3] setglobal 1 ............................. UNIObjectList = []
+  [  5] ret
+end

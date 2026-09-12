@@ -1,0 +1,55 @@
+property spriteNum, castNum, currpos
+
+on new me, spritenum0
+  [  0] getparam 8 .............................. <spritenum0>
+  [  2] setprop 22 .............................. spriteNum = spritenum0
+  [  4] getprop 22 .............................. <spriteNum>
+  [  6] pushint8 35 ............................. <35>
+  [  8] get 6 ................................... <the memberNum of sprite spriteNum>
+  [ 10] setprop 23 .............................. castNum = the memberNum of sprite spriteNum
+  [ 12] getprop 22 .............................. <spriteNum>
+  [ 14] pushint8 13 ............................. <13>
+  [ 16] get 6 ................................... <the locH of sprite spriteNum>
+  [ 18] setlocal 0 .............................. xPos = the locH of sprite spriteNum
+  [ 20] getprop 22 .............................. <spriteNum>
+  [ 22] pushint8 14 ............................. <14>
+  [ 24] get 6 ................................... <the locV of sprite spriteNum>
+  [ 26] setlocal 8 .............................. yPos = the locV of sprite spriteNum
+  [ 28] getlocal 0 .............................. <xPos>
+  [ 30] getlocal 8 .............................. <yPos>
+  [ 32] pusharglist 2 ........................... <xPos, yPos>
+  [ 34] extcall 6 ............................... <point(xPos, yPos)>
+  [ 36] setprop 24 .............................. currpos = point(xPos, yPos)
+  [ 38] getprop 22 .............................. <spriteNum>
+  [ 40] pushint8 1 .............................. <1>
+  [ 42] pusharglistnoret 2 ...................... <spriteNum, 1>
+  [ 44] extcall 10 .............................. puppetSprite(spriteNum, 1)
+  [ 46] getparam 0 .............................. <me>
+  [ 48] pusharglistnoret 1 ...................... <me>
+  [ 50] extcall 25 .............................. return me
+  [ 52] ret
+end
+
+on setpos me, pos
+  [  0] getparam 8 .............................. <pos>
+  [  2] setprop 24 .............................. currpos = pos
+  [  4] getprop 22 .............................. <spriteNum>
+  [  6] getprop 24 .............................. <currpos>
+  [  8] pushint8 33 ............................. <33>
+  [ 10] set 6 ................................... set the loc of sprite spriteNum to currpos
+  [ 12] ret
+end
+
+on setsprite me, sp
+  [  0] getparam 8 .............................. <sp>
+  [  2] setprop 22 .............................. spriteNum = sp
+  [  4] getprop 22 .............................. <spriteNum>
+  [  6] getprop 24 .............................. <currpos>
+  [  8] pushint8 33 ............................. <33>
+  [ 10] set 6 ................................... set the loc of sprite spriteNum to currpos
+  [ 12] getprop 22 .............................. <spriteNum>
+  [ 14] getprop 23 .............................. <castNum>
+  [ 16] pushint8 35 ............................. <35>
+  [ 18] set 6 ................................... set the memberNum of sprite spriteNum to castNum
+  [ 20] ret
+end

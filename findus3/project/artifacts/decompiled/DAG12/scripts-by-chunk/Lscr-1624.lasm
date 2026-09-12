@@ -1,0 +1,9 @@
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 3 ............................... RensaLjud()
+  [  4] pushint8 1 .............................. <1>
+  [  7] pushcons 0 .............................. <"kalender">
+  [  9] pusharglistnoret 2 ...................... <1, "kalender">
+  [ 11] extcall 1 ............................... go(1, "kalender")
+  [ 13] ret
+end

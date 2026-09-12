@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"restart">
+  [  2] pusharglistnoret 1 ...................... <"restart">
+  [  4] extcall 7 ............................... go("restart")
+  [  6] ret
+end

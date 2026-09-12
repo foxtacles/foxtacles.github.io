@@ -1,0 +1,1386 @@
+{
+  "name": "DAG20",
+  "input": "artifacts/disc/MAIN/DAG20.DXR",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 272,
+    "movieLeft": 320,
+    "movieBottom": 752,
+    "movieRight": 960,
+    "minMember": 1,
+    "maxMember": 90,
+    "field9": 1,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 1,
+    "commentSize": 12,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 255,
+    "bitDepth": 32,
+    "field17": 0,
+    "field18": 1,
+    "field19": 3006277,
+    "directorVersion": 1406,
+    "field21": 8,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 15,
+    "platform": 1,
+    "protection": 31970,
+    "field29": 60,
+    "checksum": 390896886
+  },
+  "cast_libraries": [
+    {
+      "name": "Internal",
+      "filePath": "",
+      "preloadSettings": 0,
+      "minMember": 1,
+      "maxMember": 90,
+      "id": 1024
+    }
+  ],
+  "member_types": {
+    "bitmap": 34,
+    "script": 11,
+    "sound": 10,
+    "text": 1
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 1,
+      "chunk_id": 4,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "PETTSONS GRAN",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 427,
+          "castID": 4,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 2,
+      "chunk_id": 30,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 416,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 3,
+      "chunk_id": 31,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 428,
+          "castID": 31,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 4,
+      "chunk_id": 34,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 429,
+          "castID": 34,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 5,
+      "chunk_id": 37,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 430,
+          "castID": 37,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 6,
+      "chunk_id": 40,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 431,
+          "castID": 40,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 7,
+      "chunk_id": 43,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 432,
+          "castID": 43,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 8,
+      "chunk_id": 46,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 433,
+          "castID": 46,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 9,
+      "chunk_id": 49,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 434,
+          "castID": 49,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 10,
+      "chunk_id": 52,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "GRANPYNT",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 435,
+          "castID": 52,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 11,
+      "chunk_id": 55,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 436,
+          "castID": 55,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 12,
+      "chunk_id": 58,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 437,
+          "castID": 58,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 13,
+      "chunk_id": 61,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 418,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 14,
+      "chunk_id": 62,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 419,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 15,
+      "chunk_id": 409,
+      "type": "script",
+      "type_id": 11,
+      "name": "locz",
+      "script_chunk": 426,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 17,
+      "chunk_id": 313,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "till kalendern",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 438,
+          "castID": 313,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 18,
+      "chunk_id": 312,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "borja",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 439,
+          "castID": 312,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 20,
+      "chunk_id": 161,
+      "type": "sound",
+      "type_id": 6,
+      "name": "bygga_gran_8bit",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 442,
+          "castID": 161,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 443,
+          "castID": 161,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 444,
+          "castID": 161,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 21,
+      "chunk_id": 276,
+      "type": "sound",
+      "type_id": 6,
+      "name": "fel",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 447,
+          "castID": 276,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 448,
+          "castID": 276,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 449,
+          "castID": 276,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 22,
+      "chunk_id": 89,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 420,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 24,
+      "chunk_id": 87,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "pix",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 450,
+          "castID": 87,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 25,
+      "chunk_id": 45,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 421,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 26,
+      "chunk_id": 141,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "apa",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 451,
+          "castID": 141,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 27,
+      "chunk_id": 21,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "fantom",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 452,
+          "castID": 21,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 28,
+      "chunk_id": 139,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "ko",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 453,
+          "castID": 139,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 29,
+      "chunk_id": 169,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "lykta",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 454,
+          "castID": 169,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 30,
+      "chunk_id": 183,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 455,
+          "castID": 183,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 31,
+      "chunk_id": 131,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "pensel",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 456,
+          "castID": 131,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 32,
+      "chunk_id": 179,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 422,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 33,
+      "chunk_id": 90,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Pek",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 457,
+          "castID": 90,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 34,
+      "chunk_id": 93,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Hand",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 458,
+          "castID": 93,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 35,
+      "chunk_id": 96,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Grepp",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 459,
+          "castID": 96,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 36,
+      "chunk_id": 99,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Pekmask",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 460,
+          "castID": 99,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 37,
+      "chunk_id": 102,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Handmask",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 461,
+          "castID": 102,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 38,
+      "chunk_id": 105,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "Greppmask",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 462,
+          "castID": 105,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 39,
+      "chunk_id": 129,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 417,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 40,
+      "chunk_id": 113,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 423,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 41,
+      "chunk_id": 197,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 424,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 42,
+      "chunk_id": 247,
+      "type": "sound",
+      "type_id": 6,
+      "name": "rim.aif",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 465,
+          "castID": 247,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 466,
+          "castID": 247,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 467,
+          "castID": 247,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 43,
+      "chunk_id": 246,
+      "type": "sound",
+      "type_id": 6,
+      "name": "klart.aif",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 470,
+          "castID": 246,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 471,
+          "castID": 246,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 472,
+          "castID": 246,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 44,
+      "chunk_id": 245,
+      "type": "sound",
+      "type_id": 6,
+      "name": "bra1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 475,
+          "castID": 245,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 476,
+          "castID": 245,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 477,
+          "castID": 245,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 45,
+      "chunk_id": 244,
+      "type": "sound",
+      "type_id": 6,
+      "name": "bra2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 480,
+          "castID": 244,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 481,
+          "castID": 244,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 482,
+          "castID": 244,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 46,
+      "chunk_id": 243,
+      "type": "sound",
+      "type_id": 6,
+      "name": "bra3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 485,
+          "castID": 243,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 486,
+          "castID": 243,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 487,
+          "castID": 243,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 47,
+      "chunk_id": 314,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 425,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 48,
+      "chunk_id": 264,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "morka knappar",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 488,
+          "castID": 264,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 60,
+      "chunk_id": 290,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "jattefint",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 489,
+          "castID": 290,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 61,
+      "chunk_id": 104,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "hona1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 490,
+          "castID": 104,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 62,
+      "chunk_id": 160,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "hona2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 491,
+          "castID": 160,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 63,
+      "chunk_id": 280,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "hona3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 492,
+          "castID": 280,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 64,
+      "chunk_id": 289,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "jattefint",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 493,
+          "castID": 289,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 65,
+      "chunk_id": 315,
+      "type": "sound",
+      "type_id": 6,
+      "name": "SARK1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 496,
+          "castID": 315,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 497,
+          "castID": 315,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 498,
+          "castID": 315,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 66,
+      "chunk_id": 316,
+      "type": "sound",
+      "type_id": 6,
+      "name": "SARK2",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 501,
+          "castID": 316,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 502,
+          "castID": 316,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 503,
+          "castID": 316,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 67,
+      "chunk_id": 317,
+      "type": "sound",
+      "type_id": 6,
+      "name": "SARK3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 506,
+          "castID": 317,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 507,
+          "castID": 317,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 508,
+          "castID": 317,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 69,
+      "chunk_id": 253,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "julgran3",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 509,
+          "castID": 253,
+          "fourCC": "BITD"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 89,
+      "chunk_id": 248,
+      "type": "text",
+      "type_id": 3,
+      "name": "",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 510,
+          "castID": 248,
+          "fourCC": "STXT"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "Internal",
+      "member": 90,
+      "chunk_id": 241,
+      "type": "bitmap",
+      "type_id": 1,
+      "name": "20",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 511,
+          "castID": 241,
+          "fourCC": "BITD"
+        }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "chunk_id": 426,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-426.ls",
+      "handler_names": [
+        "beginSprite"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 3,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 15,
+          "chunk_id": 409,
+          "type": "script",
+          "type_id": 11,
+          "name": "locz",
+          "script_chunk": 426,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 416,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-416.ls",
+      "handler_names": [
+        "idle",
+        "mouseDown",
+        "mouseUp",
+        "exitFrame"
+      ],
+      "globals": [
+        "plats",
+        "aktiv",
+        "tre",
+        "fyra",
+        "fem",
+        "sex",
+        "sju",
+        "atta",
+        "nio",
+        "tio",
+        "tretton",
+        "fjorton",
+        "femton",
+        "sexton",
+        "sjutton",
+        "ove"
+      ],
+      "properties": [],
+      "source_lines": 241,
+      "bytecode_handlers": 4,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 2,
+          "chunk_id": 30,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 416,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 420,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-420.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [
+        "decDate"
+      ],
+      "properties": [],
+      "source_lines": 14,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 22,
+          "chunk_id": 89,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 420,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 421,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-421.ls",
+      "handler_names": [
+        "omstart"
+      ],
+      "globals": [
+        "tre",
+        "fyra",
+        "fem",
+        "sex",
+        "sju",
+        "atta",
+        "nio",
+        "tio",
+        "tretton",
+        "fjorton",
+        "femton",
+        "sexton",
+        "sjutton",
+        "ove",
+        "aktiv"
+      ],
+      "properties": [],
+      "source_lines": 35,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 25,
+          "chunk_id": 45,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 421,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 417,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-417.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 58,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 39,
+          "chunk_id": 129,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 417,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 422,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-422.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 12,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 32,
+          "chunk_id": 179,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 422,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 418,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-418.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 13,
+          "chunk_id": 61,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 418,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 419,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-419.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 14,
+          "chunk_id": 62,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 419,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 423,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-423.ls",
+      "handler_names": [
+        "exitFrame"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 59,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 40,
+          "chunk_id": 113,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 423,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 424,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-424.ls",
+      "handler_names": [
+        "Wait"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 6,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 41,
+          "chunk_id": 197,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 424,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 425,
+      "path": "artifacts/decompiled/DAG20/scripts-by-chunk/Lscr-425.ls",
+      "handler_names": [
+        "exitFrame",
+        "musOve"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 84,
+      "bytecode_handlers": 2,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "Internal",
+          "member": 47,
+          "chunk_id": 314,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 425,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "frame": 3,
+      "label": "hona",
+      "comment": ""
+    },
+    {
+      "frame": 4,
+      "label": "start",
+      "comment": ""
+    },
+    {
+      "frame": 5,
+      "label": "pynta",
+      "comment": ""
+    },
+    {
+      "frame": 8,
+      "label": "klar",
+      "comment": ""
+    },
+    {
+      "frame": 10,
+      "label": "vidare",
+      "comment": ""
+    }
+  ],
+  "score": {
+    "path": "artifacts/analysis/scores/DAG20.json",
+    "frames": 11,
+    "spans": 39
+  },
+  "filmloops": [],
+  "texts": [
+    {
+      "chunk_id": 510,
+      "text": "Tyskland -->",
+      "encoding": "mac_roman",
+      "style_data_hex": "0001000000000000000000050000000c000000000000",
+      "path": "artifacts/analysis/text/DAG20/STXT-510.txt"
+    }
+  ]
+}

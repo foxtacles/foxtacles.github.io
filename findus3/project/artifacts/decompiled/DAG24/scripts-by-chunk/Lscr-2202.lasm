@@ -1,0 +1,9 @@
+on tid
+  [  0] pushint8 34 ............................. <34>
+  [  3] get 7 ................................... <the timer>
+  [  5] getglobal 81 ............................ <startade>
+  [  8] sub ..................................... <the timer - startade>
+  [  9] pusharglistnoret 1 ...................... <the timer - startade>
+  [ 11] extcall 14 .............................. return the timer - startade
+  [ 13] ret
+end

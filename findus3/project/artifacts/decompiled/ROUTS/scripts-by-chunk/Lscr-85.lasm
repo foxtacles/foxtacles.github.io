@@ -1,0 +1,69 @@
+global G_LillTomteSpNr, G_SiffrorCNr, G_PoangAntalSiffror
+
+on InitPoangLillTomte SpNr, CastNR, TwoThreeDigit
+  [  0] getparam 0 .............................. <SpNr>
+  [  2] setglobal 92 ............................ G_LillTomteSpNr = SpNr
+  [  5] getparam 8 .............................. <CastNR>
+  [  7] setglobal 93 ............................ G_SiffrorCNr = CastNR
+  [ 10] getparam 16 ............................. <TwoThreeDigit>
+  [ 12] setglobal 9 ............................. G_PoangAntalSiffror = TwoThreeDigit
+  [ 14] ret
+end
+
+on ShowPoangLillTomte LillPoang
+  [  0] getparam 0 .............................. <LillPoang>
+  [  2] pusharglist 1 ........................... <LillPoang>
+  [  4] extcall 95 .............................. <integer(LillPoang)>
+  [  7] pusharglist 1 ........................... <integer(LillPoang)>
+  [  9] extcall 94 .............................. <string(integer(LillPoang))>
+  [ 12] setlocal 0 .............................. s = string(integer(LillPoang))
+  [ 14] getlocal 0 .............................. <s>
+  [ 16] pusharglist 1 ........................... <s>
+  [ 18] extcall 96 .............................. <length(s)>
+  [ 21] pushint8 3 .............................. <3>
+  [ 24] lt ...................................... <length(s) < 3>
+  [ 25] jmpifz [ 37] ............................ repeat while length(s) < 3
+  [ 28] pushcons 0 .............................. <"0">
+  [ 30] getlocal 0 .............................. <s>
+  [ 32] joinstr ................................. <"0" & s>
+  [ 33] setlocal 0 .............................. s = "0" & s
+  [ 35] endrepeat [ 14]
+  [ 37] pushint8 1 .............................. <1>
+  [ 40] setlocal 8
+  [ 42] getlocal 8
+  [ 44] pushint8 3 .............................. <3>
+  [ 47] lteq
+  [ 48] jmpifz [108] ............................ repeat with i = 1 to 3
+  [ 51] getlocal 8 .............................. <i>
+  [ 53] pushzero ................................ <0>
+  [ 54] pushzero ................................ <0>
+  [ 55] pushzero ................................ <0>
+  [ 56] pushzero ................................ <0>
+  [ 57] pushzero ................................ <0>
+  [ 58] pushzero ................................ <0>
+  [ 59] pushzero ................................ <0>
+  [ 60] getlocal 0 .............................. <s>
+  [ 62] getchunk ................................ <char i of s>
+  [ 63] pusharglist 1 ........................... <char i of s>
+  [ 65] extcall 97 .............................. <charToNum(char i of s)>
+  [ 68] pushint8 48 ............................. <48>
+  [ 71] sub ..................................... <charToNum(char i of s) - 48>
+  [ 72] setlocal 16 ............................. b = charToNum(char i of s) - 48
+  [ 74] getglobal 92 ............................ <G_LillTomteSpNr>
+  [ 77] getlocal 8 .............................. <i>
+  [ 79] add ..................................... <G_LillTomteSpNr + i>
+  [ 80] pusharglist 1 ........................... <G_LillTomteSpNr + i>
+  [ 82] extcall 22 .............................. <sprite(G_LillTomteSpNr + i)>
+  [ 84] getglobal 93 ............................ <G_SiffrorCNr>
+  [ 87] pushint8 1 .............................. <1>
+  [ 90] add ..................................... <G_SiffrorCNr + 1>
+  [ 91] getlocal 16 ............................. <b>
+  [ 93] add ..................................... <G_SiffrorCNr + 1 + b>
+  [ 94] setobjprop 98 ........................... sprite(G_LillTomteSpNr + i).memberNum = G_SiffrorCNr + 1 + b
+  [ 97] pushint8 1
+  [100] getlocal 8
+  [102] add
+  [103] setlocal 8
+  [105] endrepeat [ 42]
+  [108] ret
+end

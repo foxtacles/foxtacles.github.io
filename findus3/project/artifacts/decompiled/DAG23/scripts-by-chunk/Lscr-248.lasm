@@ -1,0 +1,205 @@
+global gPath, gPathLen, gPathPos, gPathDist, gNumObjects, gSortList, gEditSortList, gObjectList, gFindus, gFindusGhost, gGran
+
+on createObjects
+  [  0] pusharglist 0 ........................... <>
+  [  2] extcall 4 ............................... <list()>
+  [  4] setglobal 33 ............................ gSortList = list()
+  [  6] pusharglist 0 ........................... <>
+  [  8] extcall 4 ............................... <list()>
+  [ 10] setglobal 61 ............................ gEditSortList = list()
+  [ 12] pushcons 0 .............................. <"actor_script">
+  [ 14] pusharglist 1 ........................... <"actor_script">
+  [ 16] extcall 34 .............................. <script("actor_script")>
+  [ 18] pushint8 10 ............................. <10>
+  [ 20] pusharglist 2 ........................... <script("actor_script"), 10>
+  [ 22] extcall 19 .............................. <new(script("actor_script"), 10)>
+  [ 24] setglobal 62 ............................ gGran = new(script("actor_script"), 10)
+  [ 26] getglobal 33 ............................ <gSortList>
+  [ 28] getglobal 62 ............................ <gGran>
+  [ 30] pusharglistnoret 2 ...................... <gSortList, gGran>
+  [ 32] extcall 5 ............................... add(gSortList, gGran)
+  [ 34] getglobal 61 ............................ <gEditSortList>
+  [ 36] getglobal 62 ............................ <gGran>
+  [ 38] pusharglistnoret 2 ...................... <gEditSortList, gGran>
+  [ 40] extcall 5 ............................... add(gEditSortList, gGran)
+  [ 42] pusharglist 0 ........................... <>
+  [ 44] extcall 4 ............................... <list()>
+  [ 46] setglobal 35 ............................ gObjectList = list()
+  [ 48] pushint8 1 .............................. <1>
+  [ 50] setlocal 0
+  [ 52] getlocal 0
+  [ 54] getglobal 9 ............................. <gNumObjects>
+  [ 56] lteq
+  [ 57] jmpifz [102] ............................ repeat with i = 1 to gNumObjects
+  [ 60] pushcons 8 .............................. <"actor_script">
+  [ 62] pusharglist 1 ........................... <"actor_script">
+  [ 64] extcall 34 .............................. <script("actor_script")>
+  [ 66] pushint8 10 ............................. <10>
+  [ 68] getlocal 0 .............................. <i>
+  [ 70] add ..................................... <10 + i>
+  [ 71] pusharglist 2 ........................... <script("actor_script"), 10 + i>
+  [ 73] extcall 19 .............................. <new(script("actor_script"), 10 + i)>
+  [ 75] setlocal 8 .............................. obj = new(script("actor_script"), 10 + i)
+  [ 77] getglobal 35 ............................ <gObjectList>
+  [ 79] getlocal 8 .............................. <obj>
+  [ 81] pusharglistnoret 2 ...................... <gObjectList, obj>
+  [ 83] extcall 5 ............................... add(gObjectList, obj)
+  [ 85] getglobal 33 ............................ <gSortList>
+  [ 87] getlocal 8 .............................. <obj>
+  [ 89] pusharglistnoret 2 ...................... <gSortList, obj>
+  [ 91] extcall 5 ............................... add(gSortList, obj)
+  [ 93] pushint8 1
+  [ 95] getlocal 0
+  [ 97] add
+  [ 98] setlocal 0
+  [100] endrepeat [ 52]
+  [102] getglobal 35 ............................ <gObjectList>
+  [104] pushint8 1 .............................. <1>
+  [106] pusharglist 2 ........................... <gObjectList, 1>
+  [108] extcall 15 .............................. <getAt(gObjectList, 1)>
+  [110] setglobal 59 ............................ gFindus = getAt(gObjectList, 1)
+  [112] getglobal 35 ............................ <gObjectList>
+  [114] pushint8 2 .............................. <2>
+  [116] pusharglist 2 ........................... <gObjectList, 2>
+  [118] extcall 15 .............................. <getAt(gObjectList, 2)>
+  [120] setglobal 63 ............................ gFindusGhost = getAt(gObjectList, 2)
+  [122] getglobal 61 ............................ <gEditSortList>
+  [124] getglobal 59 ............................ <gFindus>
+  [126] pusharglistnoret 2 ...................... <gEditSortList, gFindus>
+  [128] extcall 5 ............................... add(gEditSortList, gFindus)
+  [130] getglobal 61 ............................ <gEditSortList>
+  [132] getglobal 63 ............................ <gFindusGhost>
+  [134] pusharglistnoret 2 ...................... <gEditSortList, gFindusGhost>
+  [136] extcall 5 ............................... add(gEditSortList, gFindusGhost)
+  [138] ret
+end
+
+on positionObjects
+  [  0] getglobal 7 ............................. <gPathPos>
+  [  2] setlocal 0 .............................. pos = gPathPos
+  [  4] pushint8 1 .............................. <1>
+  [  6] setlocal 8
+  [  8] getlocal 8
+  [ 10] getglobal 9 ............................. <gNumObjects>
+  [ 12] lteq
+  [ 13] jmpifz [109] ............................ repeat with i = 1 to gNumObjects
+  [ 16] getglobal 3 ............................. <gPath>
+  [ 18] getlocal 0 .............................. <pos>
+  [ 20] pusharglist 2 ........................... <gPath, pos>
+  [ 22] extcall 15 .............................. <getAt(gPath, pos)>
+  [ 24] setlocal 16 ............................. p = getAt(gPath, pos)
+  [ 26] getglobal 35 ............................ <gObjectList>
+  [ 28] getlocal 8 .............................. <i>
+  [ 30] pusharglist 2 ........................... <gObjectList, i>
+  [ 32] extcall 15 .............................. <getAt(gObjectList, i)>
+  [ 34] setlocal 24 ............................. obj = getAt(gObjectList, i)
+  [ 36] getlocal 24 ............................. <obj>
+  [ 38] getlocal 16 ............................. <p>
+  [ 40] pusharglistnoret 2 ...................... <obj, p>
+  [ 42] extcall 20 .............................. setpos(obj, p)
+  [ 44] getlocal 0 .............................. <pos>
+  [ 46] getglobal 8 ............................. <gPathDist>
+  [ 48] sub ..................................... <pos - gPathDist>
+  [ 49] setlocal 0 .............................. pos = pos - gPathDist
+  [ 51] getlocal 0 .............................. <pos>
+  [ 53] getglobal 2 ............................. <gPathLen>
+  [ 55] gt ...................................... <pos > gPathLen>
+  [ 56] jmpifz [ 69] ............................ if pos > gPathLen then / else
+  [ 59] getlocal 0 .............................. <pos>
+  [ 61] getglobal 2 ............................. <gPathLen>
+  [ 63] sub ..................................... <pos - gPathLen>
+  [ 64] setlocal 0 .............................. pos = pos - gPathLen
+  [ 66] jmp [ 84]
+  [ 69] getlocal 0 .............................. <pos>
+  [ 71] pushint8 1 .............................. <1>
+  [ 73] lt ...................................... <pos < 1>
+  [ 74] jmpifz [ 84] ............................ if pos < 1 then
+  [ 77] getglobal 2 ............................. <gPathLen>
+  [ 79] getlocal 0 .............................. <pos>
+  [ 81] add ..................................... <gPathLen + pos>
+  [ 82] setlocal 0 .............................. pos = gPathLen + pos
+  [ 84] pushint8 1 .............................. <1>
+  [ 86] getglobal 2 ............................. <gPathLen>
+  [ 88] getlocal 0 .............................. <pos>
+  [ 90] pusharglist 2 ........................... <gPathLen, pos>
+  [ 92] extcall 58 .............................. <min(gPathLen, pos)>
+  [ 94] pusharglist 2 ........................... <1, min(gPathLen, pos)>
+  [ 96] extcall 67 .............................. <max(1, min(gPathLen, pos))>
+  [ 98] setlocal 0 .............................. pos = max(1, min(gPathLen, pos))
+  [100] pushint8 1
+  [102] getlocal 8
+  [104] add
+  [105] setlocal 8
+  [107] endrepeat [  8]
+  [109] ret
+end
+
+on sortObjects baseSprite, sortList
+  [  0] pushint8 999 ............................ <999>
+  [  3] pushint8 10 ............................. <10>
+  [  5] pusharglist 2 ........................... <[999: 10]>
+  [  7] pushproplist ............................ <[999: 10]>
+  [  8] setlocal 0 .............................. templist = [999: 10]
+  [ 10] pushint8 1 .............................. <1>
+  [ 12] setlocal 8
+  [ 14] getlocal 8
+  [ 16] getparam 8 .............................. <sortList>
+  [ 18] pusharglist 1 ........................... <sortList>
+  [ 20] extcall 37 .............................. <count(sortList)>
+  [ 22] lteq
+  [ 23] jmpifz [ 59] ............................ repeat with i = 1 to count(sortList)
+  [ 26] getparam 8 .............................. <sortList>
+  [ 28] getlocal 8 .............................. <i>
+  [ 30] pusharglist 2 ........................... <sortList, i>
+  [ 32] extcall 15 .............................. <getAt(sortList, i)>
+  [ 34] setlocal 16 ............................. obj = getAt(sortList, i)
+  [ 36] getlocal 0 .............................. <templist>
+  [ 38] getlocal 16 ............................. <obj>
+  [ 40] getobjprop 24 ........................... <obj.currpos>
+  [ 42] getobjprop 44 ........................... <obj.currpos.locV>
+  [ 44] getlocal 8 .............................. <i>
+  [ 46] pusharglistnoret 3 ...................... <templist, obj.currpos.locV, i>
+  [ 48] extcall 38 .............................. addProp(templist, obj.currpos.locV, i)
+  [ 50] pushint8 1
+  [ 52] getlocal 8
+  [ 54] add
+  [ 55] setlocal 8
+  [ 57] endrepeat [ 14]
+  [ 59] getlocal 0 .............................. <templist>
+  [ 61] pusharglistnoret 1 ...................... <templist>
+  [ 63] extcall 39 .............................. sort(templist)
+  [ 65] pushint8 1 .............................. <1>
+  [ 67] setlocal 8
+  [ 69] getlocal 8
+  [ 71] getlocal 0 .............................. <templist>
+  [ 73] pusharglist 1 ........................... <templist>
+  [ 75] extcall 37 .............................. <count(templist)>
+  [ 77] pushint8 1 .............................. <1>
+  [ 79] sub ..................................... <count(templist) - 1>
+  [ 80] lteq
+  [ 81] jmpifz [127] ............................ repeat with i = 1 to count(templist) - 1
+  [ 84] getlocal 0 .............................. <templist>
+  [ 86] getlocal 8 .............................. <i>
+  [ 88] pusharglist 2 ........................... <templist, i>
+  [ 90] extcall 15 .............................. <getAt(templist, i)>
+  [ 92] setlocal 24 ............................. n = getAt(templist, i)
+  [ 94] getparam 8 .............................. <sortList>
+  [ 96] getlocal 24 ............................. <n>
+  [ 98] pusharglist 2 ........................... <sortList, n>
+  [100] extcall 15 .............................. <getAt(sortList, n)>
+  [102] setlocal 16 ............................. obj = getAt(sortList, n)
+  [104] getlocal 16 ............................. <obj>
+  [106] getparam 0 .............................. <baseSprite>
+  [108] getlocal 8 .............................. <i>
+  [110] add ..................................... <baseSprite + i>
+  [111] pushint8 1 .............................. <1>
+  [113] sub ..................................... <baseSprite + i - 1>
+  [114] pusharglistnoret 2 ...................... <obj, baseSprite + i - 1>
+  [116] extcall 21 .............................. setsprite(obj, baseSprite + i - 1)
+  [118] pushint8 1
+  [120] getlocal 8
+  [122] add
+  [123] setlocal 8
+  [125] endrepeat [ 69]
+  [127] ret
+end

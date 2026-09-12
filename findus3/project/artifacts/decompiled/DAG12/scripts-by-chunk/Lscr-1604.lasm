@@ -1,0 +1,45 @@
+global gBorja
+
+on beginSprite me
+  [  0] getparam 0 .............................. <me>
+  [  2] getobjprop 234 .......................... <me.spriteNum>
+  [  5] setglobal 232 ........................... gBorja = me.spriteNum
+  [  8] getglobal 232 ........................... <gBorja>
+  [ 11] pusharglist 1 ........................... <gBorja>
+  [ 13] extcall 76 .............................. <sprite(gBorja)>
+  [ 16] pushzero ................................ <0>
+  [ 17] setobjprop 231 .......................... sprite(gBorja).visible = 0
+  [ 20] ret
+end
+
+on exitFrame me
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 229 ............................. knappar()
+  [  5] ret
+end
+
+on mouseEnter me
+  [  0] pushint8 73 ............................. <73>
+  [  3] pushint8 74 ............................. <74>
+  [  6] pusharglist 2 ........................... <[73, 74]>
+  [  8] pushlist ................................ <[73, 74]>
+  [  9] pusharglistnoret 1 ...................... <[73, 74]>
+  [ 11] extcall 241 ............................. cursor([73, 74])
+  [ 14] ret
+end
+
+on mouseLeave me
+  [  0] pushint8 1 .............................. <1>
+  [  3] inv ..................................... <-1>
+  [  4] pusharglistnoret 1 ...................... <-1>
+  [  6] extcall 241 ............................. cursor(-1)
+  [  9] ret
+end
+
+on mouseDown me
+  [  0] pushint8 1 .............................. <1>
+  [  3] inv ..................................... <-1>
+  [  4] pusharglistnoret 1 ...................... <-1>
+  [  6] extcall 241 ............................. cursor(-1)
+  [  9] ret
+end

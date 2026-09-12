@@ -1,0 +1,7 @@
+on exitFrame
+  [  0] pushint8 1 .............................. <1>
+  [  2] pushcons 0 .............................. <"fanfar">
+  [  4] pusharglistnoret 2 ...................... <1, "fanfar">
+  [  6] extcall 17 .............................. puppetSound(1, "fanfar")
+  [  8] ret
+end

@@ -1,0 +1,84 @@
+on exitFrame
+  [  0] pushint8 1 .............................. <1>
+  [  3] pushcons 0 .............................. <"Ber05c">
+  [  5] pusharglistnoret 2 ...................... <1, "Ber05c">
+  [  7] extcall 37 .............................. puppetSound(1, "Ber05c")
+  [ 10] pushint8 34 ............................. <34>
+  [ 13] get 7 ................................... <the timer>
+  [ 15] pushint8 200 ............................ <200>
+  [ 18] add ..................................... <the timer + 200>
+  [ 19] setglobal 38 ............................ TomteMoveTimer = the timer + 200
+  [ 22] pushint8 1 .............................. <1>
+  [ 25] setglobal 39 ............................ Tomteggr = 1
+  [ 28] pushint8 550 ............................ <550>
+  [ 31] pushint8 273 ............................ <273>
+  [ 34] pusharglist 2 ........................... <550, 273>
+  [ 36] extcall 51 .............................. <point(550, 273)>
+  [ 39] setlocal 0 .............................. NyPos = point(550, 273)
+  [ 41] getglobal 40 ............................ <startsprites>
+  [ 44] pushint8 1 .............................. <1>
+  [ 47] pusharglist 2 ........................... <startsprites, 1>
+  [ 49] objcall 41 .............................. <startsprites[1]>
+  [ 52] pusharglist 1 ........................... <startsprites[1]>
+  [ 54] extcall 4 ............................... <sprite(startsprites[1])>
+  [ 56] getlocal 0 .............................. <NyPos>
+  [ 58] setobjprop 6 ............................ sprite(startsprites[1]).loc = NyPos
+  [ 60] pushint8 1 .............................. <1>
+  [ 63] setlocal 8
+  [ 65] getlocal 8
+  [ 67] pushint8 4 .............................. <4>
+  [ 70] lteq
+  [ 71] jmpifz [141] ............................ repeat with i = 1 to 4
+  [ 74] getglobal 63 ............................ <tomtepos>
+  [ 77] getglobal 43 ............................ <TomteSprites>
+  [ 80] getlocal 8 .............................. <i>
+  [ 82] pusharglist 2 ........................... <TomteSprites, i>
+  [ 84] objcall 41 .............................. <TomteSprites[i]>
+  [ 87] pusharglist 2 ........................... <tomtepos, TomteSprites[i]>
+  [ 89] extcall 12 .............................. <getOne(tomtepos, TomteSprites[i])>
+  [ 91] setlocal 16 ............................. pos = getOne(tomtepos, TomteSprites[i])
+  [ 93] getglobal 63 ............................ <tomtepos>
+  [ 96] getlocal 16 ............................. <pos>
+  [ 98] pushint8 1 .............................. <1>
+  [101] add ..................................... <pos + 1>
+  [102] pusharglist 2 ........................... <tomtepos, pos + 1>
+  [104] objcall 41 .............................. <tomtepos[pos + 1]>
+  [107] setlocal 24 ............................. posDiff = tomtepos[pos + 1]
+  [109] getglobal 43 ............................ <TomteSprites>
+  [112] getlocal 8 .............................. <i>
+  [114] pusharglist 2 ........................... <TomteSprites, i>
+  [116] objcall 41 .............................. <TomteSprites[i]>
+  [119] pusharglist 1 ........................... <TomteSprites[i]>
+  [121] extcall 4 ............................... <sprite(TomteSprites[i])>
+  [123] getlocal 0 .............................. <NyPos>
+  [125] getlocal 24 ............................. <posDiff>
+  [127] sub ..................................... <NyPos - posDiff>
+  [128] setobjprop 6 ............................ sprite(TomteSprites[i]).loc = NyPos - posDiff
+  [130] pushint8 1
+  [133] getlocal 8
+  [135] add
+  [136] setlocal 8
+  [138] endrepeat [ 65]
+  [141] pushint8 42 ............................. <42>
+  [144] setlocal 8
+  [146] getlocal 8
+  [148] pushint8 80 ............................. <80>
+  [151] lteq
+  [152] jmpifz [173] ............................ repeat with i = 42 to 80
+  [155] getlocal 8 .............................. <i>
+  [157] pushzero ................................ <0>
+  [158] pushint8 30 ............................. <30>
+  [161] set 6 ................................... set the moveableSprite of sprite i to 0
+  [163] pushint8 1
+  [166] getlocal 8
+  [168] add
+  [169] setlocal 8
+  [171] endrepeat [146]
+  [173] pushint8 4 .............................. <4>
+  [176] pusharglistnoret 1 ...................... <4>
+  [178] extcall 26 .............................. InitDragAvsnitt(4)
+  [180] pushint8 1 .............................. <1>
+  [183] pusharglistnoret 1 ...................... <1>
+  [185] extcall 27 .............................. DisplayDragDjur(1)
+  [187] ret
+end

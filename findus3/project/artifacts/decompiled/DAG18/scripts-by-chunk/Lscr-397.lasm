@@ -1,0 +1,39 @@
+on mouseDown
+  [  0] pushint8 7 .............................. <7>
+  [  3] setlocal 0 .............................. Knapp = 7
+  [  5] pusharglist 0 ........................... <>
+  [  7] thebuiltin 7 ............................ <the mouseDown>
+  [  9] jmpifz [ 61] ............................ repeat while the mouseDown
+  [ 12] getlocal 0 .............................. <Knapp>
+  [ 14] pusharglist 1 ........................... <Knapp>
+  [ 16] extcall 2 ............................... <rollOver(Knapp)>
+  [ 18] jmpifz [ 39] ............................ if rollOver(Knapp) then / else
+  [ 21] getlocal 0 .............................. <Knapp>
+  [ 23] pushcons 0 .............................. <"nickbak">
+  [ 25] pushzero ................................ <0>
+  [ 26] pushint8 10 ............................. <10>
+  [ 29] get 9 ................................... <the number of member "nickbak">
+  [ 31] pushint8 4 .............................. <4>
+  [ 34] set 6 ................................... set the castNum of sprite Knapp to the number of member "nickbak"
+  [ 36] jmp [ 54]
+  [ 39] getlocal 0 .............................. <Knapp>
+  [ 41] pushcons 8 .............................. <"bak\x8Ct">
+  [ 43] pushzero ................................ <0>
+  [ 44] pushint8 10 ............................. <10>
+  [ 47] get 9 ................................... <the number of member "bak\x8Ct">
+  [ 49] pushint8 4 .............................. <4>
+  [ 52] set 6 ................................... set the castNum of sprite Knapp to the number of member "bak\x8Ct"
+  [ 54] pusharglistnoret 0 ...................... <>
+  [ 56] extcall 6 ............................... updateStage()
+  [ 58] endrepeat [  5]
+  [ 61] getlocal 0 .............................. <Knapp>
+  [ 63] pusharglist 1 ........................... <Knapp>
+  [ 65] extcall 2 ............................... <rollOver(Knapp)>
+  [ 67] not ..................................... <not rollOver(Knapp)>
+  [ 68] jmpifz [ 72] ............................ if not rollOver(Knapp) then
+  [ 71] ret ..................................... exit
+  [ 72] pushsymb 13 ............................. <#previous>
+  [ 74] pusharglistnoret 1 ...................... <#previous>
+  [ 76] extcall 9 ............................... go(#previous)
+  [ 78] ret
+end

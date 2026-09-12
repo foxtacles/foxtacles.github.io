@@ -1,0 +1,194 @@
+on exitFrame
+  [  0] pushint8 34 ............................. <34>
+  [  3] get 7 ................................... <the timer>
+  [  5] setlocal 0 .............................. FrameTid = the timer
+  [  7] getglobal 4 ............................. <SpeletSlut>
+  [  9] pushint8 1 .............................. <1>
+  [ 12] eq ...................................... <SpeletSlut = 1>
+  [ 13] jmpifz [ 24] ............................ if SpeletSlut = 1 then / else
+  [ 16] pusharglistnoret 0 ...................... <>
+  [ 18] extcall 92 .............................. FixaRedovisning()
+  [ 21] jmp [427]
+  [ 24] pushzero ................................ <0>
+  [ 25] setlocal 8 .............................. Ngn = 0
+  [ 27] pushint8 1 .............................. <1>
+  [ 30] setlocal 16
+  [ 32] getlocal 16
+  [ 34] pushint8 4 .............................. <4>
+  [ 37] lteq
+  [ 38] jmpifz [ 76] ............................ repeat with i = 1 to 4
+  [ 41] getglobal 12 ............................ <lSpikObjMatris>
+  [ 43] getlocal 16 ............................. <i>
+  [ 45] pusharglist 2 ........................... <lSpikObjMatris, i>
+  [ 47] objcall 43 .............................. <lSpikObjMatris[i]>
+  [ 50] getobjprop 53 ........................... <lSpikObjMatris[i].xPos>
+  [ 53] pushint8 400 ............................ <400>
+  [ 56] gt ...................................... <lSpikObjMatris[i].xPos > 400>
+  [ 57] jmpifz [ 65] ............................ if lSpikObjMatris[i].xPos > 400 then
+  [ 60] pushint8 1 .............................. <1>
+  [ 63] setlocal 8 .............................. Ngn = 1
+  [ 65] pushint8 1
+  [ 68] getlocal 16
+  [ 70] add
+  [ 71] setlocal 16
+  [ 73] endrepeat [ 32]
+  [ 76] getlocal 8 .............................. <Ngn>
+  [ 78] pushint8 1 .............................. <1>
+  [ 81] eq ...................................... <Ngn = 1>
+  [ 82] jmpifz [109] ............................ if Ngn = 1 then / else
+  [ 85] pushint8 3 .............................. <3>
+  [ 88] pusharglist 1 ........................... <3>
+  [ 90] extcall 147 ............................. <sprite(3)>
+  [ 93] pushint8 23 ............................. <23>
+  [ 96] pushcons 0 .............................. <"Graphics">
+  [ 98] pusharglist 2 ........................... <23, "Graphics">
+  [100] extcall 82 .............................. <member(23, "Graphics")>
+  [103] setobjprop 82 ........................... sprite(3).member = member(23, "Graphics")
+  [106] jmp [130]
+  [109] pushint8 3 .............................. <3>
+  [112] pusharglist 1 ........................... <3>
+  [114] extcall 147 ............................. <sprite(3)>
+  [117] pushint8 22 ............................. <22>
+  [120] pushcons 8 .............................. <"Graphics">
+  [122] pusharglist 2 ........................... <22, "Graphics">
+  [124] extcall 82 .............................. <member(22, "Graphics")>
+  [127] setobjprop 82 ........................... sprite(3).member = member(22, "Graphics")
+  [130] getglobal 5 ............................. <SpikarFrammeVidStart>
+  [132] pushzero ................................ <0>
+  [133] eq ...................................... <SpikarFrammeVidStart = 0>
+  [134] jmpifz [186] ............................ if SpikarFrammeVidStart = 0 then
+  [137] pushint8 1 .............................. <1>
+  [140] setglobal 31 ............................ HammareFunkar = 1
+  [142] pushint8 1 .............................. <1>
+  [145] setlocal 16
+  [147] getlocal 16
+  [149] pushint8 4 .............................. <4>
+  [152] lteq
+  [153] jmpifz [186] ............................ repeat with i = 1 to 4
+  [156] getglobal 12 ............................ <lSpikObjMatris>
+  [158] getlocal 16 ............................. <i>
+  [160] pusharglist 2 ........................... <lSpikObjMatris, i>
+  [162] extcall 43 .............................. <getAt(lSpikObjMatris, i)>
+  [165] pusharglistnoret 1 ...................... <getAt(lSpikObjMatris, i)>
+  [167] extcall 47 .............................. animera(getAt(lSpikObjMatris, i))
+  [170] pusharglistnoret 0 ...................... <>
+  [172] extcall 93 .............................. AnimeraCursor()
+  [175] pushint8 1
+  [178] getlocal 16
+  [180] add
+  [181] setlocal 16
+  [183] endrepeat [147]
+  [186] getglobal 5 ............................. <SpikarFrammeVidStart>
+  [188] pushint8 1 .............................. <1>
+  [191] eq ...................................... <SpikarFrammeVidStart = 1>
+  [192] getglobal 6 ............................. <SpeletIgang>
+  [194] pushzero ................................ <0>
+  [195] eq ...................................... <SpeletIgang = 0>
+  [196] and ..................................... <(SpikarFrammeVidStart = 1) and (SpeletIgang = 0)>
+  [197] pusharglist 0 ........................... <>
+  [199] thebuiltin 94 ........................... <the mouseDown>
+  [202] pushint8 1 .............................. <1>
+  [205] eq ...................................... <the mouseDown = 1>
+  [206] and ..................................... <(SpikarFrammeVidStart = 1) and (SpeletIgang = 0) and (the mouseDown = 1)>
+  [207] jmpifz [272] ............................ if (SpikarFrammeVidStart = 1) and (SpeletIgang = 0) and (the mouseDown = 1) then
+  [210] pushzero ................................ <0>
+  [211] pusharglistnoret 1 ...................... <0>
+  [213] extcall 33 .............................. ShowPoangtomte(0)
+  [216] pushint8 1 .............................. <1>
+  [219] setglobal 6 ............................. SpeletIgang = 1
+  [221] pushint8 2 .............................. <2>
+  [224] setglobal 31 ............................ HammareFunkar = 2
+  [226] pushzero ................................ <0>
+  [227] pusharglistnoret 1 ...................... <0>
+  [229] extcall 86 .............................. INCPoang(0)
+  [232] pushint8 1 .............................. <1>
+  [235] setlocal 16
+  [237] getlocal 16
+  [239] pushint8 4 .............................. <4>
+  [242] lteq
+  [243] jmpifz [272] ............................ repeat with i = 1 to 4
+  [246] getglobal 12 ............................ <lSpikObjMatris>
+  [248] getlocal 16 ............................. <i>
+  [250] pusharglist 2 ........................... <lSpikObjMatris, i>
+  [252] extcall 43 .............................. <getAt(lSpikObjMatris, i)>
+  [255] pushint8 2 .............................. <2>
+  [258] setobjprop 51 ........................... getAt(lSpikObjMatris, i).status = 2
+  [261] pushint8 1
+  [264] getlocal 16
+  [266] add
+  [267] setlocal 16
+  [269] endrepeat [237]
+  [272] getglobal 6 ............................. <SpeletIgang>
+  [274] pushint8 1 .............................. <1>
+  [277] eq ...................................... <SpeletIgang = 1>
+  [278] jmpifz [325] ............................ if SpeletIgang = 1 then
+  [281] pushint8 1 .............................. <1>
+  [284] setlocal 16
+  [286] getlocal 16
+  [288] pushint8 4 .............................. <4>
+  [291] lteq
+  [292] jmpifz [325] ............................ repeat with i = 1 to 4
+  [295] getglobal 12 ............................ <lSpikObjMatris>
+  [297] getlocal 16 ............................. <i>
+  [299] pusharglist 2 ........................... <lSpikObjMatris, i>
+  [301] extcall 43 .............................. <getAt(lSpikObjMatris, i)>
+  [304] pusharglistnoret 1 ...................... <getAt(lSpikObjMatris, i)>
+  [306] extcall 47 .............................. animera(getAt(lSpikObjMatris, i))
+  [309] pusharglistnoret 0 ...................... <>
+  [311] extcall 93 .............................. AnimeraCursor()
+  [314] pushint8 1
+  [317] getlocal 16
+  [319] add
+  [320] setlocal 16
+  [322] endrepeat [286]
+  [325] pushint8 34 ............................. <34>
+  [328] get 7 ................................... <the timer>
+  [330] getlocal 0 .............................. <FrameTid>
+  [332] pushint8 3 .............................. <3>
+  [335] add ..................................... <FrameTid + 3>
+  [336] lt ...................................... <the timer < (FrameTid + 3)>
+  [337] jmpifz [427] ............................ repeat while the timer < (FrameTid + 3)
+  [340] getglobal 31 ............................ <HammareFunkar>
+  [342] pushzero ................................ <0>
+  [343] gt ...................................... <HammareFunkar > 0>
+  [344] jmpifz [419] ............................ if HammareFunkar > 0 then
+  [347] pusharglist 0 ........................... <>
+  [349] thebuiltin 95 ........................... <the mouseV>
+  [352] pushint8 75 ............................. <75>
+  [355] gt ...................................... <the mouseV > 75>
+  [356] pusharglist 0 ........................... <>
+  [358] thebuiltin 95 ........................... <the mouseV>
+  [361] pushint8 340 ............................ <340>
+  [364] lt ...................................... <the mouseV < 340>
+  [365] and ..................................... <(the mouseV > 75) and (the mouseV < 340)>
+  [366] jmpifz [390] ............................ if (the mouseV > 75) and (the mouseV < 340) then / else
+  [369] pushint8 200 ............................ <200>
+  [372] pusharglistnoret 1 ...................... <200>
+  [374] extcall 96 .............................. cursor(200)
+  [377] getglobal 18 ............................ <cCursorKanal>
+  [379] getmovieprop 97 ......................... <the mouseLoc>
+  [382] pushint8 33 ............................. <33>
+  [385] set 6 ................................... set the loc of sprite cCursorKanal to the mouseLoc
+  [387] jmp [419]
+  [390] pushint8 1 .............................. <1>
+  [393] inv ..................................... <-1>
+  [394] pusharglistnoret 1 ...................... <-1>
+  [396] extcall 96 .............................. cursor(-1)
+  [399] getglobal 18 ............................ <cCursorKanal>
+  [401] pushint8 1000 ........................... <1000>
+  [404] inv ..................................... <-1000>
+  [405] pushint8 1000 ........................... <1000>
+  [408] inv ..................................... <-1000>
+  [409] pusharglist 2 ........................... <-1000, -1000>
+  [411] extcall 36 .............................. <point(-1000, -1000)>
+  [414] pushint8 33 ............................. <33>
+  [417] set 6 ................................... set the loc of sprite cCursorKanal to point(-1000, -1000)
+  [419] pusharglistnoret 0 ...................... <>
+  [421] extcall 98 .............................. updateStage()
+  [424] endrepeat [325]
+  [427] pusharglist 0 ........................... <>
+  [429] thebuiltin 99 ........................... <the frame>
+  [432] pusharglistnoret 1 ...................... <the frame>
+  [434] extcall 100 ............................. go(the frame)
+  [437] ret
+end

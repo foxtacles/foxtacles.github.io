@@ -1,0 +1,6 @@
+on exitFrame
+  [  0] pushcons 0 .............................. <"Filmduk">
+  [  2] pusharglistnoret 1 ...................... <"Filmduk">
+  [  4] extcall 29 .............................. go("Filmduk")
+  [  6] ret
+end

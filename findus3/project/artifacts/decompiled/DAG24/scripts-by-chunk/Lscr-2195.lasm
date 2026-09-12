@@ -1,0 +1,70 @@
+on unclicked Snr
+  [  0] getparam 0 .............................. <Snr>
+  [  2] setlocal 0 .............................. spnum = Snr
+  [  4] getlocal 0 .............................. <spnum>
+  [  6] pushzero ................................ <0>
+  [  7] nteq .................................... <spnum <> 0>
+  [  8] getlocal 0 .............................. <spnum>
+  [ 10] getglobal 40 ............................ <startsprites>
+  [ 13] pushint8 1 .............................. <1>
+  [ 16] pusharglist 2 ........................... <startsprites, 1>
+  [ 18] objcall 41 .............................. <startsprites[1]>
+  [ 21] gt ...................................... <spnum > startsprites[1]>
+  [ 22] and ..................................... <(spnum <> 0) and (spnum > startsprites[1])>
+  [ 23] jmpifz [146] ............................ if (spnum <> 0) and (spnum > startsprites[1]) then
+  [ 26] getlocal 0 .............................. <spnum>
+  [ 28] pusharglist 1 ........................... <spnum>
+  [ 30] extcall 4 ............................... <sprite(spnum)>
+  [ 32] getlocal 0 .............................. <spnum>
+  [ 34] setobjprop 56 ........................... sprite(spnum).locZ = spnum
+  [ 37] getlocal 0 .............................. <spnum>
+  [ 39] pusharglist 1 ........................... <spnum>
+  [ 41] extcall 4 ............................... <sprite(spnum)>
+  [ 43] getobjprop 6 ............................ <sprite(spnum).loc>
+  [ 45] getglobal 59 ............................ <tomtearea>
+  [ 48] pusharglist 2 ........................... <sprite(spnum).loc, tomtearea>
+  [ 50] extcall 58 .............................. <inside(sprite(spnum).loc, tomtearea)>
+  [ 53] jmpifz [ 80] ............................ if inside(sprite(spnum).loc, tomtearea) then / else
+  [ 56] getlocal 0 .............................. <spnum>
+  [ 58] pusharglist 1 ........................... <spnum>
+  [ 60] extcall 4 ............................... <sprite(spnum)>
+  [ 62] getlocal 0 .............................. <spnum>
+  [ 64] pusharglist 1 ........................... <spnum>
+  [ 66] extcall 60 .............................. <getTomtePos(spnum)>
+  [ 69] setobjprop 6 ............................ sprite(spnum).loc = getTomtePos(spnum)
+  [ 71] getlocal 0 .............................. <spnum>
+  [ 73] pusharglistnoret 1 ...................... <spnum>
+  [ 75] extcall 0 ............................... checktomte(spnum)
+  [ 77] jmp [146]
+  [ 80] getlocal 0 .............................. <spnum>
+  [ 82] pusharglist 1 ........................... <spnum>
+  [ 84] extcall 4 ............................... <sprite(spnum)>
+  [ 86] getlocal 0 .............................. <spnum>
+  [ 88] pusharglist 1 ........................... <spnum>
+  [ 90] extcall 5 ............................... <getStartPos(spnum)>
+  [ 92] setobjprop 6 ............................ sprite(spnum).loc = getStartPos(spnum)
+  [ 94] pushint8 1 .............................. <1>
+  [ 97] setlocal 8
+  [ 99] getlocal 8
+  [101] pushint8 4 .............................. <4>
+  [104] lteq
+  [105] jmpifz [146] ............................ repeat with i = 1 to 4
+  [108] getglobal 43 ............................ <TomteSprites>
+  [111] getlocal 8 .............................. <i>
+  [113] pusharglist 2 ........................... <TomteSprites, i>
+  [115] objcall 41 .............................. <TomteSprites[i]>
+  [118] getlocal 0 .............................. <spnum>
+  [120] eq ...................................... <TomteSprites[i] = spnum>
+  [121] jmpifz [135] ............................ if TomteSprites[i] = spnum then
+  [124] getglobal 43 ............................ <TomteSprites>
+  [127] getlocal 8 .............................. <i>
+  [129] pushzero ................................ <0>
+  [130] pusharglistnoret 3 ...................... <TomteSprites, i, 0>
+  [132] objcall 110 ............................. TomteSprites[i] = 0
+  [135] pushint8 1
+  [138] getlocal 8
+  [140] add
+  [141] setlocal 8
+  [143] endrepeat [ 99]
+  [146] ret
+end

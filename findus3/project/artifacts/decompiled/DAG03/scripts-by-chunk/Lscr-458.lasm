@@ -1,0 +1,152 @@
+global click, score, lastscore, lastClick, slumplistan, allaklarade, antalkvar
+
+on mouseUp
+  [  0] getglobal 4 ............................. <slumplistan>
+  [  2] pusharglist 0 ........................... <>
+  [  4] thebuiltin 5 ............................ <the clickOn>
+  [  6] pushint8 9 .............................. <9>
+  [  8] sub ..................................... <the clickOn - 9>
+  [  9] pusharglist 2 ........................... <slumplistan, the clickOn - 9>
+  [ 11] extcall 3 ............................... <getAt(slumplistan, the clickOn - 9)>
+  [ 13] pushzero ................................ <0>
+  [ 14] nteq .................................... <getAt(slumplistan, the clickOn - 9) <> 0>
+  [ 15] jmpifz [275] ............................ if getAt(slumplistan, the clickOn - 9) <> 0 then
+  [ 18] getglobal 7 ............................. <click>
+  [ 20] setglobal 6 ............................. lastClick = click
+  [ 22] getglobal 9 ............................. <score>
+  [ 24] setglobal 8 ............................. lastscore = score
+  [ 26] pusharglist 0 ........................... <>
+  [ 28] thebuiltin 5 ............................ <the clickOn>
+  [ 30] pushint8 9 .............................. <9>
+  [ 32] sub ..................................... <the clickOn - 9>
+  [ 33] setglobal 9 ............................. score = the clickOn - 9
+  [ 35] getglobal 4 ............................. <slumplistan>
+  [ 37] pusharglist 0 ........................... <>
+  [ 39] thebuiltin 5 ............................ <the clickOn>
+  [ 41] pushint8 9 .............................. <9>
+  [ 43] sub ..................................... <the clickOn - 9>
+  [ 44] pusharglist 2 ........................... <slumplistan, the clickOn - 9>
+  [ 46] extcall 3 ............................... <getAt(slumplistan, the clickOn - 9)>
+  [ 48] setglobal 7 ............................. click = getAt(slumplistan, the clickOn - 9)
+  [ 50] getglobal 7 ............................. <click>
+  [ 52] pusharglistnoret 1 ...................... <click>
+  [ 54] extcall 10 .............................. puppetSound(click)
+  [ 56] pusharglistnoret 0 ...................... <>
+  [ 58] extcall 11 .............................. updateStage()
+  [ 60] getglobal 7 ............................. <click>
+  [ 62] pushzero ................................ <0>
+  [ 63] nteq .................................... <click <> 0>
+  [ 64] jmpifz [275] ............................ if click <> 0 then
+  [ 67] getglobal 6 ............................. <lastClick>
+  [ 69] getglobal 7 ............................. <click>
+  [ 71] eq ...................................... <lastClick = click>
+  [ 72] getglobal 9 ............................. <score>
+  [ 74] getglobal 8 ............................. <lastscore>
+  [ 76] nteq .................................... <score <> lastscore>
+  [ 77] and ..................................... <(lastClick = click) and (score <> lastscore)>
+  [ 78] jmpifz [169] ............................ if (lastClick = click) and (score <> lastscore) then
+  [ 81] getglobal 4 ............................. <slumplistan>
+  [ 83] getglobal 9 ............................. <score>
+  [ 85] pushzero ................................ <0>
+  [ 86] pusharglistnoret 3 ...................... <slumplistan, score, 0>
+  [ 88] extcall 12 .............................. setAt(slumplistan, score, 0)
+  [ 90] getglobal 4 ............................. <slumplistan>
+  [ 92] getglobal 8 ............................. <lastscore>
+  [ 94] pushzero ................................ <0>
+  [ 95] pusharglistnoret 3 ...................... <slumplistan, lastscore, 0>
+  [ 97] extcall 12 .............................. setAt(slumplistan, lastscore, 0)
+  [ 99] pushcons 0 .............................. <"vilken position i scoren">
+  [101] pusharglist 0 ........................... <>
+  [103] thebuiltin 5 ............................ <the clickOn>
+  [105] pushint8 9 .............................. <9>
+  [107] sub ..................................... <the clickOn - 9>
+  [108] pusharglistnoret 2 ...................... <"vilken position i scoren", the clickOn - 9>
+  [110] extcall 13 .............................. put "vilken position i scoren", the clickOn - 9
+  [112] pushcons 8 .............................. <"slumplistan">
+  [114] getglobal 4 ............................. <slumplistan>
+  [116] pusharglistnoret 2 ...................... <"slumplistan", slumplistan>
+  [118] extcall 13 .............................. put "slumplistan", slumplistan
+  [120] pushint8 80 ............................. <80>
+  [122] pusharglistnoret 1 ...................... <80>
+  [124] extcall 14 .............................. Wait(80)
+  [126] pushzero ................................ <0>
+  [127] pusharglistnoret 1 ...................... <0>
+  [129] extcall 40 .............................. cursor(0)
+  [131] pushcons 16 ............................. <"DAG03_F_RIGHT.AIF">
+  [133] pusharglistnoret 1 ...................... <"DAG03_F_RIGHT.AIF">
+  [135] extcall 10 .............................. puppetSound("DAG03_F_RIGHT.AIF")
+  [137] pusharglistnoret 0 ...................... <>
+  [139] extcall 11 .............................. updateStage()
+  [141] pushint8 20 ............................. <20>
+  [143] pusharglistnoret 1 ...................... <20>
+  [145] extcall 14 .............................. Wait(20)
+  [147] getglobal 37 ............................ <antalkvar>
+  [149] pushint8 1 .............................. <1>
+  [151] sub ..................................... <antalkvar - 1>
+  [152] setglobal 37 ............................ antalkvar = antalkvar - 1
+  [154] pushint8 45 ............................. <45>
+  [156] pushint8 70 ............................. <70>
+  [158] getglobal 37 ............................ <antalkvar>
+  [160] add ..................................... <70 + antalkvar>
+  [161] pushint8 4 .............................. <4>
+  [163] set 6 ................................... set the castNum of sprite 45 to 70 + antalkvar
+  [165] pusharglistnoret 0 ...................... <>
+  [167] extcall 11 .............................. updateStage()
+  [169] getglobal 4 ............................. <slumplistan>
+  [171] peek 0
+  [173] pusharglist 1
+  [175] extcall 15
+  [177] pushint8 1
+  [179] peek 0
+  [181] peek 2
+  [183] lteq
+  [184] jmpifz [219] ............................ repeat with i in slumplistan
+  [187] peek 2
+  [189] peek 1
+  [191] pusharglist 2
+  [193] extcall 3
+  [195] setlocal 0
+  [197] getlocal 0 .............................. <i>
+  [199] pushzero ................................ <0>
+  [200] nteq .................................... <i <> 0>
+  [201] jmpifz [210] ............................ if i <> 0 then
+  [204] pushzero ................................ <0>
+  [205] setglobal 16 ............................ allaklarade = 0
+  [207] jmp [219] ............................... exit repeat
+  [210] pushint8 1 .............................. <1>
+  [212] setglobal 16 ............................ allaklarade = 1
+  [214] pushint8 1
+  [216] add
+  [217] endrepeat [179]
+  [219] pop 3
+  [221] getglobal 16 ............................ <allaklarade>
+  [223] pushzero ................................ <0>
+  [224] nteq .................................... <allaklarade <> 0>
+  [225] jmpifz [275] ............................ if allaklarade <> 0 then
+  [228] pushint8 44 ............................. <44>
+  [230] pushzero ................................ <0>
+  [231] pushint8 25 ............................. <25>
+  [233] set 6 ................................... set the visible of sprite 44 to 0
+  [235] pushint8 46 ............................. <46>
+  [237] pushzero ................................ <0>
+  [238] pushint8 25 ............................. <25>
+  [240] set 6 ................................... set the visible of sprite 46 to 0
+  [242] pushint8 60 ............................. <60>
+  [244] pusharglistnoret 1 ...................... <60>
+  [246] extcall 14 .............................. Wait(60)
+  [248] pushint8 3 .............................. <3>
+  [250] pushint8 3 .............................. <3>
+  [252] pusharglist 1 ........................... <3>
+  [254] extcall 17 .............................. <random(3)>
+  [256] pushint8 52 ............................. <52>
+  [258] add ..................................... <random(3) + 52>
+  [259] pusharglistnoret 2 ...................... <3, random(3) + 52>
+  [261] extcall 10 .............................. puppetSound(3, random(3) + 52)
+  [263] pushint8 120 ............................ <120>
+  [265] pusharglistnoret 1 ...................... <120>
+  [267] extcall 14 .............................. Wait(120)
+  [269] pushsymb 21 ............................. <#next>
+  [271] pusharglistnoret 1 ...................... <#next>
+  [273] extcall 22 .............................. go(#next)
+  [275] ret
+end

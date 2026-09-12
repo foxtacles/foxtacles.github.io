@@ -1,0 +1,87 @@
+global gBorja, gKalender, flash
+
+on knappar
+  [  0] getglobal 71 ............................ <gKalender>
+  [  3] pusharglist 1 ........................... <gKalender>
+  [  5] extcall 70 .............................. <rollOver(gKalender)>
+  [  8] jmpifz [ 80] ............................ if rollOver(gKalender) then / else
+  [ 11] getglobal 71 ............................ <gKalender>
+  [ 14] pusharglist 1 ........................... <gKalender>
+  [ 16] extcall 72 .............................. <sprite(gKalender)>
+  [ 19] pushint8 1 .............................. <1>
+  [ 22] setobjprop 73 ........................... sprite(gKalender).visible = 1
+  [ 25] pusharglist 0 ........................... <>
+  [ 27] thebuiltin 5 ............................ <the mouseDown>
+  [ 29] getglobal 16 ............................ <flash>
+  [ 31] pushzero ................................ <0>
+  [ 32] eq ...................................... <flash = 0>
+  [ 33] and ..................................... <the mouseDown and (flash = 0)>
+  [ 34] jmpifz [ 77] ............................ if the mouseDown and (flash = 0) then
+  [ 37] pusharglist 0 ........................... <>
+  [ 39] thebuiltin 5 ............................ <the mouseDown>
+  [ 41] pushint8 1 .............................. <1>
+  [ 44] eq ...................................... <the mouseDown = 1>
+  [ 45] jmpifz [ 55] ............................ repeat while the mouseDown = 1
+  [ 48] pusharglistnoret 0 ...................... <>
+  [ 50] extcall 61 .............................. updateStage()
+  [ 53] endrepeat [ 37]
+  [ 55] pushint8 10 ............................. <10>
+  [ 58] pusharglistnoret 1 ...................... <10>
+  [ 60] extcall 69 .............................. puppetTransition(10)
+  [ 63] pushint8 1 .............................. <1>
+  [ 66] pushzero ................................ <0>
+  [ 67] pusharglistnoret 2 ...................... <1, 0>
+  [ 69] extcall 17 .............................. puppetSound(1, 0)
+  [ 71] pushcons 0 .............................. <"sluta">
+  [ 73] pusharglistnoret 1 ...................... <"sluta">
+  [ 75] extcall 11 .............................. go("sluta")
+  [ 77] jmp [ 92]
+  [ 80] getglobal 71 ............................ <gKalender>
+  [ 83] pusharglist 1 ........................... <gKalender>
+  [ 85] extcall 72 .............................. <sprite(gKalender)>
+  [ 88] pushzero ................................ <0>
+  [ 89] setobjprop 73 ........................... sprite(gKalender).visible = 0
+  [ 92] getglobal 74 ............................ <gBorja>
+  [ 95] pusharglist 1 ........................... <gBorja>
+  [ 97] extcall 70 .............................. <rollOver(gBorja)>
+  [100] jmpifz [176] ............................ if rollOver(gBorja) then / else
+  [103] getglobal 74 ............................ <gBorja>
+  [106] pusharglist 1 ........................... <gBorja>
+  [108] extcall 72 .............................. <sprite(gBorja)>
+  [111] pushint8 1 .............................. <1>
+  [114] setobjprop 73 ........................... sprite(gBorja).visible = 1
+  [117] pusharglist 0 ........................... <>
+  [119] thebuiltin 5 ............................ <the mouseDown>
+  [121] getglobal 16 ............................ <flash>
+  [123] pushzero ................................ <0>
+  [124] eq ...................................... <flash = 0>
+  [125] and ..................................... <the mouseDown and (flash = 0)>
+  [126] jmpifz [173] ............................ if the mouseDown and (flash = 0) then
+  [129] pusharglist 0 ........................... <>
+  [131] thebuiltin 5 ............................ <the mouseDown>
+  [133] pushint8 1 .............................. <1>
+  [136] eq ...................................... <the mouseDown = 1>
+  [137] jmpifz [147] ............................ repeat while the mouseDown = 1
+  [140] pusharglistnoret 0 ...................... <>
+  [142] extcall 61 .............................. updateStage()
+  [145] endrepeat [129]
+  [147] pushint8 1 .............................. <1>
+  [150] pushzero ................................ <0>
+  [151] pusharglistnoret 2 ...................... <1, 0>
+  [153] extcall 17 .............................. puppetSound(1, 0)
+  [155] getglobal 74 ............................ <gBorja>
+  [158] pusharglist 1 ........................... <gBorja>
+  [160] extcall 72 .............................. <sprite(gBorja)>
+  [163] pushzero ................................ <0>
+  [164] setobjprop 73 ........................... sprite(gBorja).visible = 0
+  [167] pushcons 8 .............................. <"spielen">
+  [169] pusharglistnoret 1 ...................... <"spielen">
+  [171] extcall 11 .............................. go("spielen")
+  [173] jmp [188]
+  [176] getglobal 74 ............................ <gBorja>
+  [179] pusharglist 1 ........................... <gBorja>
+  [181] extcall 72 .............................. <sprite(gBorja)>
+  [184] pushzero ................................ <0>
+  [185] setobjprop 73 ........................... sprite(gBorja).visible = 0
+  [188] ret
+end

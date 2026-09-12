@@ -1,0 +1,74 @@
+global gKalender, flash
+
+on beginSprite me
+  [  0] getparam 0 .............................. <me>
+  [  2] getobjprop 5 ............................ <me.spriteNum>
+  [  4] setglobal 4 ............................. gKalender = me.spriteNum
+  [  6] getglobal 4 ............................. <gKalender>
+  [  8] pusharglist 1 ........................... <gKalender>
+  [ 10] extcall 6 ............................... <sprite(gKalender)>
+  [ 12] pushzero ................................ <0>
+  [ 13] setobjprop 7 ............................ sprite(gKalender).blend = 0
+  [ 15] ret
+end
+
+on mouseEnter me
+  [  0] getglobal 4 ............................. <gKalender>
+  [  2] pusharglist 1 ........................... <gKalender>
+  [  4] extcall 6 ............................... <sprite(gKalender)>
+  [  6] pushint8 100 ............................ <100>
+  [  9] setobjprop 7 ............................ sprite(gKalender).blend = 100
+  [ 11] pushint8 20 ............................. <20>
+  [ 14] pushint8 21 ............................. <21>
+  [ 17] pusharglist 2 ........................... <[20, 21]>
+  [ 19] pushlist ................................ <[20, 21]>
+  [ 20] pusharglistnoret 1 ...................... <[20, 21]>
+  [ 22] extcall 18 .............................. cursor([20, 21])
+  [ 24] ret
+end
+
+on mouseLeave me
+  [  0] getglobal 4 ............................. <gKalender>
+  [  2] pusharglist 1 ........................... <gKalender>
+  [  4] extcall 6 ............................... <sprite(gKalender)>
+  [  6] pushzero ................................ <0>
+  [  7] setobjprop 7 ............................ sprite(gKalender).blend = 0
+  [  9] pushint8 1 .............................. <1>
+  [ 12] inv ..................................... <-1>
+  [ 13] pusharglistnoret 1 ...................... <-1>
+  [ 15] extcall 18 .............................. cursor(-1)
+  [ 17] ret
+end
+
+on mouseDown me
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 3 ............................ <the mouseDown>
+  [  4] getglobal 9 ............................. <flash>
+  [  6] pushzero ................................ <0>
+  [  7] eq ...................................... <flash = 0>
+  [  8] and ..................................... <the mouseDown and (flash = 0)>
+  [  9] jmpifz [ 58] ............................ if the mouseDown and (flash = 0) then
+  [ 12] pushint8 1 .............................. <1>
+  [ 15] inv ..................................... <-1>
+  [ 16] pusharglistnoret 1 ...................... <-1>
+  [ 18] extcall 18 .............................. cursor(-1)
+  [ 20] pusharglist 0 ........................... <>
+  [ 22] thebuiltin 3 ............................ <the mouseDown>
+  [ 24] pushint8 1 .............................. <1>
+  [ 27] eq ...................................... <the mouseDown = 1>
+  [ 28] jmpifz [ 37] ............................ repeat while the mouseDown = 1
+  [ 31] pusharglistnoret 0 ...................... <>
+  [ 33] extcall 10 .............................. updateStage()
+  [ 35] endrepeat [ 20]
+  [ 37] pushint8 10 ............................. <10>
+  [ 40] pusharglistnoret 1 ...................... <10>
+  [ 42] extcall 11 .............................. puppetTransition(10)
+  [ 44] pushint8 1 .............................. <1>
+  [ 47] pushzero ................................ <0>
+  [ 48] pusharglistnoret 2 ...................... <1, 0>
+  [ 50] extcall 12 .............................. puppetSound(1, 0)
+  [ 52] pushcons 0 .............................. <"SpelSlut">
+  [ 54] pusharglistnoret 1 ...................... <"SpelSlut">
+  [ 56] extcall 13 .............................. go("SpelSlut")
+  [ 58] ret
+end

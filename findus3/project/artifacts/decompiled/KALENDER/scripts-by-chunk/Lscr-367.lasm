@@ -1,0 +1,18 @@
+on exitFrame
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 14 ........................... <the mouseDown>
+  [  4] jmpifz [ 24] ............................ if the mouseDown then
+  [  7] pusharglist 0 ........................... <>
+  [  9] thebuiltin 14 ........................... <the mouseDown>
+  [ 11] jmpifz [ 20] ............................ repeat while the mouseDown
+  [ 14] pusharglistnoret 0 ...................... <>
+  [ 16] extcall 27 .............................. nothing()
+  [ 18] endrepeat [  7]
+  [ 20] pusharglistnoret 0 ...................... <>
+  [ 22] extcall 28 .............................. quit()
+  [ 24] pusharglist 0 ........................... <>
+  [ 26] thebuiltin 16 ........................... <the frame>
+  [ 28] pusharglistnoret 1 ...................... <the frame>
+  [ 30] extcall 15 .............................. go(the frame)
+  [ 32] ret
+end

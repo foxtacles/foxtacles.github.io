@@ -1,0 +1,9 @@
+on mouseUp me
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 30 ........................... <the clickOn>
+  [  4] setlocal 0 .............................. s = the clickOn
+  [  6] getlocal 0 .............................. <s>
+  [  8] pusharglistnoret 1 ...................... <s>
+  [ 10] extcall 31 .............................. unclicked(s)
+  [ 12] ret
+end

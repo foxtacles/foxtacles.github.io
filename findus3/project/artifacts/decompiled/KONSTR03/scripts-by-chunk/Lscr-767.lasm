@@ -1,0 +1,179 @@
+on PlaceraUtObjekt
+  [  0] pushint8 1 .............................. <1>
+  [  2] setlocal 0
+  [  4] getlocal 0
+  [  6] getglobal 12 ............................ <AntalVerktygsObjekt>
+  [  8] lteq
+  [  9] jmpifz [305] ............................ repeat with ObjNum = 1 to AntalVerktygsObjekt
+  [ 12] getglobal 13 ............................ <spriteNum>
+  [ 14] getlocal 0 .............................. <ObjNum>
+  [ 16] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [ 18] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [ 20] setlocal 8 .............................. SpritNr = getaProp(spriteNum, ObjNum)
+  [ 22] getlocal 0 .............................. <ObjNum>
+  [ 24] pushint8 10 ............................. <10>
+  [ 26] eq ...................................... <ObjNum = 10>
+  [ 27] jmpifz [ 34] ............................ if ObjNum = 10 then
+  [ 30] getlocal 0 .............................. <ObjNum>
+  [ 32] setlocal 0 .............................. ObjNum = ObjNum
+  [ 34] getlocal 8 .............................. <SpritNr>
+  [ 36] pushzero ................................ <0>
+  [ 37] gt ...................................... <SpritNr > 0>
+  [ 38] jmpifz [295] ............................ if SpritNr > 0 then
+  [ 41] getlocal 8 .............................. <SpritNr>
+  [ 43] pushint8 1 .............................. <1>
+  [ 45] pusharglistnoret 2 ...................... <SpritNr, 1>
+  [ 47] extcall 25 .............................. puppetSprite(SpritNr, 1)
+  [ 49] getglobal 54 ............................ <ObjektAktiv>
+  [ 51] getlocal 0 .............................. <ObjNum>
+  [ 53] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [ 55] extcall 58 .............................. <getaProp(ObjektAktiv, ObjNum)>
+  [ 57] pushzero ................................ <0>
+  [ 58] eq ...................................... <getaProp(ObjektAktiv, ObjNum) = 0>
+  [ 59] jmpifz [135] ............................ if getaProp(ObjektAktiv, ObjNum) = 0 then
+  [ 62] getglobal 14 ............................ <VerktygsObjekt>
+  [ 64] getlocal 0 .............................. <ObjNum>
+  [ 66] pusharglist 2 ........................... <VerktygsObjekt, ObjNum>
+  [ 68] extcall 58 .............................. <getaProp(VerktygsObjekt, ObjNum)>
+  [ 70] pushzero ................................ <0>
+  [ 71] eq ...................................... <getaProp(VerktygsObjekt, ObjNum) = 0>
+  [ 72] jmpifz [ 85] ............................ if getaProp(VerktygsObjekt, ObjNum) = 0 then / else
+  [ 75] getlocal 8 .............................. <SpritNr>
+  [ 77] pushzero ................................ <0>
+  [ 78] pushint8 25 ............................. <25>
+  [ 80] set 6 ................................... set the visible of sprite SpritNr to 0
+  [ 82] jmp [135]
+  [ 85] getlocal 8 .............................. <SpritNr>
+  [ 87] pushint8 1 .............................. <1>
+  [ 89] pushint8 25 ............................. <25>
+  [ 91] set 6 ................................... set the visible of sprite SpritNr to 1
+  [ 93] getlocal 8 .............................. <SpritNr>
+  [ 95] getglobal 59 ............................ <BildIVerktygsLada>
+  [ 97] getlocal 0 .............................. <ObjNum>
+  [ 99] pusharglist 2 ........................... <BildIVerktygsLada, ObjNum>
+  [101] extcall 58 .............................. <getaProp(BildIVerktygsLada, ObjNum)>
+  [103] pushint8 4 .............................. <4>
+  [105] set 6 ................................... set the castNum of sprite SpritNr to getaProp(BildIVerktygsLada, ObjNum)
+  [107] getlocal 8 .............................. <SpritNr>
+  [109] getglobal 11 ............................ <XposV>
+  [111] getlocal 0 .............................. <ObjNum>
+  [113] pusharglist 2 ........................... <XposV, ObjNum>
+  [115] extcall 58 .............................. <getaProp(XposV, ObjNum)>
+  [117] pushint8 13 ............................. <13>
+  [119] set 6 ................................... set the locH of sprite SpritNr to getaProp(XposV, ObjNum)
+  [121] getlocal 8 .............................. <SpritNr>
+  [123] getglobal 10 ............................ <YposV>
+  [125] getlocal 0 .............................. <ObjNum>
+  [127] pusharglist 2 ........................... <YposV, ObjNum>
+  [129] extcall 58 .............................. <getaProp(YposV, ObjNum)>
+  [131] pushint8 14 ............................. <14>
+  [133] set 6 ................................... set the locV of sprite SpritNr to getaProp(YposV, ObjNum)
+  [135] getglobal 54 ............................ <ObjektAktiv>
+  [137] getlocal 0 .............................. <ObjNum>
+  [139] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [141] extcall 58 .............................. <getaProp(ObjektAktiv, ObjNum)>
+  [143] pushint8 1 .............................. <1>
+  [145] eq ...................................... <getaProp(ObjektAktiv, ObjNum) = 1>
+  [146] getglobal 54 ............................ <ObjektAktiv>
+  [148] getlocal 0 .............................. <ObjNum>
+  [150] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [152] extcall 58 .............................. <getaProp(ObjektAktiv, ObjNum)>
+  [154] pushint8 4 .............................. <4>
+  [156] eq ...................................... <getaProp(ObjektAktiv, ObjNum) = 4>
+  [157] or ...................................... <(getaProp(ObjektAktiv, ObjNum) = 1) or (getaProp(ObjektAktiv, ObjNum) = 4)>
+  [158] jmpifz [211] ............................ if (getaProp(ObjektAktiv, ObjNum) = 1) or (getaProp(ObjektAktiv, ObjNum) = 4) then
+  [161] getlocal 8 .............................. <SpritNr>
+  [163] pushint8 1 .............................. <1>
+  [165] pushint8 25 ............................. <25>
+  [167] set 6 ................................... set the visible of sprite SpritNr to 1
+  [169] getlocal 8 .............................. <SpritNr>
+  [171] getglobal 60 ............................ <StartbildObjekt>
+  [173] getlocal 0 .............................. <ObjNum>
+  [175] pusharglist 2 ........................... <StartbildObjekt, ObjNum>
+  [177] extcall 58 .............................. <getaProp(StartbildObjekt, ObjNum)>
+  [179] pushint8 4 .............................. <4>
+  [181] set 6 ................................... set the castNum of sprite SpritNr to getaProp(StartbildObjekt, ObjNum)
+  [183] getlocal 8 .............................. <SpritNr>
+  [185] getglobal 61 ............................ <StartXPos>
+  [187] getlocal 0 .............................. <ObjNum>
+  [189] pusharglist 2 ........................... <StartXPos, ObjNum>
+  [191] extcall 58 .............................. <getaProp(StartXPos, ObjNum)>
+  [193] pushint8 13 ............................. <13>
+  [195] set 6 ................................... set the locH of sprite SpritNr to getaProp(StartXPos, ObjNum)
+  [197] getlocal 8 .............................. <SpritNr>
+  [199] getglobal 62 ............................ <StartYPos>
+  [201] getlocal 0 .............................. <ObjNum>
+  [203] pusharglist 2 ........................... <StartYPos, ObjNum>
+  [205] extcall 58 .............................. <getaProp(StartYPos, ObjNum)>
+  [207] pushint8 14 ............................. <14>
+  [209] set 6 ................................... set the locV of sprite SpritNr to getaProp(StartYPos, ObjNum)
+  [211] getglobal 54 ............................ <ObjektAktiv>
+  [213] getlocal 0 .............................. <ObjNum>
+  [215] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [217] extcall 58 .............................. <getaProp(ObjektAktiv, ObjNum)>
+  [219] pushint8 2 .............................. <2>
+  [221] eq ...................................... <getaProp(ObjektAktiv, ObjNum) = 2>
+  [222] jmpifz [274] ............................ if getaProp(ObjektAktiv, ObjNum) = 2 then
+  [225] getlocal 8 .............................. <SpritNr>
+  [227] pushzero ................................ <0>
+  [228] pushint8 25 ............................. <25>
+  [230] set 6 ................................... set the visible of sprite SpritNr to 0
+  [232] getlocal 8 .............................. <SpritNr>
+  [234] getglobal 60 ............................ <StartbildObjekt>
+  [236] getlocal 0 .............................. <ObjNum>
+  [238] pusharglist 2 ........................... <StartbildObjekt, ObjNum>
+  [240] extcall 58 .............................. <getaProp(StartbildObjekt, ObjNum)>
+  [242] pushint8 4 .............................. <4>
+  [244] set 6 ................................... set the castNum of sprite SpritNr to getaProp(StartbildObjekt, ObjNum)
+  [246] getlocal 8 .............................. <SpritNr>
+  [248] getglobal 61 ............................ <StartXPos>
+  [250] getlocal 0 .............................. <ObjNum>
+  [252] pusharglist 2 ........................... <StartXPos, ObjNum>
+  [254] extcall 58 .............................. <getaProp(StartXPos, ObjNum)>
+  [256] pushint8 13 ............................. <13>
+  [258] set 6 ................................... set the locH of sprite SpritNr to getaProp(StartXPos, ObjNum)
+  [260] getlocal 8 .............................. <SpritNr>
+  [262] getglobal 62 ............................ <StartYPos>
+  [264] getlocal 0 .............................. <ObjNum>
+  [266] pusharglist 2 ........................... <StartYPos, ObjNum>
+  [268] extcall 58 .............................. <getaProp(StartYPos, ObjNum)>
+  [270] pushint8 14 ............................. <14>
+  [272] set 6 ................................... set the locV of sprite SpritNr to getaProp(StartYPos, ObjNum)
+  [274] getglobal 54 ............................ <ObjektAktiv>
+  [276] getlocal 0 .............................. <ObjNum>
+  [278] pusharglist 2 ........................... <ObjektAktiv, ObjNum>
+  [280] extcall 58 .............................. <getaProp(ObjektAktiv, ObjNum)>
+  [282] pushint8 5 .............................. <5>
+  [284] eq ...................................... <getaProp(ObjektAktiv, ObjNum) = 5>
+  [285] jmpifz [295] ............................ if getaProp(ObjektAktiv, ObjNum) = 5 then
+  [288] getlocal 8 .............................. <SpritNr>
+  [290] pushzero ................................ <0>
+  [291] pushint8 25 ............................. <25>
+  [293] set 6 ................................... set the visible of sprite SpritNr to 0
+  [295] pushint8 1
+  [297] getlocal 0
+  [299] add
+  [300] setlocal 0
+  [302] endrepeat [  4]
+  [305] pushint8 1 .............................. <1>
+  [307] setlocal 0
+  [309] getlocal 0
+  [311] getglobal 12 ............................ <AntalVerktygsObjekt>
+  [313] lteq
+  [314] jmpifz [344] ............................ repeat with ObjNum = 1 to AntalVerktygsObjekt
+  [317] getglobal 13 ............................ <spriteNum>
+  [319] getlocal 0 .............................. <ObjNum>
+  [321] pusharglist 2 ........................... <spriteNum, ObjNum>
+  [323] extcall 58 .............................. <getaProp(spriteNum, ObjNum)>
+  [325] setlocal 8 .............................. SpritNr = getaProp(spriteNum, ObjNum)
+  [327] getlocal 8 .............................. <SpritNr>
+  [329] pushint8 100 ............................ <100>
+  [331] pushint8 28 ............................. <28>
+  [333] set 6 ................................... set the blend of sprite SpritNr to 100
+  [335] pushint8 1
+  [337] getlocal 0
+  [339] add
+  [340] setlocal 0
+  [342] endrepeat [309]
+  [344] ret
+end

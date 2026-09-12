@@ -1,0 +1,9 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"F507">
+  [  2] pusharglistnoret 1 ...................... <"F507">
+  [  4] extcall 3 ............................... StartaUtLjud("F507")
+  [  6] pushcons 8 .............................. <"GameOver">
+  [  8] pusharglistnoret 1 ...................... <"GameOver">
+  [ 10] extcall 4 ............................... go("GameOver")
+  [ 12] ret
+end

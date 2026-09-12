@@ -1,0 +1,15 @@
+on exitFrame
+  [  0] pushint8 120 ............................ <120>
+  [  2] pusharglistnoret 1 ...................... <120>
+  [  4] extcall 123 ............................. puppetTempo(120)
+  [  6] pusharglistnoret 0 ...................... <>
+  [  8] extcall 6 ............................... init2()
+  [ 10] pushzero ................................ <0>
+  [ 11] setglobal 22 ............................ KonstruktionFardig = 0
+  [ 13] pusharglistnoret 0 ...................... <>
+  [ 15] extcall 10 .............................. startTimer()
+  [ 17] pushcons 0 .............................. <"Starting">
+  [ 19] pusharglistnoret 1 ...................... <"Starting">
+  [ 21] extcall 37 .............................. put "Starting"
+  [ 23] ret
+end

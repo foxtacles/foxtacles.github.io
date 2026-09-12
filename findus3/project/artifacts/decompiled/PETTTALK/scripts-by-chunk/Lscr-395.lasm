@@ -1,0 +1,395 @@
+on TaFramBortPettson Avsnitt
+  [  0] pushint8 10 ............................. <10>
+  [  3] setlocal 0 .............................. PettsCastNr = 10
+  [  5] pushint8 60 ............................. <60>
+  [  8] setlocal 8 .............................. PettsLjudNr = 60
+  [ 10] getglobal 3 ............................. <PettsonSpriteNr>
+  [ 12] pushint8 1 .............................. <1>
+  [ 15] pusharglistnoret 2 ...................... <PettsonSpriteNr, 1>
+  [ 17] extcall 2 ............................... puppetSprite(PettsonSpriteNr, 1)
+  [ 19] pusharglist 0 ........................... <>
+  [ 21] thebuiltin 4 ............................ <the mouseDown>
+  [ 23] pushint8 1 .............................. <1>
+  [ 26] eq ...................................... <the mouseDown = 1>
+  [ 27] jmpifz [ 32] ............................ repeat while the mouseDown = 1
+  [ 30] endrepeat [ 19]
+  [ 32] getparam 0 .............................. <Avsnitt>
+  [ 34] pushint8 1 .............................. <1>
+  [ 37] eq ...................................... <Avsnitt = 1>
+  [ 38] getparam 0 .............................. <Avsnitt>
+  [ 40] pushint8 4 .............................. <4>
+  [ 43] eq ...................................... <Avsnitt = 4>
+  [ 44] or ...................................... <(Avsnitt = 1) or (Avsnitt = 4)>
+  [ 45] getparam 0 .............................. <Avsnitt>
+  [ 47] pushint8 5 .............................. <5>
+  [ 50] eq ...................................... <Avsnitt = 5>
+  [ 51] or ...................................... <(Avsnitt = 1) or (Avsnitt = 4) or (Avsnitt = 5)>
+  [ 52] getparam 0 .............................. <Avsnitt>
+  [ 54] pushint8 6 .............................. <6>
+  [ 57] eq ...................................... <Avsnitt = 6>
+  [ 58] or ...................................... <(Avsnitt = 1) or (Avsnitt = 4) or (Avsnitt = 5) or (Avsnitt = 6)>
+  [ 59] jmpifz [563] ............................ if (Avsnitt = 1) or (Avsnitt = 4) or (Avsnitt = 5) or (Avsnitt = 6) then
+  [ 62] pushint8 1 .............................. <1>
+  [ 65] setglobal 5 ............................. PettSonFramme = 1
+  [ 67] getglobal 3 ............................. <PettsonSpriteNr>
+  [ 69] pushint8 100 ............................ <100>
+  [ 72] pushint8 28 ............................. <28>
+  [ 75] set 6 ................................... set the blend of sprite PettsonSpriteNr to 100
+  [ 77] pushint8 1 .............................. <1>
+  [ 80] setlocal 16
+  [ 82] getlocal 16
+  [ 84] pushint8 6 .............................. <6>
+  [ 87] lteq
+  [ 88] jmpifz [135] ............................ repeat with i = 1 to 6
+  [ 91] getglobal 3 ............................. <PettsonSpriteNr>
+  [ 93] getlocal 0 .............................. <PettsCastNr>
+  [ 95] getlocal 16 ............................. <i>
+  [ 97] add ..................................... <PettsCastNr + i>
+  [ 98] pushint8 1 .............................. <1>
+  [101] sub ..................................... <PettsCastNr + i - 1>
+  [102] pushcons 0 .............................. <"PettTalk">
+  [104] pusharglist 2 ........................... <PettsCastNr + i - 1, "PettTalk">
+  [106] extcall 6 ............................... <member(PettsCastNr + i - 1, "PettTalk")>
+  [108] pushint8 4 .............................. <4>
+  [111] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + i - 1, "PettTalk")
+  [113] pusharglistnoret 0 ...................... <>
+  [115] extcall 8 ............................... updateStage()
+  [117] pushint8 5 .............................. <5>
+  [120] pusharglistnoret 1 ...................... <5>
+  [122] localcall 1 ............................. DelayPettson(5)
+  [124] pushint8 1
+  [127] getlocal 16
+  [129] add
+  [130] setlocal 16
+  [132] endrepeat [ 82]
+  [135] getparam 0 .............................. <Avsnitt>
+  [137] pushint8 5 .............................. <5>
+  [140] nteq .................................... <Avsnitt <> 5>
+  [141] jmpifz [336] ............................ if Avsnitt <> 5 then
+  [144] getglobal 9 ............................. <PettsonPratat>
+  [146] pushzero ................................ <0>
+  [147] eq ...................................... <PettsonPratat = 0>
+  [148] getparam 0 .............................. <Avsnitt>
+  [150] pushint8 4 .............................. <4>
+  [153] eq ...................................... <Avsnitt = 4>
+  [154] or ...................................... <(PettsonPratat = 0) or (Avsnitt = 4)>
+  [155] jmpifz [336] ............................ if (PettsonPratat = 0) or (Avsnitt = 4) then
+  [158] getparam 0 .............................. <Avsnitt>
+  [160] pushint8 1 .............................. <1>
+  [163] eq ...................................... <Avsnitt = 1>
+  [164] jmpifz [187] ............................ if Avsnitt = 1 then
+  [167] pushint8 1 .............................. <1>
+  [170] setglobal 9 ............................. PettsonPratat = 1
+  [172] pushint8 1 .............................. <1>
+  [175] getlocal 8 .............................. <PettsLjudNr>
+  [177] pushcons 8 .............................. <"PettTalk">
+  [179] pusharglist 2 ........................... <PettsLjudNr, "PettTalk">
+  [181] extcall 6 ............................... <member(PettsLjudNr, "PettTalk")>
+  [183] pusharglistnoret 2 ...................... <1, member(PettsLjudNr, "PettTalk")>
+  [185] extcall 10 .............................. puppetSound(1, member(PettsLjudNr, "PettTalk"))
+  [187] getparam 0 .............................. <Avsnitt>
+  [189] pushint8 4 .............................. <4>
+  [192] eq ...................................... <Avsnitt = 4>
+  [193] jmpifz [215] ............................ if Avsnitt = 4 then
+  [196] pushint8 1 .............................. <1>
+  [199] getlocal 8 .............................. <PettsLjudNr>
+  [201] pushint8 34 ............................. <34>
+  [204] add ..................................... <PettsLjudNr + 34>
+  [205] pushcons 16 ............................. <"PettTalk">
+  [207] pusharglist 2 ........................... <PettsLjudNr + 34, "PettTalk">
+  [209] extcall 6 ............................... <member(PettsLjudNr + 34, "PettTalk")>
+  [211] pusharglistnoret 2 ...................... <1, member(PettsLjudNr + 34, "PettTalk")>
+  [213] extcall 10 .............................. puppetSound(1, member(PettsLjudNr + 34, "PettTalk"))
+  [215] getparam 0 .............................. <Avsnitt>
+  [217] pushint8 6 .............................. <6>
+  [220] eq ...................................... <Avsnitt = 6>
+  [221] jmpifz [243] ............................ if Avsnitt = 6 then
+  [224] pushint8 1 .............................. <1>
+  [227] getlocal 8 .............................. <PettsLjudNr>
+  [229] pushint8 32 ............................. <32>
+  [232] add ..................................... <PettsLjudNr + 32>
+  [233] pushcons 24 ............................. <"PettTalk">
+  [235] pusharglist 2 ........................... <PettsLjudNr + 32, "PettTalk">
+  [237] extcall 6 ............................... <member(PettsLjudNr + 32, "PettTalk")>
+  [239] pusharglistnoret 2 ...................... <1, member(PettsLjudNr + 32, "PettTalk")>
+  [241] extcall 10 .............................. puppetSound(1, member(PettsLjudNr + 32, "PettTalk"))
+  [243] pusharglistnoret 0 ...................... <>
+  [245] extcall 8 ............................... updateStage()
+  [247] pushint8 1 .............................. <1>
+  [250] pusharglist 1 ........................... <1>
+  [252] extcall 11 .............................. <soundBusy(1)>
+  [254] pushint8 1 .............................. <1>
+  [257] eq ...................................... <soundBusy(1) = 1>
+  [258] jmpifz [336] ............................ repeat while soundBusy(1) = 1
+  [261] getglobal 3 ............................. <PettsonSpriteNr>
+  [263] getlocal 0 .............................. <PettsCastNr>
+  [265] pushint8 5 .............................. <5>
+  [268] add ..................................... <PettsCastNr + 5>
+  [269] pushint8 3 .............................. <3>
+  [272] pusharglist 1 ........................... <3>
+  [274] extcall 12 .............................. <random(3)>
+  [276] add ..................................... <PettsCastNr + 5 + random(3)>
+  [277] pushcons 32 ............................. <"PettTalk">
+  [279] pusharglist 2 ........................... <PettsCastNr + 5 + random(3), "PettTalk">
+  [281] extcall 6 ............................... <member(PettsCastNr + 5 + random(3), "PettTalk")>
+  [283] pushint8 4 .............................. <4>
+  [286] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + 5 + random(3), "PettTalk")
+  [288] pusharglistnoret 0 ...................... <>
+  [290] extcall 8 ............................... updateStage()
+  [292] pusharglistnoret 0 ...................... <>
+  [294] extcall 13 .............................. startTimer()
+  [296] pushint8 34 ............................. <34>
+  [299] get 7 ................................... <the timer>
+  [301] pushint8 10 ............................. <10>
+  [304] lt ...................................... <the timer < 10>
+  [305] jmpifz [333] ............................ repeat while the timer < 10
+  [308] pusharglist 0 ........................... <>
+  [310] thebuiltin 4 ............................ <the mouseDown>
+  [312] pushint8 1 .............................. <1>
+  [315] eq ...................................... <the mouseDown = 1>
+  [316] jmpifz [330] ............................ if the mouseDown = 1 then
+  [319] pushint8 1 .............................. <1>
+  [322] pushzero ................................ <0>
+  [323] pusharglistnoret 2 ...................... <1, 0>
+  [325] extcall 10 .............................. puppetSound(1, 0)
+  [327] jmp [333] ............................... exit repeat
+  [330] endrepeat [296]
+  [333] endrepeat [247]
+  [336] getparam 0 .............................. <Avsnitt>
+  [338] pushint8 6 .............................. <6>
+  [341] eq ...................................... <Avsnitt = 6>
+  [342] jmpifz [345] ............................ if Avsnitt = 6 then
+  [345] getparam 0 .............................. <Avsnitt>
+  [347] pushint8 1 .............................. <1>
+  [350] eq ...................................... <Avsnitt = 1>
+  [351] getparam 0 .............................. <Avsnitt>
+  [353] pushint8 5 .............................. <5>
+  [356] eq ...................................... <Avsnitt = 5>
+  [357] or ...................................... <(Avsnitt = 1) or (Avsnitt = 5)>
+  [358] getparam 0 .............................. <Avsnitt>
+  [360] pushint8 6 .............................. <6>
+  [363] eq ...................................... <Avsnitt = 6>
+  [364] or ...................................... <(Avsnitt = 1) or (Avsnitt = 5) or (Avsnitt = 6)>
+  [365] jmpifz [481] ............................ if (Avsnitt = 1) or (Avsnitt = 5) or (Avsnitt = 6) then
+  [368] pushint8 1 .............................. <1>
+  [371] setlocal 16
+  [373] getlocal 16
+  [375] pushint8 19 ............................. <19>
+  [378] lteq
+  [379] jmpifz [430] ............................ repeat with i = 1 to 19
+  [382] getglobal 3 ............................. <PettsonSpriteNr>
+  [384] getlocal 0 .............................. <PettsCastNr>
+  [386] pushint8 9 .............................. <9>
+  [389] add ..................................... <PettsCastNr + 9>
+  [390] getlocal 16 ............................. <i>
+  [392] add ..................................... <PettsCastNr + 9 + i>
+  [393] pushint8 1 .............................. <1>
+  [396] sub ..................................... <PettsCastNr + 9 + i - 1>
+  [397] pushcons 40 ............................. <"PettTalk">
+  [399] pusharglist 2 ........................... <PettsCastNr + 9 + i - 1, "PettTalk">
+  [401] extcall 6 ............................... <member(PettsCastNr + 9 + i - 1, "PettTalk")>
+  [403] pushint8 4 .............................. <4>
+  [406] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + 9 + i - 1, "PettTalk")
+  [408] pusharglistnoret 0 ...................... <>
+  [410] extcall 8 ............................... updateStage()
+  [412] pushint8 5 .............................. <5>
+  [415] pusharglistnoret 1 ...................... <5>
+  [417] localcall 1 ............................. DelayPettson(5)
+  [419] pushint8 1
+  [422] getlocal 16
+  [424] add
+  [425] setlocal 16
+  [427] endrepeat [373]
+  [430] getglobal 3 ............................. <PettsonSpriteNr>
+  [432] getlocal 0 .............................. <PettsCastNr>
+  [434] pushint8 28 ............................. <28>
+  [437] add ..................................... <PettsCastNr + 28>
+  [438] getglobal 16 ............................ <AktRitning>
+  [440] add ..................................... <PettsCastNr + 28 + AktRitning>
+  [441] pushint8 1 .............................. <1>
+  [444] sub ..................................... <PettsCastNr + 28 + AktRitning - 1>
+  [445] pushcons 48 ............................. <"PettTalk">
+  [447] pusharglist 2 ........................... <PettsCastNr + 28 + AktRitning - 1, "PettTalk">
+  [449] extcall 6 ............................... <member(PettsCastNr + 28 + AktRitning - 1, "PettTalk")>
+  [451] pushint8 4 .............................. <4>
+  [454] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + 28 + AktRitning - 1, "PettTalk")
+  [456] pushint8 1 .............................. <1>
+  [459] getlocal 8 .............................. <PettsLjudNr>
+  [461] getglobal 16 ............................ <AktRitning>
+  [463] add ..................................... <PettsLjudNr + AktRitning>
+  [464] pushcons 56 ............................. <"PettTalk">
+  [466] pusharglist 2 ........................... <PettsLjudNr + AktRitning, "PettTalk">
+  [468] extcall 6 ............................... <member(PettsLjudNr + AktRitning, "PettTalk")>
+  [470] pusharglistnoret 2 ...................... <1, member(PettsLjudNr + AktRitning, "PettTalk")>
+  [472] extcall 10 .............................. puppetSound(1, member(PettsLjudNr + AktRitning, "PettTalk"))
+  [474] pusharglistnoret 0 ...................... <>
+  [476] extcall 8 ............................... updateStage()
+  [478] pushzero ................................ <0>
+  [479] setglobal 17 ............................ AntalJaNejDjurggr = 0
+  [481] getparam 0 .............................. <Avsnitt>
+  [483] pushint8 4 .............................. <4>
+  [486] eq ...................................... <Avsnitt = 4>
+  [487] jmpifz [563] ............................ if Avsnitt = 4 then
+  [490] pushint8 1 .............................. <1>
+  [493] setlocal 16
+  [495] getlocal 16
+  [497] pushint8 6 .............................. <6>
+  [500] lteq
+  [501] jmpifz [552] ............................ repeat with i = 1 to 6
+  [504] getglobal 3 ............................. <PettsonSpriteNr>
+  [506] getlocal 0 .............................. <PettsCastNr>
+  [508] pushint8 6 .............................. <6>
+  [511] getlocal 16 ............................. <i>
+  [513] sub ..................................... <6 - i>
+  [514] add ..................................... <PettsCastNr + (6 - i)>
+  [515] pushint8 1 .............................. <1>
+  [518] sub ..................................... <PettsCastNr + (6 - i) - 1>
+  [519] pushcons 64 ............................. <"PettTalk">
+  [521] pusharglist 2 ........................... <PettsCastNr + (6 - i) - 1, "PettTalk">
+  [523] extcall 6 ............................... <member(PettsCastNr + (6 - i) - 1, "PettTalk")>
+  [525] pushint8 4 .............................. <4>
+  [528] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + (6 - i) - 1, "PettTalk")
+  [530] pusharglistnoret 0 ...................... <>
+  [532] extcall 8 ............................... updateStage()
+  [534] pushint8 5 .............................. <5>
+  [537] pusharglistnoret 1 ...................... <5>
+  [539] localcall 1 ............................. DelayPettson(5)
+  [541] pushint8 1
+  [544] getlocal 16
+  [546] add
+  [547] setlocal 16
+  [549] endrepeat [495]
+  [552] pushzero ................................ <0>
+  [553] setglobal 5 ............................. PettSonFramme = 0
+  [555] getglobal 3 ............................. <PettsonSpriteNr>
+  [557] pushzero ................................ <0>
+  [558] pushint8 28 ............................. <28>
+  [561] set 6 ................................... set the blend of sprite PettsonSpriteNr to 0
+  [563] getparam 0 .............................. <Avsnitt>
+  [565] pushint8 2 .............................. <2>
+  [568] eq ...................................... <Avsnitt = 2>
+  [569] jmpifz [653] ............................ if Avsnitt = 2 then
+  [572] pushint8 1 .............................. <1>
+  [575] pushzero ................................ <0>
+  [576] pusharglistnoret 2 ...................... <1, 0>
+  [578] extcall 10 .............................. puppetSound(1, 0)
+  [580] getglobal 16 ............................ <AktRitning>
+  [582] pushint8 1 .............................. <1>
+  [585] add ..................................... <AktRitning + 1>
+  [586] setglobal 16 ............................ AktRitning = AktRitning + 1
+  [588] getglobal 16 ............................ <AktRitning>
+  [590] pushint8 3 .............................. <3>
+  [593] gt ...................................... <AktRitning > 3>
+  [594] jmpifz [602] ............................ if AktRitning > 3 then
+  [597] pushint8 1 .............................. <1>
+  [600] setglobal 16 ............................ AktRitning = 1
+  [602] getglobal 3 ............................. <PettsonSpriteNr>
+  [604] getlocal 0 .............................. <PettsCastNr>
+  [606] pushint8 28 ............................. <28>
+  [609] add ..................................... <PettsCastNr + 28>
+  [610] getglobal 16 ............................ <AktRitning>
+  [612] add ..................................... <PettsCastNr + 28 + AktRitning>
+  [613] pushint8 1 .............................. <1>
+  [616] sub ..................................... <PettsCastNr + 28 + AktRitning - 1>
+  [617] pushcons 72 ............................. <"PettTalk">
+  [619] pusharglist 2 ........................... <PettsCastNr + 28 + AktRitning - 1, "PettTalk">
+  [621] extcall 6 ............................... <member(PettsCastNr + 28 + AktRitning - 1, "PettTalk")>
+  [623] pushint8 4 .............................. <4>
+  [626] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + 28 + AktRitning - 1, "PettTalk")
+  [628] pushint8 1 .............................. <1>
+  [631] getlocal 8 .............................. <PettsLjudNr>
+  [633] getglobal 16 ............................ <AktRitning>
+  [635] add ..................................... <PettsLjudNr + AktRitning>
+  [636] pushcons 80 ............................. <"PettTalk">
+  [638] pusharglist 2 ........................... <PettsLjudNr + AktRitning, "PettTalk">
+  [640] extcall 6 ............................... <member(PettsLjudNr + AktRitning, "PettTalk")>
+  [642] pusharglistnoret 2 ...................... <1, member(PettsLjudNr + AktRitning, "PettTalk")>
+  [644] extcall 10 .............................. puppetSound(1, member(PettsLjudNr + AktRitning, "PettTalk"))
+  [646] pusharglistnoret 0 ...................... <>
+  [648] extcall 8 ............................... updateStage()
+  [650] pushzero ................................ <0>
+  [651] setglobal 17 ............................ AntalJaNejDjurggr = 0
+  [653] getparam 0 .............................. <Avsnitt>
+  [655] pushint8 3 .............................. <3>
+  [658] eq ...................................... <Avsnitt = 3>
+  [659] jmpifz [799] ............................ if Avsnitt = 3 then
+  [662] pushzero ................................ <0>
+  [663] setglobal 5 ............................. PettSonFramme = 0
+  [665] getglobal 18 ............................ <JaDjurSpriteNr>
+  [667] pushzero ................................ <0>
+  [668] pushint8 28 ............................. <28>
+  [671] set 6 ................................... set the blend of sprite JaDjurSpriteNr to 0
+  [673] getglobal 19 ............................ <NejDjurSpriteNr>
+  [675] pushzero ................................ <0>
+  [676] pushint8 28 ............................. <28>
+  [679] set 6 ................................... set the blend of sprite NejDjurSpriteNr to 0
+  [681] pushint8 1 .............................. <1>
+  [684] pushzero ................................ <0>
+  [685] pusharglistnoret 2 ...................... <1, 0>
+  [687] extcall 10 .............................. puppetSound(1, 0)
+  [689] pushint8 1 .............................. <1>
+  [692] setlocal 16
+  [694] getlocal 16
+  [696] pushint8 27 ............................. <27>
+  [699] lteq
+  [700] jmpifz [765] ............................ repeat with i = 1 to 27
+  [703] getglobal 3 ............................. <PettsonSpriteNr>
+  [705] getlocal 0 .............................. <PettsCastNr>
+  [707] pushint8 27 ............................. <27>
+  [710] add ..................................... <PettsCastNr + 27>
+  [711] getlocal 16 ............................. <i>
+  [713] sub ..................................... <PettsCastNr + 27 - i>
+  [714] pushint8 1 .............................. <1>
+  [717] sub ..................................... <PettsCastNr + 27 - i - 1>
+  [718] pushcons 88 ............................. <"PettTalk">
+  [720] pusharglist 2 ........................... <PettsCastNr + 27 - i - 1, "PettTalk">
+  [722] extcall 6 ............................... <member(PettsCastNr + 27 - i - 1, "PettTalk")>
+  [724] pushint8 4 .............................. <4>
+  [727] set 6 ................................... set the castNum of sprite PettsonSpriteNr to member(PettsCastNr + 27 - i - 1, "PettTalk")
+  [729] pusharglistnoret 0 ...................... <>
+  [731] extcall 8 ............................... updateStage()
+  [733] pushint8 4 .............................. <4>
+  [736] pusharglistnoret 1 ...................... <4>
+  [738] localcall 1 ............................. DelayPettson(4)
+  [740] getlocal 16 ............................. <i>
+  [742] pushint8 18 ............................. <18>
+  [745] eq ...................................... <i = 18>
+  [746] jmpifz [754] ............................ if i = 18 then
+  [749] pushint8 21 ............................. <21>
+  [752] setlocal 16 ............................. i = 21
+  [754] pushint8 1
+  [757] getlocal 16
+  [759] add
+  [760] setlocal 16
+  [762] endrepeat [694]
+  [765] getglobal 3 ............................. <PettsonSpriteNr>
+  [767] pushzero ................................ <0>
+  [768] pushint8 28 ............................. <28>
+  [771] set 6 ................................... set the blend of sprite PettsonSpriteNr to 0
+  [773] pusharglistnoret 0 ...................... <>
+  [775] extcall 8 ............................... updateStage()
+  [777] pushint8 1 .............................. <1>
+  [780] inv ..................................... <-1>
+  [781] setglobal 17 ............................ AntalJaNejDjurggr = -1
+  [783] getglobal 18 ............................ <JaDjurSpriteNr>
+  [785] pushzero ................................ <0>
+  [786] pushint8 28 ............................. <28>
+  [789] set 6 ................................... set the blend of sprite JaDjurSpriteNr to 0
+  [791] getglobal 19 ............................ <NejDjurSpriteNr>
+  [793] pushzero ................................ <0>
+  [794] pushint8 28 ............................. <28>
+  [797] set 6 ................................... set the blend of sprite NejDjurSpriteNr to 0
+  [799] ret
+end
+
+on DelayPettson Timen
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 13 .............................. startTimer()
+  [  4] pushint8 34 ............................. <34>
+  [  7] get 7 ................................... <the timer>
+  [  9] getparam 0 .............................. <Timen>
+  [ 11] lt ...................................... <the timer < Timen>
+  [ 12] jmpifz [ 17] ............................ repeat while the timer < Timen
+  [ 15] endrepeat [  4]
+  [ 17] ret
+end

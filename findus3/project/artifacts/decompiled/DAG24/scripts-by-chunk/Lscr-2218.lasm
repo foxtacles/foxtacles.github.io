@@ -1,0 +1,45 @@
+global gKalender
+
+on beginSprite me
+  [  0] getparam 0 .............................. <me>
+  [  2] getobjprop 127 .......................... <me.spriteNum>
+  [  5] setglobal 122 ........................... gKalender = me.spriteNum
+  [  8] getglobal 122 ........................... <gKalender>
+  [ 11] pusharglist 1 ........................... <gKalender>
+  [ 13] extcall 4 ............................... <sprite(gKalender)>
+  [ 15] pushzero ................................ <0>
+  [ 16] setobjprop 123 .......................... sprite(gKalender).visible = 0
+  [ 19] ret
+end
+
+on exitFrame me
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 121 ............................. knappar()
+  [  5] ret
+end
+
+on mouseEnter me
+  [  0] pushint8 100 ............................ <100>
+  [  3] pushint8 101 ............................ <101>
+  [  6] pusharglist 2 ........................... <[100, 101]>
+  [  8] pushlist ................................ <[100, 101]>
+  [  9] pusharglistnoret 1 ...................... <[100, 101]>
+  [ 11] extcall 141 ............................. cursor([100, 101])
+  [ 14] ret
+end
+
+on mouseLeave me
+  [  0] pushint8 1 .............................. <1>
+  [  3] inv ..................................... <-1>
+  [  4] pusharglistnoret 1 ...................... <-1>
+  [  6] extcall 141 ............................. cursor(-1)
+  [  9] ret
+end
+
+on mouseDown me
+  [  0] pushint8 1 .............................. <1>
+  [  3] inv ..................................... <-1>
+  [  4] pusharglistnoret 1 ...................... <-1>
+  [  6] extcall 141 ............................. cursor(-1)
+  [  9] ret
+end

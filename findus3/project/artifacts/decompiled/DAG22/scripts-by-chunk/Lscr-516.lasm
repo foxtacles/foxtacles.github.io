@@ -1,0 +1,66 @@
+global gAntalPynt, gPyntSprite, gFarg, gAllaFargade, gAllaFargadeCount
+
+on exitFrame
+  [  0] pushint8 1 .............................. <1>
+  [  2] pusharglistnoret 1 ...................... <1>
+  [  4] extcall 30 .............................. moveCursor(1)
+  [  6] pusharglistnoret 0 ...................... <>
+  [  8] extcall 19 .............................. checkButtons()
+  [ 10] pushint8 10 ............................. <10>
+  [ 12] setglobal 1 ............................. gPyntSprite = 10
+  [ 14] pushint8 13 ............................. <13>
+  [ 16] setglobal 2 ............................. gAntalPynt = 13
+  [ 18] pushint8 1 .............................. <1>
+  [ 20] setlocal 0
+  [ 22] getlocal 0
+  [ 24] getglobal 2 ............................. <gAntalPynt>
+  [ 26] lteq
+  [ 27] jmpifz [ 53] ............................ repeat with i = 1 to gAntalPynt
+  [ 30] getlocal 0 .............................. <i>
+  [ 32] getglobal 1 ............................. <gPyntSprite>
+  [ 34] add ..................................... <i + gPyntSprite>
+  [ 35] pushint8 1 .............................. <1>
+  [ 37] sub ..................................... <i + gPyntSprite - 1>
+  [ 38] pushint8 1 .............................. <1>
+  [ 40] pusharglistnoret 2 ...................... <i + gPyntSprite - 1, 1>
+  [ 42] extcall 3 ............................... puppetSprite(i + gPyntSprite - 1, 1)
+  [ 44] pushint8 1
+  [ 46] getlocal 0
+  [ 48] add
+  [ 49] setlocal 0
+  [ 51] endrepeat [ 22]
+  [ 53] pushint8 25 ............................. <25>
+  [ 55] setlocal 0
+  [ 57] getlocal 0
+  [ 59] pushint8 28 ............................. <28>
+  [ 61] lteq
+  [ 62] jmpifz [ 82] ............................ repeat with i = 25 to 28
+  [ 65] getlocal 0 .............................. <i>
+  [ 67] pushint8 1 .............................. <1>
+  [ 69] pusharglistnoret 2 ...................... <i, 1>
+  [ 71] extcall 3 ............................... puppetSprite(i, 1)
+  [ 73] pushint8 1
+  [ 75] getlocal 0
+  [ 77] add
+  [ 78] setlocal 0
+  [ 80] endrepeat [ 57]
+  [ 82] pushint8 1 .............................. <1>
+  [ 84] setglobal 4 ............................. gFarg = 1
+  [ 86] pushzero ................................ <0>
+  [ 87] setglobal 26 ............................ gAllaFargade = 0
+  [ 89] pushzero ................................ <0>
+  [ 90] setglobal 27 ............................ gAllaFargadeCount = 0
+  [ 92] pushcons 0 .............................. <"DAG22_P_INTRO">
+  [ 94] pushint8 2 .............................. <2>
+  [ 96] pusharglist 1 ........................... <2>
+  [ 98] extcall 22 .............................. <random(2)>
+  [100] joinstr ................................. <"DAG22_P_INTRO" & random(2)>
+  [101] pusharglistnoret 1 ...................... <"DAG22_P_INTRO" & random(2)>
+  [103] extcall 21 .............................. puppetSound("DAG22_P_INTRO" & random(2))
+  [105] pusharglistnoret 0 ...................... <>
+  [107] extcall 41 .............................. unloadMember()
+  [109] pushcons 8 .............................. <"mainloop">
+  [111] pusharglistnoret 1 ...................... <"mainloop">
+  [113] extcall 7 ............................... go("mainloop")
+  [115] ret
+end

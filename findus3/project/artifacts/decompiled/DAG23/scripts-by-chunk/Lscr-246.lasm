@@ -1,0 +1,119 @@
+global gPath, gPathLen, gPathPos, gPathDist, gNumObjects, gOldX, gOldY, gDragX, gDragY, gSortList, gEditSortList, gObjectList, gFindus, gFindusGhost, gGran
+
+on exitFrame
+  [  0] pusharglistnoret 0 ...................... <>
+  [  2] extcall 76 .............................. checkButtons()
+  [  5] pusharglistnoret 0 ...................... <>
+  [  7] extcall 84 .............................. checkSound()
+  [ 10] pusharglist 0 ........................... <>
+  [ 12] thebuiltin 48 ........................... <the mouseDown>
+  [ 15] jmpifz [191] ............................ if the mouseDown then / else
+  [ 18] pushint8 80 ............................. <80>
+  [ 21] pushint8 560 ............................ <560>
+  [ 24] pusharglist 0 ........................... <>
+  [ 26] thebuiltin 51 ........................... <the mouseH>
+  [ 29] getglobal 56 ............................ <gDragX>
+  [ 32] sub ..................................... <the mouseH - gDragX>
+  [ 33] pusharglist 2 ........................... <560, the mouseH - gDragX>
+  [ 35] extcall 58 .............................. <min(560, the mouseH - gDragX)>
+  [ 38] pusharglist 2 ........................... <80, min(560, the mouseH - gDragX)>
+  [ 40] extcall 67 .............................. <max(80, min(560, the mouseH - gDragX))>
+  [ 43] setlocal 0 .............................. X = max(80, min(560, the mouseH - gDragX))
+  [ 45] pushint8 150 ............................ <150>
+  [ 48] pushint8 400 ............................ <400>
+  [ 51] pusharglist 0 ........................... <>
+  [ 53] thebuiltin 52 ........................... <the mouseV>
+  [ 56] getglobal 57 ............................ <gDragY>
+  [ 59] sub ..................................... <the mouseV - gDragY>
+  [ 60] pusharglist 2 ........................... <400, the mouseV - gDragY>
+  [ 62] extcall 58 .............................. <min(400, the mouseV - gDragY)>
+  [ 65] pusharglist 2 ........................... <150, min(400, the mouseV - gDragY)>
+  [ 67] extcall 67 .............................. <max(150, min(400, the mouseV - gDragY))>
+  [ 70] setlocal 8 .............................. Y = max(150, min(400, the mouseV - gDragY))
+  [ 72] getlocal 0 .............................. <X>
+  [ 74] getglobal 49 ............................ <gOldX>
+  [ 77] nteq .................................... <X <> gOldX>
+  [ 78] getlocal 8 .............................. <Y>
+  [ 80] getglobal 50 ............................ <gOldY>
+  [ 83] nteq .................................... <Y <> gOldY>
+  [ 84] or ...................................... <(X <> gOldX) or (Y <> gOldY)>
+  [ 85] jmpifz [169] ............................ if (X <> gOldX) or (Y <> gOldY) then
+  [ 88] pushint8 10000 .......................... <10000>
+  [ 91] getglobal 2 ............................. <gPathLen>
+  [ 93] pushint8 1 .............................. <1>
+  [ 96] add ..................................... <gPathLen + 1>
+  [ 97] pusharglist 2 ........................... <10000, gPathLen + 1>
+  [ 99] extcall 58 .............................. <min(10000, gPathLen + 1)>
+  [102] setglobal 2 ............................. gPathLen = min(10000, gPathLen + 1)
+  [104] getglobal 7 ............................. <gPathPos>
+  [106] pushint8 1 .............................. <1>
+  [109] add ..................................... <gPathPos + 1>
+  [110] setglobal 7 ............................. gPathPos = gPathPos + 1
+  [112] getglobal 7 ............................. <gPathPos>
+  [114] getglobal 2 ............................. <gPathLen>
+  [116] gt ...................................... <gPathPos > gPathLen>
+  [117] jmpifz [127] ............................ if gPathPos > gPathLen then
+  [120] getglobal 7 ............................. <gPathPos>
+  [122] getglobal 2 ............................. <gPathLen>
+  [124] sub ..................................... <gPathPos - gPathLen>
+  [125] setglobal 7 ............................. gPathPos = gPathPos - gPathLen
+  [127] getglobal 59 ............................ <gFindus>
+  [130] getlocal 0 .............................. <X>
+  [132] getlocal 8 .............................. <Y>
+  [134] pusharglist 2 ........................... <X, Y>
+  [136] extcall 6 ............................... <point(X, Y)>
+  [138] pusharglistnoret 2 ...................... <gFindus, point(X, Y)>
+  [140] extcall 20 .............................. setpos(gFindus, point(X, Y))
+  [142] getglobal 3 ............................. <gPath>
+  [144] getglobal 7 ............................. <gPathPos>
+  [146] getlocal 0 .............................. <X>
+  [148] getlocal 8 .............................. <Y>
+  [150] pusharglist 2 ........................... <X, Y>
+  [152] extcall 6 ............................... <point(X, Y)>
+  [154] pusharglistnoret 3 ...................... <gPath, gPathPos, point(X, Y)>
+  [156] extcall 53 .............................. setAt(gPath, gPathPos, point(X, Y))
+  [159] getlocal 0 .............................. <X>
+  [161] setglobal 49 ............................ gOldX = X
+  [164] getlocal 8 .............................. <Y>
+  [166] setglobal 50 ............................ gOldY = Y
+  [169] pushint8 10 ............................. <10>
+  [172] getglobal 61 ............................ <gEditSortList>
+  [175] pusharglistnoret 2 ...................... <10, gEditSortList>
+  [177] extcall 32 .............................. sortObjects(10, gEditSortList)
+  [180] pusharglist 0 ........................... <>
+  [182] thebuiltin 18 ........................... <the frame>
+  [184] pusharglistnoret 1 ...................... <the frame>
+  [186] extcall 1 ............................... go(the frame)
+  [188] jmp [259]
+  [191] getglobal 2 ............................. <gPathLen>
+  [193] pushzero ................................ <0>
+  [194] lteq .................................... <gPathLen <= 0>
+  [195] jmpifz [208] ............................ if gPathLen <= 0 then
+  [198] pushint8 1 .............................. <1>
+  [201] setglobal 2 ............................. gPathLen = 1
+  [203] pushint8 1 .............................. <1>
+  [206] setglobal 7 ............................. gPathPos = 1
+  [208] pushint8 13 ............................. <13>
+  [211] setlocal 16
+  [213] getlocal 16
+  [215] pushint8 15 ............................. <15>
+  [218] lteq
+  [219] jmpifz [245] ............................ repeat with i = 13 to 15
+  [222] getlocal 16 ............................. <i>
+  [224] pusharglist 1 ........................... <i>
+  [226] extcall 113 ............................. <sprite(i)>
+  [229] pushint8 1 .............................. <1>
+  [232] setobjprop 114 .......................... sprite(i).visible = 1
+  [235] pushint8 1
+  [238] getlocal 16
+  [240] add
+  [241] setlocal 16
+  [243] endrepeat [213]
+  [245] getglobal 63 ............................ <gFindusGhost>
+  [248] pushint8 41 ............................. <41>
+  [251] setobjprop 23 ........................... gFindusGhost.castNum = 41
+  [253] pushcons 0 .............................. <"gameloop">
+  [255] pusharglistnoret 1 ...................... <"gameloop">
+  [257] extcall 1 ............................... go("gameloop")
+  [259] ret
+end

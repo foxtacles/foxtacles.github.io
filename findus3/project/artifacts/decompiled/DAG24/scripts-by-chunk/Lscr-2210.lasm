@@ -1,0 +1,36 @@
+on getTomtePos SpriteNr
+  [  0] getglobal 63 ............................ <tomtepos>
+  [  3] getparam 0 .............................. <SpriteNr>
+  [  5] pusharglist 1 ........................... <SpriteNr>
+  [  7] extcall 4 ............................... <sprite(SpriteNr)>
+  [  9] getobjprop 103 .......................... <sprite(SpriteNr).memberNum>
+  [ 12] pusharglist 2 ........................... <tomtepos, sprite(SpriteNr).memberNum>
+  [ 14] extcall 12 .............................. <getOne(tomtepos, sprite(SpriteNr).memberNum)>
+  [ 16] setlocal 0 .............................. a = getOne(tomtepos, sprite(SpriteNr).memberNum)
+  [ 18] getlocal 0 .............................. <a>
+  [ 20] pushzero ................................ <0>
+  [ 21] nteq .................................... <a <> 0>
+  [ 22] jmpifz [ 53] ............................ if a <> 0 then
+  [ 25] getglobal 89 ............................ <tomtesprite>
+  [ 28] pusharglist 1 ........................... <tomtesprite>
+  [ 30] extcall 4 ............................... <sprite(tomtesprite)>
+  [ 32] getobjprop 6 ............................ <sprite(tomtesprite).loc>
+  [ 34] getglobal 63 ............................ <tomtepos>
+  [ 37] getlocal 0 .............................. <a>
+  [ 39] pushint8 1 .............................. <1>
+  [ 42] add ..................................... <a + 1>
+  [ 43] pusharglist 2 ........................... <tomtepos, a + 1>
+  [ 45] objcall 41 .............................. <tomtepos[a + 1]>
+  [ 48] sub ..................................... <sprite(tomtesprite).loc - tomtepos[a + 1]>
+  [ 49] pusharglistnoret 1 ...................... <sprite(tomtesprite).loc - tomtepos[a + 1]>
+  [ 51] extcall 14 .............................. return sprite(tomtesprite).loc - tomtepos[a + 1]
+  [ 53] pushint8 1000 ........................... <1000>
+  [ 56] inv ..................................... <-1000>
+  [ 57] pushint8 1000 ........................... <1000>
+  [ 60] inv ..................................... <-1000>
+  [ 61] pusharglist 2 ........................... <-1000, -1000>
+  [ 63] extcall 51 .............................. <point(-1000, -1000)>
+  [ 66] pusharglistnoret 1 ...................... <point(-1000, -1000)>
+  [ 68] extcall 14 .............................. return point(-1000, -1000)
+  [ 70] ret
+end

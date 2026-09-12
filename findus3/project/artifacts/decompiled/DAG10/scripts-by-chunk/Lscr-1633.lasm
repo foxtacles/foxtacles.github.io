@@ -1,0 +1,79 @@
+on UniStillAnimation Objnr
+  [  0] getglobal 1 ............................. <UNIObjectList>
+  [  2] getparam 0 .............................. <Objnr>
+  [  4] pusharglist 2 ........................... <UNIObjectList, Objnr>
+  [  6] objcall 45 .............................. <UNIObjectList[Objnr]>
+  [  9] setlocal 0 .............................. tObj = UNIObjectList[Objnr]
+  [ 11] getlocal 0 .............................. <tObj>
+  [ 13] getobjprop 23 ........................... <tObj.UNIBasePic>
+  [ 15] setlocal 8 .............................. basePic = tObj.UNIBasePic
+  [ 17] getlocal 0 .............................. <tObj>
+  [ 19] getobjprop 21 ........................... <tObj.UNIpicsPerAngle>
+  [ 21] setlocal 16 ............................. picsPerAngle = tObj.UNIpicsPerAngle
+  [ 23] getlocal 0 .............................. <tObj>
+  [ 25] getobjprop 35 ........................... <tObj.UNIendPointCounter>
+  [ 28] setlocal 24 ............................. EPC = tObj.UNIendPointCounter
+  [ 30] getlocal 0 .............................. <tObj>
+  [ 32] getobjprop 29 ........................... <tObj.UNIaktStep>
+  [ 34] setlocal 32 ............................. step = tObj.UNIaktStep
+  [ 36] getlocal 0 .............................. <tObj>
+  [ 38] getobjprop 13 ........................... <tObj.UniFrameTime>
+  [ 40] setlocal 40 ............................. waitTime = tObj.UniFrameTime
+  [ 42] getlocal 8 .............................. <basePic>
+  [ 44] getlocal 32 ............................. <step>
+  [ 46] add ..................................... <basePic + step>
+  [ 47] getlocal 8 .............................. <basePic>
+  [ 49] getlocal 16 ............................. <picsPerAngle>
+  [ 51] add ..................................... <basePic + picsPerAngle>
+  [ 52] gteq .................................... <(basePic + step) >= (basePic + picsPerAngle)>
+  [ 53] jmpifz [121] ............................ if (basePic + step) >= (basePic + picsPerAngle) then
+  [ 56] getlocal 24 ............................. <EPC>
+  [ 58] peek 0 .................................. case EPC of
+  [ 60] pushint8 1 .............................. <1>
+  [ 63] eq
+  [ 64] jmpifz [ 82] ............................ (case) 1:
+  [ 67] getlocal 0 .............................. <tObj>
+  [ 69] pushzero ................................ <0>
+  [ 70] setobjprop 4 ............................ tObj.UNIactive = 0
+  [ 72] pop 1
+  [ 74] pusharglistnoret 0 ...................... <>
+  [ 76] extcall 41 .............................. return 
+  [ 79] jmp [119]
+  [ 82] peek 0
+  [ 84] pushint8 1 .............................. <1>
+  [ 87] inv ..................................... <-1>
+  [ 88] eq
+  [ 89] jmpifz [100] ............................ (case) (-1):
+  [ 92] pushint8 1 .............................. <1>
+  [ 95] setlocal 32 ............................. step = 1
+  [ 97] jmp [119] ............................... (case) otherwise:
+  [100] getlocal 0 .............................. <tObj>
+  [102] getlocal 0 .............................. <tObj>
+  [104] getobjprop 35 ........................... <tObj.UNIendPointCounter>
+  [107] pushint8 1 .............................. <1>
+  [110] sub ..................................... <tObj.UNIendPointCounter - 1>
+  [111] setobjprop 35 ........................... tObj.UNIendPointCounter = tObj.UNIendPointCounter - 1
+  [114] pushint8 1 .............................. <1>
+  [117] setlocal 32 ............................. step = 1
+  [119] pop 1 ................................... end case
+  [121] getlocal 0 .............................. <tObj>
+  [123] getlocal 8 .............................. <basePic>
+  [125] getlocal 32 ............................. <step>
+  [127] add ..................................... <basePic + step>
+  [128] pushint8 1 .............................. <1>
+  [131] sub ..................................... <basePic + step - 1>
+  [132] setobjprop 27 ........................... tObj.UNIaktPic = basePic + step - 1
+  [134] getlocal 0 .............................. <tObj>
+  [136] getlocal 32 ............................. <step>
+  [138] setobjprop 29 ........................... tObj.UNIaktStep = step
+  [140] getlocal 0 .............................. <tObj>
+  [142] getlocal 40 ............................. <waitTime>
+  [144] getlocal 0 .............................. <tObj>
+  [146] getobjprop 15 ........................... <tObj.UNIm>
+  [148] mul ..................................... <waitTime * tObj.UNIm>
+  [149] pushint8 34 ............................. <34>
+  [152] get 7 ................................... <the timer>
+  [154] add ..................................... <(waitTime * tObj.UNIm) + the timer>
+  [155] setobjprop 14 ........................... tObj.UNIoldPicTimer = (waitTime * tObj.UNIm) + the timer
+  [157] ret
+end

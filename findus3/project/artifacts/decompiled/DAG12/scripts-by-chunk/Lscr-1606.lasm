@@ -1,0 +1,67 @@
+global gBorja, gKalender, OkAttAvsluta
+
+on knappar
+  [  0] getglobal 230 ........................... <gKalender>
+  [  3] pusharglist 1 ........................... <gKalender>
+  [  5] extcall 77 .............................. <rollOver(gKalender)>
+  [  8] jmpifz [ 60] ............................ if rollOver(gKalender) then / else
+  [ 11] getglobal 230 ........................... <gKalender>
+  [ 14] pusharglist 1 ........................... <gKalender>
+  [ 16] extcall 76 .............................. <sprite(gKalender)>
+  [ 19] pushint8 1 .............................. <1>
+  [ 22] setobjprop 231 .......................... sprite(gKalender).visible = 1
+  [ 25] pusharglist 0 ........................... <>
+  [ 27] thebuiltin 72 ........................... <the mouseDown>
+  [ 30] jmpifz [ 57] ............................ if the mouseDown then
+  [ 33] pushint8 10 ............................. <10>
+  [ 36] pusharglistnoret 1 ...................... <10>
+  [ 38] extcall 228 ............................. puppetTransition(10)
+  [ 41] pushint8 1 .............................. <1>
+  [ 44] pushzero ................................ <0>
+  [ 45] pusharglistnoret 2 ...................... <1, 0>
+  [ 47] extcall 89 .............................. puppetSound(1, 0)
+  [ 50] pushcons 0 .............................. <"SlutSpel">
+  [ 52] pusharglistnoret 1 ...................... <"SlutSpel">
+  [ 54] extcall 55 .............................. go("SlutSpel")
+  [ 57] jmp [ 72]
+  [ 60] getglobal 230 ........................... <gKalender>
+  [ 63] pusharglist 1 ........................... <gKalender>
+  [ 65] extcall 76 .............................. <sprite(gKalender)>
+  [ 68] pushzero ................................ <0>
+  [ 69] setobjprop 231 .......................... sprite(gKalender).visible = 0
+  [ 72] getglobal 232 ........................... <gBorja>
+  [ 75] pusharglist 1 ........................... <gBorja>
+  [ 77] extcall 77 .............................. <rollOver(gBorja)>
+  [ 80] getglobal 238 ........................... <OkAttAvsluta>
+  [ 83] pushint8 1 .............................. <1>
+  [ 86] eq ...................................... <OkAttAvsluta = 1>
+  [ 87] and ..................................... <rollOver(gBorja) and (OkAttAvsluta = 1)>
+  [ 88] jmpifz [145] ............................ if rollOver(gBorja) and (OkAttAvsluta = 1) then / else
+  [ 91] getglobal 232 ........................... <gBorja>
+  [ 94] pusharglist 1 ........................... <gBorja>
+  [ 96] extcall 76 .............................. <sprite(gBorja)>
+  [ 99] pushint8 1 .............................. <1>
+  [102] setobjprop 231 .......................... sprite(gBorja).visible = 1
+  [105] pusharglist 0 ........................... <>
+  [107] thebuiltin 72 ........................... <the mouseDown>
+  [110] jmpifz [142] ............................ if the mouseDown then
+  [113] pushint8 3 .............................. <3>
+  [116] pusharglistnoret 1 ...................... <3>
+  [118] extcall 55 .............................. go(3)
+  [121] pushint8 1 .............................. <1>
+  [124] pushzero ................................ <0>
+  [125] pusharglistnoret 2 ...................... <1, 0>
+  [127] extcall 89 .............................. puppetSound(1, 0)
+  [130] getglobal 232 ........................... <gBorja>
+  [133] pusharglist 1 ........................... <gBorja>
+  [135] extcall 76 .............................. <sprite(gBorja)>
+  [138] pushzero ................................ <0>
+  [139] setobjprop 231 .......................... sprite(gBorja).visible = 0
+  [142] jmp [157]
+  [145] getglobal 232 ........................... <gBorja>
+  [148] pusharglist 1 ........................... <gBorja>
+  [150] extcall 76 .............................. <sprite(gBorja)>
+  [153] pushzero ................................ <0>
+  [154] setobjprop 231 .......................... sprite(gBorja).visible = 0
+  [157] ret
+end

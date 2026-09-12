@@ -1,0 +1,791 @@
+global elkCounter, startElk, endElk, movedElkCounter, elkSpeed, changeElkPictureSpeed, startElkSpeed, elkSpriteNumber, startElkCastNumber, stopElkCastNumber, numberOfPlayers, ElkDirection, targetPos, standCounter, elkLock, ballSpriteNumber, findusSpriteNumber, elkAlive, currentScorePlayer, currentScoreElk
+
+on moveElk
+  [  0] getglobal 113 ........................... <elkAlive>
+  [  3] pushzero ................................ <0>
+  [  4] eq ...................................... <elkAlive = 0>
+  [  5] jmpifz [ 13] ............................ if elkAlive = 0 then
+  [  8] pusharglistnoret 0 ...................... <>
+  [ 10] extcall 56 .............................. return 
+  [ 13] getglobal 104 ........................... <numberOfPlayers>
+  [ 16] pushint8 1 .............................. <1>
+  [ 19] eq ...................................... <numberOfPlayers = 1>
+  [ 20] jmpifz [ 32] ............................ if numberOfPlayers = 1 then
+  [ 23] pusharglistnoret 0 ...................... <>
+  [ 25] localcall 1 ............................. autoElk2()
+  [ 27] pusharglistnoret 0 ...................... <>
+  [ 29] extcall 56 .............................. return 
+  [ 32] getglobal 108 ........................... <movedElkCounter>
+  [ 35] pushint8 1 .............................. <1>
+  [ 38] add ..................................... <movedElkCounter + 1>
+  [ 39] setglobal 108 ........................... movedElkCounter = movedElkCounter + 1
+  [ 42] pushint8 123 ............................ <123>
+  [ 45] pusharglist 1 ........................... <123>
+  [ 47] extcall 152 ............................. <keyPressed(123)>
+  [ 50] pushzero ................................ <0>
+  [ 51] pusharglist 1 ........................... <0>
+  [ 53] extcall 152 ............................. <keyPressed(0)>
+  [ 56] or ...................................... <keyPressed(123) or keyPressed(0)>
+  [ 57] pushint8 124 ............................ <124>
+  [ 60] pusharglist 1 ........................... <124>
+  [ 62] extcall 152 ............................. <keyPressed(124)>
+  [ 65] pushint8 2 .............................. <2>
+  [ 68] pusharglist 1 ........................... <2>
+  [ 70] extcall 152 ............................. <keyPressed(2)>
+  [ 73] or ...................................... <keyPressed(124) or keyPressed(2)>
+  [ 74] and ..................................... <(keyPressed(123) or keyPressed(0)) and (keyPressed(124) or keyPressed(2))>
+  [ 75] jmpifz [ 92] ............................ if (keyPressed(123) or keyPressed(0)) and (keyPressed(124) or keyPressed(2)) then / else
+  [ 78] pushint8 1 .............................. <1>
+  [ 81] setglobal 108 ........................... movedElkCounter = 1
+  [ 84] pusharglistnoret 0 ...................... <>
+  [ 86] extcall 56 .............................. return 
+  [ 89] jmp [240]
+  [ 92] pushint8 123 ............................ <123>
+  [ 95] pusharglist 1 ........................... <123>
+  [ 97] extcall 152 ............................. <keyPressed(123)>
+  [100] pushzero ................................ <0>
+  [101] pusharglist 1 ........................... <0>
+  [103] extcall 152 ............................. <keyPressed(0)>
+  [106] or ...................................... <keyPressed(123) or keyPressed(0)>
+  [107] jmpifz [126] ............................ if keyPressed(123) or keyPressed(0) then / else
+  [110] pushint8 1 .............................. <1>
+  [113] inv ..................................... <-1>
+  [114] setglobal 107 ........................... ElkDirection = -1
+  [117] pushint8 1 .............................. <1>
+  [120] setglobal 108 ........................... movedElkCounter = 1
+  [123] jmp [240]
+  [126] pushint8 124 ............................ <124>
+  [129] pusharglist 1 ........................... <124>
+  [131] extcall 152 ............................. <keyPressed(124)>
+  [134] pushint8 2 .............................. <2>
+  [137] pusharglist 1 ........................... <2>
+  [139] extcall 152 ............................. <keyPressed(2)>
+  [142] or ...................................... <keyPressed(124) or keyPressed(2)>
+  [143] jmpifz [161] ............................ if keyPressed(124) or keyPressed(2) then / else
+  [146] pushint8 1 .............................. <1>
+  [149] setglobal 107 ........................... ElkDirection = 1
+  [152] pushint8 1 .............................. <1>
+  [155] setglobal 108 ........................... movedElkCounter = 1
+  [158] jmp [240]
+  [161] getglobal 108 ........................... <movedElkCounter>
+  [164] pushint8 50 ............................. <50>
+  [167] pusharglist 1 ........................... <50>
+  [169] extcall 46 .............................. <random(50)>
+  [172] add ..................................... <movedElkCounter + random(50)>
+  [173] pushint8 120 ............................ <120>
+  [176] gt ...................................... <(movedElkCounter + random(50)) > 120>
+  [177] getglobal 98 ............................ <elkSpriteNumber>
+  [180] pushint8 35 ............................. <35>
+  [183] get 6 ................................... <the memberNum of sprite elkSpriteNumber>
+  [185] getglobal 110 ........................... <stopElkCastNumber>
+  [188] eq ...................................... <the memberNum of sprite elkSpriteNumber = stopElkCastNumber>
+  [189] and ..................................... <((movedElkCounter + random(50)) > 120) and (the memberNum of sprite elkSpriteNumber = stopElkCastNumber)>
+  [190] jmpifz [208] ............................ if ((movedElkCounter + random(50)) > 120) and (the memberNum of sprite elkSpriteNumber = stopElkCastNumber) then / else
+  [193] pushint8 10 ............................. <10>
+  [196] inv ..................................... <-10>
+  [197] setglobal 108 ........................... movedElkCounter = -10
+  [200] pusharglistnoret 0 ...................... <>
+  [202] extcall 56 .............................. return 
+  [205] jmp [240]
+  [208] getglobal 108 ........................... <movedElkCounter>
+  [211] pushzero ................................ <0>
+  [212] eq ...................................... <movedElkCounter = 0>
+  [213] jmpifz [235] ............................ if movedElkCounter = 0 then / else
+  [216] getglobal 98 ............................ <elkSpriteNumber>
+  [219] getglobal 110 ........................... <stopElkCastNumber>
+  [222] pushint8 35 ............................. <35>
+  [225] set 6 ................................... set the memberNum of sprite elkSpriteNumber to stopElkCastNumber
+  [227] pusharglistnoret 0 ...................... <>
+  [229] extcall 56 .............................. return 
+  [232] jmp [240]
+  [235] pusharglistnoret 0 ...................... <>
+  [237] extcall 56 .............................. return 
+  [240] getglobal 98 ............................ <elkSpriteNumber>
+  [243] pushint8 35 ............................. <35>
+  [246] get 6 ................................... <the memberNum of sprite elkSpriteNumber>
+  [248] getglobal 110 ........................... <stopElkCastNumber>
+  [251] pushint8 1 .............................. <1>
+  [254] add ..................................... <stopElkCastNumber + 1>
+  [255] eq ...................................... <the memberNum of sprite elkSpriteNumber = (stopElkCastNumber + 1)>
+  [256] jmpifz [276] ............................ if the memberNum of sprite elkSpriteNumber = (stopElkCastNumber + 1) then
+  [259] getglobal 98 ............................ <elkSpriteNumber>
+  [262] getglobal 110 ........................... <stopElkCastNumber>
+  [265] pushint8 35 ............................. <35>
+  [268] set 6 ................................... set the memberNum of sprite elkSpriteNumber to stopElkCastNumber
+  [270] pushint8 1 .............................. <1>
+  [273] setglobal 108 ........................... movedElkCounter = 1
+  [276] getglobal 45 ............................ <currentScorePlayer>
+  [279] getglobal 43 ............................ <currentScoreElk>
+  [282] sub ..................................... <currentScorePlayer - currentScoreElk>
+  [283] setlocal 0 .............................. Faktor = currentScorePlayer - currentScoreElk
+  [285] getlocal 0 .............................. <Faktor>
+  [287] pushint8 4 .............................. <4>
+  [290] gt ...................................... <Faktor > 4>
+  [291] jmpifz [300] ............................ if Faktor > 4 then
+  [294] pushint8 4 .............................. <4>
+  [297] setglobal 100 ........................... elkSpeed = 4
+  [300] getlocal 0 .............................. <Faktor>
+  [302] pushint8 8 .............................. <8>
+  [305] gt ...................................... <Faktor > 8>
+  [306] jmpifz [315] ............................ if Faktor > 8 then
+  [309] pushint8 6 .............................. <6>
+  [312] setglobal 100 ........................... elkSpeed = 6
+  [315] getglobal 109 ........................... <startElkCastNumber>
+  [318] getglobal 110 ........................... <stopElkCastNumber>
+  [321] getglobal 107 ........................... <ElkDirection>
+  [324] getglobal 98 ............................ <elkSpriteNumber>
+  [327] getglobal 102 ........................... <elkCounter>
+  [330] getglobal 84 ............................ <changeElkPictureSpeed>
+  [333] pusharglist 6 ........................... <startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [335] extcall 80 .............................. <changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [338] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [341] getglobal 98 ............................ <elkSpriteNumber>
+  [344] getglobal 98 ............................ <elkSpriteNumber>
+  [347] pushint8 13 ............................. <13>
+  [350] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [352] getglobal 107 ........................... <ElkDirection>
+  [355] getglobal 100 ........................... <elkSpeed>
+  [358] mul ..................................... <ElkDirection * elkSpeed>
+  [359] add ..................................... <the locH of sprite elkSpriteNumber + (ElkDirection * elkSpeed)>
+  [360] pushint8 13 ............................. <13>
+  [363] set 6 ................................... set the locH of sprite elkSpriteNumber to the locH of sprite elkSpriteNumber + (ElkDirection * elkSpeed)
+  [365] getglobal 98 ............................ <elkSpriteNumber>
+  [368] pushint8 13 ............................. <13>
+  [371] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [373] getglobal 112 ........................... <endElk>
+  [376] gteq .................................... <the locH of sprite elkSpriteNumber >= endElk>
+  [377] jmpifz [409] ............................ if the locH of sprite elkSpriteNumber >= endElk then / else
+  [380] pushcons 0 .............................. <"elk">
+  [382] pushint8 1 .............................. <1>
+  [385] pusharglistnoret 2 ...................... <"elk", 1>
+  [387] extcall 18 .............................. ADDSCORE("elk", 1)
+  [389] getglobal 111 ........................... <startElkSpeed>
+  [392] setglobal 100 ........................... elkSpeed = startElkSpeed
+  [395] getglobal 98 ............................ <elkSpriteNumber>
+  [398] getglobal 99 ............................ <startElk>
+  [401] pushint8 13 ............................. <13>
+  [404] set 6 ................................... set the locH of sprite elkSpriteNumber to startElk
+  [406] jmp [435]
+  [409] getglobal 98 ............................ <elkSpriteNumber>
+  [412] pushint8 13 ............................. <13>
+  [415] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [417] getglobal 99 ............................ <startElk>
+  [420] lt ...................................... <the locH of sprite elkSpriteNumber < startElk>
+  [421] jmpifz [435] ............................ if the locH of sprite elkSpriteNumber < startElk then
+  [424] getglobal 98 ............................ <elkSpriteNumber>
+  [427] getglobal 99 ............................ <startElk>
+  [430] pushint8 13 ............................. <13>
+  [433] set 6 ................................... set the locH of sprite elkSpriteNumber to startElk
+  [435] ret
+end
+
+on autoElk2
+  [  0] getglobal 98 ............................ <elkSpriteNumber>
+  [  3] pushint8 13 ............................. <13>
+  [  6] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [  8] setlocal 0 .............................. thisElkPos = the locH of sprite elkSpriteNumber
+  [ 10] getglobal 35 ............................ <ballSpriteNumber>
+  [ 13] pushint8 14 ............................. <14>
+  [ 16] get 6 ................................... <the locV of sprite ballSpriteNumber>
+  [ 18] setlocal 8 .............................. thisBallPosY = the locV of sprite ballSpriteNumber
+  [ 20] getglobal 35 ............................ <ballSpriteNumber>
+  [ 23] pushint8 13 ............................. <13>
+  [ 26] get 6 ................................... <the locH of sprite ballSpriteNumber>
+  [ 28] setlocal 16 ............................. thisBallPosX = the locH of sprite ballSpriteNumber
+  [ 30] getlocal 16 ............................. <thisBallPosX>
+  [ 32] getlocal 0 .............................. <thisElkPos>
+  [ 34] sub ..................................... <thisBallPosX - thisElkPos>
+  [ 35] pusharglist 1 ........................... <thisBallPosX - thisElkPos>
+  [ 37] extcall 57 .............................. <abs(thisBallPosX - thisElkPos)>
+  [ 40] setlocal 24 ............................. posDiff = abs(thisBallPosX - thisElkPos)
+  [ 42] getglobal 117 ........................... <ElkAtStart>
+  [ 45] pushint8 1 .............................. <1>
+  [ 48] eq ...................................... <ElkAtStart = 1>
+  [ 49] jmpifz [235] ............................ if ElkAtStart = 1 then / else
+  [ 52] pushzero ................................ <0>
+  [ 53] setglobal 117 ........................... ElkAtStart = 0
+  [ 56] pushzero ................................ <0>
+  [ 57] setglobal 108 ........................... movedElkCounter = 0
+  [ 60] pushint8 100 ............................ <100>
+  [ 63] pusharglist 1 ........................... <100>
+  [ 65] extcall 46 .............................. <random(100)>
+  [ 68] pushint8 100 ............................ <100>
+  [ 71] add ..................................... <random(100) + 100>
+  [ 72] setglobal 154 ........................... targetPos = random(100) + 100
+  [ 75] getglobal 45 ............................ <currentScorePlayer>
+  [ 78] getglobal 43 ............................ <currentScoreElk>
+  [ 81] sub ..................................... <currentScorePlayer - currentScoreElk>
+  [ 82] setlocal 32 ............................. Faktor = currentScorePlayer - currentScoreElk
+  [ 84] getlocal 32 ............................. <Faktor>
+  [ 86] pushint8 1 .............................. <1>
+  [ 89] lt ...................................... <Faktor < 1>
+  [ 90] jmpifz [ 98] ............................ if Faktor < 1 then
+  [ 93] pushint8 1 .............................. <1>
+  [ 96] setlocal 32 ............................. Faktor = 1
+  [ 98] getlocal 32 ............................. <Faktor>
+  [100] pushint8 7 .............................. <7>
+  [103] gt ...................................... <Faktor > 7>
+  [104] jmpifz [112] ............................ if Faktor > 7 then
+  [107] pushint8 7 .............................. <7>
+  [110] setlocal 32 ............................. Faktor = 7
+  [112] pushint8 2 .............................. <2>
+  [115] pusharglist 1 ........................... <2>
+  [117] extcall 46 .............................. <random(2)>
+  [120] setlocal 40 ............................. St = random(2)
+  [122] getlocal 40 ............................. <St>
+  [124] pushint8 1 .............................. <1>
+  [127] eq ...................................... <St = 1>
+  [128] jmpifz [157] ............................ if St = 1 then
+  [131] pushcons 8 .............................. <"1">
+  [133] pusharglistnoret 1 ...................... <"1">
+  [135] extcall 155 ............................. put "1"
+  [138] pushint8 1 .............................. <1>
+  [141] setglobal 107 ........................... ElkDirection = 1
+  [144] pushint8 100 ............................ <100>
+  [147] inv ..................................... <-100>
+  [148] setglobal 99 ............................ startElk = -100
+  [151] pushint8 730 ............................ <730>
+  [154] setglobal 112 ........................... endElk = 730
+  [157] getlocal 40 ............................. <St>
+  [159] pushint8 2 .............................. <2>
+  [162] eq ...................................... <St = 2>
+  [163] jmpifz [193] ............................ if St = 2 then
+  [166] pushcons 16 ............................. <"2">
+  [168] pusharglistnoret 1 ...................... <"2">
+  [170] extcall 155 ............................. put "2"
+  [173] pushint8 1 .............................. <1>
+  [176] inv ..................................... <-1>
+  [177] setglobal 107 ........................... ElkDirection = -1
+  [180] pushint8 730 ............................ <730>
+  [183] setglobal 99 ............................ startElk = 730
+  [186] pushint8 100 ............................ <100>
+  [189] inv ..................................... <-100>
+  [190] setglobal 112 ........................... endElk = -100
+  [193] getglobal 99 ............................ <startElk>
+  [196] setlocal 0 .............................. thisElkPos = startElk
+  [198] getglobal 111 ........................... <startElkSpeed>
+  [201] pushint8 2 .............................. <2>
+  [204] sub ..................................... <startElkSpeed - 2>
+  [205] pushint8 2 .............................. <2>
+  [208] pusharglist 1 ........................... <2>
+  [210] extcall 46 .............................. <random(2)>
+  [213] add ..................................... <startElkSpeed - 2 + random(2)>
+  [214] getlocal 32 ............................. <Faktor>
+  [216] add ..................................... <startElkSpeed - 2 + random(2) + Faktor>
+  [217] setglobal 100 ........................... elkSpeed = startElkSpeed - 2 + random(2) + Faktor
+  [220] getlocal 0 .............................. <thisElkPos>
+  [222] getglobal 107 ........................... <ElkDirection>
+  [225] getglobal 100 ........................... <elkSpeed>
+  [228] mul ..................................... <ElkDirection * elkSpeed>
+  [229] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [230] setlocal 48 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [232] jmp [348]
+  [235] getglobal 156 ........................... <elkggr>
+  [238] pushint8 1 .............................. <1>
+  [241] add ..................................... <elkggr + 1>
+  [242] setglobal 156 ........................... elkggr = elkggr + 1
+  [245] getglobal 156 ........................... <elkggr>
+  [248] pushint8 15 ............................. <15>
+  [251] mod ..................................... <elkggr mod 15>
+  [252] pushzero ................................ <0>
+  [253] eq ...................................... <(elkggr mod 15) = 0>
+  [254] jmpifz [257] ............................ if (elkggr mod 15) = 0 then
+  [257] getlocal 0 .............................. <thisElkPos>
+  [259] getglobal 107 ........................... <ElkDirection>
+  [262] getglobal 100 ........................... <elkSpeed>
+  [265] mul ..................................... <ElkDirection * elkSpeed>
+  [266] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [267] setlocal 48 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [269] getglobal 107 ........................... <ElkDirection>
+  [272] pushint8 1 .............................. <1>
+  [275] eq ...................................... <ElkDirection = 1>
+  [276] jmpifz [308] ............................ if ElkDirection = 1 then
+  [279] getlocal 48 ............................. <nextLoch>
+  [281] getglobal 112 ........................... <endElk>
+  [284] gteq .................................... <nextLoch >= endElk>
+  [285] jmpifz [308] ............................ if nextLoch >= endElk then
+  [288] pushcons 24 ............................. <"elk">
+  [290] pushint8 1 .............................. <1>
+  [293] pusharglistnoret 2 ...................... <"elk", 1>
+  [295] extcall 18 .............................. ADDSCORE("elk", 1)
+  [297] getglobal 99 ............................ <startElk>
+  [300] setlocal 48 ............................. nextLoch = startElk
+  [302] pushint8 1 .............................. <1>
+  [305] setglobal 117 ........................... ElkAtStart = 1
+  [308] getglobal 107 ........................... <ElkDirection>
+  [311] pushint8 1 .............................. <1>
+  [314] inv ..................................... <-1>
+  [315] eq ...................................... <ElkDirection = -1>
+  [316] jmpifz [348] ............................ if ElkDirection = -1 then
+  [319] getlocal 48 ............................. <nextLoch>
+  [321] getglobal 112 ........................... <endElk>
+  [324] lteq .................................... <nextLoch <= endElk>
+  [325] jmpifz [348] ............................ if nextLoch <= endElk then
+  [328] pushcons 32 ............................. <"elk">
+  [330] pushint8 1 .............................. <1>
+  [333] pusharglistnoret 2 ...................... <"elk", 1>
+  [335] extcall 18 .............................. ADDSCORE("elk", 1)
+  [337] getglobal 99 ............................ <startElk>
+  [340] setlocal 48 ............................. nextLoch = startElk
+  [342] pushint8 1 .............................. <1>
+  [345] setglobal 117 ........................... ElkAtStart = 1
+  [348] getglobal 108 ........................... <movedElkCounter>
+  [351] pushint8 1 .............................. <1>
+  [354] add ..................................... <movedElkCounter + 1>
+  [355] setglobal 108 ........................... movedElkCounter = movedElkCounter + 1
+  [358] getglobal 108 ........................... <movedElkCounter>
+  [361] pushint8 1 .............................. <1>
+  [364] gt ...................................... <movedElkCounter > 1>
+  [365] jmpifz [445] ............................ if movedElkCounter > 1 then
+  [368] pushzero ................................ <0>
+  [369] setglobal 108 ........................... movedElkCounter = 0
+  [372] getglobal 107 ........................... <ElkDirection>
+  [375] pushint8 1 .............................. <1>
+  [378] eq ...................................... <ElkDirection = 1>
+  [379] jmpifz [411] ............................ if ElkDirection = 1 then / else
+  [382] getglobal 109 ........................... <startElkCastNumber>
+  [385] getglobal 110 ........................... <stopElkCastNumber>
+  [388] getglobal 107 ........................... <ElkDirection>
+  [391] getglobal 98 ............................ <elkSpriteNumber>
+  [394] getglobal 102 ........................... <elkCounter>
+  [397] getglobal 84 ............................ <changeElkPictureSpeed>
+  [400] pusharglist 6 ........................... <startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [402] extcall 80 .............................. <changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [405] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [408] jmp [445]
+  [411] getglobal 109 ........................... <startElkCastNumber>
+  [414] pushint8 7 .............................. <7>
+  [417] add ..................................... <startElkCastNumber + 7>
+  [418] getglobal 110 ........................... <stopElkCastNumber>
+  [421] pushint8 7 .............................. <7>
+  [424] add ..................................... <stopElkCastNumber + 7>
+  [425] getglobal 107 ........................... <ElkDirection>
+  [428] getglobal 98 ............................ <elkSpriteNumber>
+  [431] getglobal 102 ........................... <elkCounter>
+  [434] getglobal 84 ............................ <changeElkPictureSpeed>
+  [437] pusharglist 6 ........................... <startElkCastNumber + 7, stopElkCastNumber + 7, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [439] extcall 80 .............................. <changePicture(startElkCastNumber + 7, stopElkCastNumber + 7, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [442] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber + 7, stopElkCastNumber + 7, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [445] getglobal 98 ............................ <elkSpriteNumber>
+  [448] getlocal 48 ............................. <nextLoch>
+  [450] pushint8 13 ............................. <13>
+  [453] set 6 ................................... set the locH of sprite elkSpriteNumber to nextLoch
+  [455] ret
+end
+
+on setNewTargetPos
+  [  0] pushint8 4 .............................. <4>
+  [  3] pusharglist 1 ........................... <4>
+  [  5] extcall 46 .............................. <random(4)>
+  [  8] setlocal 0 .............................. whichWay = random(4)
+  [ 10] getlocal 0 .............................. <whichWay>
+  [ 12] peek 0 .................................. case whichWay of
+  [ 14] pushint8 1 .............................. <1>
+  [ 17] nteq
+  [ 18] jmpifz [ 48] ............................ (case) 1, ...
+  [ 21] peek 0
+  [ 23] pushint8 2 .............................. <2>
+  [ 26] nteq
+  [ 27] jmpifz [ 48] ............................ (case) ..., 2, ...
+  [ 30] peek 0
+  [ 32] pushint8 3 .............................. <3>
+  [ 35] nteq
+  [ 36] jmpifz [ 48] ............................ (case) ..., 3, ...
+  [ 39] peek 0
+  [ 41] pushint8 4 .............................. <4>
+  [ 44] eq
+  [ 45] jmpifz [ 94] ............................ (case) ..., 4:
+  [ 48] getglobal 154 ........................... <targetPos>
+  [ 51] pushint8 100 ............................ <100>
+  [ 54] pusharglist 1 ........................... <100>
+  [ 56] extcall 46 .............................. <random(100)>
+  [ 59] add ..................................... <targetPos + random(100)>
+  [ 60] pushint8 100 ............................ <100>
+  [ 63] add ..................................... <targetPos + random(100) + 100>
+  [ 64] setlocal 8 .............................. nextTarget = targetPos + random(100) + 100
+  [ 66] getglobal 111 ........................... <startElkSpeed>
+  [ 69] pushint8 3 .............................. <3>
+  [ 72] sub ..................................... <startElkSpeed - 3>
+  [ 73] pushint8 2 .............................. <2>
+  [ 76] pusharglist 1 ........................... <2>
+  [ 78] extcall 46 .............................. <random(2)>
+  [ 81] add ..................................... <startElkSpeed - 3 + random(2)>
+  [ 82] setglobal 100 ........................... elkSpeed = startElkSpeed - 3 + random(2)
+  [ 85] pushint8 1 .............................. <1>
+  [ 88] setglobal 107 ........................... ElkDirection = 1
+  [ 91] jmp [171] ............................... (case) otherwise:
+  [ 94] getglobal 154 ........................... <targetPos>
+  [ 97] pushint8 60 ............................. <60>
+  [100] pusharglist 1 ........................... <60>
+  [102] extcall 46 .............................. <random(60)>
+  [105] sub ..................................... <targetPos - random(60)>
+  [106] pushint8 20 ............................. <20>
+  [109] sub ..................................... <targetPos - random(60) - 20>
+  [110] setlocal 8 .............................. nextTarget = targetPos - random(60) - 20
+  [112] getglobal 111 ........................... <startElkSpeed>
+  [115] pushint8 2 .............................. <2>
+  [118] sub ..................................... <startElkSpeed - 2>
+  [119] pushint8 2 .............................. <2>
+  [122] pusharglist 1 ........................... <2>
+  [124] extcall 46 .............................. <random(2)>
+  [127] add ..................................... <startElkSpeed - 2 + random(2)>
+  [128] setglobal 100 ........................... elkSpeed = startElkSpeed - 2 + random(2)
+  [131] pushint8 1 .............................. <1>
+  [134] inv ..................................... <-1>
+  [135] setglobal 107 ........................... ElkDirection = -1
+  [138] getlocal 8 .............................. <nextTarget>
+  [140] getglobal 99 ............................ <startElk>
+  [143] lteq .................................... <nextTarget <= startElk>
+  [144] jmpifz [171] ............................ if nextTarget <= startElk then
+  [147] getglobal 154 ........................... <targetPos>
+  [150] pushint8 100 ............................ <100>
+  [153] pusharglist 1 ........................... <100>
+  [155] extcall 46 .............................. <random(100)>
+  [158] add ..................................... <targetPos + random(100)>
+  [159] pushint8 60 ............................. <60>
+  [162] add ..................................... <targetPos + random(100) + 60>
+  [163] setlocal 8 .............................. nextTarget = targetPos + random(100) + 60
+  [165] pushint8 1 .............................. <1>
+  [168] setglobal 107 ........................... ElkDirection = 1
+  [171] pop 1 ................................... end case
+  [173] getlocal 8 .............................. <nextTarget>
+  [175] setglobal 154 ........................... targetPos = nextTarget
+  [178] ret
+end
+
+on setNewTargetPosEVADE
+  [  0] pushint8 2 .............................. <2>
+  [  3] setglobal 100 ........................... elkSpeed = 2
+  [  6] getglobal 98 ............................ <elkSpriteNumber>
+  [  9] pushint8 13 ............................. <13>
+  [ 12] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [ 14] setlocal 0 .............................. elkLoch = the locH of sprite elkSpriteNumber
+  [ 16] getglobal 35 ............................ <ballSpriteNumber>
+  [ 19] pushint8 13 ............................. <13>
+  [ 22] get 6 ................................... <the locH of sprite ballSpriteNumber>
+  [ 24] setlocal 8 .............................. ballLoch = the locH of sprite ballSpriteNumber
+  [ 26] getglobal 68 ............................ <stopX>
+  [ 29] getglobal 32 ............................ <changeInstopX>
+  [ 32] pushint8 56 ............................. <56>
+  [ 35] mul ..................................... <changeInstopX * 56>
+  [ 36] add ..................................... <stopX + (changeInstopX * 56)>
+  [ 37] setlocal 16 ............................. guessPosBall = stopX + (changeInstopX * 56)
+  [ 39] getlocal 0 .............................. <elkLoch>
+  [ 41] getglobal 107 ........................... <ElkDirection>
+  [ 44] pushint8 40 ............................. <40>
+  [ 47] mul ..................................... <ElkDirection * 40>
+  [ 48] add ..................................... <elkLoch + (ElkDirection * 40)>
+  [ 49] setlocal 24 ............................. guessPosElk = elkLoch + (ElkDirection * 40)
+  [ 51] getlocal 16 ............................. <guessPosBall>
+  [ 53] getlocal 24 ............................. <guessPosElk>
+  [ 55] sub ..................................... <guessPosBall - guessPosElk>
+  [ 56] pusharglist 1 ........................... <guessPosBall - guessPosElk>
+  [ 58] extcall 57 .............................. <abs(guessPosBall - guessPosElk)>
+  [ 61] pushint8 40 ............................. <40>
+  [ 64] lteq .................................... <abs(guessPosBall - guessPosElk) <= 40>
+  [ 65] jmpifz [175] ............................ if abs(guessPosBall - guessPosElk) <= 40 then / else
+  [ 68] getglobal 107 ........................... <ElkDirection>
+  [ 71] inv ..................................... <-ElkDirection>
+  [ 72] setglobal 107 ........................... ElkDirection = -ElkDirection
+  [ 75] getglobal 107 ........................... <ElkDirection>
+  [ 78] pusharglist 1 ........................... <ElkDirection>
+  [ 80] extcall 57 .............................. <abs(ElkDirection)>
+  [ 83] getglobal 107 ........................... <ElkDirection>
+  [ 86] div ..................................... <abs(ElkDirection) / ElkDirection>
+  [ 87] setlocal 32 ............................. dirSign = abs(ElkDirection) / ElkDirection
+  [ 89] getlocal 0 .............................. <elkLoch>
+  [ 91] pushint8 30 ............................. <30>
+  [ 94] getlocal 32 ............................. <dirSign>
+  [ 96] mul ..................................... <30 * dirSign>
+  [ 97] add ..................................... <elkLoch + (30 * dirSign)>
+  [ 98] pushint8 20 ............................. <20>
+  [101] pushint8 2 .............................. <2>
+  [104] pusharglist 1 ........................... <2>
+  [106] extcall 46 .............................. <random(2)>
+  [109] mul ..................................... <20 * random(2)>
+  [110] getlocal 32 ............................. <dirSign>
+  [112] mul ..................................... <20 * random(2) * dirSign>
+  [113] add ..................................... <elkLoch + (30 * dirSign) + (20 * random(2) * dirSign)>
+  [114] setlocal 40 ............................. nextTarget = elkLoch + (30 * dirSign) + (20 * random(2) * dirSign)
+  [116] getlocal 32 ............................. <dirSign>
+  [118] pushint8 1 .............................. <1>
+  [121] inv ..................................... <-1>
+  [122] eq ...................................... <dirSign = -1>
+  [123] pushint8 5 .............................. <5>
+  [126] pusharglist 1 ........................... <5>
+  [128] extcall 46 .............................. <random(5)>
+  [131] pushint8 1 .............................. <1>
+  [134] eq ...................................... <random(5) = 1>
+  [135] and ..................................... <(dirSign = -1) and (random(5) = 1)>
+  [136] jmpifz [172] ............................ if (dirSign = -1) and (random(5) = 1) then
+  [139] getlocal 0 .............................. <elkLoch>
+  [141] pushint8 80 ............................. <80>
+  [144] add ..................................... <elkLoch + 80>
+  [145] pushint8 20 ............................. <20>
+  [148] pushint8 2 .............................. <2>
+  [151] pusharglist 1 ........................... <2>
+  [153] extcall 46 .............................. <random(2)>
+  [156] mul ..................................... <20 * random(2)>
+  [157] add ..................................... <elkLoch + 80 + (20 * random(2))>
+  [158] setlocal 40 ............................. nextTarget = elkLoch + 80 + (20 * random(2))
+  [160] pushint8 1 .............................. <1>
+  [163] setglobal 107 ........................... ElkDirection = 1
+  [166] pushint8 4 .............................. <4>
+  [169] setglobal 100 ........................... elkSpeed = 4
+  [172] jmp [202]
+  [175] getlocal 0 .............................. <elkLoch>
+  [177] pushint8 60 ............................. <60>
+  [180] add ..................................... <elkLoch + 60>
+  [181] pushint8 20 ............................. <20>
+  [184] pushint8 2 .............................. <2>
+  [187] pusharglist 1 ........................... <2>
+  [189] extcall 46 .............................. <random(2)>
+  [192] mul ..................................... <20 * random(2)>
+  [193] add ..................................... <elkLoch + 60 + (20 * random(2))>
+  [194] setlocal 40 ............................. nextTarget = elkLoch + 60 + (20 * random(2))
+  [196] pushint8 1 .............................. <1>
+  [199] setglobal 107 ........................... ElkDirection = 1
+  [202] getlocal 40 ............................. <nextTarget>
+  [204] pusharglist 1 ........................... <nextTarget>
+  [206] extcall 139 ............................. <integer(nextTarget)>
+  [209] setglobal 154 ........................... targetPos = integer(nextTarget)
+  [212] pusharglistnoret 0 ...................... <>
+  [214] extcall 56 .............................. return 
+  [217] ret
+end
+
+on autoElk
+  [  0] getglobal 98 ............................ <elkSpriteNumber>
+  [  3] pushint8 13 ............................. <13>
+  [  6] get 6 ................................... <the locH of sprite elkSpriteNumber>
+  [  8] setlocal 0 .............................. thisElkPos = the locH of sprite elkSpriteNumber
+  [ 10] getglobal 35 ............................ <ballSpriteNumber>
+  [ 13] pushint8 14 ............................. <14>
+  [ 16] get 6 ................................... <the locV of sprite ballSpriteNumber>
+  [ 18] setlocal 8 .............................. thisBallPosY = the locV of sprite ballSpriteNumber
+  [ 20] getglobal 35 ............................ <ballSpriteNumber>
+  [ 23] pushint8 13 ............................. <13>
+  [ 26] get 6 ................................... <the locH of sprite ballSpriteNumber>
+  [ 28] setlocal 16 ............................. thisBallPosX = the locH of sprite ballSpriteNumber
+  [ 30] getlocal 16 ............................. <thisBallPosX>
+  [ 32] getlocal 0 .............................. <thisElkPos>
+  [ 34] sub ..................................... <thisBallPosX - thisElkPos>
+  [ 35] pusharglist 1 ........................... <thisBallPosX - thisElkPos>
+  [ 37] extcall 57 .............................. <abs(thisBallPosX - thisElkPos)>
+  [ 40] setlocal 24 ............................. posDiff = abs(thisBallPosX - thisElkPos)
+  [ 42] getlocal 0 .............................. <thisElkPos>
+  [ 44] pushint8 470 ............................ <470>
+  [ 47] gt ...................................... <thisElkPos > 470>
+  [ 48] jmpifz [123] ............................ if thisElkPos > 470 then
+  [ 51] getglobal 109 ........................... <startElkCastNumber>
+  [ 54] getglobal 110 ........................... <stopElkCastNumber>
+  [ 57] getglobal 107 ........................... <ElkDirection>
+  [ 60] getglobal 98 ............................ <elkSpriteNumber>
+  [ 63] getglobal 102 ........................... <elkCounter>
+  [ 66] getglobal 84 ............................ <changeElkPictureSpeed>
+  [ 69] pusharglist 6 ........................... <startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [ 71] extcall 80 .............................. <changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [ 74] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [ 77] getlocal 0 .............................. <thisElkPos>
+  [ 79] pushint8 3 .............................. <3>
+  [ 82] add ..................................... <thisElkPos + 3>
+  [ 83] setlocal 32 ............................. nextLoch = thisElkPos + 3
+  [ 85] getlocal 32 ............................. <nextLoch>
+  [ 87] getglobal 112 ........................... <endElk>
+  [ 90] gteq .................................... <nextLoch >= endElk>
+  [ 91] jmpifz [108] ............................ if nextLoch >= endElk then
+  [ 94] pushcons 40 ............................. <"elk">
+  [ 96] pushint8 1 .............................. <1>
+  [ 99] pusharglistnoret 2 ...................... <"elk", 1>
+  [101] extcall 18 .............................. ADDSCORE("elk", 1)
+  [103] getglobal 99 ............................ <startElk>
+  [106] setlocal 32 ............................. nextLoch = startElk
+  [108] getglobal 98 ............................ <elkSpriteNumber>
+  [111] getlocal 32 ............................. <nextLoch>
+  [113] pushint8 13 ............................. <13>
+  [116] set 6 ................................... set the locH of sprite elkSpriteNumber to nextLoch
+  [118] pusharglistnoret 0 ...................... <>
+  [120] extcall 56 .............................. return 
+  [123] getglobal 9 ............................. <ballALive>
+  [125] pushint8 1 .............................. <1>
+  [128] eq ...................................... <ballALive = 1>
+  [129] getglobal 34 ............................ <ballLoopCounter>
+  [132] pushint8 26 ............................. <26>
+  [135] gteq .................................... <ballLoopCounter >= 26>
+  [136] and ..................................... <(ballALive = 1) and (ballLoopCounter >= 26)>
+  [137] getlocal 24 ............................. <posDiff>
+  [139] pushint8 70 ............................. <70>
+  [142] lt ...................................... <posDiff < 70>
+  [143] and ..................................... <(ballALive = 1) and (ballLoopCounter >= 26) and (posDiff < 70)>
+  [144] getglobal 29 ............................ <checkLock>
+  [146] pushzero ................................ <0>
+  [147] eq ...................................... <checkLock = 0>
+  [148] and ..................................... <(ballALive = 1) and (ballLoopCounter >= 26) and (posDiff < 70) and (checkLock = 0)>
+  [149] getglobal 114 ........................... <elkLock>
+  [152] pushzero ................................ <0>
+  [153] eq ...................................... <elkLock = 0>
+  [154] and ..................................... <(ballALive = 1) and (ballLoopCounter >= 26) and (posDiff < 70) and (checkLock = 0) and (elkLock = 0)>
+  [155] jmpifz [164] ............................ if (ballALive = 1) and (ballLoopCounter >= 26) and (posDiff < 70) and (checkLock = 0) and (elkLock = 0) then
+  [158] pushint8 1 .............................. <1>
+  [161] setglobal 114 ........................... elkLock = 1
+  [164] getglobal 114 ........................... <elkLock>
+  [167] pushint8 1 .............................. <1>
+  [170] eq ...................................... <elkLock = 1>
+  [171] jmpifz [246] ............................ if elkLock = 1 then
+  [174] getlocal 0 .............................. <thisElkPos>
+  [176] getglobal 107 ........................... <ElkDirection>
+  [179] add ..................................... <thisElkPos + ElkDirection>
+  [180] setlocal 32 ............................. nextLoch = thisElkPos + ElkDirection
+  [182] getglobal 109 ........................... <startElkCastNumber>
+  [185] getglobal 110 ........................... <stopElkCastNumber>
+  [188] getglobal 107 ........................... <ElkDirection>
+  [191] getglobal 98 ............................ <elkSpriteNumber>
+  [194] getglobal 102 ........................... <elkCounter>
+  [197] getglobal 84 ............................ <changeElkPictureSpeed>
+  [200] pusharglist 6 ........................... <startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [202] extcall 80 .............................. <changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [205] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [208] getglobal 98 ............................ <elkSpriteNumber>
+  [211] getlocal 32 ............................. <nextLoch>
+  [213] pushint8 13 ............................. <13>
+  [216] set 6 ................................... set the locH of sprite elkSpriteNumber to nextLoch
+  [218] getglobal 34 ............................ <ballLoopCounter>
+  [221] pushint8 35 ............................. <35>
+  [224] gt ...................................... <ballLoopCounter > 35>
+  [225] jmpifz [241] ............................ if ballLoopCounter > 35 then
+  [228] pushzero ................................ <0>
+  [229] setglobal 114 ........................... elkLock = 0
+  [232] pusharglistnoret 0 ...................... <>
+  [234] localcall 3 ............................. setNewTargetPosEVADE()
+  [236] pushint8 1 .............................. <1>
+  [239] setglobal 29 ............................ checkLock = 1
+  [241] pusharglistnoret 0 ...................... <>
+  [243] extcall 56 .............................. return 
+  [246] getlocal 0 .............................. <thisElkPos>
+  [248] getglobal 99 ............................ <startElk>
+  [251] eq ...................................... <thisElkPos = startElk>
+  [252] jmpifz [310] ............................ if thisElkPos = startElk then / else
+  [255] pushint8 1 .............................. <1>
+  [258] setglobal 107 ........................... ElkDirection = 1
+  [261] pushint8 100 ............................ <100>
+  [264] pusharglist 1 ........................... <100>
+  [266] extcall 46 .............................. <random(100)>
+  [269] pushint8 100 ............................ <100>
+  [272] add ..................................... <random(100) + 100>
+  [273] setglobal 154 ........................... targetPos = random(100) + 100
+  [276] getglobal 111 ........................... <startElkSpeed>
+  [279] pushint8 2 .............................. <2>
+  [282] sub ..................................... <startElkSpeed - 2>
+  [283] pushint8 2 .............................. <2>
+  [286] pusharglist 1 ........................... <2>
+  [288] extcall 46 .............................. <random(2)>
+  [291] add ..................................... <startElkSpeed - 2 + random(2)>
+  [292] setglobal 100 ........................... elkSpeed = startElkSpeed - 2 + random(2)
+  [295] getlocal 0 .............................. <thisElkPos>
+  [297] getglobal 107 ........................... <ElkDirection>
+  [300] getglobal 100 ........................... <elkSpeed>
+  [303] mul ..................................... <ElkDirection * elkSpeed>
+  [304] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [305] setlocal 32 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [307] jmp [481]
+  [310] getlocal 0 .............................. <thisElkPos>
+  [312] getglobal 154 ........................... <targetPos>
+  [315] eq ...................................... <thisElkPos = targetPos>
+  [316] jmpifz [391] ............................ if thisElkPos = targetPos then / else
+  [319] getglobal 115 ........................... <standCounter>
+  [322] pushint8 1 .............................. <1>
+  [325] add ..................................... <standCounter + 1>
+  [326] setglobal 115 ........................... standCounter = standCounter + 1
+  [329] pushint8 15 ............................. <15>
+  [332] pusharglist 1 ........................... <15>
+  [334] extcall 46 .............................. <random(15)>
+  [337] pushint8 20 ............................. <20>
+  [340] add ..................................... <random(15) + 20>
+  [341] setglobal 163 ........................... standTime = random(15) + 20
+  [344] getglobal 115 ........................... <standCounter>
+  [347] getglobal 163 ........................... <standTime>
+  [350] gt ...................................... <standCounter > standTime>
+  [351] jmpifz [379] ............................ if standCounter > standTime then / else
+  [354] pusharglistnoret 0 ...................... <>
+  [356] localcall 2 ............................. setNewTargetPos()
+  [358] getlocal 0 .............................. <thisElkPos>
+  [360] getglobal 107 ........................... <ElkDirection>
+  [363] getglobal 100 ........................... <elkSpeed>
+  [366] mul ..................................... <ElkDirection * elkSpeed>
+  [367] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [368] setlocal 32 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [370] pushint8 1 .............................. <1>
+  [373] setglobal 115 ........................... standCounter = 1
+  [376] jmp [388]
+  [379] getlocal 0 .............................. <thisElkPos>
+  [381] setlocal 32 ............................. nextLoch = thisElkPos
+  [383] pusharglistnoret 0 ...................... <>
+  [385] extcall 56 .............................. return 
+  [388] jmp [481]
+  [391] getlocal 0 .............................. <thisElkPos>
+  [393] getglobal 154 ........................... <targetPos>
+  [396] lt ...................................... <thisElkPos < targetPos>
+  [397] getglobal 107 ........................... <ElkDirection>
+  [400] pushint8 1 .............................. <1>
+  [403] eq ...................................... <ElkDirection = 1>
+  [404] and ..................................... <(thisElkPos < targetPos) and (ElkDirection = 1)>
+  [405] jmpifz [437] ............................ if (thisElkPos < targetPos) and (ElkDirection = 1) then / else
+  [408] getlocal 0 .............................. <thisElkPos>
+  [410] getglobal 107 ........................... <ElkDirection>
+  [413] getglobal 100 ........................... <elkSpeed>
+  [416] mul ..................................... <ElkDirection * elkSpeed>
+  [417] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [418] setlocal 32 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [420] getlocal 32 ............................. <nextLoch>
+  [422] getglobal 154 ........................... <targetPos>
+  [425] gteq .................................... <nextLoch >= targetPos>
+  [426] jmpifz [434] ............................ if nextLoch >= targetPos then
+  [429] getglobal 154 ........................... <targetPos>
+  [432] setlocal 32 ............................. nextLoch = targetPos
+  [434] jmp [481]
+  [437] getlocal 0 .............................. <thisElkPos>
+  [439] getglobal 154 ........................... <targetPos>
+  [442] gt ...................................... <thisElkPos > targetPos>
+  [443] getglobal 107 ........................... <ElkDirection>
+  [446] pushint8 1 .............................. <1>
+  [449] inv ..................................... <-1>
+  [450] eq ...................................... <ElkDirection = -1>
+  [451] and ..................................... <(thisElkPos > targetPos) and (ElkDirection = -1)>
+  [452] jmpifz [481] ............................ if (thisElkPos > targetPos) and (ElkDirection = -1) then
+  [455] getlocal 0 .............................. <thisElkPos>
+  [457] getglobal 107 ........................... <ElkDirection>
+  [460] getglobal 100 ........................... <elkSpeed>
+  [463] mul ..................................... <ElkDirection * elkSpeed>
+  [464] add ..................................... <thisElkPos + (ElkDirection * elkSpeed)>
+  [465] setlocal 32 ............................. nextLoch = thisElkPos + (ElkDirection * elkSpeed)
+  [467] getlocal 32 ............................. <nextLoch>
+  [469] getglobal 154 ........................... <targetPos>
+  [472] lteq .................................... <nextLoch <= targetPos>
+  [473] jmpifz [481] ............................ if nextLoch <= targetPos then
+  [476] getglobal 154 ........................... <targetPos>
+  [479] setlocal 32 ............................. nextLoch = targetPos
+  [481] getlocal 32 ............................. <nextLoch>
+  [483] getglobal 112 ........................... <endElk>
+  [486] gteq .................................... <nextLoch >= endElk>
+  [487] jmpifz [504] ............................ if nextLoch >= endElk then
+  [490] pushcons 48 ............................. <"elk">
+  [492] pushint8 1 .............................. <1>
+  [495] pusharglistnoret 2 ...................... <"elk", 1>
+  [497] extcall 18 .............................. ADDSCORE("elk", 1)
+  [499] getglobal 99 ............................ <startElk>
+  [502] setlocal 32 ............................. nextLoch = startElk
+  [504] getglobal 109 ........................... <startElkCastNumber>
+  [507] getglobal 110 ........................... <stopElkCastNumber>
+  [510] getglobal 107 ........................... <ElkDirection>
+  [513] getglobal 98 ............................ <elkSpriteNumber>
+  [516] getglobal 102 ........................... <elkCounter>
+  [519] getglobal 84 ............................ <changeElkPictureSpeed>
+  [522] pusharglist 6 ........................... <startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed>
+  [524] extcall 80 .............................. <changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)>
+  [527] setglobal 102 ........................... elkCounter = changePicture(startElkCastNumber, stopElkCastNumber, ElkDirection, elkSpriteNumber, elkCounter, changeElkPictureSpeed)
+  [530] getglobal 98 ............................ <elkSpriteNumber>
+  [533] getlocal 32 ............................. <nextLoch>
+  [535] pushint8 13 ............................. <13>
+  [538] set 6 ................................... set the locH of sprite elkSpriteNumber to nextLoch
+  [540] ret
+end

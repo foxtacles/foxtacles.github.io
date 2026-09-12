@@ -1,0 +1,5 @@
+global gkalenderintro
+
+on exitFrame
+  [  0] ret
+end

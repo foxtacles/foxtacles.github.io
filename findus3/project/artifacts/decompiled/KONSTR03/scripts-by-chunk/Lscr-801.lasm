@@ -1,0 +1,6 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"slut">
+  [  2] pusharglistnoret 1 ...................... <"slut">
+  [  4] extcall 29 .............................. go("slut")
+  [  6] ret
+end

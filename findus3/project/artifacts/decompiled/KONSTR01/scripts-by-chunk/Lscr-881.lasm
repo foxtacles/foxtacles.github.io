@@ -1,0 +1,6 @@
+on exitFrame
+  [  0] pushcons 0 .............................. <"startkonstruktion">
+  [  2] pusharglistnoret 1 ...................... <"startkonstruktion">
+  [  4] extcall 25 .............................. go("startkonstruktion")
+  [  6] ret
+end

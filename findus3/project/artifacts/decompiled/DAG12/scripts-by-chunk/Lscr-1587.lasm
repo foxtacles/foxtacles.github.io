@@ -1,0 +1,197 @@
+global spriteBeingDragged
+
+on checkDragging mousePos
+  [  0] pusharglist 0 ........................... <>
+  [  2] thebuiltin 72 ........................... <the mouseDown>
+  [  5] getglobal 33 ............................ <spriteBeingDragged>
+  [  8] pushzero ................................ <0>
+  [  9] eq ...................................... <spriteBeingDragged = 0>
+  [ 10] and ..................................... <the mouseDown and (spriteBeingDragged = 0)>
+  [ 11] jmpifz [ 80] ............................ if the mouseDown and (spriteBeingDragged = 0) then / else
+  [ 14] pushint8 6 .............................. <6>
+  [ 17] setlocal 0
+  [ 19] getlocal 0
+  [ 21] pushint8 10 ............................. <10>
+  [ 24] lteq
+  [ 25] jmpifz [ 77] ............................ repeat with i = 6 to 10
+  [ 28] getlocal 0 .............................. <i>
+  [ 30] pusharglist 1 ........................... <i>
+  [ 32] extcall 76 .............................. <sprite(i)>
+  [ 35] getobjprop 77 ........................... <sprite(i).rollOver>
+  [ 38] pushint8 1 .............................. <1>
+  [ 41] eq ...................................... <sprite(i).rollOver = 1>
+  [ 42] jmpifz [ 66] ............................ if sprite(i).rollOver = 1 then
+  [ 45] getlocal 0 .............................. <i>
+  [ 47] setglobal 33 ............................ spriteBeingDragged = i
+  [ 50] getlocal 0 .............................. <i>
+  [ 52] pushint8 33 ............................. <33>
+  [ 55] get 6 ................................... <the loc of sprite i>
+  [ 57] getparam 0 .............................. <mousePos>
+  [ 59] sub ..................................... <the loc of sprite i - mousePos>
+  [ 60] setglobal 94 ............................ offCenter = the loc of sprite i - mousePos
+  [ 63] jmp [ 77] ............................... exit repeat
+  [ 66] pushint8 1
+  [ 69] getlocal 0
+  [ 71] add
+  [ 72] setlocal 0
+  [ 74] endrepeat [ 19]
+  [ 77] jmp [268]
+  [ 80] pusharglist 0 ........................... <>
+  [ 82] thebuiltin 72 ........................... <the mouseDown>
+  [ 85] getglobal 33 ............................ <spriteBeingDragged>
+  [ 88] pushzero ................................ <0>
+  [ 89] nteq .................................... <spriteBeingDragged <> 0>
+  [ 90] and ..................................... <the mouseDown and (spriteBeingDragged <> 0)>
+  [ 91] jmpifz [115] ............................ if the mouseDown and (spriteBeingDragged <> 0) then / else
+  [ 94] pusharglistnoret 0 ...................... <>
+  [ 96] localcall 1 ............................. checkInBowl()
+  [ 98] getglobal 33 ............................ <spriteBeingDragged>
+  [101] getparam 0 .............................. <mousePos>
+  [103] getglobal 94 ............................ <offCenter>
+  [106] add ..................................... <mousePos + offCenter>
+  [107] pushint8 33 ............................. <33>
+  [110] set 6 ................................... set the loc of sprite spriteBeingDragged to mousePos + offCenter
+  [112] jmp [268]
+  [115] pusharglist 0 ........................... <>
+  [117] thebuiltin 72 ........................... <the mouseDown>
+  [120] not ..................................... <not (the mouseDown)>
+  [121] getglobal 33 ............................ <spriteBeingDragged>
+  [124] pushzero ................................ <0>
+  [125] nteq .................................... <spriteBeingDragged <> 0>
+  [126] and ..................................... <not (the mouseDown) and (spriteBeingDragged <> 0)>
+  [127] jmpifz [268] ............................ if not (the mouseDown) and (spriteBeingDragged <> 0) then
+  [130] getglobal 25 ............................ <spriteInBowl>
+  [132] pushzero ................................ <0>
+  [133] nteq .................................... <spriteInBowl <> 0>
+  [134] jmpifz [204] ............................ if spriteInBowl <> 0 then / else
+  [137] pushzero ................................ <0>
+  [138] setglobal 30 ............................ holdStage = 0
+  [140] getglobal 24 ............................ <ingredientList>
+  [142] getglobal 33 ............................ <spriteBeingDragged>
+  [145] pusharglistnoret 2 ...................... <ingredientList, spriteBeingDragged>
+  [147] extcall 2 ............................... add(ingredientList, spriteBeingDragged)
+  [149] getglobal 33 ............................ <spriteBeingDragged>
+  [152] pusharglistnoret 1 ...................... <spriteBeingDragged>
+  [154] extcall 95 .............................. whichIngredient(spriteBeingDragged)
+  [157] pushint8 6 .............................. <6>
+  [160] setlocal 8
+  [162] getlocal 8
+  [164] pushint8 10 ............................. <10>
+  [167] lteq
+  [168] jmpifz [201] ............................ repeat with j = 6 to 10
+  [171] getlocal 8 .............................. <j>
+  [173] pushint8 1000 ........................... <1000>
+  [176] inv ..................................... <-1000>
+  [177] pushint8 1000 ........................... <1000>
+  [180] inv ..................................... <-1000>
+  [181] pusharglist 2 ........................... <-1000, -1000>
+  [183] extcall 27 .............................. <point(-1000, -1000)>
+  [185] pushint8 33 ............................. <33>
+  [188] set 6 ................................... set the loc of sprite j to point(-1000, -1000)
+  [190] pushint8 1
+  [193] getlocal 8
+  [195] add
+  [196] setlocal 8
+  [198] endrepeat [162]
+  [201] jmp [261]
+  [204] getglobal 33 ............................ <spriteBeingDragged>
+  [207] getglobal 26 ............................ <dragSpritePosList>
+  [209] getglobal 33 ............................ <spriteBeingDragged>
+  [212] pushint8 5 .............................. <5>
+  [215] sub ..................................... <spriteBeingDragged - 5>
+  [216] pusharglist 2 ........................... <dragSpritePosList, spriteBeingDragged - 5>
+  [218] objcall 5 ............................... <dragSpritePosList[spriteBeingDragged - 5]>
+  [220] pushint8 33 ............................. <33>
+  [223] set 6 ................................... set the loc of sprite spriteBeingDragged to dragSpritePosList[spriteBeingDragged - 5]
+  [225] getglobal 33 ............................ <spriteBeingDragged>
+  [228] pusharglist 1 ........................... <spriteBeingDragged>
+  [230] extcall 76 .............................. <sprite(spriteBeingDragged)>
+  [233] getglobal 33 ............................ <spriteBeingDragged>
+  [236] setobjprop 96 ........................... sprite(spriteBeingDragged).locZ = spriteBeingDragged
+  [239] pushint8 2 .............................. <2>
+  [242] pusharglist 1 ........................... <2>
+  [244] extcall 87 .............................. <soundBusy(2)>
+  [247] not ..................................... <not soundBusy(2)>
+  [248] jmpifz [261] ............................ if not soundBusy(2) then
+  [251] pushint8 2 .............................. <2>
+  [254] pushcons 0 .............................. <"Baka14">
+  [256] pusharglistnoret 2 ...................... <2, "Baka14">
+  [258] extcall 89 .............................. puppetSound(2, "Baka14")
+  [261] pushzero ................................ <0>
+  [262] setglobal 33 ............................ spriteBeingDragged = 0
+  [265] pushzero ................................ <0>
+  [266] setglobal 25 ............................ spriteInBowl = 0
+  [268] ret
+end
+
+on checkInBowl
+  [  0] getglobal 33 ............................ <spriteBeingDragged>
+  [  3] setlocal 0 .............................. b = spriteBeingDragged
+  [  5] getlocal 0 .............................. <b>
+  [  7] pushint8 13 ............................. <13>
+  [ 10] ontospr ................................. <sprite b intersects 13>
+  [ 11] getlocal 0 .............................. <b>
+  [ 13] pusharglist 1 ........................... <b>
+  [ 15] extcall 76 .............................. <sprite(b)>
+  [ 18] getobjprop 98 ........................... <sprite(b).left>
+  [ 21] pushint8 13 ............................. <13>
+  [ 24] pusharglist 1 ........................... <13>
+  [ 26] extcall 76 .............................. <sprite(13)>
+  [ 29] getobjprop 98 ........................... <sprite(13).left>
+  [ 32] pushint8 10 ............................. <10>
+  [ 35] add ..................................... <sprite(13).left + 10>
+  [ 36] lt ...................................... <sprite(b).left < (sprite(13).left + 10)>
+  [ 37] getlocal 0 .............................. <b>
+  [ 39] pusharglist 1 ........................... <b>
+  [ 41] extcall 76 .............................. <sprite(b)>
+  [ 44] getobjprop 99 ........................... <sprite(b).right>
+  [ 47] pushint8 13 ............................. <13>
+  [ 50] pusharglist 1 ........................... <13>
+  [ 52] extcall 76 .............................. <sprite(13)>
+  [ 55] getobjprop 99 ........................... <sprite(13).right>
+  [ 58] pushint8 10 ............................. <10>
+  [ 61] sub ..................................... <sprite(13).right - 10>
+  [ 62] gt ...................................... <sprite(b).right > (sprite(13).right - 10)>
+  [ 63] or ...................................... <(sprite(b).left < (sprite(13).left + 10)) or (sprite(b).right > (sprite(13).right - 10))>
+  [ 64] getlocal 0 .............................. <b>
+  [ 66] pusharglist 1 ........................... <b>
+  [ 68] extcall 76 .............................. <sprite(b)>
+  [ 71] getobjprop 100 .......................... <sprite(b).bottom>
+  [ 74] pushint8 13 ............................. <13>
+  [ 77] pusharglist 1 ........................... <13>
+  [ 79] extcall 76 .............................. <sprite(13)>
+  [ 82] getobjprop 100 .......................... <sprite(13).bottom>
+  [ 85] pushint8 15 ............................. <15>
+  [ 88] sub ..................................... <sprite(13).bottom - 15>
+  [ 89] gt ...................................... <sprite(b).bottom > (sprite(13).bottom - 15)>
+  [ 90] or ...................................... <(sprite(b).left < (sprite(13).left + 10)) or (sprite(b).right > (sprite(13).right - 10)) or (sprite(b).bottom > (sprite(13).bottom - 15))>
+  [ 91] and ..................................... <sprite b intersects 13 and ((sprite(b).left < (sprite(13).left + 10)) or (sprite(b).right > (sprite(13).right - 10)) or (sprite(b).bottom > (sprite(13).bottom - 15)))>
+  [ 92] jmpifz [117] ............................ if sprite b intersects 13 and ((sprite(b).left < (sprite(13).left + 10)) or (sprite(b).right > (sprite(13).right - 10)) or (sprite(b).bottom > (sprite(13).bottom - 15))) then / else
+  [ 95] getlocal 0 .............................. <b>
+  [ 97] pusharglist 1 ........................... <b>
+  [ 99] extcall 76 .............................. <sprite(b)>
+  [102] getlocal 0 .............................. <b>
+  [104] pushint8 50 ............................. <50>
+  [107] add ..................................... <b + 50>
+  [108] setobjprop 96 ........................... sprite(b).locZ = b + 50
+  [111] pushzero ................................ <0>
+  [112] setglobal 25 ............................ spriteInBowl = 0
+  [114] jmp [149]
+  [117] getlocal 0 .............................. <b>
+  [119] pushint8 13 ............................. <13>
+  [122] ontospr ................................. <sprite b intersects 13>
+  [123] jmpifz [146] ............................ if sprite b intersects 13 then / else
+  [126] getlocal 0 .............................. <b>
+  [128] pusharglist 1 ........................... <b>
+  [130] extcall 76 .............................. <sprite(b)>
+  [133] getlocal 0 .............................. <b>
+  [135] setobjprop 96 ........................... sprite(b).locZ = b
+  [138] getglobal 33 ............................ <spriteBeingDragged>
+  [141] setglobal 25 ............................ spriteInBowl = spriteBeingDragged
+  [143] jmp [149]
+  [146] pushzero ................................ <0>
+  [147] setglobal 25 ............................ spriteInBowl = 0
+  [149] pusharglistnoret 0 ...................... <>
+  [151] extcall 60 .............................. return 
+  [154] ret
+end

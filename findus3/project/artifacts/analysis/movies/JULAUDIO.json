@@ -1,0 +1,5448 @@
+{
+  "name": "JULAUDIO",
+  "input": "artifacts/disc/MAIN/JULAUDIO.CXT",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 0,
+    "movieLeft": 0,
+    "movieBottom": 0,
+    "movieRight": 0,
+    "minMember": 1,
+    "maxMember": 314,
+    "field9": 0,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 0,
+    "commentSize": 0,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 0,
+    "bitDepth": 0,
+    "field17": 0,
+    "field18": 0,
+    "field19": 0,
+    "directorVersion": 1406,
+    "field21": 0,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 0,
+    "platform": 1,
+    "protection": 22011,
+    "field29": 60,
+    "checksum": 119022614
+  },
+  "cast_libraries": [
+    {
+      "name": "External",
+      "filePath": "",
+      "id": 1024,
+      "minMember": 1,
+      "maxMember": 314
+    }
+  ],
+  "member_types": {
+    "sound": 131,
+    "script": 16,
+    "text": 1
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 1,
+      "chunk_id": 540,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F120Ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1145,
+          "castID": 540,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1146,
+          "castID": 540,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1147,
+          "castID": 540,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 2,
+      "chunk_id": 583,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1142,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 9,
+      "chunk_id": 585,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1128,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 10,
+      "chunk_id": 619,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf001",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1150,
+          "castID": 619,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1151,
+          "castID": 619,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1152,
+          "castID": 619,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 11,
+      "chunk_id": 618,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf002",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1155,
+          "castID": 618,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1156,
+          "castID": 618,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1157,
+          "castID": 618,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 12,
+      "chunk_id": 612,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf003",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1160,
+          "castID": 612,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1161,
+          "castID": 612,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1162,
+          "castID": 612,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 13,
+      "chunk_id": 611,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf004",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1165,
+          "castID": 611,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1166,
+          "castID": 611,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1167,
+          "castID": 611,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 14,
+      "chunk_id": 610,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf005",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1170,
+          "castID": 610,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1171,
+          "castID": 610,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1172,
+          "castID": 610,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 15,
+      "chunk_id": 609,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf006",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1175,
+          "castID": 609,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1176,
+          "castID": 609,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1177,
+          "castID": 609,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 16,
+      "chunk_id": 608,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Brf007",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1180,
+          "castID": 608,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1181,
+          "castID": 608,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1182,
+          "castID": 608,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 17,
+      "chunk_id": 607,
+      "type": "sound",
+      "type_id": 6,
+      "name": "ALLA",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1185,
+          "castID": 607,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1186,
+          "castID": 607,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1187,
+          "castID": 607,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 18,
+      "chunk_id": 606,
+      "type": "sound",
+      "type_id": 6,
+      "name": "b101",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1190,
+          "castID": 606,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1191,
+          "castID": 606,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1192,
+          "castID": 606,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 19,
+      "chunk_id": 605,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B102",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1195,
+          "castID": 605,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1196,
+          "castID": 605,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1197,
+          "castID": 605,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 20,
+      "chunk_id": 604,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B103",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1200,
+          "castID": 604,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1201,
+          "castID": 604,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1202,
+          "castID": 604,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 21,
+      "chunk_id": 603,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B201",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1205,
+          "castID": 603,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1206,
+          "castID": 603,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1207,
+          "castID": 603,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 22,
+      "chunk_id": 602,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B202",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1210,
+          "castID": 602,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1211,
+          "castID": 602,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1212,
+          "castID": 602,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 23,
+      "chunk_id": 601,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B203",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1215,
+          "castID": 601,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1216,
+          "castID": 601,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1217,
+          "castID": 601,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 24,
+      "chunk_id": 599,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B301",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1220,
+          "castID": 599,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1221,
+          "castID": 599,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1222,
+          "castID": 599,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 25,
+      "chunk_id": 598,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B302",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1225,
+          "castID": 598,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1226,
+          "castID": 598,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1227,
+          "castID": 598,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 26,
+      "chunk_id": 597,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B303",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1230,
+          "castID": 597,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1231,
+          "castID": 597,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1232,
+          "castID": 597,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 27,
+      "chunk_id": 596,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B501",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1235,
+          "castID": 596,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1236,
+          "castID": 596,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1237,
+          "castID": 596,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 28,
+      "chunk_id": 595,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B502",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1240,
+          "castID": 595,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1241,
+          "castID": 595,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1242,
+          "castID": 595,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 29,
+      "chunk_id": 593,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B503",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1245,
+          "castID": 593,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1246,
+          "castID": 593,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1247,
+          "castID": 593,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 30,
+      "chunk_id": 592,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B401",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1250,
+          "castID": 592,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1251,
+          "castID": 592,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1252,
+          "castID": 592,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 31,
+      "chunk_id": 591,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B402",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1255,
+          "castID": 591,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1256,
+          "castID": 591,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1257,
+          "castID": 591,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 32,
+      "chunk_id": 590,
+      "type": "sound",
+      "type_id": 6,
+      "name": "B403",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1260,
+          "castID": 590,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1261,
+          "castID": 590,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1262,
+          "castID": 590,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 33,
+      "chunk_id": 587,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F501ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1265,
+          "castID": 587,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1266,
+          "castID": 587,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1267,
+          "castID": 587,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 34,
+      "chunk_id": 584,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F507",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1270,
+          "castID": 584,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1271,
+          "castID": 584,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1272,
+          "castID": 584,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 35,
+      "chunk_id": 582,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F202ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1275,
+          "castID": 582,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1276,
+          "castID": 582,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1277,
+          "castID": 582,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 36,
+      "chunk_id": 581,
+      "type": "text",
+      "type_id": 3,
+      "name": "",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1278,
+          "castID": 581,
+          "fourCC": "STXT"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 37,
+      "chunk_id": 1080,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F203br",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1281,
+          "castID": 1080,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1282,
+          "castID": 1080,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1283,
+          "castID": 1080,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 38,
+      "chunk_id": 1081,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F204br",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1286,
+          "castID": 1081,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1287,
+          "castID": 1081,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1288,
+          "castID": 1081,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 39,
+      "chunk_id": 488,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F207br",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1291,
+          "castID": 488,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1292,
+          "castID": 488,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1293,
+          "castID": 488,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 60,
+      "chunk_id": 1088,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F601",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1296,
+          "castID": 1088,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1297,
+          "castID": 1088,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1298,
+          "castID": 1088,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 61,
+      "chunk_id": 1089,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F602",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1301,
+          "castID": 1089,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1302,
+          "castID": 1089,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1303,
+          "castID": 1089,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 62,
+      "chunk_id": 1090,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F603",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1306,
+          "castID": 1090,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1307,
+          "castID": 1090,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1308,
+          "castID": 1090,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 63,
+      "chunk_id": 1091,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F604",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1311,
+          "castID": 1091,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1312,
+          "castID": 1091,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1313,
+          "castID": 1091,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 64,
+      "chunk_id": 1092,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F601b",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1316,
+          "castID": 1092,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1317,
+          "castID": 1092,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1318,
+          "castID": 1092,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 65,
+      "chunk_id": 1093,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F606",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1321,
+          "castID": 1093,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1322,
+          "castID": 1093,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1323,
+          "castID": 1093,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 66,
+      "chunk_id": 1094,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F607",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1326,
+          "castID": 1094,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1327,
+          "castID": 1094,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1328,
+          "castID": 1094,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 67,
+      "chunk_id": 1095,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F608",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1331,
+          "castID": 1095,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1332,
+          "castID": 1095,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1333,
+          "castID": 1095,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 68,
+      "chunk_id": 1096,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F609",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1336,
+          "castID": 1096,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1337,
+          "castID": 1096,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1338,
+          "castID": 1096,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 69,
+      "chunk_id": 1097,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F610",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1341,
+          "castID": 1097,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1342,
+          "castID": 1097,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1343,
+          "castID": 1097,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 70,
+      "chunk_id": 1098,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F611",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1346,
+          "castID": 1098,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1347,
+          "castID": 1098,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1348,
+          "castID": 1098,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 71,
+      "chunk_id": 1099,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F612",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1351,
+          "castID": 1099,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1352,
+          "castID": 1099,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1353,
+          "castID": 1099,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 72,
+      "chunk_id": 1100,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F613",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1356,
+          "castID": 1100,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1357,
+          "castID": 1100,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1358,
+          "castID": 1100,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 73,
+      "chunk_id": 1101,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F614",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1361,
+          "castID": 1101,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1362,
+          "castID": 1101,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1363,
+          "castID": 1101,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 74,
+      "chunk_id": 1102,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F615",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1366,
+          "castID": 1102,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1367,
+          "castID": 1102,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1368,
+          "castID": 1102,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 75,
+      "chunk_id": 1103,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F616",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1371,
+          "castID": 1103,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1372,
+          "castID": 1103,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1373,
+          "castID": 1103,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 76,
+      "chunk_id": 1104,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F617",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1376,
+          "castID": 1104,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1377,
+          "castID": 1104,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1378,
+          "castID": 1104,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 77,
+      "chunk_id": 1105,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F618",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1381,
+          "castID": 1105,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1382,
+          "castID": 1105,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1383,
+          "castID": 1105,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 78,
+      "chunk_id": 1106,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F619",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1386,
+          "castID": 1106,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1387,
+          "castID": 1106,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1388,
+          "castID": 1106,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 87,
+      "chunk_id": 1107,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F627",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1391,
+          "castID": 1107,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1392,
+          "castID": 1107,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1393,
+          "castID": 1107,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 88,
+      "chunk_id": 1108,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F618B",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1396,
+          "castID": 1108,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1397,
+          "castID": 1108,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1398,
+          "castID": 1108,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 97,
+      "chunk_id": 1109,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Baka14",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1401,
+          "castID": 1109,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1402,
+          "castID": 1109,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1403,
+          "castID": 1109,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 101,
+      "chunk_id": 297,
+      "type": "sound",
+      "type_id": 6,
+      "name": "NyBakafx01",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1406,
+          "castID": 297,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1407,
+          "castID": 297,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1408,
+          "castID": 297,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 102,
+      "chunk_id": 347,
+      "type": "sound",
+      "type_id": 6,
+      "name": "TickTick",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1411,
+          "castID": 347,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1412,
+          "castID": 347,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1413,
+          "castID": 347,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 103,
+      "chunk_id": 617,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Dong",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1416,
+          "castID": 617,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1417,
+          "castID": 617,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1418,
+          "castID": 617,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 104,
+      "chunk_id": 269,
+      "type": "sound",
+      "type_id": 6,
+      "name": "NyFx06",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1421,
+          "castID": 269,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1422,
+          "castID": 269,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1423,
+          "castID": 269,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 105,
+      "chunk_id": 293,
+      "type": "sound",
+      "type_id": 6,
+      "name": "NyBakafx07",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1426,
+          "castID": 293,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1427,
+          "castID": 293,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1428,
+          "castID": 293,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 106,
+      "chunk_id": 304,
+      "type": "sound",
+      "type_id": 6,
+      "name": "BakaFX02",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1431,
+          "castID": 304,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1432,
+          "castID": 304,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1433,
+          "castID": 304,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 107,
+      "chunk_id": 161,
+      "type": "sound",
+      "type_id": 6,
+      "name": "BakaFX03",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1436,
+          "castID": 161,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1437,
+          "castID": 161,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1438,
+          "castID": 161,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 108,
+      "chunk_id": 257,
+      "type": "sound",
+      "type_id": 6,
+      "name": "BakaFX04",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1441,
+          "castID": 257,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1442,
+          "castID": 257,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1443,
+          "castID": 257,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 110,
+      "chunk_id": 501,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1140,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 129,
+      "chunk_id": 552,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1129,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 130,
+      "chunk_id": 1110,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F201",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1446,
+          "castID": 1110,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1447,
+          "castID": 1110,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1448,
+          "castID": 1110,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 131,
+      "chunk_id": 565,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Spik04",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1451,
+          "castID": 565,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1452,
+          "castID": 565,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1453,
+          "castID": 565,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 132,
+      "chunk_id": 1111,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F204",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1456,
+          "castID": 1111,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1457,
+          "castID": 1111,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1458,
+          "castID": 1111,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 133,
+      "chunk_id": 1112,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F206",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1461,
+          "castID": 1112,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1462,
+          "castID": 1112,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1463,
+          "castID": 1112,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 134,
+      "chunk_id": 1113,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F203",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1466,
+          "castID": 1113,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1467,
+          "castID": 1113,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1468,
+          "castID": 1113,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 135,
+      "chunk_id": 1114,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F205ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1471,
+          "castID": 1114,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1472,
+          "castID": 1114,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1473,
+          "castID": 1114,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 136,
+      "chunk_id": 1115,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F207",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1476,
+          "castID": 1115,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1477,
+          "castID": 1115,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1478,
+          "castID": 1115,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 137,
+      "chunk_id": 1116,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F208",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1481,
+          "castID": 1116,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1482,
+          "castID": 1116,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1483,
+          "castID": 1116,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 138,
+      "chunk_id": 554,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F209",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1486,
+          "castID": 554,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1487,
+          "castID": 554,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1488,
+          "castID": 554,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 139,
+      "chunk_id": 1117,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F_Spik05",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1491,
+          "castID": 1117,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1492,
+          "castID": 1117,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1493,
+          "castID": 1117,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 199,
+      "chunk_id": 280,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1130,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 200,
+      "chunk_id": 522,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Traff2ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1496,
+          "castID": 522,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1497,
+          "castID": 522,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1498,
+          "castID": 522,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 201,
+      "chunk_id": 658,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Hit01ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1501,
+          "castID": 658,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1502,
+          "castID": 658,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1503,
+          "castID": 658,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 202,
+      "chunk_id": 659,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Hit02ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1506,
+          "castID": 659,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1507,
+          "castID": 659,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1508,
+          "castID": 659,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 203,
+      "chunk_id": 660,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Hit03ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1511,
+          "castID": 660,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1512,
+          "castID": 660,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1513,
+          "castID": 660,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 204,
+      "chunk_id": 180,
+      "type": "sound",
+      "type_id": 6,
+      "name": "_06",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1516,
+          "castID": 180,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1517,
+          "castID": 180,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1518,
+          "castID": 180,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 205,
+      "chunk_id": 4,
+      "type": "sound",
+      "type_id": 6,
+      "name": "elk08",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1521,
+          "castID": 4,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1522,
+          "castID": 4,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1523,
+          "castID": 4,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 206,
+      "chunk_id": 664,
+      "type": "sound",
+      "type_id": 6,
+      "name": "_09",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1526,
+          "castID": 664,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1527,
+          "castID": 664,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1528,
+          "castID": 664,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 208,
+      "chunk_id": 679,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F301",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1531,
+          "castID": 679,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1532,
+          "castID": 679,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1533,
+          "castID": 679,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 209,
+      "chunk_id": 1086,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F302",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1536,
+          "castID": 1086,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1537,
+          "castID": 1086,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1538,
+          "castID": 1086,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 210,
+      "chunk_id": 5,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F307ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1541,
+          "castID": 5,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1542,
+          "castID": 5,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1543,
+          "castID": 5,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 211,
+      "chunk_id": 670,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F308ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1546,
+          "castID": 670,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1547,
+          "castID": 670,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1548,
+          "castID": 670,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 212,
+      "chunk_id": 197,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": null,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 213,
+      "chunk_id": 299,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F208 (svensk)",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1551,
+          "castID": 299,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1552,
+          "castID": 299,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1553,
+          "castID": 299,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 215,
+      "chunk_id": 671,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F314",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1556,
+          "castID": 671,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1557,
+          "castID": 671,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1558,
+          "castID": 671,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 216,
+      "chunk_id": 672,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F315",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1561,
+          "castID": 672,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1562,
+          "castID": 672,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1563,
+          "castID": 672,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 217,
+      "chunk_id": 6,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F316",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1566,
+          "castID": 6,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1567,
+          "castID": 6,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1568,
+          "castID": 6,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 218,
+      "chunk_id": 447,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1131,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 219,
+      "chunk_id": 676,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F317",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1571,
+          "castID": 676,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1572,
+          "castID": 676,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1573,
+          "castID": 676,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 220,
+      "chunk_id": 677,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F318",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1576,
+          "castID": 677,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1577,
+          "castID": 677,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1578,
+          "castID": 677,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 221,
+      "chunk_id": 678,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F319",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1581,
+          "castID": 678,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1582,
+          "castID": 678,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1583,
+          "castID": 678,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 222,
+      "chunk_id": 429,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Pling",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1586,
+          "castID": 429,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1587,
+          "castID": 429,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1588,
+          "castID": 429,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 223,
+      "chunk_id": 1118,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Provigen",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1591,
+          "castID": 1118,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1592,
+          "castID": 1118,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        },
+        {
+          "sectionID": 1593,
+          "castID": 1118,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 224,
+      "chunk_id": 1087,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F301b",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1596,
+          "castID": 1087,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1597,
+          "castID": 1087,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1598,
+          "castID": 1087,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 225,
+      "chunk_id": 338,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1132,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 226,
+      "chunk_id": 479,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Kast1",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1601,
+          "castID": 479,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1602,
+          "castID": 479,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1603,
+          "castID": 479,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 227,
+      "chunk_id": 378,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1133,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 228,
+      "chunk_id": 683,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F308",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1606,
+          "castID": 683,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1607,
+          "castID": 683,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1608,
+          "castID": 683,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 229,
+      "chunk_id": 684,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F313",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1611,
+          "castID": 684,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1612,
+          "castID": 684,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1613,
+          "castID": 684,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 230,
+      "chunk_id": 8,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F320",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1616,
+          "castID": 8,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1617,
+          "castID": 8,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1618,
+          "castID": 8,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 231,
+      "chunk_id": 390,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1134,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 250,
+      "chunk_id": 315,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1135,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 251,
+      "chunk_id": 300,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F101a",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1621,
+          "castID": 300,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1622,
+          "castID": 300,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1623,
+          "castID": 300,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 252,
+      "chunk_id": 279,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F101b",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1626,
+          "castID": 279,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1627,
+          "castID": 279,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1628,
+          "castID": 279,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 253,
+      "chunk_id": 314,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F120a",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1631,
+          "castID": 314,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1632,
+          "castID": 314,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1633,
+          "castID": 314,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 254,
+      "chunk_id": 558,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F103",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1636,
+          "castID": 558,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1637,
+          "castID": 558,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1638,
+          "castID": 558,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 255,
+      "chunk_id": 381,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P101",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1641,
+          "castID": 381,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1642,
+          "castID": 381,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1643,
+          "castID": 381,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 256,
+      "chunk_id": 339,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P102a",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1646,
+          "castID": 339,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1647,
+          "castID": 339,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1648,
+          "castID": 339,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 258,
+      "chunk_id": 450,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F102a",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1651,
+          "castID": 450,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1652,
+          "castID": 450,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1653,
+          "castID": 450,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 259,
+      "chunk_id": 487,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F102b",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1656,
+          "castID": 487,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1657,
+          "castID": 487,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1658,
+          "castID": 487,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 261,
+      "chunk_id": 452,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P102b",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1661,
+          "castID": 452,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1662,
+          "castID": 452,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1663,
+          "castID": 452,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 262,
+      "chunk_id": 600,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P102c",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1666,
+          "castID": 600,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1667,
+          "castID": 600,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1668,
+          "castID": 600,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 264,
+      "chunk_id": 433,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F111",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1671,
+          "castID": 433,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1672,
+          "castID": 433,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1673,
+          "castID": 433,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 265,
+      "chunk_id": 580,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F112",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1676,
+          "castID": 580,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1677,
+          "castID": 580,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1678,
+          "castID": 580,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 266,
+      "chunk_id": 579,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F113",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1681,
+          "castID": 579,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1682,
+          "castID": 579,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1683,
+          "castID": 579,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 267,
+      "chunk_id": 578,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F114",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1686,
+          "castID": 578,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1687,
+          "castID": 578,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1688,
+          "castID": 578,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 268,
+      "chunk_id": 541,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P111",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1691,
+          "castID": 541,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1692,
+          "castID": 541,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1693,
+          "castID": 541,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 270,
+      "chunk_id": 538,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P110",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1696,
+          "castID": 538,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1697,
+          "castID": 538,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1698,
+          "castID": 538,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 274,
+      "chunk_id": 537,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F115",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1701,
+          "castID": 537,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1702,
+          "castID": 537,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1703,
+          "castID": 537,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 275,
+      "chunk_id": 536,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P112",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1706,
+          "castID": 536,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1707,
+          "castID": 536,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1708,
+          "castID": 536,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 276,
+      "chunk_id": 535,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F116",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1711,
+          "castID": 535,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1712,
+          "castID": 535,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1713,
+          "castID": 535,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 277,
+      "chunk_id": 534,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F117",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1716,
+          "castID": 534,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1717,
+          "castID": 534,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1718,
+          "castID": 534,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 278,
+      "chunk_id": 530,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P118",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1721,
+          "castID": 530,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1722,
+          "castID": 530,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1723,
+          "castID": 530,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 279,
+      "chunk_id": 529,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1136,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 280,
+      "chunk_id": 322,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P114",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1726,
+          "castID": 322,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1727,
+          "castID": 322,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1728,
+          "castID": 322,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 281,
+      "chunk_id": 458,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P115",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1731,
+          "castID": 458,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1732,
+          "castID": 458,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1733,
+          "castID": 458,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 282,
+      "chunk_id": 527,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P116",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1736,
+          "castID": 527,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1737,
+          "castID": 527,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1738,
+          "castID": 527,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 283,
+      "chunk_id": 457,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P117",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1741,
+          "castID": 457,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1742,
+          "castID": 457,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1743,
+          "castID": 457,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 285,
+      "chunk_id": 432,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F156",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1746,
+          "castID": 432,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1747,
+          "castID": 432,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1748,
+          "castID": 432,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 286,
+      "chunk_id": 430,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1137,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 288,
+      "chunk_id": 419,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1138,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 289,
+      "chunk_id": 418,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F158ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1751,
+          "castID": 418,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1752,
+          "castID": 418,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1753,
+          "castID": 418,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 291,
+      "chunk_id": 405,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F122",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1756,
+          "castID": 405,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1757,
+          "castID": 405,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1758,
+          "castID": 405,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 292,
+      "chunk_id": 404,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F123",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1761,
+          "castID": 404,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1762,
+          "castID": 404,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1763,
+          "castID": 404,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 293,
+      "chunk_id": 401,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1139,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 295,
+      "chunk_id": 374,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Jakort",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1766,
+          "castID": 374,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1767,
+          "castID": 374,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1768,
+          "castID": 374,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 296,
+      "chunk_id": 373,
+      "type": "sound",
+      "type_id": 6,
+      "name": "Nejkort",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1771,
+          "castID": 373,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1772,
+          "castID": 373,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1773,
+          "castID": 373,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 297,
+      "chunk_id": 387,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F167",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1776,
+          "castID": 387,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1777,
+          "castID": 387,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1778,
+          "castID": 387,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 298,
+      "chunk_id": 349,
+      "type": "sound",
+      "type_id": 6,
+      "name": "P119",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1781,
+          "castID": 349,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1782,
+          "castID": 349,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1783,
+          "castID": 349,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 310,
+      "chunk_id": 589,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 1141,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 311,
+      "chunk_id": 570,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F401ny",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1786,
+          "castID": 570,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1787,
+          "castID": 570,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1788,
+          "castID": 570,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 313,
+      "chunk_id": 545,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F406",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1791,
+          "castID": 545,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1792,
+          "castID": 545,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1793,
+          "castID": 545,
+          "fourCC": "sndS"
+        }
+      ]
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 314,
+      "chunk_id": 562,
+      "type": "sound",
+      "type_id": 6,
+      "name": "F407",
+      "script_chunk": null,
+      "children": [
+        {
+          "sectionID": 1796,
+          "castID": 562,
+          "fourCC": "snd "
+        },
+        {
+          "sectionID": 1797,
+          "castID": 562,
+          "fourCC": "sndH"
+        },
+        {
+          "sectionID": 1798,
+          "castID": 562,
+          "fourCC": "sndS"
+        }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "chunk_id": 1131,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1131.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 218,
+          "chunk_id": 447,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1131,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1130,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1130.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 199,
+          "chunk_id": 280,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1130,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1137,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1137.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 286,
+          "chunk_id": 430,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1137,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1140,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1140.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 110,
+          "chunk_id": 501,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1140,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1141,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1141.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 310,
+          "chunk_id": 589,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1141,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1136,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1136.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 279,
+          "chunk_id": 529,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1136,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1135,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1135.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 250,
+          "chunk_id": 315,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1135,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1139,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1139.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 293,
+          "chunk_id": 401,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1139,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1142,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1142.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 2,
+          "chunk_id": 583,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1142,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1138,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1138.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 288,
+          "chunk_id": 419,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1138,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1134,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1134.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 231,
+          "chunk_id": 390,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1134,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1129,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1129.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 129,
+          "chunk_id": 552,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1129,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1133,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1133.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 227,
+          "chunk_id": 378,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1133,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1132,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1132.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 225,
+          "chunk_id": 338,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1132,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 1128,
+      "path": "artifacts/decompiled/JULAUDIO/scripts-by-chunk/Lscr-1128.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 9,
+          "chunk_id": 585,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 1128,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "labels": [],
+  "filmloops": [],
+  "texts": [
+    {
+      "chunk_id": 1278,
+      "text": "Tyska kalendern ver2 -->",
+      "encoding": "mac_roman",
+      "style_data_hex": "0001000000000000000080020000000c000000000000",
+      "path": "artifacts/analysis/text/JULAUDIO/STXT-1278.txt"
+    }
+  ]
+}

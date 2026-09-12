@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173f3c">
+<title>Findus wartet auf Weihnachten</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"dirplayer-js-api":"./engine/dirplayer-js-api.js"}}</script>
+<main id="player">
+  <header><span>Findus wartet auf Weihnachten</span><nav>
+    <button id="sound" disabled aria-label="Ton ausschalten">Ton an</button>
+    <button id="controls" aria-expanded="false" aria-controls="touch-controls">Tasten</button>
+    <button id="fullscreen" aria-label="Vollbild öffnen">Vollbild</button>
+  </nav></header>
+  <section id="game" aria-label="Spiel">
+    <div id="stage_canvas_container" tabindex="0" aria-label="Spielfläche"></div>
+    <div id="welcome">
+      <h1>Findus wartet<br>auf Weihnachten</h1>
+      <p>24 Tage voller Geschichten und Spiele mit Pettersson und Findus.</p>
+      <label><input id="all-days" type="checkbox" checked> Alle Kalendertüren öffnen</label>
+      <button id="start" disabled>Spiel wird geladen …</button>
+      <p id="status" role="status"></p>
+    </div>
+  </section>
+  <section id="touch-controls" aria-label="Spieltasten" hidden>
+    <div class="direction-pad">
+      <button data-key="ArrowUp" data-code="38" aria-label="Pfeil nach oben">↑</button>
+      <button data-key="ArrowLeft" data-code="37" aria-label="Pfeil nach links">←</button>
+      <button data-key="ArrowDown" data-code="40" aria-label="Pfeil nach unten">↓</button>
+      <button data-key="ArrowRight" data-code="39" aria-label="Pfeil nach rechts">→</button>
+    </div>
+    <div class="action-pad">
+      <button data-key="Shift" data-code="16">Shift <small>Gas</small></button>
+      <button data-key="Control" data-code="17">Ctrl <small>Zurück</small></button>
+      <button data-key=" " data-code="32">Leertaste</button>
+      <button data-key="Enter" data-code="13">Enter</button>
+      <button data-key="a" data-code="65">A</button><button data-key="d" data-code="68">D</button>
+    </div>
+  </section>
+  <footer>Mit Maus oder Touch spielen · Manche Spiele verwenden die Pfeiltasten und die Leertaste.</footer>
+  <details id="diagnostics"><summary>Technische Angaben</summary><pre id="diagnostic-output"></pre></details>
+</main>
+<script type="module" src="./app.js"></script>
+</html>

@@ -1,0 +1,468 @@
+{
+  "name": "ROUTS",
+  "input": "artifacts/disc/MAIN/ROUTS.CXT",
+  "config": {
+    "len": 84,
+    "fileVersion": 5692,
+    "movieTop": 0,
+    "movieLeft": 0,
+    "movieBottom": 0,
+    "movieRight": 0,
+    "minMember": 1,
+    "maxMember": 18,
+    "field9": 0,
+    "field10": 0,
+    "D7stageColorG": 0,
+    "D7stageColorB": 0,
+    "commentFont": 0,
+    "commentSize": 0,
+    "commentStyle": 0,
+    "D7stageColorIsRGB": 0,
+    "D7stageColorR": 0,
+    "bitDepth": 0,
+    "field17": 0,
+    "field18": 0,
+    "field19": 0,
+    "directorVersion": 1406,
+    "field21": 0,
+    "field22": 0,
+    "field23": 0,
+    "field24": 0,
+    "field25": 0,
+    "field26": 0,
+    "frameRate": 0,
+    "platform": 1,
+    "protection": 2829,
+    "field29": 60,
+    "checksum": 1851119222
+  },
+  "cast_libraries": [
+    {
+      "name": "External",
+      "filePath": "",
+      "id": 1024,
+      "minMember": 1,
+      "maxMember": 18
+    }
+  ],
+  "member_types": {
+    "script": 11
+  },
+  "members": [
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 1,
+      "chunk_id": 69,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 79,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 2,
+      "chunk_id": 57,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 89,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 10,
+      "chunk_id": 4,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 80,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 11,
+      "chunk_id": 6,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 81,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 12,
+      "chunk_id": 18,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 82,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 13,
+      "chunk_id": 40,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 83,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 14,
+      "chunk_id": 30,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 84,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 15,
+      "chunk_id": 65,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 85,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 16,
+      "chunk_id": 56,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 86,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 17,
+      "chunk_id": 67,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 87,
+      "children": []
+    },
+    {
+      "cast_number": 1,
+      "cast_name": "External",
+      "member": 18,
+      "chunk_id": 59,
+      "type": "script",
+      "type_id": 11,
+      "name": "",
+      "script_chunk": 88,
+      "children": []
+    }
+  ],
+  "scripts": [
+    {
+      "chunk_id": 82,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-82.ls",
+      "handler_names": [
+        "KorLjudVantaMus",
+        "KorLjudOchVanta"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 22,
+      "bytecode_handlers": 2,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 12,
+          "chunk_id": 18,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 82,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 83,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-83.ls",
+      "handler_names": [
+        "CheckHighScore"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 25,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 13,
+          "chunk_id": 40,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 83,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 88,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-88.ls",
+      "handler_names": [
+        "FixaVolym"
+      ],
+      "globals": [
+        "MasterVolym"
+      ],
+      "properties": [],
+      "source_lines": 26,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 18,
+          "chunk_id": 59,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 88,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 84,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-84.ls",
+      "handler_names": [
+        "RensaLjud"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 7,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 14,
+          "chunk_id": 30,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 84,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 85,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-85.ls",
+      "handler_names": [
+        "InitPoangLillTomte",
+        "ShowPoangLillTomte"
+      ],
+      "globals": [
+        "G_LillTomteSpNr",
+        "G_SiffrorCNr",
+        "G_PoangAntalSiffror"
+      ],
+      "properties": [],
+      "source_lines": 18,
+      "bytecode_handlers": 2,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 15,
+          "chunk_id": 65,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 85,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 89,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-89.ls",
+      "handler_names": [
+        "kolladatum"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 53,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 2,
+          "chunk_id": 57,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 89,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 86,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-86.ls",
+      "handler_names": [
+        "Pointinpoly"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 16,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 16,
+          "chunk_id": 56,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 86,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 87,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-87.ls",
+      "handler_names": [
+        "StartaUtLjud"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 18,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 17,
+          "chunk_id": 67,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 87,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 80,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-80.ls",
+      "handler_names": [
+        "InitPoangTomte",
+        "ShowPoangtomte",
+        "InitSparaFigur",
+        "ShowSparaFigur",
+        "TaFramValAvSparaFigur",
+        "TaFramValAvSparaFigurOpening"
+      ],
+      "globals": [
+        "G_PoangSpNr",
+        "G_PoangCNr",
+        "G_PoangAntalSiffror",
+        "G_ElkHigh",
+        "G_AktSparaFigur",
+        "G_AktGame",
+        "G_SpikHigh",
+        "G_BrorHigh",
+        "G_TomteMirror",
+        "G_SparaFigSpNr",
+        "G_SparaFigCnr",
+        "OkAttKlickaTillArea",
+        "TaBortTitelText"
+      ],
+      "properties": [],
+      "source_lines": 174,
+      "bytecode_handlers": 6,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 10,
+          "chunk_id": 4,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 80,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 79,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-79.ls",
+      "handler_names": [
+        "mouseUp"
+      ],
+      "globals": [],
+      "properties": [],
+      "source_lines": 3,
+      "bytecode_handlers": 1,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 1,
+          "chunk_id": 69,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 79,
+          "children": []
+        }
+      ]
+    },
+    {
+      "chunk_id": 81,
+      "path": "artifacts/decompiled/ROUTS/scripts-by-chunk/Lscr-81.ls",
+      "handler_names": [],
+      "globals": [],
+      "properties": [],
+      "source_lines": 0,
+      "bytecode_handlers": 0,
+      "bindings": [
+        {
+          "cast_number": 1,
+          "cast_name": "External",
+          "member": 11,
+          "chunk_id": 6,
+          "type": "script",
+          "type_id": 11,
+          "name": "",
+          "script_chunk": 81,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "labels": [],
+  "filmloops": [],
+  "texts": []
+}

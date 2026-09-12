@@ -1,0 +1,243 @@
+on exitFrame
+  [  0] pushint8 23 ............................. <23>
+  [  3] pusharglist 1 ........................... <23>
+  [  5] extcall 74 .............................. <rollOver(23)>
+  [  8] jmpifz [193] ............................ if rollOver(23) then / else
+  [ 11] pushint8 98 ............................. <98>
+  [ 14] pushint8 99 ............................. <99>
+  [ 17] pusharglist 2 ........................... <[98, 99]>
+  [ 19] pushlist ................................ <[98, 99]>
+  [ 20] pusharglistnoret 1 ...................... <[98, 99]>
+  [ 22] extcall 1 ............................... cursor([98, 99])
+  [ 24] pushint8 23 ............................. <23>
+  [ 27] pusharglist 1 ........................... <23>
+  [ 29] extcall 74 .............................. <rollOver(23)>
+  [ 32] jmpifz [174] ............................ repeat while rollOver(23)
+  [ 35] pushint8 23 ............................. <23>
+  [ 38] pusharglist 1 ........................... <23>
+  [ 40] extcall 100 ............................. <sprite(23)>
+  [ 43] pushint8 1 .............................. <1>
+  [ 46] setobjprop 101 .......................... sprite(23).visible = 1
+  [ 49] pusharglistnoret 0 ...................... <>
+  [ 51] extcall 29 .............................. updateStage()
+  [ 53] pusharglist 0 ........................... <>
+  [ 55] thebuiltin 75 ........................... <the mouseDown>
+  [ 58] jmpifz [171] ............................ if the mouseDown then
+  [ 61] pusharglist 0 ........................... <>
+  [ 63] thebuiltin 75 ........................... <the mouseDown>
+  [ 66] jmpifz [134] ............................ repeat while the mouseDown
+  [ 69] pushint8 23 ............................. <23>
+  [ 72] pusharglist 1 ........................... <23>
+  [ 74] extcall 74 .............................. <rollOver(23)>
+  [ 77] jmpifz [110] ............................ if rollOver(23) then / else
+  [ 80] pushint8 23 ............................. <23>
+  [ 83] pusharglist 1 ........................... <23>
+  [ 85] extcall 100 ............................. <sprite(23)>
+  [ 88] pushint8 1 .............................. <1>
+  [ 91] setobjprop 101 .......................... sprite(23).visible = 1
+  [ 94] pushint8 98 ............................. <98>
+  [ 97] pushint8 99 ............................. <99>
+  [100] pusharglist 2 ........................... <[98, 99]>
+  [102] pushlist ................................ <[98, 99]>
+  [103] pusharglistnoret 1 ...................... <[98, 99]>
+  [105] extcall 1 ............................... cursor([98, 99])
+  [107] jmp [127]
+  [110] pushint8 23 ............................. <23>
+  [113] pusharglist 1 ........................... <23>
+  [115] extcall 100 ............................. <sprite(23)>
+  [118] pushzero ................................ <0>
+  [119] setobjprop 101 .......................... sprite(23).visible = 0
+  [122] pushzero ................................ <0>
+  [123] pusharglistnoret 1 ...................... <0>
+  [125] extcall 1 ............................... cursor(0)
+  [127] pusharglistnoret 0 ...................... <>
+  [129] extcall 29 .............................. updateStage()
+  [131] endrepeat [ 61]
+  [134] pushint8 23 ............................. <23>
+  [137] pusharglist 1 ........................... <23>
+  [139] extcall 74 .............................. <rollOver(23)>
+  [142] jmpifz [171] ............................ if rollOver(23) then
+  [145] pushint8 23 ............................. <23>
+  [148] pusharglist 1 ........................... <23>
+  [150] extcall 100 ............................. <sprite(23)>
+  [153] pushzero ................................ <0>
+  [154] setobjprop 101 .......................... sprite(23).visible = 0
+  [157] pushint8 10 ............................. <10>
+  [160] pusharglistnoret 1 ...................... <10>
+  [162] extcall 81 .............................. puppetTransition(10)
+  [165] pushcons 0 .............................. <"kalender">
+  [167] pusharglistnoret 1 ...................... <"kalender">
+  [169] extcall 7 ............................... go("kalender")
+  [171] endrepeat [ 24]
+  [174] pushint8 23 ............................. <23>
+  [177] pusharglist 1 ........................... <23>
+  [179] extcall 100 ............................. <sprite(23)>
+  [182] pushzero ................................ <0>
+  [183] setobjprop 101 .......................... sprite(23).visible = 0
+  [186] pusharglistnoret 0 ...................... <>
+  [188] extcall 29 .............................. updateStage()
+  [190] jmp [566]
+  [193] pushint8 24 ............................. <24>
+  [196] pusharglist 1 ........................... <24>
+  [198] extcall 74 .............................. <rollOver(24)>
+  [201] jmpifz [381] ............................ if rollOver(24) then / else
+  [204] pushint8 98 ............................. <98>
+  [207] pushint8 99 ............................. <99>
+  [210] pusharglist 2 ........................... <[98, 99]>
+  [212] pushlist ................................ <[98, 99]>
+  [213] pusharglistnoret 1 ...................... <[98, 99]>
+  [215] extcall 1 ............................... cursor([98, 99])
+  [217] pushint8 24 ............................. <24>
+  [220] pusharglist 1 ........................... <24>
+  [222] extcall 74 .............................. <rollOver(24)>
+  [225] jmpifz [362] ............................ repeat while rollOver(24)
+  [228] pushint8 24 ............................. <24>
+  [231] pusharglist 1 ........................... <24>
+  [233] extcall 100 ............................. <sprite(24)>
+  [236] pushint8 1 .............................. <1>
+  [239] setobjprop 101 .......................... sprite(24).visible = 1
+  [242] pusharglistnoret 0 ...................... <>
+  [244] extcall 29 .............................. updateStage()
+  [246] pusharglist 0 ........................... <>
+  [248] thebuiltin 75 ........................... <the mouseDown>
+  [251] jmpifz [359] ............................ if the mouseDown then
+  [254] pusharglist 0 ........................... <>
+  [256] thebuiltin 75 ........................... <the mouseDown>
+  [259] jmpifz [327] ............................ repeat while the mouseDown
+  [262] pushint8 24 ............................. <24>
+  [265] pusharglist 1 ........................... <24>
+  [267] extcall 74 .............................. <rollOver(24)>
+  [270] jmpifz [303] ............................ if rollOver(24) then / else
+  [273] pushint8 24 ............................. <24>
+  [276] pusharglist 1 ........................... <24>
+  [278] extcall 100 ............................. <sprite(24)>
+  [281] pushint8 1 .............................. <1>
+  [284] setobjprop 101 .......................... sprite(24).visible = 1
+  [287] pushint8 98 ............................. <98>
+  [290] pushint8 99 ............................. <99>
+  [293] pusharglist 2 ........................... <[98, 99]>
+  [295] pushlist ................................ <[98, 99]>
+  [296] pusharglistnoret 1 ...................... <[98, 99]>
+  [298] extcall 1 ............................... cursor([98, 99])
+  [300] jmp [320]
+  [303] pushint8 24 ............................. <24>
+  [306] pusharglist 1 ........................... <24>
+  [308] extcall 100 ............................. <sprite(24)>
+  [311] pushzero ................................ <0>
+  [312] setobjprop 101 .......................... sprite(24).visible = 0
+  [315] pushzero ................................ <0>
+  [316] pusharglistnoret 1 ...................... <0>
+  [318] extcall 1 ............................... cursor(0)
+  [320] pusharglistnoret 0 ...................... <>
+  [322] extcall 29 .............................. updateStage()
+  [324] endrepeat [254]
+  [327] pushint8 24 ............................. <24>
+  [330] pusharglist 1 ........................... <24>
+  [332] extcall 74 .............................. <rollOver(24)>
+  [335] jmpifz [359] ............................ if rollOver(24) then
+  [338] pushint8 24 ............................. <24>
+  [341] pusharglist 1 ........................... <24>
+  [343] extcall 100 ............................. <sprite(24)>
+  [346] pushzero ................................ <0>
+  [347] setobjprop 101 .......................... sprite(24).visible = 0
+  [350] pushcons 8 .............................. <"ovn4.1">
+  [352] pusharglistnoret 1 ...................... <"ovn4.1">
+  [354] extcall 7 ............................... go("ovn4.1")
+  [356] jmp [362] ............................... exit repeat
+  [359] endrepeat [217]
+  [362] pushint8 24 ............................. <24>
+  [365] pusharglist 1 ........................... <24>
+  [367] extcall 100 ............................. <sprite(24)>
+  [370] pushzero ................................ <0>
+  [371] setobjprop 101 .......................... sprite(24).visible = 0
+  [374] pusharglistnoret 0 ...................... <>
+  [376] extcall 29 .............................. updateStage()
+  [378] jmp [566]
+  [381] pushint8 3 .............................. <3>
+  [384] pusharglist 1 ........................... <3>
+  [386] extcall 74 .............................. <rollOver(3)>
+  [389] pushint8 4 .............................. <4>
+  [392] pusharglist 1 ........................... <4>
+  [394] extcall 74 .............................. <rollOver(4)>
+  [397] or ...................................... <rollOver(3) or rollOver(4)>
+  [398] pushint8 5 .............................. <5>
+  [401] pusharglist 1 ........................... <5>
+  [403] extcall 74 .............................. <rollOver(5)>
+  [406] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5)>
+  [407] pushint8 6 .............................. <6>
+  [410] pusharglist 1 ........................... <6>
+  [412] extcall 74 .............................. <rollOver(6)>
+  [415] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6)>
+  [416] pushint8 7 .............................. <7>
+  [419] pusharglist 1 ........................... <7>
+  [421] extcall 74 .............................. <rollOver(7)>
+  [424] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7)>
+  [425] pushint8 8 .............................. <8>
+  [428] pusharglist 1 ........................... <8>
+  [430] extcall 74 .............................. <rollOver(8)>
+  [433] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8)>
+  [434] pushint8 9 .............................. <9>
+  [437] pusharglist 1 ........................... <9>
+  [439] extcall 74 .............................. <rollOver(9)>
+  [442] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9)>
+  [443] pushint8 10 ............................. <10>
+  [446] pusharglist 1 ........................... <10>
+  [448] extcall 74 .............................. <rollOver(10)>
+  [451] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10)>
+  [452] pushint8 23 ............................. <23>
+  [455] pusharglist 1 ........................... <23>
+  [457] extcall 74 .............................. <rollOver(23)>
+  [460] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23)>
+  [461] pushint8 24 ............................. <24>
+  [464] pusharglist 1 ........................... <24>
+  [466] extcall 74 .............................. <rollOver(24)>
+  [469] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24)>
+  [470] pushint8 26 ............................. <26>
+  [473] pusharglist 1 ........................... <26>
+  [475] extcall 74 .............................. <rollOver(26)>
+  [478] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26)>
+  [479] pushint8 27 ............................. <27>
+  [482] pusharglist 1 ........................... <27>
+  [484] extcall 74 .............................. <rollOver(27)>
+  [487] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27)>
+  [488] pushint8 28 ............................. <28>
+  [491] pusharglist 1 ........................... <28>
+  [493] extcall 74 .............................. <rollOver(28)>
+  [496] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28)>
+  [497] pushint8 29 ............................. <29>
+  [500] pusharglist 1 ........................... <29>
+  [502] extcall 74 .............................. <rollOver(29)>
+  [505] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29)>
+  [506] pushint8 30 ............................. <30>
+  [509] pusharglist 1 ........................... <30>
+  [511] extcall 74 .............................. <rollOver(30)>
+  [514] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29) or rollOver(30)>
+  [515] pushint8 31 ............................. <31>
+  [518] pusharglist 1 ........................... <31>
+  [520] extcall 74 .............................. <rollOver(31)>
+  [523] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29) or rollOver(30) or rollOver(31)>
+  [524] pushint8 32 ............................. <32>
+  [527] pusharglist 1 ........................... <32>
+  [529] extcall 74 .............................. <rollOver(32)>
+  [532] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29) or rollOver(30) or rollOver(31) or rollOver(32)>
+  [533] pushint8 33 ............................. <33>
+  [536] pusharglist 1 ........................... <33>
+  [538] extcall 74 .............................. <rollOver(33)>
+  [541] or ...................................... <rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29) or rollOver(30) or rollOver(31) or rollOver(32) or rollOver(33)>
+  [542] jmpifz [561] ............................ if rollOver(3) or rollOver(4) or rollOver(5) or rollOver(6) or rollOver(7) or rollOver(8) or rollOver(9) or rollOver(10) or rollOver(23) or rollOver(24) or rollOver(26) or rollOver(27) or rollOver(28) or rollOver(29) or rollOver(30) or rollOver(31) or rollOver(32) or rollOver(33) then / else
+  [545] pushint8 98 ............................. <98>
+  [548] pushint8 99 ............................. <99>
+  [551] pusharglist 2 ........................... <[98, 99]>
+  [553] pushlist ................................ <[98, 99]>
+  [554] pusharglistnoret 1 ...................... <[98, 99]>
+  [556] extcall 1 ............................... cursor([98, 99])
+  [558] jmp [566]
+  [561] pushzero ................................ <0>
+  [562] pusharglistnoret 1 ...................... <0>
+  [564] extcall 1 ............................... cursor(0)
+  [566] pusharglist 0 ........................... <>
+  [568] thebuiltin 12 ........................... <the frame>
+  [570] pusharglistnoret 1 ...................... <the frame>
+  [572] extcall 7 ............................... go(the frame)
+  [574] ret
+end

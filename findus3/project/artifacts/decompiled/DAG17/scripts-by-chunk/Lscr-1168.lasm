@@ -1,0 +1,9 @@
+on mouseUp
+  [  0] pushcons 0 .............................. <"F320">
+  [  2] pusharglistnoret 1 ...................... <"F320">
+  [  4] extcall 200 ............................. StartaUtLjud("F320")
+  [  7] pushcons 8 .............................. <"SpelSlut">
+  [  9] pusharglistnoret 1 ...................... <"SpelSlut">
+  [ 11] extcall 15 .............................. go("SpelSlut")
+  [ 13] ret
+end
