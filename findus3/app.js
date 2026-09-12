@@ -112,31 +112,43 @@ showControls(matchMedia('(pointer: coarse)').matches);
 const stage=$('stage_canvas_container');
 const point=e=>{const r=stage.getBoundingClientRect();return [Math.round((e.clientX-r.left)*640/r.width),Math.round((e.clientY-r.top)*480/r.height)];};
 let activePointer;
-function releasePointer() {
-  if(!activePointer)return;
-  const pointer=activePointer;activePointer=null;
+function releaseCapture(element,id) {
+  try{if(element.hasPointerCapture(id))element.releasePointerCapture(id);}catch{}
+}
+function releasePointer(pointer=activePointer) {
+  if(!pointer || activePointer!==pointer)return;
+  activePointer=null;
   clearTimeout(pointer.release);
   clearTimeout(pointer.press);
   if(pointer.begun)(pointer.right?vm.right_mouse_up:vm.mouse_up)(...pointer.point);
+  releaseCapture(stage,pointer.id);
 }
-function finishPointerWhenReady() {
-  if(!activePointer?.begun)return;
+function finishPointerWhenReady(pointer=activePointer) {
+  if(!pointer?.begun || activePointer!==pointer)return;
   // A touch release may follow a coalesced final move immediately. Let the
   // original low-frame-rate idle handler update its drag/drop hit mask first.
-  const delay=activePointer.touch?Math.max(100,120-(performance.now()-activePointer.started)):0;
-  if(delay)activePointer.release=setTimeout(releasePointer,delay);else releasePointer();
+  const delay=pointer.touch?Math.max(100,120-(performance.now()-pointer.started)):0;
+  clearTimeout(pointer.release);
+  if(delay)pointer.release=setTimeout(()=>releasePointer(pointer),delay);else releasePointer(pointer);
+}
+function finishPointer(pointer=activePointer) {
+  if(!pointer || activePointer!==pointer || pointer.released)return;
+  pointer.released=true;
+  finishPointerWhenReady(pointer);
 }
 stage.addEventListener('pointermove',e=>{
   if(!state.playing || (activePointer && activePointer.id!==e.pointerId))return;
+  if(activePointer && e.pointerType==='mouse' && e.buttons===0){releasePointer();return;}
   const p=point(e);if(activePointer)activePointer.point=p;
   vm.mouse_move(...p);
 });
 stage.addEventListener('pointerdown',e=>{
   if(!state.playing || (activePointer && !activePointer.release))return;
-  releasePointer();e.preventDefault();stage.focus();stage.setPointerCapture(e.pointerId);
+  releasePointer();e.preventDefault();stage.focus();
+  try{stage.setPointerCapture(e.pointerId);}catch{}
   if(context.state!=='running')context.resume().catch(error=>report('errors',String(error)));
   const p=point(e);
-  const pointer=activePointer={id:e.pointerId,right:e.button===2,point:p,touch:e.pointerType!=='mouse',begun:false,released:false};
+  const pointer=activePointer={id:e.pointerId,right:e.button===2,point:p,touch:e.pointerType==='touch',begun:false,released:false};
   vm.mouse_move(...p);
   const press=()=>{
     if(activePointer!==pointer)return;
@@ -145,24 +157,43 @@ stage.addEventListener('pointerdown',e=>{
     // preceding hover, so allow the original frame handler to reveal it.
     vm.mouse_move(...p);(pointer.right?vm.right_mouse_down:vm.mouse_down)(...p);
     if(pointer.point!==p)vm.mouse_move(...pointer.point);
-    if(pointer.released)finishPointerWhenReady();
+    if(pointer.released)finishPointerWhenReady(pointer);
   };
   if(pointer.touch)pointer.press=setTimeout(press,100);else press();
 });
-stage.addEventListener('pointerup',e=>{
+// Listen above the controls: Safari can retarget the final event when capture
+// is interrupted by browser UI or a finger ends outside its original button.
+window.addEventListener('pointerup',e=>{
+  releaseButton(e.pointerId);
   if(activePointer?.id!==e.pointerId)return;
   activePointer.point=point(e);
   vm.mouse_move(...activePointer.point);
   // Original Lingo menus poll the mouse button. Preserve a short tap long
   // enough for the authored loop to observe it, without delaying dragging.
-  activePointer.released=true;finishPointerWhenReady();
+  finishPointer();
+},{capture:true});
+window.addEventListener('pointercancel',e=>{
+  releaseButton(e.pointerId);
+  if(activePointer?.id===e.pointerId)releasePointer();
+},{capture:true});
+stage.addEventListener('lostpointercapture',e=>{
+  // A normal pointerup also loses capture. Keep its short authored tap alive.
+  if(activePointer?.id===e.pointerId && !activePointer.released && !stage.hasPointerCapture(e.pointerId))releasePointer();
 });
-stage.addEventListener('pointercancel',e=>{if(activePointer?.id===e.pointerId)releasePointer();});
 stage.addEventListener('contextmenu',e=>e.preventDefault());
 const keys=new Map();
 stage.addEventListener('keydown',e=>{if(!state.playing)return;e.preventDefault();keys.set(e.code,[e.key,e.keyCode]);vm.key_down(e.key,e.keyCode);});
-stage.addEventListener('keyup',e=>{if(!state.playing)return;e.preventDefault();keys.delete(e.code);vm.key_up(e.key,e.keyCode);});
-stage.addEventListener('blur',()=>{for(const [key,code]of keys.values())vm.key_up(key,code);keys.clear();});
+function releaseUnusedKey(key,code) {
+  if([...keys.values()].some(value=>value[1]===code))return;
+  if([...heldButtons.values()].some(held=>Number(held.button.dataset.code)===code))return;
+  vm.key_up(key,code);
+}
+function releaseKeyboard() {
+  const released=[...keys.values()];keys.clear();
+  for(const [key,code] of released)releaseUnusedKey(key,code);
+}
+stage.addEventListener('keyup',e=>{if(!state.playing)return;e.preventDefault();keys.delete(e.code);releaseUnusedKey(e.key,e.keyCode);});
+stage.addEventListener('blur',releaseKeyboard);
 function releaseButton(pointerId) {
   const held=heldButtons.get(pointerId);
   if(!held)return;
@@ -171,30 +202,63 @@ function releaseButton(pointerId) {
   heldButtons.delete(pointerId);
   if(![...heldButtons.values()].some(held=>held.button===button)) {
     button.classList.remove('pressed');
-    vm.key_up(button.dataset.key,Number(button.dataset.code));
+    releaseUnusedKey(button.dataset.key,Number(button.dataset.code));
   }
+  releaseCapture(button,pointerId);
 }
 for(const button of $('touch-controls').querySelectorAll('[data-key]')) {
   button.addEventListener('pointerdown',e=>{
     if(!state.playing)return;
-    e.preventDefault();button.setPointerCapture(e.pointerId);
-    const held={button,repeat:null};
+    e.preventDefault();releaseButton(e.pointerId);
+    try{button.setPointerCapture(e.pointerId);}catch{}
+    const held={button,pointerType:e.pointerType,repeat:null};
     heldButtons.set(e.pointerId,held);button.classList.add('pressed');
     vm.key_down(button.dataset.key,Number(button.dataset.code));
     if(!['Shift','Control'].includes(button.dataset.key)) {
       const repeat=()=>{
-        if(!heldButtons.has(e.pointerId))return;
+        if(heldButtons.get(e.pointerId)!==held)return;
         vm.key_down(button.dataset.key,Number(button.dataset.code));
         held.repeat=setTimeout(repeat,50);
       };
       held.repeat=setTimeout(repeat,350);
     }
   });
-  for(const name of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(name,e=>releaseButton(e.pointerId));
+  button.addEventListener('lostpointercapture',e=>{
+    if(heldButtons.get(e.pointerId)?.button===button && !button.hasPointerCapture(e.pointerId))releaseButton(e.pointerId);
+  });
   button.addEventListener('contextmenu',e=>e.preventDefault());
 }
-function releaseInputs(){releasePointer();for(const id of heldButtons.keys())releaseButton(id);for(const [key,code] of keys.values())vm.key_up(key,code);keys.clear();}
+// Touch identifiers are not PointerEvent IDs. Reconcile by the original touch
+// targets, retaining keys whose fingers are still down instead of releasing
+// every key when just one finger ends. This also recovers a missing pointerup.
+function reconcileTouches(e) {
+  const touches=[...e.touches];
+  for(const [id,held] of heldButtons){
+    if(held.pointerType==='touch' && !touches.some(touch=>held.button.contains(touch.target)))releaseButton(id);
+  }
+  if(activePointer?.touch && !touches.some(touch=>stage.contains(touch.target))){
+    if(e.type==='touchcancel')releasePointer();
+    else {
+      const ended=[...e.changedTouches].find(touch=>stage.contains(touch.target));
+      if(ended){activePointer.point=point(ended);vm.mouse_move(...activePointer.point);}
+      finishPointer();
+    }
+  }
+}
+for(const name of ['touchend','touchcancel'])window.addEventListener(name,reconcileTouches,{capture:true,passive:true});
+window.addEventListener('pointermove',e=>{
+  if(e.pointerType==='mouse' && e.buttons===0)releaseButton(e.pointerId);
+},{capture:true});
+// Keep native text selection/callouts away from game input, without disabling
+// selection in the diagnostics panel.
+for(const name of ['selectstart','contextmenu'])$('player').addEventListener(name,e=>{
+  if(e.target.closest?.('#game, #touch-controls, button'))e.preventDefault();
+});
+function releaseInputs(){releasePointer();for(const id of heldButtons.keys())releaseButton(id);releaseKeyboard();}
 window.addEventListener('blur',releaseInputs);
+window.addEventListener('pagehide',releaseInputs);
+window.addEventListener('orientationchange',releaseInputs);
+document.addEventListener('fullscreenchange',releaseInputs);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseInputs();});
 // Observable, read-only diagnostics plus the underlying VM for regression tests.
 window.findus={vm,state,load,context,snapshot:()=>({context:JSON.parse(vm.mcp_get_context()),execution:JSON.parse(vm.mcp_get_execution_state()),globals:JSON.parse(vm.mcp_get_globals()),errors:state.errors})};
