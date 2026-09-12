@@ -1,6 +1,0 @@
-on stopMovie
-  [  0] getglobal 6 ............................. <langd>
-  [  2] pusharglistnoret 1 ...................... <langd>
-  [  4] extcall 52 .............................. put langd
-  [  6] ret
-end

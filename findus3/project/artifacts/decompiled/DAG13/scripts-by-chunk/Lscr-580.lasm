@@ -1,5 +1,0 @@
-on mouseUp
-  [  0] pusharglistnoret 0 ...................... <>
-  [  2] extcall 14 .............................. kolla_mem()
-  [  4] ret
-end

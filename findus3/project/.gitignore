@@ -1,9 +1,0 @@
-CD01.img
-CD01.sub
-artifacts/
-tools/
-dist/
-.venv/
-__pycache__/
-*.pyc
-.DS_Store

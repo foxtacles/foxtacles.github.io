@@ -1,3 +1,0 @@
-on exitFrame
-  [  0] ret
-end

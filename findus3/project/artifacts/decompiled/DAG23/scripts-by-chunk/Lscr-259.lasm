@@ -1,6 +1,0 @@
-on exitFrame
-  [  0] pushint8 9 .............................. <9>
-  [  2] pusharglistnoret 1 ...................... <9>
-  [  4] extcall 89 .............................. puppetTransition(9)
-  [  6] ret
-end

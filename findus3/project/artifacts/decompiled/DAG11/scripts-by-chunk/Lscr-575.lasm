@@ -1,6 +1,0 @@
-on mouseUp
-  [  0] pushcons 0 .............................. <"findus">
-  [  2] pusharglistnoret 1 ...................... <"findus">
-  [  4] extcall 36 .............................. puppetSound("findus")
-  [  7] ret
-end

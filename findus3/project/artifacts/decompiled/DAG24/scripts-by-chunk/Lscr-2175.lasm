@@ -1,5 +1,0 @@
-on exitFrame
-  [  0] pusharglistnoret 0 ...................... <>
-  [  2] extcall 19 .............................. initber1()
-  [  4] ret
-end

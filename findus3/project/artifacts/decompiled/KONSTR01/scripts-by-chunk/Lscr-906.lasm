@@ -1,7 +1,0 @@
-on startMovie
-  [  0] pushzero ................................ <0>
-  [  1] setglobal 23 ............................ FraganRedanStalld = 0
-  [  3] pushzero ................................ <0>
-  [  4] setglobal 22 ............................ KonstruktionFardig = 0
-  [  6] ret
-end

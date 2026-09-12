@@ -1,6 +1,0 @@
-on mouseUp
-  [  0] pushcons 0 .............................. <"StartKonstruktion">
-  [  2] pusharglistnoret 1 ...................... <"StartKonstruktion">
-  [  4] extcall 26 .............................. go("StartKonstruktion")
-  [  6] ret
-end

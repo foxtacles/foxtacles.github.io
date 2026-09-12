@@ -1,2 +1,0 @@
-on closingSequence
-end

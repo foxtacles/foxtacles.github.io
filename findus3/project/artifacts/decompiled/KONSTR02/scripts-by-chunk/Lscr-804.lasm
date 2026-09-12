@@ -1,7 +1,0 @@
-on mouseUp
-  [  0] pushint8 1 .............................. <1>
-  [  2] pushcons 0 .............................. <"ploop">
-  [  4] pusharglistnoret 2 ...................... <1, "ploop">
-  [  6] extcall 132 ............................. play movie "ploop"
-  [  8] ret
-end

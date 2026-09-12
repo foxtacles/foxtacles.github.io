@@ -1,5 +1,0 @@
-on mouseUp
-  [  0] pusharglistnoret 0 ...................... <>
-  [  2] extcall 49 .............................. TryckNejDjur()
-  [  4] ret
-end

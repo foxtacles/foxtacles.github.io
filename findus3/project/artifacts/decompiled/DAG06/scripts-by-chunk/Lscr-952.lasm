@@ -1,9 +1,0 @@
-on exitFrame
-  [  0] pusharglist 0 ........................... <>
-  [  2] thebuiltin 25 ........................... <the frame>
-  [  4] pushint8 1 .............................. <1>
-  [  6] sub ..................................... <the frame - 1>
-  [  7] pusharglistnoret 1 ...................... <the frame - 1>
-  [  9] extcall 24 .............................. go(the frame - 1)
-  [ 11] ret
-end

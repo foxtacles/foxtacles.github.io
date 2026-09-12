@@ -1,9 +1,0 @@
-on mouseUp
-  [  0] pushcons 0 .............................. <"F627">
-  [  2] pusharglistnoret 1 ...................... <"F627">
-  [  4] extcall 6 ............................... StartaUtLjud("F627")
-  [  6] pushcons 8 .............................. <"slutspel">
-  [  8] pusharglistnoret 1 ...................... <"slutspel">
-  [ 10] extcall 1 ............................... go("slutspel")
-  [ 12] ret
-end

@@ -1,1 +1,0 @@
-pos of backdrop:-15,-15size:669, 504

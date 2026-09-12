@@ -1,7 +1,0 @@
-on exitFrame
-  [  0] pushint8 1 .............................. <1>
-  [  3] pushcons 0 .............................. <"kalender">
-  [  5] pusharglistnoret 2 ...................... <1, "kalender">
-  [  7] extcall 32 .............................. go(1, "kalender")
-  [ 10] ret
-end

@@ -1,3 +1,0 @@
-on exitFrame
-  initvar()
-end

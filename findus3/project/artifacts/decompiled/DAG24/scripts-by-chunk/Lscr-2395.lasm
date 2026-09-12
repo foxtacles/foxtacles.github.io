@@ -1,6 +1,0 @@
-on mouseUp
-  [  0] pushint8 2 .............................. <2>
-  [  3] pusharglistnoret 1 ...................... <2>
-  [  5] extcall 14 .............................. FixaKlickPaDragDjur(2)
-  [  7] ret
-end

@@ -1,6 +1,0 @@
-on mouseUp
-  [  0] pushcons 0 .............................. <"start">
-  [  2] pusharglistnoret 1 ...................... <"start">
-  [  4] extcall 46 .............................. go("start")
-  [  6] ret
-end

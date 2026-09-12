@@ -1,7 +1,0 @@
-on newber
-  [  0] pusharglistnoret 0 ...................... <>
-  [  2] extcall 68 .............................. clear()
-  [  5] getglobal 69 ............................ <lastber>
-  [  8] pop 1 ................................... case lastber of / end case
-  [ 10] ret
-end
